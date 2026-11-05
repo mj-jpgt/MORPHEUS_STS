@@ -1,0 +1,8 @@
+{
+ "schema": "morpheus_pass_rule/v1",
+ "id": "p3_sign_rule_v01",
+ "status": "DECLARED and hashed before application (coordinator 2026-10-26); a second, standard pass rule reported beside the held-out gain rule, never replacing it",
+ "applies_to": "saved rows only (no rerun): the phenomena panel P3 rows (per-patient partial slopes saved) and the CRC v03 tumour_budding rows where per-patient slopes are saved",
+ "rule": "pass = (a) per-patient partial-slope sign consistency in the declared direction by an exact one-sided binomial test at p <= 0.05 against 0.5 (equivalently >= 5/6, >= 5/5, >= 17/23 at n = 23; the coordinator's examples >= 5/6 and >= 20/23 are both satisfied by this test) AND (b) the patient-bootstrap 95% CI (2000 draws) of the mean per-patient standardised partial slope excludes 0 in the declared direction",
+ "standardised_slope": "the per-patient mean partial derivative of the frozen v03_rff relation fitted on within-patient standardised variables (as saved by phenomena_panel.relation)"
+}

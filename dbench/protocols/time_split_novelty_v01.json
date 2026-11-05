@@ -1,0 +1,24 @@
+{
+ "schema": "morpheus_time_split_prereg/v1",
+ "id": "time_split_novelty_v01",
+ "status": "PREREGISTERED (written and hashed before any result is read; owner directive 2026-10-26, COUNTEREXAMPLE_PLAN §10.3)",
+ "written_by": "Agent R",
+ "literature_cutoff": "2023-01-01",
+ "cohort": "meylan2022_ccrcc (HEST Meylan 2022, 24 patients)",
+ "baseline": {
+  "B_known_pre_cutoff": "depth + within-patient centred own-spot scores of the 50 MSigDB Hallmark sets and the Barkley 2022 cancer-cell-state modules (morpheus-rebase/v2/data/metaprograms/barkley_2022_modules.json) + CellViT composition; Gavish 2023 metaprograms excluded (post-cutoff); for each hypothesis the target programme and any reference set overlapping the target (|A&B|/min(|A|,|B|) >= 0.2) are removed, as the registered rule does",
+  "novelty_catalogue": "pre-cutoff only (Hallmark, Barkley 2022, Reactome releases before 2023 where the set is dated; no post-cutoff literature)"
+ },
+ "pipeline": "the frozen search of the registered run is not re-run: the proposals of renal-spatial-v07-20261022 do not depend on the B_known baseline (the learned search and the classical proposer rank on held-out gain over the depth baseline), so every saved hypothesis that entered supplementary pooling v2 (passing the fold rule in >= 3 folds) is re-scored by the pooled leave-one-patient-out gain of its v03_rff relation over B_known_pre_cutoff, and ranked; the top 20 are inspected",
+ "targets_verbatim": [
+  {"id": "T1", "year": 2023, "finding": "spatial CP-gene expression associated with COL4A1 expression and hyalinised stroma (ccRCC)", "hit_rule": "a top-20 hypothesis whose target or constituents include CP and COL4A1 (or COL4A1 and a hyalinised-stroma/basement-membrane programme with CP), in a stromal context (stromal-immune-dominant spots or a stromal neighbourhood term)"},
+  {"id": "T2", "year": 2024, "finding": "COL4A1 / ITGAV spatial autocorrelation in immunotherapy-exposed stroma (ccRCC)", "hit_rule": "a top-20 hypothesis containing COL4A1 and ITGAV (either as target and constituent, or both constituents) with a neighbourhood (nbr6/nbr18) term carrying the relation"},
+  {"id": "T3", "year": 2025, "finding": "chemokine-driven macrophage + CD8 T-cell niche (ccRCC)", "hit_rule": "a top-20 hypothesis combining a chemokine (CXCL9, CXCL10, CXCL11, CXCL13 or CCL5) with a macrophage marker set (C1QA/B/C, CD68, CD163, APOE, TREM2) and a CD8 marker (CD8A, CD8B, GZMB, PDCD1) among target and constituents, with a neighbourhood term"},
+  {"id": "T4", "year": 2024, "finding": "glutathione metabolism in the aggressive ccRCC metabolic progression state (Hu et al., Nat Genet 2024)", "hit_rule": "a top-20 hypothesis predicting a glutathione programme or GPX/GSTA/GGT genes together with an OXPHOS/fatty-acid proximal-tubule axis"},
+  {"id": "T5", "year": 2026, "finding": "FKBP10 links EMT, macrophage polarisation and immunosuppression in ccRCC, with spatial transcriptomics (Chen et al., Int J Biol Sci 2026)", "hit_rule": "a top-20 hypothesis containing FKBP10 with an EMT/stromal programme as target or constituent"},
+  {"id": "T6", "year": 2025, "finding": "C1Q-high macrophage populations differ across ccRCC tumour regions (Song et al., J Immunother Cancer 2025)", "hit_rule": "a top-20 hypothesis containing C1QA/B/C with an MHC-II/interferon programme and a neighbourhood term"}
+ ],
+ "hit_rule_general": "published dependency in the top 20 with the correct constituents and context; a correlated marker alone is not a hit; query-validated: each hit is confirmed by reading the hypothesis's variables and target, not by a gene-set match",
+ "reported": "for each target: hit / no hit, best rank of a matching hypothesis anywhere in the list, and its pooled gain over B_known_pre_cutoff and over the registered B_known",
+ "limitation_declared": "the registered target panel of the run is defined on Gavish programme scores (post-cutoff); the time split applies to the baseline and the novelty catalogue, and hits are judged on genes and constituents"
+}

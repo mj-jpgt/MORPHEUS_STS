@@ -1,0 +1,77 @@
+{
+  "schema": "morpheus_external_replication/v1",
+  "protocol_id": "ccrcc-external-replication-v01",
+  "created_utc": "2026-10-15",
+  "governing_plan": ".claude/SPRINT_PLAN.md section 7 (external ccRCC replication); ajas.md 'External biological replication'",
+  "status": "FROZEN before any external value is read: canonical_hash (dbench.prospective_campaign.canonical_hash) written to runs/development/sprint_v06/ccrcc_external_replication_sha256.txt and journalled by the coordinator; the rule is fixed before Agent E's conversions are opened; a change after reading any external value is a new protocol id and the old result stays reported",
+  "applies_to": "every relation frozen by the renal blind-discovery campaign (renal_spatial_v07 when registered; v0.5/v0.6 internal objects when re-tested) -- general and higher-order discoveries alike; the relation list is frozen and hashed by the campaign before this protocol is applied",
+  "discovery_cohort": {
+    "study_key": "meylan2022_ccrcc",
+    "platform": "Visium, fresh-frozen, whole-transcriptome poly-A capture",
+    "patients": 24
+  },
+  "sources": [
+    {
+      "source_key": "li2022_ccrcc",
+      "citation": "Li R, et al. Cancer Cell 40(12):1583-1599.e10 (2022), doi 10.1016/j.ccell.2022.11.001",
+      "data": "Mendeley Data 10.17632/g67bkbnhhg.1 (h5ad count objects), CC BY 4.0; raw EGA data (EGAD00001008781) are controlled and are not requested",
+      "sections": 16,
+      "patients": 8,
+      "regions": "11 tumour-normal interface + 5 tumour core sections",
+      "preservation": "fresh-frozen, OCT-embedded, 10 um cryosections (Li 2022 STAR Methods); images scanned at 40x on a Hamamatsu NanoZoomer S60 -- whether the deposited objects carry a full-resolution image is read by Agent E at conversion",
+      "chemistry_class": "fresh_frozen_whole_transcriptome",
+      "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/li2022_ccrcc/",
+      "pending_conversion": true,
+      "converter": "dbench/scripts/convert_external_visium.py (Agent E) -> flat HEST layout (st/, metadata/, patches/ where a full-resolution image exists)",
+      "exclusion_rule": "if historical task H3b is activated (Kiviaho conversion not ready at benchmark time), li2022_ccrcc leaves this replication set before any relation is transferred"
+    },
+    {
+      "source_key": "gse250163",
+      "data": "GEO GSE250163: 5 FFPE ccRCC Visium sections with H&E",
+      "sections": 5,
+      "patients": "read from the GEO sample metadata at conversion (Agent E); recorded in the conversion manifest",
+      "chemistry_class": "ffpe_probe",
+      "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/gse250163/",
+      "pending_conversion": true,
+      "converter": "dbench/scripts/convert_external_visium.py (Agent E)"
+    },
+    {
+      "source_key": "zenodo14620362",
+      "data": "Zenodo record 14620362: 3 FFPE kidney-cancer Visium sections with high-resolution images and TLS annotations",
+      "sections": 3,
+      "patients": "read from the Zenodo record at conversion (Agent E); recorded in the conversion manifest",
+      "chemistry_class": "ffpe_probe",
+      "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/zenodo14620362/",
+      "pending_conversion": true,
+      "converter": "dbench/scripts/convert_external_visium.py (Agent E)",
+      "annotation_rule": "the deposited TLS annotations are not used as a variable or a target; they may be shown beside a result for interpretation only"
+    }
+  ],
+  "transfer_rule": {
+    "identity": "a frozen relation is transferred with its exact variables, transforms, direction and relation family: the same gene symbols, the same gene sets for programme scores, the same neighbourhood definition (k = 6 and 18 nearest spots within section by KD-tree on spot centres; contrast = own - 6-neighbour mean), the same target definition; nothing is re-selected, re-weighted or re-named on external data",
+    "arithmetic": "identical to the discovery cohort, matched by HGNC gene symbol after the same gene-id convention mapping (rpd_scale_substrate.classify_gene_id_convention): log1p CPM at 1e4 over the section's panel, programme score = mean over the set's genes, within-patient centring, response within-patient standardised",
+    "fresh_frozen_to_ffpe": "for sources with chemistry_class ffpe_probe every transferred variable, every competitor column and the target are replaced by rank-based within-section standardised values: within each section, average ranks r -> Phi^-1((r - 0.5) / n); the same transform is applied to the discovery cohort's values when the discovery sign is recomputed for the sign-agreement check against an FFPE source; fresh-frozen sources (li2022_ccrcc) use the discovery arithmetic unchanged",
+    "missing_genes": "a gene variable absent from the external panel or probe set makes the relation not transferable; a programme score is transferable only when every gene that entered its discovery computation is present externally; missing genes are never substituted, imputed or replaced by a correlated gene; non-transferable relations are listed with their missing genes and count as not replicated in that source, never as failures of the relation",
+    "morphology": "relations with a morphology-concept or H-Optimus-0 constituent or target are transferred only where the section's full-resolution image has a pixel size <= 0.5 um (the H-Optimus-0 tiling scale, read from the conversion manifest's scale factors); the embedding is recomputed by Agent E with the discovery tiling (224 px tiles at 0.5 um/px centred on spots); otherwise the relation is 'not transferable (image resolution)'",
+    "competitor": "rebuilt from the external cohort's response-free columns only: log1p depth, the 41 Gavish + 50 Hallmark own-spot programme scores (and their 6/18-neighbour means for relations whose discovery comparison model carried them), platform/chemistry one-hot when sections differ; the discovery exclusion clauses carry over (target programme and its neighbour mean excluded; leak guard drops columns with within-patient |r| >= 0.9 to the target on the external proposal patients); never the response or a deterministic function of it",
+    "relation_engine": "general_discovery.evaluate_frozen_candidate with the relation the discovery campaign registered (v07_ho for v0.7 discoveries; the relation of record otherwise); fitted on external proposal patients only, evaluated on external held-out patients",
+    "external_split": "patient-grouped cross-fitting: K = min(5, number of external patients) folds by patient (numpy default_rng(20261016) shuffle of sorted patient keys); each fold is held out once; out-of-fold predictions are pooled and the held-out gain is R2(full) - R2(competitor) on the pooled out-of-fold rows (as dbench.decomposition.pool_folds)",
+    "few_patients": "a source with fewer than 4 patients is evaluated with leave-one-section-out folds and a within-section 2D block bootstrap (6 x 6 grid) in place of the patient bootstrap; its result is labelled 'section-level' and reported beside, never pooled with, patient-level sources"
+  },
+  "pass_rule": {
+    "gain": "pooled held-out gain > 0 with its patient-bootstrap 95% CI lower bound > 0 (1000 draws over whole held-out patients)",
+    "permutation": "within-patient permutation of the response on held-out rows, 199 draws, p = (1 + #null gains >= observed) / 200 <= 0.05",
+    "sign": "sign agreement: the sign of the external within-patient association between the relation's feature and the target equals the sign recorded at discovery (for k >= 2, the sign of the frozen feature's association)",
+    "all_required": true,
+    "higher_order": "for k >= 2, G_HO and its CI are reported; 'higher-order replicated' additionally requires the external G_HO CI lower bound > 0",
+    "multiplicity": "BH q over the transferred relations of a source is reported beside each result; it does not gate"
+  },
+  "pooling_across_sources": "each source is evaluated and reported separately; a relation is 'externally replicated' when it passes in at least one patient-level source, with every source's result (pass, fail, not transferable) shown; a sign reversal in any patient-level source is reported and stops the relation at internal (renal_spatial stop rule)",
+  "outputs": "runs/development/external_ccrcc_v01/<source>/<relation_hash>.json (fold receipts, pooled gain + CI, permutation p, sign, G_HO + CI, transferability, missing genes, image pixel size) and a source x relation table; never written under runs/prospective",
+  "anti_leakage": {
+    "rule_hashed_before_external_values": true,
+    "external_values_in_discovery": false,
+    "relation_redefinition_after_external": false,
+    "literature_before_internal_freeze": false
+  }
+}

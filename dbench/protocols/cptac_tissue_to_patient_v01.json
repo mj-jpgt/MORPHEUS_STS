@@ -1,0 +1,613 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "cptac-tissue-to-patient-v01-20261014",
+  "status": "REGISTERED 2026-10-14 (frozen at registration; the ledger is append-only; the advance rule never changes post hoc; no outcome has been read under this protocol)",
+  "supersedes": "none. Makes the tissue_to_patient family that renal-spatial-v04-20261011 deferred runnable as its own campaign (backup ladder item B(4)); v0.4 is untouched.",
+  "release": {
+    "name": "patient-level episode over frozen slide descriptors (H-Optimus-0 slide embedding, CellViT summaries and structure) + the v0.4 evaluation path",
+    "loader": "dbench.cohorts.load_cptac_patient_table / cptac_patient_episode / cptac_episode_null_generators",
+    "structure_descriptors": "dbench/scripts/cptac_cellvit_descriptors.py --structure -> S/external/cptac_ccrcc_cellvit_structure_20261012",
+    "runner": "morpheus_encoder/scripts/run_general_discovery_packet.py --episode cptac_patient --family <f> --proposer all --arm source (run_cptac_episode)",
+    "commit": "the registration commit that adds run_cptac_episode and this status",
+    "evidence_note": "Deep learning enters only as frozen measurement views (H-Optimus-0 slide embedding, CellViT nuclei); no model is trained on any response or outcome."
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "candidate_budget_meaning": "frozen candidates per relationship family entering the ledger at 'proposed'",
+    "patient_unit": true,
+    "unit": "patient (one tumour slide and one bulk tumour sample per patient)",
+    "literature_blind": true,
+    "fold_seed": 20261012,
+    "n_folds": 5,
+    "outer_split": "five stage-stratified patient folds over the 110 slide-mapped CPTAC ccRCC tumours (cptac_patient_folds: deterministic shuffle with fold_seed, round-robin within stage); each fold in turn is D_R (~22 patients), the other four D_P (~88); slide PCA, programme z-statistics and every standardisation are fit on D_P only",
+    "proposals_per_target": 32,
+    "rows": "tumours only (no .N normal rows); a patient missing the response, any structure column or any competitor column is dropped and listed in the receipt; nothing is imputed",
+    "targets": {
+      "definition_rule": "programme score = mean of per-gene z-scores (z statistics on D_P; gene kept if finite in >= 50% of D_P; >= 3 finite member genes per patient, else missing); never derived from a slide descriptor",
+      "rna_programmes": "41 Gavish malignant metaprograms (rna_mp1..rna_mp41, mp_id order) and 50 MSigDB Hallmarks (rna_hm_<NAME>) on log2(transcriptomics__washu + 1), symbols deduplicated",
+      "protein_programmes": "the same 91 gene sets on proteomics__umich log ratios, canonical isoform per symbol (dedupe_symbols): prot_mp1..prot_mp41, prot_hm_<NAME>"
+    },
+    "candidate_variables": {
+      "hoptimus_slide": "hos_pc1..hos_pc10: PCA (fit on D_P, columns standardised on D_P) of the 3072-d H-Optimus-0 slide embedding (mean and sd over QC-passed tiles of the 1536-d tile embedding, embeddings.h5 hoptimus_meanstd)",
+      "cellvit_summary": "cv_count_density_per_mm2, cv_mean_nuclear_area_um2, cv_class_fraction_<5 PanNuke classes> (cellvit_summary.parquet; area and density carry a constant x4 scale from the target_patch_mpp convention, immaterial after standardisation)",
+      "cellvit_structure": "cvs_*: nuclear area mean/sd, circularity, elongation (all and per abundant class), kNN (k=6) median distance, class-to-class neighbour fractions, log2 assortativity, immune intratumoral / aggregate / tumour-immune contact fractions, 256-um tile composition entropy, per-class fraction sd, density cv, tissue area (summarize_cell_structure on CellViT cells.json, level-0 mpp)",
+      "clinical_context": "only for the context family: age, sex_male, stage, grade, clear_cell and mut_{VHL,PBRM1,SETD2,BAP1,KDM5C}"
+    },
+    "excluded_from_candidates": [
+      "bulk RNA",
+      "protein",
+      "outcomes",
+      "patient identity",
+      "deconvolution estimates (competitor only)"
+    ],
+    "competitor_set": {
+      "primary": [
+        "clinical: age, sex_male, stage (I-IV ordinal), grade (G1-G4 ordinal), clear_cell",
+        "deconvolution: ESTIMATE StromalScore/ImmuneScore/ESTIMATEScore/TumorPurity, CIBERSORT 22 cell fractions, xCell ImmuneScore/StromaScore/MicroenvironmentScore",
+        "depth_proxy: detected genes and log total expression of the washu table (the deposited table is normalised; raw read depth is not available)"
+      ],
+      "informational": "clinical + depth_proxy only (no deconvolution) -- reported beside the primary for every row and used for the positive controls, because the RNA-derived immune and stromal estimates are expected to absorb much of what composition carries",
+      "rule": "the simpler model is fit on D_P and frozen; gain = R2(simpler + candidate feature, D_R) - R2(simpler, D_R); ridge on competitor columns standardised on D_P with alpha chosen by patient-grouped inner CV on D_P over VALIDATION_ALPHA_GRID (includes the zero model); the full model chosen the same way, independently",
+      "exclusion_clause": "the competitor never contains the response; deconvolution estimates are computed from the same bulk RNA as rna_programmes but are not a function of any single programme; receipts record the baseline column names",
+      "centring_rule": "patient is the unit: every column is standardised across D_P patients; no within-patient centring (one row per patient)"
+    },
+    "null_suite": {
+      "patient_perm": "permutation of the response across D_R patients",
+      "descriptor_perm_within_stage": "permutation of whole slide-descriptor rows among D_R patients of the same stage (keeps response, competitor and the stage-structure association)",
+      "interaction_break": "for |S| >= 2, within-stage permutation of one constituent across D_R patients",
+      "draws": 199,
+      "p_value": "(1 + #null gains >= observed) / (draws + 1)"
+    },
+    "advance_rule": {
+      "passing_fold": "held-out full-model R2 > 0 and patient-bootstrap gain CI lower bound > 0 (the v0.4 runner's validated rule)",
+      "proposed": "per family: top 50 hypotheses by mean held-out gain over passing folds",
+      "internal": "passing in >= 3 of 5 folds, all applicable structured nulls p <= 0.05 in those folds, mean gain >= 0.01, BH q <= 0.10 within family; recurrence counts passing folds only",
+      "pooled_out_of_fold": "informational, pre-declared: one out-of-fold prediction per patient (each from its own fold's frozen fit) for each frozen candidate; gain with a 110-patient bootstrap CI. Reported beside the fold rule; it changes no stage",
+      "external": "TCGA-KIRC (independent cohort, same modalities: H&E slide + bulk RNA), for every internal hypothesis and every proposed hypothesis with >= 2 passing folds: slide PCs = TCGA H-Optimus-0 slide embeddings standardised within TCGA and projected on the PCA loadings fitted on all 110 CPTAC patients; every constituent column z-scored within its own cohort; the frozen feature (single / product / linear subspace) computed in each cohort; the association is the Spearman correlation of the feature with the target programme after both are residualised on the competitor columns available in both cohorts (age, sex_male, stage, rna_detected_genes, rna_log_total); replicated = same sign as in CPTAC (all 110, same residualisation) and two-sided permutation p <= 0.05 (9,999 permutations); patients without the needed slide columns are left out and n is reported; BH across the replication table is reported beside p; label 'external replication (same modalities, independent cohort)'. Protein-family hypotheses have no TCGA protein and are replicated against the RNA programme of the same gene set, labelled 'cross-modality replication'.",
+      "orthogonal": "a structure->RNA-programme candidate is re-scored against the protein analogue of the same programme (same sign, permutation p <= 0.05), and vice versa",
+      "actionable": "survival only for replicated hypotheses: survival spec written and hashed (with the ledger hash) before any outcome is read; CPTAC OS and recurrence-or-death, TCGA-KIRC OS/PFS/DSS; Cox on tertiles with age, sex, stage; BH across the spec",
+      "min_gain": 0.01,
+      "no_post_hoc_change": true,
+      "explanation_level": "every internal candidate is decomposed (decompose_explanation): A simple / B additive / C non-additive / D context-dependent; E/F only from external evidence flags; nothing is dropped for being Level A"
+    },
+    "power": {
+      "n_patients": 110,
+      "per_fold_held_out": "about 22",
+      "per_fold": "a single candidate needs a partial correlation of roughly 0.43 with the residual (gain about 0.18) for a 95% interval above zero on 22 held-out patients",
+      "pooled": "about 0.19 partial correlation (gain about 0.035) on 110 out-of-fold patients",
+      "reading": "the fold rule detects only strong slide->programme relations; the pooled readout is the sensitive one and is reported for every frozen candidate"
+    },
+    "proposers": {
+      "enumeration": "singles and low-order products over the family's candidate views",
+      "residual_generator": "same as v0.4 with the graph branch off (no spatial graph at patient level)",
+      "rule": "one shared per-target budget, ranked jointly by patient-grouped CV proposal gain on D_P; every hypothesis records its proposer"
+    },
+    "relationship_families": {
+      "structure_to_programme": {
+        "targets": [
+          "rna_mp1",
+          "rna_mp2",
+          "rna_mp3",
+          "rna_mp4",
+          "rna_mp5",
+          "rna_mp6",
+          "rna_mp7",
+          "rna_mp8",
+          "rna_mp9",
+          "rna_mp10",
+          "rna_mp11",
+          "rna_mp12",
+          "rna_mp13",
+          "rna_mp14",
+          "rna_mp15",
+          "rna_mp16",
+          "rna_mp17",
+          "rna_mp18",
+          "rna_mp19",
+          "rna_mp20",
+          "rna_mp21",
+          "rna_mp22",
+          "rna_mp23",
+          "rna_mp24",
+          "rna_mp25",
+          "rna_mp26",
+          "rna_mp27",
+          "rna_mp28",
+          "rna_mp29",
+          "rna_mp30",
+          "rna_mp31",
+          "rna_mp32",
+          "rna_mp33",
+          "rna_mp34",
+          "rna_mp35",
+          "rna_mp36",
+          "rna_mp37",
+          "rna_mp38",
+          "rna_mp39",
+          "rna_mp40",
+          "rna_mp41",
+          "rna_hm_ADIPOGENESIS",
+          "rna_hm_ALLOGRAFT_REJECTION",
+          "rna_hm_ANDROGEN_RESPONSE",
+          "rna_hm_ANGIOGENESIS",
+          "rna_hm_APICAL_JUNCTION",
+          "rna_hm_APICAL_SURFACE",
+          "rna_hm_APOPTOSIS",
+          "rna_hm_BILE_ACID_METABOLISM",
+          "rna_hm_CHOLESTEROL_HOMEOSTASIS",
+          "rna_hm_COAGULATION",
+          "rna_hm_COMPLEMENT",
+          "rna_hm_DNA_REPAIR",
+          "rna_hm_E2F_TARGETS",
+          "rna_hm_EPITHELIAL_MESENCHYMAL_TRANSITION",
+          "rna_hm_ESTROGEN_RESPONSE_EARLY",
+          "rna_hm_ESTROGEN_RESPONSE_LATE",
+          "rna_hm_FATTY_ACID_METABOLISM",
+          "rna_hm_G2M_CHECKPOINT",
+          "rna_hm_GLYCOLYSIS",
+          "rna_hm_HEDGEHOG_SIGNALING",
+          "rna_hm_HEME_METABOLISM",
+          "rna_hm_HYPOXIA",
+          "rna_hm_IL2_STAT5_SIGNALING",
+          "rna_hm_IL6_JAK_STAT3_SIGNALING",
+          "rna_hm_INFLAMMATORY_RESPONSE",
+          "rna_hm_INTERFERON_ALPHA_RESPONSE",
+          "rna_hm_INTERFERON_GAMMA_RESPONSE",
+          "rna_hm_KRAS_SIGNALING_DN",
+          "rna_hm_KRAS_SIGNALING_UP",
+          "rna_hm_MITOTIC_SPINDLE",
+          "rna_hm_MTORC1_SIGNALING",
+          "rna_hm_MYC_TARGETS_V1",
+          "rna_hm_MYC_TARGETS_V2",
+          "rna_hm_MYOGENESIS",
+          "rna_hm_NOTCH_SIGNALING",
+          "rna_hm_OXIDATIVE_PHOSPHORYLATION",
+          "rna_hm_P53_PATHWAY",
+          "rna_hm_PANCREAS_BETA_CELLS",
+          "rna_hm_PEROXISOME",
+          "rna_hm_PI3K_AKT_MTOR_SIGNALING",
+          "rna_hm_PROTEIN_SECRETION",
+          "rna_hm_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+          "rna_hm_SPERMATOGENESIS",
+          "rna_hm_TGF_BETA_SIGNALING",
+          "rna_hm_TNFA_SIGNALING_VIA_NFKB",
+          "rna_hm_UNFOLDED_PROTEIN_RESPONSE",
+          "rna_hm_UV_RESPONSE_DN",
+          "rna_hm_UV_RESPONSE_UP",
+          "rna_hm_WNT_BETA_CATENIN_SIGNALING",
+          "rna_hm_XENOBIOTIC_METABOLISM"
+        ],
+        "candidate_views": [
+          "hoptimus_slide",
+          "cellvit_structure"
+        ],
+        "budget": 50,
+        "variable_views": [
+          "hoptimus_slide",
+          "cellvit_structure"
+        ],
+        "context_views": [],
+        "graph": false
+      },
+      "structure_to_protein": {
+        "targets": [
+          "prot_mp1",
+          "prot_mp2",
+          "prot_mp3",
+          "prot_mp4",
+          "prot_mp5",
+          "prot_mp6",
+          "prot_mp7",
+          "prot_mp8",
+          "prot_mp9",
+          "prot_mp10",
+          "prot_mp11",
+          "prot_mp12",
+          "prot_mp13",
+          "prot_mp14",
+          "prot_mp15",
+          "prot_mp16",
+          "prot_mp17",
+          "prot_mp18",
+          "prot_mp19",
+          "prot_mp20",
+          "prot_mp21",
+          "prot_mp22",
+          "prot_mp23",
+          "prot_mp24",
+          "prot_mp25",
+          "prot_mp26",
+          "prot_mp27",
+          "prot_mp28",
+          "prot_mp29",
+          "prot_mp30",
+          "prot_mp31",
+          "prot_mp32",
+          "prot_mp33",
+          "prot_mp34",
+          "prot_mp35",
+          "prot_mp36",
+          "prot_mp37",
+          "prot_mp38",
+          "prot_mp39",
+          "prot_mp40",
+          "prot_mp41",
+          "prot_hm_ADIPOGENESIS",
+          "prot_hm_ALLOGRAFT_REJECTION",
+          "prot_hm_ANDROGEN_RESPONSE",
+          "prot_hm_ANGIOGENESIS",
+          "prot_hm_APICAL_JUNCTION",
+          "prot_hm_APICAL_SURFACE",
+          "prot_hm_APOPTOSIS",
+          "prot_hm_BILE_ACID_METABOLISM",
+          "prot_hm_CHOLESTEROL_HOMEOSTASIS",
+          "prot_hm_COAGULATION",
+          "prot_hm_COMPLEMENT",
+          "prot_hm_DNA_REPAIR",
+          "prot_hm_E2F_TARGETS",
+          "prot_hm_EPITHELIAL_MESENCHYMAL_TRANSITION",
+          "prot_hm_ESTROGEN_RESPONSE_EARLY",
+          "prot_hm_ESTROGEN_RESPONSE_LATE",
+          "prot_hm_FATTY_ACID_METABOLISM",
+          "prot_hm_G2M_CHECKPOINT",
+          "prot_hm_GLYCOLYSIS",
+          "prot_hm_HEDGEHOG_SIGNALING",
+          "prot_hm_HEME_METABOLISM",
+          "prot_hm_HYPOXIA",
+          "prot_hm_IL2_STAT5_SIGNALING",
+          "prot_hm_IL6_JAK_STAT3_SIGNALING",
+          "prot_hm_INFLAMMATORY_RESPONSE",
+          "prot_hm_INTERFERON_ALPHA_RESPONSE",
+          "prot_hm_INTERFERON_GAMMA_RESPONSE",
+          "prot_hm_KRAS_SIGNALING_DN",
+          "prot_hm_KRAS_SIGNALING_UP",
+          "prot_hm_MITOTIC_SPINDLE",
+          "prot_hm_MTORC1_SIGNALING",
+          "prot_hm_MYC_TARGETS_V1",
+          "prot_hm_MYC_TARGETS_V2",
+          "prot_hm_MYOGENESIS",
+          "prot_hm_NOTCH_SIGNALING",
+          "prot_hm_OXIDATIVE_PHOSPHORYLATION",
+          "prot_hm_P53_PATHWAY",
+          "prot_hm_PANCREAS_BETA_CELLS",
+          "prot_hm_PEROXISOME",
+          "prot_hm_PI3K_AKT_MTOR_SIGNALING",
+          "prot_hm_PROTEIN_SECRETION",
+          "prot_hm_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+          "prot_hm_SPERMATOGENESIS",
+          "prot_hm_TGF_BETA_SIGNALING",
+          "prot_hm_TNFA_SIGNALING_VIA_NFKB",
+          "prot_hm_UNFOLDED_PROTEIN_RESPONSE",
+          "prot_hm_UV_RESPONSE_DN",
+          "prot_hm_UV_RESPONSE_UP",
+          "prot_hm_WNT_BETA_CATENIN_SIGNALING",
+          "prot_hm_XENOBIOTIC_METABOLISM"
+        ],
+        "candidate_views": [
+          "hoptimus_slide",
+          "cellvit_structure"
+        ],
+        "budget": 50,
+        "variable_views": [
+          "hoptimus_slide",
+          "cellvit_structure"
+        ],
+        "context_views": [],
+        "graph": false
+      },
+      "structure_x_clinical_context_to_programme": {
+        "targets": [
+          "rna_mp1",
+          "rna_mp2",
+          "rna_mp3",
+          "rna_mp4",
+          "rna_mp5",
+          "rna_mp6",
+          "rna_mp7",
+          "rna_mp8",
+          "rna_mp9",
+          "rna_mp10",
+          "rna_mp11",
+          "rna_mp12",
+          "rna_mp13",
+          "rna_mp14",
+          "rna_mp15",
+          "rna_mp16",
+          "rna_mp17",
+          "rna_mp18",
+          "rna_mp19",
+          "rna_mp20",
+          "rna_mp21",
+          "rna_mp22",
+          "rna_mp23",
+          "rna_mp24",
+          "rna_mp25",
+          "rna_mp26",
+          "rna_mp27",
+          "rna_mp28",
+          "rna_mp29",
+          "rna_mp30",
+          "rna_mp31",
+          "rna_mp32",
+          "rna_mp33",
+          "rna_mp34",
+          "rna_mp35",
+          "rna_mp36",
+          "rna_mp37",
+          "rna_mp38",
+          "rna_mp39",
+          "rna_mp40",
+          "rna_mp41",
+          "rna_hm_ADIPOGENESIS",
+          "rna_hm_ALLOGRAFT_REJECTION",
+          "rna_hm_ANDROGEN_RESPONSE",
+          "rna_hm_ANGIOGENESIS",
+          "rna_hm_APICAL_JUNCTION",
+          "rna_hm_APICAL_SURFACE",
+          "rna_hm_APOPTOSIS",
+          "rna_hm_BILE_ACID_METABOLISM",
+          "rna_hm_CHOLESTEROL_HOMEOSTASIS",
+          "rna_hm_COAGULATION",
+          "rna_hm_COMPLEMENT",
+          "rna_hm_DNA_REPAIR",
+          "rna_hm_E2F_TARGETS",
+          "rna_hm_EPITHELIAL_MESENCHYMAL_TRANSITION",
+          "rna_hm_ESTROGEN_RESPONSE_EARLY",
+          "rna_hm_ESTROGEN_RESPONSE_LATE",
+          "rna_hm_FATTY_ACID_METABOLISM",
+          "rna_hm_G2M_CHECKPOINT",
+          "rna_hm_GLYCOLYSIS",
+          "rna_hm_HEDGEHOG_SIGNALING",
+          "rna_hm_HEME_METABOLISM",
+          "rna_hm_HYPOXIA",
+          "rna_hm_IL2_STAT5_SIGNALING",
+          "rna_hm_IL6_JAK_STAT3_SIGNALING",
+          "rna_hm_INFLAMMATORY_RESPONSE",
+          "rna_hm_INTERFERON_ALPHA_RESPONSE",
+          "rna_hm_INTERFERON_GAMMA_RESPONSE",
+          "rna_hm_KRAS_SIGNALING_DN",
+          "rna_hm_KRAS_SIGNALING_UP",
+          "rna_hm_MITOTIC_SPINDLE",
+          "rna_hm_MTORC1_SIGNALING",
+          "rna_hm_MYC_TARGETS_V1",
+          "rna_hm_MYC_TARGETS_V2",
+          "rna_hm_MYOGENESIS",
+          "rna_hm_NOTCH_SIGNALING",
+          "rna_hm_OXIDATIVE_PHOSPHORYLATION",
+          "rna_hm_P53_PATHWAY",
+          "rna_hm_PANCREAS_BETA_CELLS",
+          "rna_hm_PEROXISOME",
+          "rna_hm_PI3K_AKT_MTOR_SIGNALING",
+          "rna_hm_PROTEIN_SECRETION",
+          "rna_hm_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+          "rna_hm_SPERMATOGENESIS",
+          "rna_hm_TGF_BETA_SIGNALING",
+          "rna_hm_TNFA_SIGNALING_VIA_NFKB",
+          "rna_hm_UNFOLDED_PROTEIN_RESPONSE",
+          "rna_hm_UV_RESPONSE_DN",
+          "rna_hm_UV_RESPONSE_UP",
+          "rna_hm_WNT_BETA_CATENIN_SIGNALING",
+          "rna_hm_XENOBIOTIC_METABOLISM"
+        ],
+        "candidate_views": [
+          "hoptimus_slide",
+          "cellvit_structure",
+          "clinical_context"
+        ],
+        "budget": 50,
+        "requirement": "every hypothesis carries at least one slide-structure variable and at least one clinical_context variable (stage, grade, age, sex, clear_cell or driver mutation); additive main effects of the context are in the competitor",
+        "variable_views": [
+          "hoptimus_slide",
+          "cellvit_structure"
+        ],
+        "context_views": [
+          "clinical_context"
+        ],
+        "graph": false
+      },
+      "tissue_to_patient_outcome": {
+        "status": "deferred: runs only after the three families above are frozen and hashed, with the survival spec written and hashed first (survival_spec_template)"
+      }
+    },
+    "survival_spec_template": {
+      "purpose": "predeclared structure->outcome stage for candidates frozen by this campaign; written with dbench.translational.write_survival_spec (sha256) AFTER the internal freeze and BEFORE any outcome is loaded; run with run_predeclared_survival(spec, load_cptac_survival_cohort)",
+      "frozen_candidates_sha256": "filled at freeze: canonical_hash of the list of internal candidates (candidate_hash, family, target, variable names, feature form)",
+      "candidates_entering": "every hypothesis replicated in TCGA-KIRC under advance_rule.external",
+      "feature": "the frozen candidate feature computed on all 110 patients with transforms fitted on all 110 patients (no outcome is used by any transform)",
+      "model": "fit_cox_tertiles: Cox PH (Efron ties), covariates alone vs covariates + feature tertile dummies (low = reference); LR test 2 df; Harrell C increment with 200-resample bootstrap",
+      "n_boot": 200,
+      "seed": 20261012,
+      "multiplicity": "BH across every (candidate, cohort, endpoint) row of this spec",
+      "cohorts": [
+        {
+          "name": "cptac_ccrcc_os",
+          "endpoint": "os",
+          "covariates": [
+            "age",
+            "sex_male",
+            "stage"
+          ],
+          "rows": "110 slide-mapped tumours with time > 0 (5 have non-positive OS days in the source table)"
+        },
+        {
+          "name": "cptac_ccrcc_rfs_or_death",
+          "endpoint": "rfs_or_death",
+          "covariates": [
+            "age",
+            "sex_male",
+            "stage"
+          ],
+          "definition": "event = recurrence or death; time = recurrence-free days if recurred, else overall-survival days"
+        },
+        {
+          "name": "tcga_kirc_os",
+          "endpoint": "os",
+          "covariates": [
+            "age",
+            "sex_male",
+            "stage"
+          ]
+        },
+        {
+          "name": "tcga_kirc_pfs",
+          "endpoint": "pfs",
+          "covariates": [
+            "age",
+            "sex_male",
+            "stage"
+          ]
+        },
+        {
+          "name": "tcga_kirc_dss",
+          "endpoint": "dss",
+          "covariates": [
+            "age",
+            "sex_male",
+            "stage"
+          ]
+        }
+      ],
+      "controls": "stage hazard ratios are reported as the technical positive control (known prognostic factors); a candidate result is read only if they behave as expected",
+      "power": "CPTAC: 21 deaths (20 in clear-cell tumours), 22 recurrences; with 3 covariates + 2 tertile terms that is ~4 events per parameter. Detectable at 80% power, alpha 0.05 (Schoenfeld): about HR 1.8 per SD for a continuous score, about HR 4.5 for high vs low tertile. A null here is uninformative unless the effect is large; TCGA-KIRC (170 deaths, 159 progressions) is the powered cohort once slide descriptors exist."
+    },
+    "receipt_contract": [
+      "family",
+      "target",
+      "fold",
+      "proposer",
+      "variable_names",
+      "feature_form",
+      "replication_gain",
+      "replication_gain_ci",
+      "replication_r2_full",
+      "validated",
+      "nulls",
+      "provenance",
+      "recurrent_in_generator",
+      "candidate_hash",
+      "dropped_rows",
+      "competitor_alone",
+      "competitor_informational"
+    ],
+    "response_transform": "z-score on D_P patients",
+    "relation": "v05",
+    "substrate_version": "not_applicable",
+    "relation_note": "v05: single-variable gain is total over the competitor and is decomposed into gain_linear + gain_nonlinear_beyond_linear with patient-bootstrap CIs (shape label)"
+  },
+  "cohorts": [
+    {
+      "id": "cptac_ccrcc_patient",
+      "role": "patient-level discovery (Level 1 = held-out patients)",
+      "gates": [
+        {
+          "id": "cptac_patient_mapping",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/cptac_ccrcc_patient_mapping.json",
+          "required": true
+        },
+        {
+          "id": "hoptimus_slide_embeddings",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_ccrcc_he_descriptors_20260925/embeddings.h5",
+          "required": true
+        },
+        {
+          "id": "cellvit_summary",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_ccrcc_he_descriptors_20260925/cellvit_summary.parquet",
+          "required": true
+        },
+        {
+          "id": "cellvit_structure",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_ccrcc_cellvit_structure_20261012/cellvit_structure.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_rna_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/transcriptomics__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_protein_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/proteomics__umich.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_clinical_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/clinical__mssm.csv",
+          "required": true
+        },
+        {
+          "id": "cptac_purity_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/tumor_purity__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_cibersort_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/cibersort__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_xcell_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/xcell__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_mutation_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/somatic_mutation__harmonized.parquet",
+          "required": true
+        },
+        {
+          "id": "hallmark_gene_sets",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/molecular_fm_embeddings_20261010/genesets/msigdb_hallmark_2024.1.Hs.gmt",
+          "required": true
+        },
+        {
+          "id": "gavish_programmes",
+          "path": "/home/ubuntu/morpheus_work/morpheus-rebase/v2/data/metaprograms/gavish_2023_malignant_mps.json",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tcga_kirc_survival",
+      "role": "second survival cohort (molecular analogues now; slide structure after its diagnostic slides are embedded)",
+      "gates": [
+        {
+          "id": "tcga_kirc_tables",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/tcga_kirc_20260925",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "translation": {
+    "cptac": "patient-level structure -> programme/protein; survival only through the hashed spec",
+    "forbidden": [
+      "outcome-guided selection of descriptors, targets, folds or competitor columns",
+      "fitting any model to OS/PFS before the survival spec is hashed",
+      "calling a held-out CPTAC fold an external replication"
+    ]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "outcome_in_discovery": false,
+    "candidate_redefinition_after_external": false,
+    "truth_or_outcome_in_discovery": false
+  },
+  "ledger": {
+    "filename": "cptac_tissue_to_patient_v01_ledger.jsonl"
+  },
+  "positive_controls": {
+    "purpose": "separate a technical failure from a real absence; informational, nothing is admitted or excluded because of them",
+    "controls": [
+      {
+        "name": "inflammatory_fraction_to_immune_programmes",
+        "spec": "cv_class_fraction_Inflammatory (single) -> rna_hm_ALLOGRAFT_REJECTION, rna_hm_INTERFERON_GAMMA_RESPONSE, rna_mp17, rna_mp18",
+        "expected": "passes (held-out R2 > 0, CI > 0) in >= 3 folds under the informational competitor (clinical + depth); under the primary competitor it may be absorbed by the deconvolution estimates, which is itself the reading"
+      },
+      {
+        "name": "connective_fraction_to_emt",
+        "spec": "cv_class_fraction_Connective -> rna_hm_EPITHELIAL_MESENCHYMAL_TRANSITION, rna_mp12..rna_mp15",
+        "expected": "as above"
+      }
+    ]
+  }
+}

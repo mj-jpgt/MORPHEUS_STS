@@ -1,0 +1,3345 @@
+{
+ "schema": "morpheus_sprint_partitions/v1",
+ "revision": 2,
+ "revision_note": "rev 2 (2026-10-15): converted external cohorts (Agent E, f37fa91) added with sample ids and flat layout; MEND37-40 (Visium) moved from reserve into ji2020_cscc; historical evidence notes the 2026-08-09 embedding-only run",
+ "created_utc": "2026-10-15T20:02:09+00:00",
+ "governing_plan": ".claude/SPRINT_PLAN.md section 1",
+ "catalogue": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_meta/HEST_v1_3_0.csv",
+ "sha256_of_catalogue": "5703d7169c7a31aa4cc74a900df9179326e0cc51bda617a1cf7ac179b6ed5d63",
+ "study_key_rule": "HEST dataset_title (10x single-section demonstration titles pooled per organ)",
+ "patient_key_rule": "<study key>:<catalogue patient>, else <study key>:<sample id>; listed overrides",
+ "role_rules": {
+  "exclusive": "every study has exactly one role; Meylan 2022 ccRCC is blind and also sanity (the one allowed overlap)",
+  "historical": "untouched: previously_influenced_morpheus false with evidence"
+ },
+ "roles": {
+  "meta_training": [
+   "andersson2021_her2",
+   "bladder_batf3",
+   "bladder_epithelial",
+   "hcc_trem1",
+   "he2020_breast_idc",
+   "lymphnode_idc",
+   "tenx_demo_bowel",
+   "tenx_demo_brain",
+   "tenx_demo_breast",
+   "tenx_demo_lung",
+   "tenx_demo_ovary",
+   "tenx_demo_prostate"
+  ],
+  "development": [
+   "kidney_injury"
+  ],
+  "historical": [
+   "ji2020_cscc",
+   "kiviaho2024_prostate",
+   "valdeolivas2024_crc"
+  ],
+  "blind": [
+   "ependymoma_pfa",
+   "meylan2022_ccrcc"
+  ],
+  "sanity": [
+   "meylan2022_ccrcc"
+  ],
+  "external_replication": [
+   "gse250163",
+   "gse280318_hd",
+   "gse294385",
+   "li2022_ccrcc",
+   "zenodo14620362"
+  ],
+  "reserve": [
+   "gse210616_tnbc",
+   "gse307534_lung_precursor",
+   "gse311609_xenium",
+   "hest_bench_prostate",
+   "nakajima_luad",
+   "reserve_cross_platform_comparison_visium_hd_3_gene_expre",
+   "reserve_cross_platform_comparison_visium_hd_spatial_gene",
+   "reserve_ffpe_human_brain_cancer_data_with_human_immuno_o",
+   "reserve_ffpe_human_breast_using_the_entire_sample_area",
+   "reserve_ffpe_human_breast_with_custom_add_on_panel",
+   "reserve_ffpe_human_breast_with_pre_designed_panel",
+   "reserve_ffpe_human_cervical_cancer_with_5k_human_pan_tis",
+   "reserve_ffpe_human_colorectal_cancer_data_with_human_imm",
+   "reserve_ffpe_human_ovarian_cancer_data_with_human_immuno",
+   "reserve_ffpe_human_ovarian_cancer_with_5k_human_pan_tiss",
+   "reserve_ffpe_human_prostate_adenocarcinoma_with_5k_human",
+   "reserve_ffpe_human_skin_primary_dermal_melanoma_with_5k",
+   "reserve_fresh_frozen_human_ovarian_adenocarcinoma_with_5",
+   "reserve_high_resolution_mapping_of_the_tumor_microenviro",
+   "reserve_human_bone_and_bone_marrow_data_with_custom_add",
+   "reserve_human_kidney_preview_data_xenium_human_multi_tis",
+   "reserve_human_liver_data_with_xenium_human_multi_tissue",
+   "reserve_post_xenium_technical_note_xenium_v1_and_xenium",
+   "reserve_spatially_resolved_transcriptomic_profiling_of_d",
+   "reserve_visium_hd_3_gene_expression_library_human_ovaria",
+   "reserve_visium_hd_3_gene_expression_library_human_pancre",
+   "reserve_visium_hd_spatial_gene_expression_libraries_post",
+   "reserve_visium_hd_spatial_gene_expression_library_human",
+   "reserve_visualization_and_analysis_of_gene_expression_in",
+   "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous"
+  ]
+ },
+ "counts": {
+  "meta_training": {
+   "n_studies": 12,
+   "n_sections": 136,
+   "n_patients": 59
+  },
+  "development": {
+   "n_studies": 1,
+   "n_sections": 23,
+   "n_patients": 22
+  },
+  "historical": {
+   "n_studies": 3,
+   "n_sections": 76,
+   "n_patients": 59
+  },
+  "blind": {
+   "n_studies": 2,
+   "n_sections": 38,
+   "n_patients": 35
+  },
+  "sanity": {
+   "n_studies": 1,
+   "n_sections": 24,
+   "n_patients": 24
+  },
+  "external_replication": {
+   "n_studies": 5,
+   "n_sections": 66,
+   "n_patients": 57
+  },
+  "reserve": {
+   "n_studies": 30,
+   "n_sections": 54,
+   "n_patients": 47
+  }
+ },
+ "studies": {
+  "he2020_breast_idc": {
+   "role": "meta_training",
+   "dataset_title": "Integrating spatial gene expression and breast tumour morphology via deep learning",
+   "dataset_titles": [
+    "Integrating spatial gene expression and breast tumour morphology via deep learning"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Spatial Transcriptomics"
+   ],
+   "platform": "st_100um",
+   "hest_ids": [
+    "SPA51",
+    "SPA52",
+    "SPA53",
+    "SPA54",
+    "SPA55",
+    "SPA56",
+    "SPA57",
+    "SPA58",
+    "SPA59",
+    "SPA60",
+    "SPA61",
+    "SPA62",
+    "SPA63",
+    "SPA64",
+    "SPA65",
+    "SPA66",
+    "SPA67",
+    "SPA68",
+    "SPA69",
+    "SPA70",
+    "SPA71",
+    "SPA72",
+    "SPA73",
+    "SPA74",
+    "SPA75",
+    "SPA76",
+    "SPA77",
+    "SPA78",
+    "SPA79",
+    "SPA80",
+    "SPA81",
+    "SPA82",
+    "SPA83",
+    "SPA84",
+    "SPA85",
+    "SPA86",
+    "SPA87",
+    "SPA88",
+    "SPA89",
+    "SPA90",
+    "SPA91",
+    "SPA92",
+    "SPA93",
+    "SPA94",
+    "SPA95",
+    "SPA96",
+    "SPA97",
+    "SPA98",
+    "SPA99",
+    "SPA100",
+    "SPA101",
+    "SPA102",
+    "SPA103",
+    "SPA104",
+    "SPA105",
+    "SPA106",
+    "SPA107",
+    "SPA108",
+    "SPA109",
+    "SPA110",
+    "SPA111",
+    "SPA112",
+    "SPA113",
+    "SPA114",
+    "SPA115",
+    "SPA116",
+    "SPA117",
+    "SPA118"
+   ],
+   "n_sections": 68,
+   "n_patients": 23,
+   "patient_of": {
+    "SPA51": "he2020_breast_idc:BC23803",
+    "SPA52": "he2020_breast_idc:BC23803",
+    "SPA53": "he2020_breast_idc:BC23803",
+    "SPA54": "he2020_breast_idc:BC23377",
+    "SPA55": "he2020_breast_idc:BC23377",
+    "SPA56": "he2020_breast_idc:BC23377",
+    "SPA57": "he2020_breast_idc:BC23288",
+    "SPA58": "he2020_breast_idc:BC23288",
+    "SPA59": "he2020_breast_idc:BC23288",
+    "SPA60": "he2020_breast_idc:BC23209",
+    "SPA61": "he2020_breast_idc:BC23209",
+    "SPA62": "he2020_breast_idc:BC23209",
+    "SPA63": "he2020_breast_idc:BC23895",
+    "SPA64": "he2020_breast_idc:BC23895",
+    "SPA65": "he2020_breast_idc:BC23895",
+    "SPA66": "he2020_breast_idc:BC23508",
+    "SPA67": "he2020_breast_idc:BC23508",
+    "SPA68": "he2020_breast_idc:BC23508",
+    "SPA69": "he2020_breast_idc:BC23506",
+    "SPA70": "he2020_breast_idc:BC23506",
+    "SPA71": "he2020_breast_idc:BC23506",
+    "SPA72": "he2020_breast_idc:BC23277",
+    "SPA73": "he2020_breast_idc:BC23277",
+    "SPA74": "he2020_breast_idc:BC23277",
+    "SPA75": "he2020_breast_idc:BC23270",
+    "SPA76": "he2020_breast_idc:BC23270",
+    "SPA77": "he2020_breast_idc:BC23270",
+    "SPA78": "he2020_breast_idc:BC24223",
+    "SPA79": "he2020_breast_idc:BC24223",
+    "SPA80": "he2020_breast_idc:BC24223",
+    "SPA81": "he2020_breast_idc:BC23272",
+    "SPA82": "he2020_breast_idc:BC23272",
+    "SPA83": "he2020_breast_idc:BC23272",
+    "SPA84": "he2020_breast_idc:BC23269",
+    "SPA85": "he2020_breast_idc:BC23269",
+    "SPA86": "he2020_breast_idc:BC23269",
+    "SPA87": "he2020_breast_idc:BC23268",
+    "SPA88": "he2020_breast_idc:BC23268",
+    "SPA89": "he2020_breast_idc:BC23268",
+    "SPA90": "he2020_breast_idc:BC24105",
+    "SPA91": "he2020_breast_idc:BC24105",
+    "SPA92": "he2020_breast_idc:BC24105",
+    "SPA93": "he2020_breast_idc:BC24044",
+    "SPA94": "he2020_breast_idc:BC24044",
+    "SPA95": "he2020_breast_idc:BC24044",
+    "SPA96": "he2020_breast_idc:BC23903",
+    "SPA97": "he2020_breast_idc:BC23903",
+    "SPA98": "he2020_breast_idc:BC23903",
+    "SPA99": "he2020_breast_idc:BC23810",
+    "SPA100": "he2020_breast_idc:BC23810",
+    "SPA101": "he2020_breast_idc:BC23810",
+    "SPA102": "he2020_breast_idc:BC23567",
+    "SPA103": "he2020_breast_idc:BC23567",
+    "SPA104": "he2020_breast_idc:BC23567",
+    "SPA105": "he2020_breast_idc:BC24220",
+    "SPA106": "he2020_breast_idc:BC24220",
+    "SPA107": "he2020_breast_idc:BC24220",
+    "SPA108": "he2020_breast_idc:BC23944",
+    "SPA109": "he2020_breast_idc:BC23944",
+    "SPA110": "he2020_breast_idc:BC23944",
+    "SPA111": "he2020_breast_idc:BC23901",
+    "SPA112": "he2020_breast_idc:BC23901",
+    "SPA113": "he2020_breast_idc:BC23450",
+    "SPA114": "he2020_breast_idc:BC23450",
+    "SPA115": "he2020_breast_idc:BC23450",
+    "SPA116": "he2020_breast_idc:BC23287",
+    "SPA117": "he2020_breast_idc:BC23287",
+    "SPA118": "he2020_breast_idc:BC23287"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/breast_idc/embeddings/hoptimus",
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/he2020_breast_idc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "previously_influenced_morpheus": true,
+   "evidence": "pooled into the registered breast campaign dbench/protocols/hest_breast_idc_v02.json (record hest_breast_idc; eligible ids in runs/prospective/G0_idc_availability.json: organ Breast & IDC, 107 samples incl. all He 2020 and Andersson 2021 sections); H-Optimus-0 embeddings in hest_fm_embeddings_20260906/breast_idc",
+   "pending_conversion": false,
+   "platform_of": {
+    "SPA51": "st_100um",
+    "SPA52": "st_100um",
+    "SPA53": "st_100um",
+    "SPA54": "st_100um",
+    "SPA55": "st_100um",
+    "SPA56": "st_100um",
+    "SPA57": "st_100um",
+    "SPA58": "st_100um",
+    "SPA59": "st_100um",
+    "SPA60": "st_100um",
+    "SPA61": "st_100um",
+    "SPA62": "st_100um",
+    "SPA63": "st_100um",
+    "SPA64": "st_100um",
+    "SPA65": "st_100um",
+    "SPA66": "st_100um",
+    "SPA67": "st_100um",
+    "SPA68": "st_100um",
+    "SPA69": "st_100um",
+    "SPA70": "st_100um",
+    "SPA71": "st_100um",
+    "SPA72": "st_100um",
+    "SPA73": "st_100um",
+    "SPA74": "st_100um",
+    "SPA75": "st_100um",
+    "SPA76": "st_100um",
+    "SPA77": "st_100um",
+    "SPA78": "st_100um",
+    "SPA79": "st_100um",
+    "SPA80": "st_100um",
+    "SPA81": "st_100um",
+    "SPA82": "st_100um",
+    "SPA83": "st_100um",
+    "SPA84": "st_100um",
+    "SPA85": "st_100um",
+    "SPA86": "st_100um",
+    "SPA87": "st_100um",
+    "SPA88": "st_100um",
+    "SPA89": "st_100um",
+    "SPA90": "st_100um",
+    "SPA91": "st_100um",
+    "SPA92": "st_100um",
+    "SPA93": "st_100um",
+    "SPA94": "st_100um",
+    "SPA95": "st_100um",
+    "SPA96": "st_100um",
+    "SPA97": "st_100um",
+    "SPA98": "st_100um",
+    "SPA99": "st_100um",
+    "SPA100": "st_100um",
+    "SPA101": "st_100um",
+    "SPA102": "st_100um",
+    "SPA103": "st_100um",
+    "SPA104": "st_100um",
+    "SPA105": "st_100um",
+    "SPA106": "st_100um",
+    "SPA107": "st_100um",
+    "SPA108": "st_100um",
+    "SPA109": "st_100um",
+    "SPA110": "st_100um",
+    "SPA111": "st_100um",
+    "SPA112": "st_100um",
+    "SPA113": "st_100um",
+    "SPA114": "st_100um",
+    "SPA115": "st_100um",
+    "SPA116": "st_100um",
+    "SPA117": "st_100um",
+    "SPA118": "st_100um"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "andersson2021_her2": {
+   "role": "meta_training",
+   "dataset_title": "Spatial deconvolution of HER2-positive breast cancer delineates tumor-associated cell type interactions",
+   "dataset_titles": [
+    "Spatial deconvolution of HER2-positive breast cancer delineates tumor-associated cell type interactions"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Spatial Transcriptomics"
+   ],
+   "platform": "st_100um",
+   "hest_ids": [
+    "SPA119",
+    "SPA120",
+    "SPA121",
+    "SPA122",
+    "SPA123",
+    "SPA124",
+    "SPA125",
+    "SPA126",
+    "SPA127",
+    "SPA128",
+    "SPA129",
+    "SPA130",
+    "SPA131",
+    "SPA132",
+    "SPA133",
+    "SPA134",
+    "SPA135",
+    "SPA136",
+    "SPA137",
+    "SPA138",
+    "SPA139",
+    "SPA140",
+    "SPA141",
+    "SPA142",
+    "SPA143",
+    "SPA144",
+    "SPA145",
+    "SPA146",
+    "SPA147",
+    "SPA148",
+    "SPA149",
+    "SPA150",
+    "SPA151",
+    "SPA152",
+    "SPA153",
+    "SPA154"
+   ],
+   "n_sections": 36,
+   "n_patients": 8,
+   "patient_of": {
+    "SPA119": "andersson2021_her2:Patient H",
+    "SPA120": "andersson2021_her2:Patient H",
+    "SPA121": "andersson2021_her2:Patient H",
+    "SPA122": "andersson2021_her2:Patient G",
+    "SPA123": "andersson2021_her2:Patient G",
+    "SPA124": "andersson2021_her2:Patient G",
+    "SPA125": "andersson2021_her2:Patient F",
+    "SPA126": "andersson2021_her2:Patient F",
+    "SPA127": "andersson2021_her2:Patient F",
+    "SPA128": "andersson2021_her2:Patient E",
+    "SPA129": "andersson2021_her2:Patient E",
+    "SPA130": "andersson2021_her2:Patient E",
+    "SPA131": "andersson2021_her2:Patient D",
+    "SPA132": "andersson2021_her2:Patient D",
+    "SPA133": "andersson2021_her2:Patient D",
+    "SPA134": "andersson2021_her2:Patient D",
+    "SPA135": "andersson2021_her2:Patient D",
+    "SPA136": "andersson2021_her2:Patient D",
+    "SPA137": "andersson2021_her2:Patient C",
+    "SPA138": "andersson2021_her2:Patient C",
+    "SPA139": "andersson2021_her2:Patient C",
+    "SPA140": "andersson2021_her2:Patient C",
+    "SPA141": "andersson2021_her2:Patient C",
+    "SPA142": "andersson2021_her2:Patient C",
+    "SPA143": "andersson2021_her2:Patient B",
+    "SPA144": "andersson2021_her2:Patient B",
+    "SPA145": "andersson2021_her2:Patient B",
+    "SPA146": "andersson2021_her2:Patient B",
+    "SPA147": "andersson2021_her2:Patient B",
+    "SPA148": "andersson2021_her2:Patient B",
+    "SPA149": "andersson2021_her2:Patient A",
+    "SPA150": "andersson2021_her2:Patient A",
+    "SPA151": "andersson2021_her2:Patient A",
+    "SPA152": "andersson2021_her2:Patient A",
+    "SPA153": "andersson2021_her2:Patient A",
+    "SPA154": "andersson2021_her2:Patient A"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/breast_idc/embeddings/hoptimus",
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/andersson2021_her2/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution 4.0 International"
+   ],
+   "previously_influenced_morpheus": true,
+   "evidence": "pooled into the registered breast campaign dbench/protocols/hest_breast_idc_v02.json (record hest_breast_idc; eligible ids in runs/prospective/G0_idc_availability.json: organ Breast & IDC, 107 samples incl. all He 2020 and Andersson 2021 sections); H-Optimus-0 embeddings in hest_fm_embeddings_20260906/breast_idc",
+   "pending_conversion": false,
+   "platform_of": {
+    "SPA119": "st_100um",
+    "SPA120": "st_100um",
+    "SPA121": "st_100um",
+    "SPA122": "st_100um",
+    "SPA123": "st_100um",
+    "SPA124": "st_100um",
+    "SPA125": "st_100um",
+    "SPA126": "st_100um",
+    "SPA127": "st_100um",
+    "SPA128": "st_100um",
+    "SPA129": "st_100um",
+    "SPA130": "st_100um",
+    "SPA131": "st_100um",
+    "SPA132": "st_100um",
+    "SPA133": "st_100um",
+    "SPA134": "st_100um",
+    "SPA135": "st_100um",
+    "SPA136": "st_100um",
+    "SPA137": "st_100um",
+    "SPA138": "st_100um",
+    "SPA139": "st_100um",
+    "SPA140": "st_100um",
+    "SPA141": "st_100um",
+    "SPA142": "st_100um",
+    "SPA143": "st_100um",
+    "SPA144": "st_100um",
+    "SPA145": "st_100um",
+    "SPA146": "st_100um",
+    "SPA147": "st_100um",
+    "SPA148": "st_100um",
+    "SPA149": "st_100um",
+    "SPA150": "st_100um",
+    "SPA151": "st_100um",
+    "SPA152": "st_100um",
+    "SPA153": "st_100um",
+    "SPA154": "st_100um"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "lymphnode_idc": {
+   "role": "meta_training",
+   "dataset_title": "Single cell profiling of primary and paired metastatic lymph node tumors in breast cancer patients",
+   "dataset_titles": [
+    "Single cell profiling of primary and paired metastatic lymph node tumors in breast cancer patients"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Lymph node"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI681",
+    "NCBI682",
+    "NCBI683",
+    "NCBI684"
+   ],
+   "n_sections": 4,
+   "n_patients": 4,
+   "patient_of": {
+    "NCBI681": "lymphnode_idc:Patient 8",
+    "NCBI682": "lymphnode_idc:Patient 7",
+    "NCBI683": "lymphnode_idc:Patient 6",
+    "NCBI684": "lymphnode_idc:Patient 3"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/lymphnode_idc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": true,
+   "evidence": "SPRINT_PLAN.md section 1 lists it as pooled into the breast campaign; measured: its ids (organ 'Lymph node') are NOT among the 107 eligible ids of runs/prospective/G0_idc_availability.json (organ=='Breast' filter), so the pooling claim is not supported by the receipt; kept true (conservative) because the role is meta-training either way",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI681": "visium",
+    "NCBI682": "visium",
+    "NCBI683": "visium",
+    "NCBI684": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "bladder_epithelial": {
+   "role": "meta_training",
+   "dataset_title": "A new epithelial cell subpopulation predicts response to surgery, chemotherapy, and immunotherapy in bladder cancer",
+   "dataset_titles": [
+    "A new epithelial cell subpopulation predicts response to surgery, chemotherapy, and immunotherapy in bladder cancer"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Bladder"
+   ],
+   "disease": [
+    "Cancer / BLCA"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI600",
+    "NCBI601",
+    "NCBI602",
+    "NCBI603"
+   ],
+   "n_sections": 4,
+   "n_patients": 4,
+   "patient_of": {
+    "NCBI600": "bladder_epithelial:Patient 4",
+    "NCBI601": "bladder_epithelial:Patient 3",
+    "NCBI602": "bladder_epithelial:Patient 2",
+    "NCBI603": "bladder_epithelial:Patient 1"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/bladder_epithelial/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI600": "visium",
+    "NCBI601": "visium",
+    "NCBI602": "visium",
+    "NCBI603": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "bladder_batf3": {
+   "role": "meta_training",
+   "dataset_title": "Batf3-dendritic cells and 4-1BB-4-1BB ligand axis are required at the effector phase within the tumor microenvironment for PD-1-PD-L1 blockade efficacy",
+   "dataset_titles": [
+    "Batf3-dendritic cells and 4-1BB-4-1BB ligand axis are required at the effector phase within the tumor microenvironment for PD-1-PD-L1 blockade efficacy"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Bladder"
+   ],
+   "disease": [
+    "Cancer / BLCA"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI854",
+    "NCBI855"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "NCBI854": "bladder_batf3:Patient 1",
+    "NCBI855": "bladder_batf3:Patient 10"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/bladder_batf3/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY-NC 4.0"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI854": "visium",
+    "NCBI855": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "hcc_trem1": {
+   "role": "meta_training",
+   "dataset_title": "Identification of TREM1+CD163+ myeloid cells as a deleterious immune subset in HCC [Spatial Transcriptomics]",
+   "dataset_titles": [
+    "Identification of TREM1+CD163+ myeloid cells as a deleterious immune subset in HCC [Spatial Transcriptomics]"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Liver"
+   ],
+   "disease": [
+    "Cancer / HCC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI642",
+    "NCBI643"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "NCBI642": "hcc_trem1:Patient b",
+    "NCBI643": "hcc_trem1:Patient a"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/hcc_trem1/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI642": "visium",
+    "NCBI643": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_breast": {
+   "role": "meta_training",
+   "dataset_title": "7 pooled HEST titles",
+   "dataset_titles": [
+    "Human Breast Cancer (Block A Section 1)",
+    "Human Breast Cancer (Block A Section 2)",
+    "Human Breast Cancer: Whole Transcriptome Analysis",
+    "Human Breast Cancer: Ductal Carcinoma In Situ, Invasive Carcinoma (FFPE)",
+    "Human Breast Cancer: Visium Fresh Frozen, Whole Transcriptome",
+    "Fresh Frozen Visium on CytAssist: Human Breast Cancer, Probe-Based Whole Transcriptome Profiling",
+    "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis [scRNA-seq and Visium]"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC",
+    "Cancer / ILC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI776",
+    "TENX13",
+    "TENX14",
+    "TENX24",
+    "TENX39",
+    "TENX53",
+    "TENX68"
+   ],
+   "n_sections": 7,
+   "n_patients": 6,
+   "patient_of": {
+    "NCBI776": "tenx_demo_breast:NCBI776",
+    "TENX13": "tenx_demo_breast:block_A",
+    "TENX14": "tenx_demo_breast:block_A",
+    "TENX24": "tenx_demo_breast:TENX24",
+    "TENX39": "tenx_demo_breast:TENX39",
+    "TENX53": "tenx_demo_breast:TENX53",
+    "TENX68": "tenx_demo_breast:TENX68"
+   },
+   "patient_source": "catalogue `patient`, else sample id; overrides {\"TENX13\": \"block_A\", \"TENX14\": \"block_A\"}",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_breast/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution",
+    "not stated in HEST_v1_3_0.csv (some sections)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "note": "10x single-section demonstration samples (Visium, local WSI); patient = sample except the two sections of Block A",
+   "platform_of": {
+    "NCBI776": "visium",
+    "TENX13": "visium",
+    "TENX14": "visium",
+    "TENX24": "visium",
+    "TENX39": "visium",
+    "TENX53": "visium",
+    "TENX68": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_bowel": {
+   "role": "meta_training",
+   "dataset_title": "3 pooled HEST titles",
+   "dataset_titles": [
+    "Characterization of immune cell populations in the tumor microenvironment of colorectal cancer using high definition spatial profiling",
+    "Visium CytAssist Gene Expression Libraries of Post-Xenium Human Colon Cancer (FFPE)",
+    "Human Colorectal Cancer, 11 mm Capture Area (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Bowel"
+   ],
+   "disease": [
+    "Cancer / COAD",
+    "Cancer / COADREAD"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "TENX70",
+    "TENX89",
+    "TENX90",
+    "TENX91",
+    "TENX92",
+    "TENX152"
+   ],
+   "n_sections": 6,
+   "n_patients": 3,
+   "patient_of": {
+    "TENX70": "tenx_demo_bowel:TENX70",
+    "TENX89": "tenx_demo_bowel:post_xenium_block",
+    "TENX90": "tenx_demo_bowel:post_xenium_block",
+    "TENX91": "tenx_demo_bowel:post_xenium_block",
+    "TENX92": "tenx_demo_bowel:post_xenium_block",
+    "TENX152": "tenx_demo_bowel:Patient 2"
+   },
+   "patient_source": "catalogue `patient`, else sample id; overrides {\"TENX89\": \"post_xenium_block\", \"TENX90\": \"post_xenium_block\", \"TENX91\": \"post_xenium_block\", \"TENX92\": \"post_xenium_block\"}",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_bowel/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "note": "Visium sections only (Visium HD members of the first title excluded); the four post-Xenium replicate sections are one block",
+   "platform_of": {
+    "TENX70": "visium",
+    "TENX89": "visium",
+    "TENX90": "visium",
+    "TENX91": "visium",
+    "TENX92": "visium",
+    "TENX152": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_brain": {
+   "role": "meta_training",
+   "dataset_title": "2 pooled HEST titles",
+   "dataset_titles": [
+    "Human Brain Cancer, 11 mm Capture Area (FFPE)",
+    "Human Glioblastoma: Whole Transcriptome Analysis"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Brain"
+   ],
+   "disease": [
+    "Cancer / GBM"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "TENX31",
+    "TENX73"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX31": "tenx_demo_brain:TENX31",
+    "TENX73": "tenx_demo_brain:TENX73"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_brain/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "TENX31": "visium",
+    "TENX73": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_lung": {
+   "role": "meta_training",
+   "dataset_title": "2 pooled HEST titles",
+   "dataset_titles": [
+    "Human Lung Cancer, 11 mm Capture Area (FFPE)",
+    "Human Lung Cancer (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Lung"
+   ],
+   "disease": [
+    "Cancer / LNET",
+    "Cancer / LUSC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "TENX62",
+    "TENX72"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX62": "tenx_demo_lung:TENX62",
+    "TENX72": "tenx_demo_lung:TENX72"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_lung/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "TENX62": "visium",
+    "TENX72": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_prostate": {
+   "role": "meta_training",
+   "dataset_title": "2 pooled HEST titles",
+   "dataset_titles": [
+    "Human Prostate Cancer, Acinar Cell Carcinoma (FFPE)",
+    "Human Prostate Cancer, Adenocarcinoma with Invasive Carcinoma (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Prostate"
+   ],
+   "disease": [
+    "Cancer / PRAD"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "TENX40",
+    "TENX46"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX40": "tenx_demo_prostate:TENX40",
+    "TENX46": "tenx_demo_prostate:TENX46"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_prostate/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "TENX40": "visium",
+    "TENX46": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "tenx_demo_ovary": {
+   "role": "meta_training",
+   "dataset_title": "Human Ovarian Cancer, 11 mm Capture Area (FFPE)",
+   "dataset_titles": [
+    "Human Ovarian Cancer, 11 mm Capture Area (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / HGSOC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "TENX65"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX65": "tenx_demo_ovary:TENX65"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/tenx_demo_ovary/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "TENX65": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "kidney_injury": {
+   "role": "development",
+   "dataset_title": "Spatial localization with Spatial Transcriptomics for an atlas of healthy and injured cell states and niches in the human kidney [Visium ST]",
+   "dataset_titles": [
+    "Spatial localization with Spatial Transcriptomics for an atlas of healthy and injured cell states and niches in the human kidney [Visium ST]"
+   ],
+   "layout": "mirror",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/kidney_injury",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "Diseased / nan",
+    "Healthy / nan"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI692",
+    "NCBI693",
+    "NCBI694",
+    "NCBI695",
+    "NCBI696",
+    "NCBI697",
+    "NCBI698",
+    "NCBI699",
+    "NCBI700",
+    "NCBI701",
+    "NCBI702",
+    "NCBI703",
+    "NCBI704",
+    "NCBI705",
+    "NCBI706",
+    "NCBI707",
+    "NCBI708",
+    "NCBI709",
+    "NCBI710",
+    "NCBI711",
+    "NCBI712",
+    "NCBI713",
+    "NCBI714"
+   ],
+   "n_sections": 23,
+   "n_patients": 22,
+   "patient_of": {
+    "NCBI692": "kidney_injury:Patient 22",
+    "NCBI693": "kidney_injury:Patient 21",
+    "NCBI694": "kidney_injury:Patient 20",
+    "NCBI695": "kidney_injury:Patient 19",
+    "NCBI696": "kidney_injury:Patient 18",
+    "NCBI697": "kidney_injury:Patient 17",
+    "NCBI698": "kidney_injury:Patient 16",
+    "NCBI699": "kidney_injury:Patient 15",
+    "NCBI700": "kidney_injury:Patient 14",
+    "NCBI701": "kidney_injury:Patient 13",
+    "NCBI702": "kidney_injury:Patient 13",
+    "NCBI703": "kidney_injury:Patient 12",
+    "NCBI704": "kidney_injury:Patient 11",
+    "NCBI705": "kidney_injury:Patient 10",
+    "NCBI706": "kidney_injury:Patient 9",
+    "NCBI707": "kidney_injury:Patient 8",
+    "NCBI708": "kidney_injury:Patient 7",
+    "NCBI709": "kidney_injury:Patient 6",
+    "NCBI710": "kidney_injury:Patient 5",
+    "NCBI711": "kidney_injury:Patient 4",
+    "NCBI712": "kidney_injury:Patient 3",
+    "NCBI713": "kidney_injury:Patient 2",
+    "NCBI714": "kidney_injury:Patient 1"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/kidney_injury/embeddings/hoptimus",
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/kidney_injury/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution 4.0"
+   ],
+   "previously_influenced_morpheus": true,
+   "evidence": "hest.COHORTS['kidney_injury'] and cscd/build_kidney_injury.py; H-Optimus-0/DINOv2/GigaPath embeddings in hest_fm_embeddings_20260906/kidney_injury",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI692": "visium",
+    "NCBI693": "visium",
+    "NCBI694": "visium",
+    "NCBI695": "visium",
+    "NCBI696": "visium",
+    "NCBI697": "visium",
+    "NCBI698": "visium",
+    "NCBI699": "visium",
+    "NCBI700": "visium",
+    "NCBI701": "visium",
+    "NCBI702": "visium",
+    "NCBI703": "visium",
+    "NCBI704": "visium",
+    "NCBI705": "visium",
+    "NCBI706": "visium",
+    "NCBI707": "visium",
+    "NCBI708": "visium",
+    "NCBI709": "visium",
+    "NCBI710": "visium",
+    "NCBI711": "visium",
+    "NCBI712": "visium",
+    "NCBI713": "visium",
+    "NCBI714": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "ji2020_cscc": {
+   "role": "historical",
+   "dataset_title": "2 pooled HEST titles",
+   "dataset_titles": [
+    "Single Cell and Spatial Analysis of Human Squamous Cell Carcinoma [ST]",
+    "Human squamous cell carcinoma"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Skin"
+   ],
+   "disease": [
+    "Cancer / CSCC",
+    "Cancer / nan"
+   ],
+   "st_technology": [
+    "Spatial Transcriptomics",
+    "Visium"
+   ],
+   "platform": [
+    "st_100um",
+    "visium"
+   ],
+   "hest_ids": [
+    "MEND37",
+    "MEND38",
+    "MEND39",
+    "MEND40",
+    "NCBI759",
+    "NCBI760",
+    "NCBI761",
+    "NCBI762",
+    "NCBI763",
+    "NCBI764",
+    "NCBI765",
+    "NCBI766",
+    "NCBI767",
+    "NCBI768",
+    "NCBI769",
+    "NCBI770"
+   ],
+   "n_sections": 16,
+   "n_patients": 5,
+   "patient_of": {
+    "MEND37": "ji2020_cscc:Patient 1",
+    "MEND38": "ji2020_cscc:Patient 1",
+    "MEND39": "ji2020_cscc:Patient 1",
+    "MEND40": "ji2020_cscc:Patient 1",
+    "NCBI759": "ji2020_cscc:Patient 10",
+    "NCBI760": "ji2020_cscc:Patient 10",
+    "NCBI761": "ji2020_cscc:Patient 10",
+    "NCBI762": "ji2020_cscc:Patient 9",
+    "NCBI763": "ji2020_cscc:Patient 9",
+    "NCBI764": "ji2020_cscc:Patient 9",
+    "NCBI765": "ji2020_cscc:Patient 5",
+    "NCBI766": "ji2020_cscc:Patient 5",
+    "NCBI767": "ji2020_cscc:Patient 5",
+    "NCBI768": "ji2020_cscc:Patient 2",
+    "NCBI769": "ji2020_cscc:Patient 2",
+    "NCBI770": "ji2020_cscc:Patient 2"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/ji2020_cscc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY 4.0",
+    "not stated in HEST_v1_3_0.csv (some sections)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "previously_influenced_morpheus false: no MORPHEUS protocol, run, loader or model development used these sections. MEND37-40 were H-Optimus-0 embedded by the 2026-08-09 patch run (S/external/hest_patches_hoptimus_20260809): embedding only, no model development, protocol or result touched them.",
+   "pending_conversion": false,
+   "note": "legacy ST sections (NCBI759-770, 4 patients) plus the paper's Visium sections MEND37-40 (Mendeley 'Human squamous cell carcinoma', same paper PMC7391009); platform recorded per sample in platform_of",
+   "platform_of": {
+    "MEND37": "visium",
+    "MEND38": "visium",
+    "MEND39": "visium",
+    "MEND40": "visium",
+    "NCBI759": "st_100um",
+    "NCBI760": "st_100um",
+    "NCBI761": "st_100um",
+    "NCBI762": "st_100um",
+    "NCBI763": "st_100um",
+    "NCBI764": "st_100um",
+    "NCBI765": "st_100um",
+    "NCBI766": "st_100um",
+    "NCBI767": "st_100um",
+    "NCBI768": "st_100um",
+    "NCBI769": "st_100um",
+    "NCBI770": "st_100um"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "valdeolivas2024_crc": {
+   "role": "historical",
+   "dataset_title": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+   "dataset_titles": [
+    "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Bowel"
+   ],
+   "disease": [
+    "Cancer / COAD",
+    "Cancer / READ"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "ZEN36",
+    "ZEN38",
+    "ZEN39",
+    "ZEN40",
+    "ZEN42",
+    "ZEN43",
+    "ZEN44",
+    "ZEN45",
+    "ZEN46",
+    "ZEN47",
+    "ZEN48",
+    "ZEN49"
+   ],
+   "n_sections": 12,
+   "n_patients": 6,
+   "patient_of": {
+    "ZEN36": "valdeolivas2024_crc:Patient 7",
+    "ZEN38": "valdeolivas2024_crc:Patient 5",
+    "ZEN39": "valdeolivas2024_crc:Patient 4",
+    "ZEN40": "valdeolivas2024_crc:Patient 7",
+    "ZEN42": "valdeolivas2024_crc:Patient 5",
+    "ZEN43": "valdeolivas2024_crc:Patient 4",
+    "ZEN44": "valdeolivas2024_crc:Patient 3",
+    "ZEN45": "valdeolivas2024_crc:Patient 3",
+    "ZEN46": "valdeolivas2024_crc:Patient 2",
+    "ZEN47": "valdeolivas2024_crc:Patient 2",
+    "ZEN48": "valdeolivas2024_crc:Patient 1",
+    "ZEN49": "valdeolivas2024_crc:Patient 1"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution 4.0 International"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "previously_influenced_morpheus false: no MORPHEUS protocol, run, loader or model development used these sections. The slides were H-Optimus-0 embedded by the 2026-08-09 patch run (S/external/hest_patches_hoptimus_20260809): embedding only, no model development, protocol or result touched them. 12 of the 14 catalogue sections are local (ZEN37 and ZEN41 absent).",
+   "pending_conversion": false,
+   "platform_of": {
+    "ZEN36": "visium",
+    "ZEN38": "visium",
+    "ZEN39": "visium",
+    "ZEN40": "visium",
+    "ZEN42": "visium",
+    "ZEN43": "visium",
+    "ZEN44": "visium",
+    "ZEN45": "visium",
+    "ZEN46": "visium",
+    "ZEN47": "visium",
+    "ZEN48": "visium",
+    "ZEN49": "visium"
+   },
+   "source_kind": "hest_catalogue",
+   "control_ids": [
+    "ZEN37",
+    "ZEN41"
+   ],
+   "control_patient_of": {
+    "ZEN37": "valdeolivas2024_crc:Patient 6",
+    "ZEN41": "valdeolivas2024_crc:Patient 6"
+   },
+   "control_data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout",
+   "control_role": "control sections: the two sections annotated healthy in the same study (HEST ZEN37 / ZEN41 = Zenodo 7760264 A798015_Rep2 / A798015_Rep1, patient 6), absent from the local HEST copy and converted from the Zenodo per-sample zips (CC BY 4.0) with their pathologist annotation CSVs beside them; they are the Problem 2 healthy-section control and never enter the discovery folds (hest_ids unchanged)",
+   "control_annotations": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/annotations/<id>_pathologist_annotations.csv"
+  },
+  "kiviaho2024_prostate": {
+   "role": "historical",
+   "dataset_title": "Single cell and spatial transcriptomics highlight the interaction of club-like cells with immunosuppressive myeloid cells in prostate cancer (Kiviaho et al. 2024)",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_prostate_kiviaho_20261016",
+   "organ": [
+    "Prostate"
+   ],
+   "disease": [
+    "BPH",
+    "PRAD"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "Kiviaho2024_BPH_1",
+    "Kiviaho2024_BPH_2",
+    "Kiviaho2024_BPH_3",
+    "Kiviaho2024_BPH_4",
+    "Kiviaho2024_CRPC_1",
+    "Kiviaho2024_CRPC_2",
+    "Kiviaho2024_CRPC_3",
+    "Kiviaho2024_CRPC_4",
+    "Kiviaho2024_CRPC_5",
+    "Kiviaho2024_NEADT_1",
+    "Kiviaho2024_NEADT_2",
+    "Kiviaho2024_NEADT_3",
+    "Kiviaho2024_NEADT_4",
+    "Kiviaho2024_NEADT_5",
+    "Kiviaho2024_NEADT_6",
+    "Kiviaho2024_NEADT_7",
+    "Kiviaho2024_NEADT_8",
+    "Kiviaho2024_NEADT_9",
+    "Kiviaho2024_NEADT_10",
+    "Kiviaho2024_NEADT_11",
+    "Kiviaho2024_NEADT_12",
+    "Kiviaho2024_NEADT_13",
+    "Kiviaho2024_NEADT_14",
+    "Kiviaho2024_NEADT_15",
+    "Kiviaho2024_NEADT_16",
+    "Kiviaho2024_NEADT_17",
+    "Kiviaho2024_NEADT_18",
+    "Kiviaho2024_NEADT_19",
+    "Kiviaho2024_NEADT_20",
+    "Kiviaho2024_NEADT_21",
+    "Kiviaho2024_NEADT_22",
+    "Kiviaho2024_TRNA_1",
+    "Kiviaho2024_TRNA_2",
+    "Kiviaho2024_TRNA_3",
+    "Kiviaho2024_TRNA_4",
+    "Kiviaho2024_TRNA_5",
+    "Kiviaho2024_TRNA_6",
+    "Kiviaho2024_TRNA_7",
+    "Kiviaho2024_TRNA_8",
+    "Kiviaho2024_TRNA_9",
+    "Kiviaho2024_TRNA_10",
+    "Kiviaho2024_TRNA_11",
+    "Kiviaho2024_TRNA_12",
+    "Kiviaho2024_TRNA_13",
+    "Kiviaho2024_TRNA_14",
+    "Kiviaho2024_TRNA_15",
+    "Kiviaho2024_TRNA_16",
+    "Kiviaho2024_TRNA_17"
+   ],
+   "n_sections": 48,
+   "n_patients": 48,
+   "patient_of": {
+    "Kiviaho2024_BPH_1": "kiviaho2024_prostate:Kiviaho2024_BPH_1",
+    "Kiviaho2024_BPH_2": "kiviaho2024_prostate:Kiviaho2024_BPH_2",
+    "Kiviaho2024_BPH_3": "kiviaho2024_prostate:Kiviaho2024_BPH_3",
+    "Kiviaho2024_BPH_4": "kiviaho2024_prostate:Kiviaho2024_BPH_4",
+    "Kiviaho2024_CRPC_1": "kiviaho2024_prostate:Kiviaho2024_CRPC_1",
+    "Kiviaho2024_CRPC_2": "kiviaho2024_prostate:Kiviaho2024_CRPC_2",
+    "Kiviaho2024_CRPC_3": "kiviaho2024_prostate:Kiviaho2024_CRPC_3",
+    "Kiviaho2024_CRPC_4": "kiviaho2024_prostate:Kiviaho2024_CRPC_4",
+    "Kiviaho2024_CRPC_5": "kiviaho2024_prostate:Kiviaho2024_CRPC_5",
+    "Kiviaho2024_NEADT_1": "kiviaho2024_prostate:Kiviaho2024_NEADT_1",
+    "Kiviaho2024_NEADT_2": "kiviaho2024_prostate:Kiviaho2024_NEADT_2",
+    "Kiviaho2024_NEADT_3": "kiviaho2024_prostate:Kiviaho2024_NEADT_3",
+    "Kiviaho2024_NEADT_4": "kiviaho2024_prostate:Kiviaho2024_NEADT_4",
+    "Kiviaho2024_NEADT_5": "kiviaho2024_prostate:Kiviaho2024_NEADT_5",
+    "Kiviaho2024_NEADT_6": "kiviaho2024_prostate:Kiviaho2024_NEADT_6",
+    "Kiviaho2024_NEADT_7": "kiviaho2024_prostate:Kiviaho2024_NEADT_7",
+    "Kiviaho2024_NEADT_8": "kiviaho2024_prostate:Kiviaho2024_NEADT_8",
+    "Kiviaho2024_NEADT_9": "kiviaho2024_prostate:Kiviaho2024_NEADT_9",
+    "Kiviaho2024_NEADT_10": "kiviaho2024_prostate:Kiviaho2024_NEADT_10",
+    "Kiviaho2024_NEADT_11": "kiviaho2024_prostate:Kiviaho2024_NEADT_11",
+    "Kiviaho2024_NEADT_12": "kiviaho2024_prostate:Kiviaho2024_NEADT_12",
+    "Kiviaho2024_NEADT_13": "kiviaho2024_prostate:Kiviaho2024_NEADT_13",
+    "Kiviaho2024_NEADT_14": "kiviaho2024_prostate:Kiviaho2024_NEADT_14",
+    "Kiviaho2024_NEADT_15": "kiviaho2024_prostate:Kiviaho2024_NEADT_15",
+    "Kiviaho2024_NEADT_16": "kiviaho2024_prostate:Kiviaho2024_NEADT_16",
+    "Kiviaho2024_NEADT_17": "kiviaho2024_prostate:Kiviaho2024_NEADT_17",
+    "Kiviaho2024_NEADT_18": "kiviaho2024_prostate:Kiviaho2024_NEADT_18",
+    "Kiviaho2024_NEADT_19": "kiviaho2024_prostate:Kiviaho2024_NEADT_19",
+    "Kiviaho2024_NEADT_20": "kiviaho2024_prostate:Kiviaho2024_NEADT_20",
+    "Kiviaho2024_NEADT_21": "kiviaho2024_prostate:Kiviaho2024_NEADT_21",
+    "Kiviaho2024_NEADT_22": "kiviaho2024_prostate:Kiviaho2024_NEADT_22",
+    "Kiviaho2024_TRNA_1": "kiviaho2024_prostate:Kiviaho2024_TRNA_1",
+    "Kiviaho2024_TRNA_2": "kiviaho2024_prostate:Kiviaho2024_TRNA_2",
+    "Kiviaho2024_TRNA_3": "kiviaho2024_prostate:Kiviaho2024_TRNA_3",
+    "Kiviaho2024_TRNA_4": "kiviaho2024_prostate:Kiviaho2024_TRNA_4",
+    "Kiviaho2024_TRNA_5": "kiviaho2024_prostate:Kiviaho2024_TRNA_5",
+    "Kiviaho2024_TRNA_6": "kiviaho2024_prostate:Kiviaho2024_TRNA_6",
+    "Kiviaho2024_TRNA_7": "kiviaho2024_prostate:Kiviaho2024_TRNA_7",
+    "Kiviaho2024_TRNA_8": "kiviaho2024_prostate:Kiviaho2024_TRNA_8",
+    "Kiviaho2024_TRNA_9": "kiviaho2024_prostate:Kiviaho2024_TRNA_9",
+    "Kiviaho2024_TRNA_10": "kiviaho2024_prostate:Kiviaho2024_TRNA_10",
+    "Kiviaho2024_TRNA_11": "kiviaho2024_prostate:Kiviaho2024_TRNA_11",
+    "Kiviaho2024_TRNA_12": "kiviaho2024_prostate:Kiviaho2024_TRNA_12",
+    "Kiviaho2024_TRNA_13": "kiviaho2024_prostate:Kiviaho2024_TRNA_13",
+    "Kiviaho2024_TRNA_14": "kiviaho2024_prostate:Kiviaho2024_TRNA_14",
+    "Kiviaho2024_TRNA_15": "kiviaho2024_prostate:Kiviaho2024_TRNA_15",
+    "Kiviaho2024_TRNA_16": "kiviaho2024_prostate:Kiviaho2024_TRNA_16",
+    "Kiviaho2024_TRNA_17": "kiviaho2024_prostate:Kiviaho2024_TRNA_17"
+   },
+   "patient_source": "metadata/{id}.json `patient` (Agent E conversion)",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/kiviaho2024_prostate/embeddings/hoptimus"
+   ],
+   "licence": [
+    "GEO public (no explicit licence; NCBI GEO data are freely available)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent E (commit f37fa91); never read by MORPHEUS model development",
+   "pending_conversion": false,
+   "source": "GEO GSE278936 (Kiviaho et al. 2024), Visium, 48 discovery sections / 48 patients",
+   "platform_of": {
+    "Kiviaho2024_BPH_1": "visium",
+    "Kiviaho2024_BPH_2": "visium",
+    "Kiviaho2024_BPH_3": "visium",
+    "Kiviaho2024_BPH_4": "visium",
+    "Kiviaho2024_CRPC_1": "visium",
+    "Kiviaho2024_CRPC_2": "visium",
+    "Kiviaho2024_CRPC_3": "visium",
+    "Kiviaho2024_CRPC_4": "visium",
+    "Kiviaho2024_CRPC_5": "visium",
+    "Kiviaho2024_NEADT_1": "visium",
+    "Kiviaho2024_NEADT_2": "visium",
+    "Kiviaho2024_NEADT_3": "visium",
+    "Kiviaho2024_NEADT_4": "visium",
+    "Kiviaho2024_NEADT_5": "visium",
+    "Kiviaho2024_NEADT_6": "visium",
+    "Kiviaho2024_NEADT_7": "visium",
+    "Kiviaho2024_NEADT_8": "visium",
+    "Kiviaho2024_NEADT_9": "visium",
+    "Kiviaho2024_NEADT_10": "visium",
+    "Kiviaho2024_NEADT_11": "visium",
+    "Kiviaho2024_NEADT_12": "visium",
+    "Kiviaho2024_NEADT_13": "visium",
+    "Kiviaho2024_NEADT_14": "visium",
+    "Kiviaho2024_NEADT_15": "visium",
+    "Kiviaho2024_NEADT_16": "visium",
+    "Kiviaho2024_NEADT_17": "visium",
+    "Kiviaho2024_NEADT_18": "visium",
+    "Kiviaho2024_NEADT_19": "visium",
+    "Kiviaho2024_NEADT_20": "visium",
+    "Kiviaho2024_NEADT_21": "visium",
+    "Kiviaho2024_NEADT_22": "visium",
+    "Kiviaho2024_TRNA_1": "visium",
+    "Kiviaho2024_TRNA_2": "visium",
+    "Kiviaho2024_TRNA_3": "visium",
+    "Kiviaho2024_TRNA_4": "visium",
+    "Kiviaho2024_TRNA_5": "visium",
+    "Kiviaho2024_TRNA_6": "visium",
+    "Kiviaho2024_TRNA_7": "visium",
+    "Kiviaho2024_TRNA_8": "visium",
+    "Kiviaho2024_TRNA_9": "visium",
+    "Kiviaho2024_TRNA_10": "visium",
+    "Kiviaho2024_TRNA_11": "visium",
+    "Kiviaho2024_TRNA_12": "visium",
+    "Kiviaho2024_TRNA_13": "visium",
+    "Kiviaho2024_TRNA_14": "visium",
+    "Kiviaho2024_TRNA_15": "visium",
+    "Kiviaho2024_TRNA_16": "visium",
+    "Kiviaho2024_TRNA_17": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {
+    "Kiviaho2024_MET_A": {
+     "patient": "kiviaho2024_prostate:Kiviaho2024_MET",
+     "reason": "metastasis sections, not in the Discovery sheet; one shared patient key (Kiviaho2024_MET); listed, not loaded, excluded from the historical task rows"
+    },
+    "Kiviaho2024_MET_B": {
+     "patient": "kiviaho2024_prostate:Kiviaho2024_MET",
+     "reason": "metastasis sections, not in the Discovery sheet; one shared patient key (Kiviaho2024_MET); listed, not loaded, excluded from the historical task rows"
+    },
+    "Kiviaho2024_MET_C": {
+     "patient": "kiviaho2024_prostate:Kiviaho2024_MET",
+     "reason": "metastasis sections, not in the Discovery sheet; one shared patient key (Kiviaho2024_MET); listed, not loaded, excluded from the historical task rows"
+    },
+    "Kiviaho2024_MET_D": {
+     "patient": "kiviaho2024_prostate:Kiviaho2024_MET",
+     "reason": "metastasis sections, not in the Discovery sheet; one shared patient key (Kiviaho2024_MET); listed, not loaded, excluded from the historical task rows"
+    }
+   },
+   "pixel_size_um": [
+    0.203,
+    0.373,
+    0.374,
+    0.375
+   ]
+  },
+  "meylan2022_ccrcc": {
+   "role": "blind",
+   "also_roles": [
+    "sanity"
+   ],
+   "dataset_title": "Tertiary lymphoid structures generate and propagate anti-tumor antibody-producing plasma cells in renal cell cancer",
+   "dataset_titles": [
+    "Tertiary lymphoid structures generate and propagate anti-tumor antibody-producing plasma cells in renal cell cancer"
+   ],
+   "layout": "mirror",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "Cancer / SCCRCC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "INT1",
+    "INT2",
+    "INT3",
+    "INT4",
+    "INT5",
+    "INT6",
+    "INT7",
+    "INT8",
+    "INT9",
+    "INT10",
+    "INT11",
+    "INT12",
+    "INT13",
+    "INT14",
+    "INT15",
+    "INT16",
+    "INT17",
+    "INT18",
+    "INT19",
+    "INT20",
+    "INT21",
+    "INT22",
+    "INT23",
+    "INT24"
+   ],
+   "n_sections": 24,
+   "n_patients": 24,
+   "patient_of": {
+    "INT1": "meylan2022_ccrcc:Patient 24",
+    "INT2": "meylan2022_ccrcc:Patient 23",
+    "INT3": "meylan2022_ccrcc:Patient 22",
+    "INT4": "meylan2022_ccrcc:Patient 21",
+    "INT5": "meylan2022_ccrcc:Patient 20",
+    "INT6": "meylan2022_ccrcc:Patient 19",
+    "INT7": "meylan2022_ccrcc:Patient 18",
+    "INT8": "meylan2022_ccrcc:Patient 17",
+    "INT9": "meylan2022_ccrcc:Patient 16",
+    "INT10": "meylan2022_ccrcc:Patient 15",
+    "INT11": "meylan2022_ccrcc:Patient 14",
+    "INT12": "meylan2022_ccrcc:Patient 13",
+    "INT13": "meylan2022_ccrcc:Patient 12",
+    "INT14": "meylan2022_ccrcc:Patient 11",
+    "INT15": "meylan2022_ccrcc:Patient 10",
+    "INT16": "meylan2022_ccrcc:Patient 9",
+    "INT17": "meylan2022_ccrcc:Patient 8",
+    "INT18": "meylan2022_ccrcc:Patient 7",
+    "INT19": "meylan2022_ccrcc:Patient 6",
+    "INT20": "meylan2022_ccrcc:Patient 5",
+    "INT21": "meylan2022_ccrcc:Patient 4",
+    "INT22": "meylan2022_ccrcc:Patient 3",
+    "INT23": "meylan2022_ccrcc:Patient 2",
+    "INT24": "meylan2022_ccrcc:Patient 1"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/ccrcc/embeddings/hoptimus",
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/meylan2022_ccrcc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Internal"
+   ],
+   "previously_influenced_morpheus": true,
+   "evidence": "hest.COHORTS['ccrcc']; registered renal campaigns dbench/protocols/renal_spatial_v01..v06.json; its TLS -> IgG plasma-cell finding is an in-sample sanity check only",
+   "pending_conversion": false,
+   "platform_of": {
+    "INT1": "visium",
+    "INT2": "visium",
+    "INT3": "visium",
+    "INT4": "visium",
+    "INT5": "visium",
+    "INT6": "visium",
+    "INT7": "visium",
+    "INT8": "visium",
+    "INT9": "visium",
+    "INT10": "visium",
+    "INT11": "visium",
+    "INT12": "visium",
+    "INT13": "visium",
+    "INT14": "visium",
+    "INT15": "visium",
+    "INT16": "visium",
+    "INT17": "visium",
+    "INT18": "visium",
+    "INT19": "visium",
+    "INT20": "visium",
+    "INT21": "visium",
+    "INT22": "visium",
+    "INT23": "visium",
+    "INT24": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "ependymoma_pfa": {
+   "role": "blind",
+   "dataset_title": "Spatial transcriptomics reveal unnresolved wound repair as potential driver of PFA Ependymoma progression",
+   "dataset_titles": [
+    "Spatial transcriptomics reveal unnresolved wound repair as potential driver of PFA Ependymoma progression"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Brain"
+   ],
+   "disease": [
+    "Cancer / EPM"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "NCBI628",
+    "NCBI629",
+    "NCBI630",
+    "NCBI631",
+    "NCBI632",
+    "NCBI633",
+    "NCBI634",
+    "NCBI635",
+    "NCBI636",
+    "NCBI637",
+    "NCBI638",
+    "NCBI639",
+    "NCBI640",
+    "NCBI641"
+   ],
+   "n_sections": 14,
+   "n_patients": 11,
+   "patient_of": {
+    "NCBI628": "ependymoma_pfa:Patient 928",
+    "NCBI629": "ependymoma_pfa:Patient 1513",
+    "NCBI630": "ependymoma_pfa:Patient 1239",
+    "NCBI631": "ependymoma_pfa:Patient 928",
+    "NCBI632": "ependymoma_pfa:Patient 1269",
+    "NCBI633": "ependymoma_pfa:Patient 1101",
+    "NCBI634": "ependymoma_pfa:Patient 848",
+    "NCBI635": "ependymoma_pfa:Patient 821",
+    "NCBI636": "ependymoma_pfa:Patient 723",
+    "NCBI637": "ependymoma_pfa:Patient 459",
+    "NCBI638": "ependymoma_pfa:Patient 812",
+    "NCBI639": "ependymoma_pfa:Patient 727",
+    "NCBI640": "ependymoma_pfa:Patient 723",
+    "NCBI641": "ependymoma_pfa:Patient 459"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/ependymoma_pfa/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "NCBI628": "visium",
+    "NCBI629": "visium",
+    "NCBI630": "visium",
+    "NCBI631": "visium",
+    "NCBI632": "visium",
+    "NCBI633": "visium",
+    "NCBI634": "visium",
+    "NCBI635": "visium",
+    "NCBI636": "visium",
+    "NCBI637": "visium",
+    "NCBI638": "visium",
+    "NCBI639": "visium",
+    "NCBI640": "visium",
+    "NCBI641": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "li2022_ccrcc": {
+   "role": "external_replication",
+   "dataset_title": "Mapping single cell transcriptomes in kidney cancer (Li et al. 2022 Cancer Cell)",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/mendeley_li2022",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "CCRCC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "Li2022_6800STDY12499406",
+    "Li2022_6800STDY12499407",
+    "Li2022_6800STDY12499408",
+    "Li2022_6800STDY12499409",
+    "Li2022_6800STDY12499410",
+    "Li2022_6800STDY12499411",
+    "Li2022_6800STDY12499412",
+    "Li2022_6800STDY12499413",
+    "Li2022_6800STDY12499502",
+    "Li2022_6800STDY12499503",
+    "Li2022_6800STDY12499504",
+    "Li2022_6800STDY12499505",
+    "Li2022_6800STDY12499506",
+    "Li2022_6800STDY12499507",
+    "Li2022_6800STDY12499508",
+    "Li2022_6800STDY12499509"
+   ],
+   "n_sections": 16,
+   "n_patients": 8,
+   "patient_of": {
+    "Li2022_6800STDY12499406": "li2022_ccrcc:Li2022_PD43824",
+    "Li2022_6800STDY12499407": "li2022_ccrcc:Li2022_PD43948",
+    "Li2022_6800STDY12499408": "li2022_ccrcc:Li2022_PD47512",
+    "Li2022_6800STDY12499409": "li2022_ccrcc:Li2022_PD47512",
+    "Li2022_6800STDY12499410": "li2022_ccrcc:Li2022_PD47171",
+    "Li2022_6800STDY12499411": "li2022_ccrcc:Li2022_PD47171",
+    "Li2022_6800STDY12499412": "li2022_ccrcc:Li2022_PD45814",
+    "Li2022_6800STDY12499413": "li2022_ccrcc:Li2022_PD45816",
+    "Li2022_6800STDY12499502": "li2022_ccrcc:Li2022_PD45814",
+    "Li2022_6800STDY12499503": "li2022_ccrcc:Li2022_PD45814",
+    "Li2022_6800STDY12499504": "li2022_ccrcc:Li2022_PD45815",
+    "Li2022_6800STDY12499505": "li2022_ccrcc:Li2022_PD45815",
+    "Li2022_6800STDY12499506": "li2022_ccrcc:Li2022_PD45816",
+    "Li2022_6800STDY12499507": "li2022_ccrcc:Li2022_PD45816",
+    "Li2022_6800STDY12499508": "li2022_ccrcc:Li2022_PD47465",
+    "Li2022_6800STDY12499509": "li2022_ccrcc:Li2022_PD47465"
+   },
+   "patient_source": "metadata/{id}.json `patient` (Agent E conversion)",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/li2022_ccrcc/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent E (commit f37fa91); never read by MORPHEUS model development",
+   "pending_conversion": false,
+   "source": "Li et al. 2022 Cancer Cell ccRCC Visium, Mendeley 10.17632/g67bkbnhhg.1, 16 sections / 8 patients",
+   "platform_of": {
+    "Li2022_6800STDY12499406": "visium",
+    "Li2022_6800STDY12499407": "visium",
+    "Li2022_6800STDY12499408": "visium",
+    "Li2022_6800STDY12499409": "visium",
+    "Li2022_6800STDY12499410": "visium",
+    "Li2022_6800STDY12499411": "visium",
+    "Li2022_6800STDY12499412": "visium",
+    "Li2022_6800STDY12499413": "visium",
+    "Li2022_6800STDY12499502": "visium",
+    "Li2022_6800STDY12499503": "visium",
+    "Li2022_6800STDY12499504": "visium",
+    "Li2022_6800STDY12499505": "visium",
+    "Li2022_6800STDY12499506": "visium",
+    "Li2022_6800STDY12499507": "visium",
+    "Li2022_6800STDY12499508": "visium",
+    "Li2022_6800STDY12499509": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {},
+   "pixel_size_um": [
+    0.748,
+    0.749
+   ]
+  },
+  "gse250163": {
+   "role": "external_replication",
+   "dataset_title": "Role of copper in progression of clear cell renal cell carcinoma [Spatial transcriptomics]",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/geo",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "CCRCC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "GSE250163_S1-B",
+    "GSE250163_S1-D",
+    "GSE250163_S2-B",
+    "GSE250163_S2-C",
+    "GSE250163_S2-D"
+   ],
+   "n_sections": 5,
+   "n_patients": 5,
+   "patient_of": {
+    "GSE250163_S1-B": "gse250163:GSE250163_S1-B",
+    "GSE250163_S1-D": "gse250163:GSE250163_S1-D",
+    "GSE250163_S2-B": "gse250163:GSE250163_S2-B",
+    "GSE250163_S2-C": "gse250163:GSE250163_S2-C",
+    "GSE250163_S2-D": "gse250163:GSE250163_S2-D"
+   },
+   "patient_source": "metadata/{id}.json `patient` (Agent E conversion)",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/gse250163/embeddings/hoptimus"
+   ],
+   "licence": [
+    "GEO public (no explicit licence; NCBI GEO data are freely available)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent E (commit f37fa91); never read by MORPHEUS model development",
+   "pending_conversion": false,
+   "source": "GEO GSE250163, 5 FFPE ccRCC Visium sections",
+   "platform_of": {
+    "GSE250163_S1-B": "visium",
+    "GSE250163_S1-D": "visium",
+    "GSE250163_S2-B": "visium",
+    "GSE250163_S2-C": "visium",
+    "GSE250163_S2-D": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {},
+   "pixel_size_um": [
+    0.26,
+    0.261
+   ]
+  },
+  "zenodo14620362": {
+   "role": "external_replication",
+   "dataset_title": "10x Visium Spatial Transcriptomics Dataset: Kidney (3) and Lung (5) Cancer with Tertiary Lymphoid Structures",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/external_ccrcc_20261016/zenodo",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "CCRCC"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "Z14620362_KC1",
+    "Z14620362_KC2",
+    "Z14620362_KC3"
+   ],
+   "n_sections": 3,
+   "n_patients": 3,
+   "patient_of": {
+    "Z14620362_KC1": "zenodo14620362:Z14620362_KC1",
+    "Z14620362_KC2": "zenodo14620362:Z14620362_KC2",
+    "Z14620362_KC3": "zenodo14620362:Z14620362_KC3"
+   },
+   "patient_source": "metadata/{id}.json `patient` (Agent E conversion)",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/zenodo14620362/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent E (commit f37fa91); never read by MORPHEUS model development",
+   "pending_conversion": false,
+   "source": "Zenodo 14620362, 3 FFPE kidney-cancer Visium sections with full-resolution TIFs and TLS annotations",
+   "platform_of": {
+    "Z14620362_KC1": "visium",
+    "Z14620362_KC2": "visium",
+    "Z14620362_KC3": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {},
+   "meets_0p5_um_per_px_rule": false,
+   "pixel_size_um": [
+    0.659,
+    0.66,
+    0.673
+   ]
+  },
+  "reserve_cross_platform_comparison_visium_hd_3_gene_expre": {
+   "role": "reserve",
+   "dataset_title": "Cross-Platform Comparison: Visium HD 3' Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)",
+   "dataset_titles": [
+    "Cross-Platform Comparison: Visium HD 3' Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / SOC"
+   ],
+   "st_technology": [
+    "Visium HD 3'"
+   ],
+   "platform": "excluded:Visium HD 3'",
+   "hest_ids": [
+    "TENX182",
+    "TENX183"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX182": "reserve_cross_platform_comparison_visium_hd_3_gene_expre:TENX182",
+    "TENX183": "reserve_cross_platform_comparison_visium_hd_3_gene_expre:TENX183"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_cross_platform_comparison_visium_hd_3_gene_expre/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX182": "excluded:Visium HD 3'",
+    "TENX183": "excluded:Visium HD 3'"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_cross_platform_comparison_visium_hd_spatial_gene": {
+   "role": "reserve",
+   "dataset_title": "Cross-Platform Comparison: Visium HD Spatial Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)",
+   "dataset_titles": [
+    "Cross-Platform Comparison: Visium HD Spatial Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / SOC"
+   ],
+   "st_technology": [
+    "Visium HD"
+   ],
+   "platform": "excluded:Visium HD",
+   "hest_ids": [
+    "TENX184",
+    "TENX185"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX184": "reserve_cross_platform_comparison_visium_hd_spatial_gene:TENX184",
+    "TENX185": "reserve_cross_platform_comparison_visium_hd_spatial_gene:TENX185"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_cross_platform_comparison_visium_hd_spatial_gene/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX184": "excluded:Visium HD",
+    "TENX185": "excluded:Visium HD"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_brain_cancer_data_with_human_immuno_o": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Brain Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on",
+   "dataset_titles": [
+    "FFPE Human Brain Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Brain"
+   ],
+   "disease": [
+    "Cancer / GBM"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX138"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX138": "reserve_ffpe_human_brain_cancer_data_with_human_immuno_o:TENX138"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_brain_cancer_data_with_human_immuno_o/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX138": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_breast_using_the_entire_sample_area": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Breast using the Entire Sample Area",
+   "dataset_titles": [
+    "FFPE Human Breast using the Entire Sample Area"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX98"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX98": "reserve_ffpe_human_breast_using_the_entire_sample_area:patient 1"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_breast_using_the_entire_sample_area/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX98": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_breast_with_custom_add_on_panel": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Breast with Custom Add-on Panel",
+   "dataset_titles": [
+    "FFPE Human Breast with Custom Add-on Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC",
+    "Cancer / ILC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX96",
+    "TENX97"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX96": "reserve_ffpe_human_breast_with_custom_add_on_panel:patient 3",
+    "TENX97": "reserve_ffpe_human_breast_with_custom_add_on_panel:patient 2"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_breast_with_custom_add_on_panel/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX96": "excluded:Xenium",
+    "TENX97": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_breast_with_pre_designed_panel": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Breast with Pre-designed Panel",
+   "dataset_titles": [
+    "FFPE Human Breast with Pre-designed Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / ILC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX94"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX94": "reserve_ffpe_human_breast_with_pre_designed_panel:patient 3"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_breast_with_pre_designed_panel/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX94": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_cervical_cancer_with_5k_human_pan_tis": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Cervical Cancer with 5K Human Pan Tissue and Pathways Panel plus 100 Custom Genes",
+   "dataset_titles": [
+    "FFPE Human Cervical Cancer with 5K Human Pan Tissue and Pathways Panel plus 100 Custom Genes"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Cervix"
+   ],
+   "disease": [
+    "Cancer / TODO"
+   ],
+   "st_technology": [
+    "Xenium 5k"
+   ],
+   "platform": "excluded:Xenium 5k",
+   "hest_ids": [
+    "TENX188"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX188": "reserve_ffpe_human_cervical_cancer_with_5k_human_pan_tis:TENX188"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_cervical_cancer_with_5k_human_pan_tis/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX188": "excluded:Xenium 5k"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_colorectal_cancer_data_with_human_imm": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Colorectal Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on",
+   "dataset_titles": [
+    "FFPE Human Colorectal Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Bowel"
+   ],
+   "disease": [
+    "Cancer / COADREAD"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX139"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX139": "reserve_ffpe_human_colorectal_cancer_data_with_human_imm:TENX139"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_colorectal_cancer_data_with_human_imm/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX139": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_ovarian_cancer_data_with_human_immuno": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Ovarian Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on",
+   "dataset_titles": [
+    "FFPE Human Ovarian Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / HGSOC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX142"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX142": "reserve_ffpe_human_ovarian_cancer_data_with_human_immuno:TENX142"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_ovarian_cancer_data_with_human_immuno/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX142": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_ovarian_cancer_with_5k_human_pan_tiss": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Ovarian Cancer with 5K Human Pan Tissue and Pathways Panel plus 100 Custom Genes",
+   "dataset_titles": [
+    "FFPE Human Ovarian Cancer with 5K Human Pan Tissue and Pathways Panel plus 100 Custom Genes"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / HGSOC"
+   ],
+   "st_technology": [
+    "Xenium 5k"
+   ],
+   "platform": "excluded:Xenium 5k",
+   "hest_ids": [
+    "TENX187"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX187": "reserve_ffpe_human_ovarian_cancer_with_5k_human_pan_tiss:TENX187"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_ovarian_cancer_with_5k_human_pan_tiss/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX187": "excluded:Xenium 5k"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_prostate_adenocarcinoma_with_5k_human": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Prostate Adenocarcinoma with 5K Human Pan Tissue and Pathways Panel",
+   "dataset_titles": [
+    "FFPE Human Prostate Adenocarcinoma with 5K Human Pan Tissue and Pathways Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Prostate"
+   ],
+   "disease": [
+    "Cancer / PRAD"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX157"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX157": "reserve_ffpe_human_prostate_adenocarcinoma_with_5k_human:TENX157"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_prostate_adenocarcinoma_with_5k_human/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX157": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_ffpe_human_skin_primary_dermal_melanoma_with_5k": {
+   "role": "reserve",
+   "dataset_title": "FFPE Human Skin Primary Dermal Melanoma with 5K Human Pan Tissue and Pathways Panel",
+   "dataset_titles": [
+    "FFPE Human Skin Primary Dermal Melanoma with 5K Human Pan Tissue and Pathways Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Skin"
+   ],
+   "disease": [
+    "Cancer / SKCM"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX158"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX158": "reserve_ffpe_human_skin_primary_dermal_melanoma_with_5k:TENX158"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_ffpe_human_skin_primary_dermal_melanoma_with_5k/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX158": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_fresh_frozen_human_ovarian_adenocarcinoma_with_5": {
+   "role": "reserve",
+   "dataset_title": "Fresh Frozen Human Ovarian Adenocarcinoma with 5K Human Pan Tissue and Pathways Panel",
+   "dataset_titles": [
+    "Fresh Frozen Human Ovarian Adenocarcinoma with 5K Human Pan Tissue and Pathways Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / HGSOC"
+   ],
+   "st_technology": [
+    "Xenium 5k"
+   ],
+   "platform": "excluded:Xenium 5k",
+   "hest_ids": [
+    "TENX160"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX160": "reserve_fresh_frozen_human_ovarian_adenocarcinoma_with_5:TENX160"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_fresh_frozen_human_ovarian_adenocarcinoma_with_5/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX160": "excluded:Xenium 5k"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_high_resolution_mapping_of_the_tumor_microenviro": {
+   "role": "reserve",
+   "dataset_title": "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis [Xenium]",
+   "dataset_titles": [
+    "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis [Xenium]"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "NCBI784"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "NCBI784": "reserve_high_resolution_mapping_of_the_tumor_microenviro:patient 4"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_high_resolution_mapping_of_the_tumor_microenviro/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "NCBI784": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_human_bone_and_bone_marrow_data_with_custom_add": {
+   "role": "reserve",
+   "dataset_title": "Human Bone and Bone Marrow Data with Custom Add-on Panel",
+   "dataset_titles": [
+    "Human Bone and Bone Marrow Data with Custom Add-on Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Lymphoid"
+   ],
+   "disease": [
+    "Cancer / ALL"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX134"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX134": "reserve_human_bone_and_bone_marrow_data_with_custom_add:TENX134"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_human_bone_and_bone_marrow_data_with_custom_add/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX134": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_human_kidney_preview_data_xenium_human_multi_tis": {
+   "role": "reserve",
+   "dataset_title": "Human Kidney Preview Data (Xenium Human Multi-Tissue and Cancer Panel)",
+   "dataset_titles": [
+    "Human Kidney Preview Data (Xenium Human Multi-Tissue and Cancer Panel)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Kidney"
+   ],
+   "disease": [
+    "Cancer / PRCC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX105"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX105": "reserve_human_kidney_preview_data_xenium_human_multi_tis:TENX105"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_human_kidney_preview_data_xenium_human_multi_tis/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX105": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_human_liver_data_with_xenium_human_multi_tissue": {
+   "role": "reserve",
+   "dataset_title": "Human Liver Data with Xenium Human Multi-Tissue and Cancer Panel",
+   "dataset_titles": [
+    "Human Liver Data with Xenium Human Multi-Tissue and Cancer Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Liver"
+   ],
+   "disease": [
+    "Cancer / HCC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX120"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX120": "reserve_human_liver_data_with_xenium_human_multi_tissue:TENX120"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_human_liver_data_with_xenium_human_multi_tissue/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX120": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_post_xenium_technical_note_xenium_v1_and_xenium": {
+   "role": "reserve",
+   "dataset_title": "Post-Xenium Technical Note: Xenium v1 and Xenium Prime 5K for FFPE Human Lung Cancer",
+   "dataset_titles": [
+    "Post-Xenium Technical Note: Xenium v1 and Xenium Prime 5K for FFPE Human Lung Cancer"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Lung"
+   ],
+   "disease": [
+    "Cancer / LUAD"
+   ],
+   "st_technology": [
+    "Xenium 5k"
+   ],
+   "platform": "excluded:Xenium 5k",
+   "hest_ids": [
+    "TENX189",
+    "TENX190"
+   ],
+   "n_sections": 2,
+   "n_patients": 2,
+   "patient_of": {
+    "TENX189": "reserve_post_xenium_technical_note_xenium_v1_and_xenium:TENX189",
+    "TENX190": "reserve_post_xenium_technical_note_xenium_v1_and_xenium:TENX190"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_post_xenium_technical_note_xenium_v1_and_xenium/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX189": "excluded:Xenium 5k",
+    "TENX190": "excluded:Xenium 5k"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_spatially_resolved_transcriptomic_profiling_of_d": {
+   "role": "reserve",
+   "dataset_title": "Spatially resolved transcriptomic profiling of degraded",
+   "dataset_titles": [
+    "Spatially resolved transcriptomic profiling of degraded"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Brain",
+    "Prostate"
+   ],
+   "disease": [
+    "Cancer / nan"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "MEND59",
+    "MEND60",
+    "MEND61",
+    "MEND62",
+    "MEND63",
+    "MEND64",
+    "MEND65",
+    "MEND66",
+    "MEND67",
+    "MEND68"
+   ],
+   "n_sections": 10,
+   "n_patients": 10,
+   "patient_of": {
+    "MEND59": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND59",
+    "MEND60": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND60",
+    "MEND61": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND61",
+    "MEND62": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND62",
+    "MEND63": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND63",
+    "MEND64": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND64",
+    "MEND65": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND65",
+    "MEND66": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND66",
+    "MEND67": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND67",
+    "MEND68": "reserve_spatially_resolved_transcriptomic_profiling_of_d:MEND68"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_spatially_resolved_transcriptomic_profiling_of_d/embeddings/hoptimus"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "MEND59": "visium",
+    "MEND60": "visium",
+    "MEND61": "visium",
+    "MEND62": "visium",
+    "MEND63": "visium",
+    "MEND64": "visium",
+    "MEND65": "visium",
+    "MEND66": "visium",
+    "MEND67": "visium",
+    "MEND68": "visium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_visium_hd_3_gene_expression_library_human_ovaria": {
+   "role": "reserve",
+   "dataset_title": "Visium HD 3' Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)",
+   "dataset_titles": [
+    "Visium HD 3' Gene Expression Library, Human Ovarian Cancer (Fresh Frozen)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Ovary"
+   ],
+   "disease": [
+    "Cancer / CCOV"
+   ],
+   "st_technology": [
+    "Visium HD 3'"
+   ],
+   "platform": "excluded:Visium HD 3'",
+   "hest_ids": [
+    "TENX177"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX177": "reserve_visium_hd_3_gene_expression_library_human_ovaria:TENX177"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_visium_hd_3_gene_expression_library_human_ovaria/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX177": "excluded:Visium HD 3'"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_visium_hd_3_gene_expression_library_human_pancre": {
+   "role": "reserve",
+   "dataset_title": "Visium HD 3' Gene Expression Library, Human Pancreatic Cancer (Fresh Frozen)",
+   "dataset_titles": [
+    "Visium HD 3' Gene Expression Library, Human Pancreatic Cancer (Fresh Frozen)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Pancreas"
+   ],
+   "disease": [
+    "Cancer / PDAC"
+   ],
+   "st_technology": [
+    "Visium HD 3'"
+   ],
+   "platform": "excluded:Visium HD 3'",
+   "hest_ids": [
+    "TENX179"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX179": "reserve_visium_hd_3_gene_expression_library_human_pancre:TENX179"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_visium_hd_3_gene_expression_library_human_pancre/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX179": "excluded:Visium HD 3'"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_visium_hd_spatial_gene_expression_libraries_post": {
+   "role": "reserve",
+   "dataset_title": "Visium HD Spatial Gene Expression Libraries, Post-Xenium, Human Lung Cancer (FFPE)",
+   "dataset_titles": [
+    "Visium HD Spatial Gene Expression Libraries, Post-Xenium, Human Lung Cancer (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Lung"
+   ],
+   "disease": [
+    "Cancer / LUAD"
+   ],
+   "st_technology": [
+    "Visium HD"
+   ],
+   "platform": "excluded:Visium HD",
+   "hest_ids": [
+    "TENX168",
+    "TENX169",
+    "TENX170",
+    "TENX171"
+   ],
+   "n_sections": 4,
+   "n_patients": 4,
+   "patient_of": {
+    "TENX168": "reserve_visium_hd_spatial_gene_expression_libraries_post:TENX168",
+    "TENX169": "reserve_visium_hd_spatial_gene_expression_libraries_post:TENX169",
+    "TENX170": "reserve_visium_hd_spatial_gene_expression_libraries_post:TENX170",
+    "TENX171": "reserve_visium_hd_spatial_gene_expression_libraries_post:TENX171"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_visium_hd_spatial_gene_expression_libraries_post/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX168": "excluded:Visium HD",
+    "TENX169": "excluded:Visium HD",
+    "TENX170": "excluded:Visium HD",
+    "TENX171": "excluded:Visium HD"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_visium_hd_spatial_gene_expression_library_human": {
+   "role": "reserve",
+   "dataset_title": "Visium HD Spatial Gene Expression Library, Human Prostate Cancer (FFPE)",
+   "dataset_titles": [
+    "Visium HD Spatial Gene Expression Library, Human Prostate Cancer (FFPE)"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Prostate"
+   ],
+   "disease": [
+    "Cancer / PRAD"
+   ],
+   "st_technology": [
+    "Visium HD"
+   ],
+   "platform": "excluded:Visium HD",
+   "hest_ids": [
+    "TENX174"
+   ],
+   "n_sections": 1,
+   "n_patients": 1,
+   "patient_of": {
+    "TENX174": "reserve_visium_hd_spatial_gene_expression_library_human:TENX174"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_visium_hd_spatial_gene_expression_library_human/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX174": "excluded:Visium HD"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_visualization_and_analysis_of_gene_expression_in": {
+   "role": "reserve",
+   "dataset_title": "Visualization and analysis of gene expression in tissue sections by spatial transcriptomics",
+   "dataset_titles": [
+    "Visualization and analysis of gene expression in tissue sections by spatial transcriptomics"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Spatial Transcriptomics"
+   ],
+   "platform": "st_100um",
+   "hest_ids": [
+    "SPA0",
+    "SPA1",
+    "SPA2",
+    "SPA3"
+   ],
+   "n_sections": 4,
+   "n_patients": 4,
+   "patient_of": {
+    "SPA0": "reserve_visualization_and_analysis_of_gene_expression_in:SPA0",
+    "SPA1": "reserve_visualization_and_analysis_of_gene_expression_in:SPA1",
+    "SPA2": "reserve_visualization_and_analysis_of_gene_expression_in:SPA2",
+    "SPA3": "reserve_visualization_and_analysis_of_gene_expression_in:SPA3"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_visualization_and_analysis_of_gene_expression_in/embeddings/hoptimus"
+   ],
+   "licence": [
+    "not stated in HEST_v1_3_0.csv"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "platform_of": {
+    "SPA0": "st_100um",
+    "SPA1": "st_100um",
+    "SPA2": "st_100um",
+    "SPA3": "st_100um"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous": {
+   "role": "reserve",
+   "dataset_title": "Xenium v1 Human Breast FFPE with Biomarkers & Housekeeping Genes Custom Panel",
+   "dataset_titles": [
+    "Xenium v1 Human Breast FFPE with Biomarkers & Housekeeping Genes Custom Panel"
+   ],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "organ": [
+    "Breast"
+   ],
+   "disease": [
+    "Cancer / IDC"
+   ],
+   "st_technology": [
+    "Xenium"
+   ],
+   "platform": "excluded:Xenium",
+   "hest_ids": [
+    "TENX191",
+    "TENX192",
+    "TENX193",
+    "TENX195",
+    "TENX196",
+    "TENX197",
+    "TENX198",
+    "TENX199",
+    "TENX200",
+    "TENX201",
+    "TENX202"
+   ],
+   "n_sections": 11,
+   "n_patients": 4,
+   "patient_of": {
+    "TENX191": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 1",
+    "TENX192": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 1",
+    "TENX193": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 1",
+    "TENX195": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 2",
+    "TENX196": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 2",
+    "TENX197": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 3",
+    "TENX198": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 3",
+    "TENX199": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 3",
+    "TENX200": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 4",
+    "TENX201": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 4",
+    "TENX202": "reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous:Patient 4"
+   },
+   "patient_source": "catalogue `patient`, else sample id",
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/reserve_xenium_v1_human_breast_ffpe_with_biomarkers_hous/embeddings/hoptimus"
+   ],
+   "licence": [
+    "Creative Commons Attribution"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "no MORPHEUS protocol, run directory, loader or embedding cache references these sample ids (git grep -w over *.py/*.json/*.md, runs/prospective excluded from writes but included in the search; matches listed in repo_mentions)",
+   "pending_conversion": false,
+   "excluded_reason": "platform out of scope (Xenium / Visium HD: no spot-level Visium or ST grid)",
+   "platform_of": {
+    "TENX191": "excluded:Xenium",
+    "TENX192": "excluded:Xenium",
+    "TENX193": "excluded:Xenium",
+    "TENX195": "excluded:Xenium",
+    "TENX196": "excluded:Xenium",
+    "TENX197": "excluded:Xenium",
+    "TENX198": "excluded:Xenium",
+    "TENX199": "excluded:Xenium",
+    "TENX200": "excluded:Xenium",
+    "TENX201": "excluded:Xenium",
+    "TENX202": "excluded:Xenium"
+   },
+   "source_kind": "hest_catalogue"
+  },
+  "gse307534_lung_precursor": {
+   "role": "reserve",
+   "dataset_title": null,
+   "dataset_titles": [],
+   "layout": "external",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "hest_ids": [],
+   "n_sections": null,
+   "n_patients": null,
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/gse307534_lung_precursor/embeddings/hoptimus"
+   ],
+   "licence": "unknown until conversion",
+   "previously_influenced_morpheus": false,
+   "evidence": "external cohort not yet on the store; never read by MORPHEUS",
+   "pending_conversion": true,
+   "source": "GEO GSE307534 lung precursor Visium (56 sections)"
+  },
+  "gse210616_tnbc": {
+   "role": "reserve",
+   "dataset_title": null,
+   "dataset_titles": [],
+   "layout": "external",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "hest_ids": [],
+   "n_sections": null,
+   "n_patients": null,
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/gse210616_tnbc/embeddings/hoptimus"
+   ],
+   "licence": "unknown until conversion",
+   "previously_influenced_morpheus": false,
+   "evidence": "external cohort not yet on the store; never read by MORPHEUS",
+   "pending_conversion": true,
+   "source": "GEO GSE210616 TNBC Visium (14 patients)"
+  },
+  "gse311609_xenium": {
+   "role": "reserve",
+   "dataset_title": null,
+   "dataset_titles": [],
+   "layout": "external",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "hest_ids": [],
+   "n_sections": null,
+   "n_patients": null,
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/gse311609_xenium/embeddings/hoptimus"
+   ],
+   "licence": "unknown until conversion",
+   "previously_influenced_morpheus": false,
+   "evidence": "external cohort not yet on the store; never read by MORPHEUS",
+   "pending_conversion": true,
+   "source": "GEO GSE311609 Xenium"
+  },
+  "nakajima_luad": {
+   "role": "reserve",
+   "dataset_title": null,
+   "dataset_titles": [],
+   "layout": "external",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "hest_ids": [],
+   "n_sections": null,
+   "n_patients": null,
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/nakajima_luad/embeddings/hoptimus"
+   ],
+   "licence": "unknown until conversion",
+   "previously_influenced_morpheus": false,
+   "evidence": "external cohort not yet on the store; never read by MORPHEUS",
+   "pending_conversion": true,
+   "source": "Nakajima LUAD Visium"
+  },
+  "hest_bench_prostate": {
+   "role": "reserve",
+   "dataset_title": null,
+   "dataset_titles": [],
+   "layout": "external",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data",
+   "hest_ids": [],
+   "n_sections": null,
+   "n_patients": null,
+   "embed_roots": [
+    "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/hest_bench_prostate/embeddings/hoptimus"
+   ],
+   "licence": "unknown until conversion",
+   "previously_influenced_morpheus": false,
+   "evidence": "external cohort not yet on the store; never read by MORPHEUS",
+   "pending_conversion": true,
+   "source": "HEST-bench prostate (2 patients)"
+  },
+  "gse294385": {
+   "role": "external_replication",
+   "replication_for": [
+    "valdeolivas2024_crc"
+   ],
+   "dataset_title": "Spatial Multi-Omics Landscape of Colorectal Cancer Macro- and Micrometastases (Liu et al. 2026 Cancer Cell)",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/geo_GSE294385_hest_layout",
+   "organ": [
+    "Bowel"
+   ],
+   "disease": [
+    "Cancer / COADREAD metastasis"
+   ],
+   "st_technology": [
+    "Visium"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "GSE294385_IX_56688",
+    "GSE294385_IX_56689",
+    "GSE294385_IX_56690",
+    "GSE294385_M-ST-05",
+    "GSE294385_M-ST-06",
+    "GSE294385_M-ST-07",
+    "GSE294385_M-ST-08",
+    "GSE294385_M-ST-09",
+    "GSE294385_M-ST-10",
+    "GSE294385_M-ST-11",
+    "GSE294385_M-ST-12",
+    "GSE294385_M-ST-13",
+    "GSE294385_M-ST-14",
+    "GSE294385_M-ST-15",
+    "GSE294385_M-ST-16",
+    "GSE294385_M-ST-17",
+    "GSE294385_M-ST-18",
+    "GSE294385_M-ST-19",
+    "GSE294385_M-ST-20",
+    "GSE294385_M-ST-21",
+    "GSE294385_M-ST-22",
+    "GSE294385_M-ST-23",
+    "GSE294385_M-ST-24",
+    "GSE294385_M-ST-25",
+    "GSE294385_M-ST-26",
+    "GSE294385_M-ST-27",
+    "GSE294385_M-ST-28",
+    "GSE294385_M-ST-29",
+    "GSE294385_M-ST-30",
+    "GSE294385_M-ST-31",
+    "GSE294385_M-ST-32",
+    "GSE294385_M-ST-33",
+    "GSE294385_M-ST-34",
+    "GSE294385_M-ST-35",
+    "GSE294385_M-ST-36",
+    "GSE294385_M-ST-37",
+    "GSE294385_M-ST-38"
+   ],
+   "n_sections": 37,
+   "n_patients": 37,
+   "patient_of": {
+    "GSE294385_IX_56688": "gse294385:GSE294385_IX_56688",
+    "GSE294385_IX_56689": "gse294385:GSE294385_IX_56689",
+    "GSE294385_IX_56690": "gse294385:GSE294385_IX_56690",
+    "GSE294385_M-ST-05": "gse294385:GSE294385_M-ST-05",
+    "GSE294385_M-ST-06": "gse294385:GSE294385_M-ST-06",
+    "GSE294385_M-ST-07": "gse294385:GSE294385_M-ST-07",
+    "GSE294385_M-ST-08": "gse294385:GSE294385_M-ST-08",
+    "GSE294385_M-ST-09": "gse294385:GSE294385_M-ST-09",
+    "GSE294385_M-ST-10": "gse294385:GSE294385_M-ST-10",
+    "GSE294385_M-ST-11": "gse294385:GSE294385_M-ST-11",
+    "GSE294385_M-ST-12": "gse294385:GSE294385_M-ST-12",
+    "GSE294385_M-ST-13": "gse294385:GSE294385_M-ST-13",
+    "GSE294385_M-ST-14": "gse294385:GSE294385_M-ST-14",
+    "GSE294385_M-ST-15": "gse294385:GSE294385_M-ST-15",
+    "GSE294385_M-ST-16": "gse294385:GSE294385_M-ST-16",
+    "GSE294385_M-ST-17": "gse294385:GSE294385_M-ST-17",
+    "GSE294385_M-ST-18": "gse294385:GSE294385_M-ST-18",
+    "GSE294385_M-ST-19": "gse294385:GSE294385_M-ST-19",
+    "GSE294385_M-ST-20": "gse294385:GSE294385_M-ST-20",
+    "GSE294385_M-ST-21": "gse294385:GSE294385_M-ST-21",
+    "GSE294385_M-ST-22": "gse294385:GSE294385_M-ST-22",
+    "GSE294385_M-ST-23": "gse294385:GSE294385_M-ST-23",
+    "GSE294385_M-ST-24": "gse294385:GSE294385_M-ST-24",
+    "GSE294385_M-ST-25": "gse294385:GSE294385_M-ST-25",
+    "GSE294385_M-ST-26": "gse294385:GSE294385_M-ST-26",
+    "GSE294385_M-ST-27": "gse294385:GSE294385_M-ST-27",
+    "GSE294385_M-ST-28": "gse294385:GSE294385_M-ST-28",
+    "GSE294385_M-ST-29": "gse294385:GSE294385_M-ST-29",
+    "GSE294385_M-ST-30": "gse294385:GSE294385_M-ST-30",
+    "GSE294385_M-ST-31": "gse294385:GSE294385_M-ST-31",
+    "GSE294385_M-ST-32": "gse294385:GSE294385_M-ST-32",
+    "GSE294385_M-ST-33": "gse294385:GSE294385_M-ST-33",
+    "GSE294385_M-ST-34": "gse294385:GSE294385_M-ST-34",
+    "GSE294385_M-ST-35": "gse294385:GSE294385_M-ST-35",
+    "GSE294385_M-ST-36": "gse294385:GSE294385_M-ST-36",
+    "GSE294385_M-ST-37": "gse294385:GSE294385_M-ST-37",
+    "GSE294385_M-ST-38": "gse294385:GSE294385_M-ST-38"
+   },
+   "patient_source": "GEO carries no patient identity: patient key = sample id, so patient-held-out folds are sample-held-out (the paper reports 11 patients); sections of one patient may fall in different folds",
+   "embed_roots": [],
+   "licence": [
+    "GEO public (no explicit licence; NCBI places no restrictions on use or distribution)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent S (scripts/second_wave/convert_geo_crc.py, second wave 2026-10-22); never read by MORPHEUS model development; not in HEST",
+   "pending_conversion": false,
+   "source": "GEO GSE294385, 37 Visium sections of CRC metastases, Space Ranger outputs; no WSI, no annotations, no site labels",
+   "platform_of": {
+    "GSE294385_IX_56688": "visium",
+    "GSE294385_IX_56689": "visium",
+    "GSE294385_IX_56690": "visium",
+    "GSE294385_M-ST-05": "visium",
+    "GSE294385_M-ST-06": "visium",
+    "GSE294385_M-ST-07": "visium",
+    "GSE294385_M-ST-08": "visium",
+    "GSE294385_M-ST-09": "visium",
+    "GSE294385_M-ST-10": "visium",
+    "GSE294385_M-ST-11": "visium",
+    "GSE294385_M-ST-12": "visium",
+    "GSE294385_M-ST-13": "visium",
+    "GSE294385_M-ST-14": "visium",
+    "GSE294385_M-ST-15": "visium",
+    "GSE294385_M-ST-16": "visium",
+    "GSE294385_M-ST-17": "visium",
+    "GSE294385_M-ST-18": "visium",
+    "GSE294385_M-ST-19": "visium",
+    "GSE294385_M-ST-20": "visium",
+    "GSE294385_M-ST-21": "visium",
+    "GSE294385_M-ST-22": "visium",
+    "GSE294385_M-ST-23": "visium",
+    "GSE294385_M-ST-24": "visium",
+    "GSE294385_M-ST-25": "visium",
+    "GSE294385_M-ST-26": "visium",
+    "GSE294385_M-ST-27": "visium",
+    "GSE294385_M-ST-28": "visium",
+    "GSE294385_M-ST-29": "visium",
+    "GSE294385_M-ST-30": "visium",
+    "GSE294385_M-ST-31": "visium",
+    "GSE294385_M-ST-32": "visium",
+    "GSE294385_M-ST-33": "visium",
+    "GSE294385_M-ST-34": "visium",
+    "GSE294385_M-ST-35": "visium",
+    "GSE294385_M-ST-36": "visium",
+    "GSE294385_M-ST-37": "visium",
+    "GSE294385_M-ST-38": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {},
+   "pixel_size_um": [
+    0.212,
+    0.213,
+    0.23,
+    0.231,
+    0.233
+   ],
+   "note": "molecular replication only (no full-resolution H&E in GEO: no morphology, H-Optimus-0 or CellViT view)"
+  },
+  "gse280318_hd": {
+   "role": "external_replication",
+   "replication_for": [
+    "valdeolivas2024_crc"
+   ],
+   "dataset_title": "Characterization of immune cell populations in the tumor microenvironment of colorectal cancer using high definition spatial profiling [VisiumHD] (Oliveira et al. 2025 Nat Genet; GSE280315 / GSE280318)",
+   "dataset_titles": [],
+   "layout": "flat",
+   "data_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/geo_GSE280318_visiumhd_hest_layout/pseudo_visium_56um",
+   "alt_data_dir": {
+    "native_8um": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/geo_GSE280318_visiumhd_hest_layout/native_8um"
+   },
+   "organ": [
+    "Bowel"
+   ],
+   "disease": [
+    "Cancer / COADREAD",
+    "Normal adjacent"
+   ],
+   "st_technology": [
+    "Visium HD"
+   ],
+   "platform": "visium",
+   "hest_ids": [
+    "GSE280318HD_P1CRC",
+    "GSE280318HD_P2CRC",
+    "GSE280318HD_P5CRC",
+    "GSE280318HD_P3NAT",
+    "GSE280318HD_P5NAT"
+   ],
+   "n_sections": 5,
+   "n_patients": 4,
+   "patient_of": {
+    "GSE280318HD_P1CRC": "gse280318_hd:GSE280318_P1",
+    "GSE280318HD_P2CRC": "gse280318_hd:GSE280318_P2",
+    "GSE280318HD_P5CRC": "gse280318_hd:GSE280318_P5",
+    "GSE280318HD_P3NAT": "gse280318_hd:GSE280318_P3",
+    "GSE280318HD_P5NAT": "gse280318_hd:GSE280318_P5"
+   },
+   "patient_source": "section name P<n> (GEO sample titles); P5CRC and P5NAT share patient P5",
+   "embed_roots": [],
+   "licence": [
+    "GEO public (no explicit licence; NCBI places no restrictions on use or distribution)"
+   ],
+   "previously_influenced_morpheus": false,
+   "evidence": "converted by Agent S (scripts/second_wave/convert_geo_crc.py, second wave 2026-10-22); the HD sections are not in HEST and were never read by MORPHEUS model development",
+   "pending_conversion": false,
+   "source": "GEO GSE280315 (Visium HD sub-series of GSE280318), 5 FFPE sections, 8 um bins; served here as 56 um pseudo-spots (7 x 7 bins summed, >= 25 bins under tissue) with the native 8 um layout beside it",
+   "platform_of": {
+    "GSE280318HD_P1CRC": "visium",
+    "GSE280318HD_P2CRC": "visium",
+    "GSE280318HD_P5CRC": "visium",
+    "GSE280318HD_P3NAT": "visium",
+    "GSE280318HD_P5NAT": "visium"
+   },
+   "source_kind": "external_converted",
+   "excluded_ids": {},
+   "pixel_size_um": [
+    0.274
+   ],
+   "meta_training_overlap": "the Visium v2 section P2CRC of this study is HEST TENX152, a member of the meta_training study tenx_demo_bowel; the search model has seen that section",
+   "rule": "HD sections only: no Visium v2, Xenium or Flex member of GSE280318 may be used for replication, and every report on this study states the TENX152 overlap",
+   "note": "full-resolution tissue_image.btf not downloaded: expression + spatial only, no patches"
+  }
+ }
+}

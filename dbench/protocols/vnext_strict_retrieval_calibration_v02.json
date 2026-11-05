@@ -1,0 +1,39 @@
+{
+  "schema": "morpheus-vnext-strict-retrieval-v2",
+  "status": "registered_before_execution",
+  "purpose": "Development-only calibration of a frozen raw multimodal composer under a non-saturated regular and higher-order retrieval endpoint. This protocol cannot establish a paper-facing superiority claim.",
+  "cache": {
+    "path": "runs/development/vnext_phase07/20261030T000001Z/dev24_c234",
+    "manifest_sha256": "c86b69b70a0363b7b283f4a151386a47c59f5cf856ef4bf326603c92cb791a1e",
+    "role": "development",
+    "unit_of_independence": "patient-disjoint episode"
+  },
+  "checkpoint": {
+    "path": "runs/meta_training/vnext_phase07/20261030T000001Z/train6000/frozen.pt",
+    "sha256": "328681c5ceaf7a2f464a3f880d43ebf21f62524d2b4bbad1a5509d5a1119f829"
+  },
+  "candidate_bank": {
+    "size": 96,
+    "arity": [2, 3, 4],
+    "construction": "deterministic metadata-only sampling before support targets or query payload are read",
+    "structural_strata": ["cross_modal", "spatial_context", "conditional_multiscale"]
+  },
+  "methods": {
+    "morpheus_multimodal_composer": "frozen checkpoint, support-only scoring",
+    "ebm_program_ranker": "main-effect EBM over exactly the 96 compiled program columns",
+    "gbm_program_ranker": "support-only permutation importance over exactly the 96 compiled program columns",
+    "random_program_ranker": "seeded uniform ordering of the same 96 programs"
+  },
+  "hidden_evaluator": {
+    "score_serialization": "all four support score vectors are written before query payload access",
+    "regular_endpoint": "held-out gain beyond B_known",
+    "higher_order_endpoint": "held-out gain beyond B_known and the strongest legal proper-subset decomposition",
+    "patient_bootstrap_draws": 1999,
+    "majority_patient_sign": 0.6,
+    "within_patient_response_permutations": 39,
+    "structure_matched_candidate_scrambles": 39,
+    "strict_label": "positive regular and higher-order gain; both patient-bootstrap lower confidence bounds > 0; at least 60% held-out patients positive for each; both empirical null p <= 0.05"
+  },
+  "outputs": ["AP", "AUROC", "precision_at_10", "precision_at_20", "recall_at_20", "candidate-level gate receipt", "runtime"],
+  "interpretation": "A later test-role cache repeats this protocol without changes. The frozen historical and blind-discovery cohorts are prohibited from model selection and calibration."
+}

@@ -1,0 +1,15 @@
+{
+ "kidney": {
+  "n": 4974,
+  "n_target_hi": 929,
+  "n_score_hi": 400,
+  "spearman": 0.43235111066440807
+ },
+ "colorectal": {
+  "n": 1192,
+  "n_target_hi": 191,
+  "n_score_hi": 108,
+  "spearman": 0.7363248874737424,
+  "section": "ZEN42"
+ }
+}

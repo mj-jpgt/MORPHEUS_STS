@@ -1,0 +1,412 @@
+{
+  "schema": "morpheus_agent_study/v2",
+  "study_id": "agent-study-v02-20261015",
+  "status": "DRAFT 2026-10-15 rev 6 (not registered; the agent pilot runs after the learned-search architecture freeze (runs/development/learned_search_v01/frozen.pt + FROZEN.md) and only once the key file ~/.config/morpheus/claude_api exists; no model call before then)",
+  "supersedes_for_paper": "agent_study_v01.json (rev 4) stays as the record of the v0.5 design; v02 is the paper design of ajas.md 'Scientific-agent experiment'",
+  "claim": "Can MORPHEUS give a capable scientific agent a scientific-search operation it otherwise does not reproduce reliably through ordinary coding and analysis? Same agent, model, data, question, compute and budget in three arms; every submitted hypothesis is scored by the same hidden patient-level validation outside the agent.",
+  "agent": {
+    "shell": "Biomni A1 (CodeAct agent; ~/biomni_venv; package version 0.0.8)",
+    "model": "claude-sonnet-5-5",
+    "effort": "high",
+    "sampling": "API defaults (temperature not sent)",
+    "prompt_caching": "top-level automatic cache_control; identical for every arm",
+    "biomni_configuration": "tool retriever off; data lake not downloaded; commercial_mode on; tool modules restricted per arm so the system prompt is identical across arms except for the arm's tools",
+    "replicates_per_task_arm": 1,
+    "key_handling": "as agent_study_v01: launch.sh passes only the key FILE path (--key-file); agent_runner.py reads it and passes api_key= to the clients; the key never enters an environment, a command line, a log or a file the run writes; --scripted and --build-only never touch the key file"
+  },
+  "arms": {
+    "A0": {
+      "label": "agent alone (ajas.md A0)",
+      "has_data": true,
+      "tools": [
+        "python REPL (numpy, pandas, scipy, scikit-learn, statsmodels, scanpy, anndata)",
+        "literature per task (tasks.literature_policy)",
+        "submit_relation"
+      ],
+      "data": "the proposal (support) patients' rows as AnnData: every catalog variable, the target, the comparison-model columns, patient and spot coordinates"
+    },
+    "A1": {
+      "label": "agent + classical MORPHEUS (ajas.md A1)",
+      "has_data": true,
+      "tools": [
+        "everything in A0",
+        "MORPHEUS MCP server (stdio, --arm A1): bank_views, propose, validate, ledger_lookup, novelty_check, characterise"
+      ],
+      "modes": {
+        "knowledge_guided": "primary: literature tools per task",
+        "blind": "secondary: no literature tools; novelty_check refused until the hypothesis is frozen"
+      },
+      "validate_split": "inner cross-fitting over the support patients only (5 patient-grouped inner folds, seed 20261014), the registered machinery on each; held-out (query) patients are never reachable from any tool",
+      "propose_source": "live enumeration on the support rows (no registered receipts exist for these tasks)",
+      "admissible_ledgers": []
+    },
+    "A2": {
+      "label": "agent + learned MORPHEUS (ajas.md A2)",
+      "has_data": true,
+      "tools": [
+        "everything in A1",
+        "discover_relationships(dataset, target, relation_type='open'|'molecular'|'morphology'|'spatial', top<=16) on the MCP server (--arm A2)"
+      ],
+      "modes": {
+        "knowledge_guided": "primary",
+        "blind": "secondary"
+      },
+      "discover_relationships": {
+        "backend": "dbench.agent_study.service.FrozenSearch: the frozen learned-search checkpoint (LearnedSearchModel.load) named by MORPHEUS_LEARNED_CHECKPOINT with its sha256 in MORPHEUS_LEARNED_CHECKPOINT_SHA256 (checked on load); morpheus_encoder.learned_search.propose on the support rows only (budget 128)",
+        "returns": "ranked hypotheses {rank, variables (prefixed names: bare = own value; nbr6:/nbr18:/contrast: spatial transforms; concept:<j> learned morphology concepts), feature_form 'flexible', support_fit {r2_support_cv, response_surface (mean target over a quantile grid of the selected variables, support rows)}}, the model record {checkpoint_sha256, frozen_at} and the note 'support-set quantities only'",
+        "never_returns": "held-out rows, held-out fits, nulls or anything computed on query patients",
+        "refusal": "ContractError('learned search not frozen yet') while MORPHEUS_LEARNED_CHECKPOINT is unset; the development stand-in MORPHEUS_LEARNED_CHECKPOINT=stub:marginal_screen (propose(model=None)) is allowed only in scripted dry runs and is labelled stub in every reply and task JSON",
+        "claims": "a submitted 'flexible' claim is scored as a product candidate (k >= 2) or a single-variable candidate (k = 1) with provenance agent_flexible by the same registered machinery as any other claim"
+      }
+    },
+    "A_S": {
+      "label": "owner's earlier name for 'A0 with data' (agent_study_v01); identical to A0 here and not run separately",
+      "has_data": true
+    },
+    "reference_rows_not_agents": {
+      "MORPHEUS_alone": "the learned-search model's top-ranked sets and the classical proposers' top sets submitted unchanged, scored by the same rule (descriptive)",
+      "scripted_policies": "deterministic LLM-free policies (scripted_policies) run through the same harness; plumbing check and a policy floor"
+    }
+  },
+  "tasks": {
+    "question": "find and justify relations between <target> and the measurement bank that hold in held-out patients",
+    "partitions": "dbench/protocols/sprint_partitions_v01.json",
+    "partitions_note": "study keys follow Agent D's sprint_partitions_v01.json; until that file is hashed the study names below are descriptive and build_task_bundle refuses (hest_multi.study_episode)",
+    "patient_split": "per task: support/query = deterministic patient-disjoint split (harness.split_patients, query_fraction, split_seed); proposal = support rows, scoring = query rows",
+    "literature_policy": {
+      "controlled_heldout": "full Biomni literature tools (the planted relation is not in any literature)",
+      "historical": "date_limited: Biomni's query_pubmed cannot be date-limited from outside, so the Biomni literature tools are removed and replaced by query_pubmed_before (NCBI esearch, datetype=pdat, maxdate = before_date); novelty_check and the harness novelty label use OpenAlex filter=to_publication_date:<before_date> and Europe PMC FIRST_PDATE:[1800-01-01 TO <before_date>], with before_date in the cache key",
+      "biology": "full Biomni literature tools"
+    },
+    "items": {
+      "C1": {
+        "kind": "controlled_heldout",
+        "study": "kidney_injury",
+        "dataset": "kidney_injury_visium",
+        "role": "development study (non-cancer Visium, 23 sections / 22 patients; touched before, not paper-grade biology, so used only as a real substrate for a planted relation)",
+        "target": "programme:hallmark:HALLMARK_HYPOXIA",
+        "target_definition": "a gene-programme score of the spot (mean log1p-CPM over the programme's genes), within-patient standardised",
+        "heldout_family": "gp_2",
+        "heldout_family_label": "held-out family A",
+        "effect_fraction": 0.05,
+        "level": "N",
+        "source": "gene",
+        "world_seed": 0,
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "query_fraction": 0.3,
+        "split_seed": 20261015,
+        "literature": "full",
+        "scoring_extra": "planted-set recovery: rank of the planted set among the submitted claims (submission order), dbench.benchmark.scoring.rank_of hit rule; plus held-out validation of every claim",
+        "hidden_from_agent": [
+          "heldout_family",
+          "heldout_family_label",
+          "world_seed",
+          "effect_fraction"
+        ],
+        "target_maps_to": "hest_multi StudyEpisode programme column 'hallmark:HALLMARK_HYPOXIA' (parse_target 'programme:<column>'; checked on kidney_injury 2026-10-15); bench name programmes:hallmark:HALLMARK_HYPOXIA"
+      },
+      "C2": {
+        "kind": "controlled_heldout",
+        "study": "he2020_breast_idc",
+        "dataset": "he2020_breast_st",
+        "role": "meta-training study, patient-held-out fold (the patients reserved in sprint_partitions_v01.json for early stopping; never seen by training)",
+        "target": "programme:hallmark:HALLMARK_ESTROGEN_RESPONSE_EARLY",
+        "target_definition": "a gene-programme score of the spot (mean log1p-CPM over the programme's genes), within-patient standardised",
+        "heldout_family": "spatial_mix_gp",
+        "heldout_family_label": "held-out family B",
+        "effect_fraction": 0.05,
+        "level": "N",
+        "source": "gene",
+        "world_seed": 0,
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "query_fraction": 0.3,
+        "split_seed": 20261015,
+        "literature": "full",
+        "scoring_extra": "as C1",
+        "hidden_from_agent": [
+          "heldout_family",
+          "heldout_family_label",
+          "world_seed",
+          "effect_fraction"
+        ],
+        "study_note": "he2020_breast_idc is a meta-training study (sprint_partitions_v01.json revision 2, Agent D 56d70c7): the background tissue was seen in meta-training, but the planted family spatial_mix_gp is held out and was never trained on. The agent study compares arms on the same task; it does not measure the learned model's generalisation, which is HO_Q1 / HO_Q2's job",
+        "target_maps_to": "programme column 'hallmark:HALLMARK_ESTROGEN_RESPONSE_EARLY' (checked on he2020_breast_idc 2026-10-15); bench name programmes:hallmark:HALLMARK_ESTROGEN_RESPONSE_EARLY"
+      },
+      "H1": {
+        "kind": "historical",
+        "study": "ji2020_cscc",
+        "dataset": "ji2020_cscc_st",
+        "target": "programme:tsk",
+        "target_definition": "own-spot tumour-specific keratinocyte programme score (MMP10, PTHLH, FEZ1, IL24, KCNMA1, INHBA, MAGEA4, NT5E, LAMC2, SLITRK6), within-patient standardised",
+        "before_date": "2020-06-22",
+        "before_date_source": "the day before the journal date 2020-06-23 (OpenAlex publication_date of 10.1016/j.cell.2020.05.039; no earlier preprint found), because OpenAlex to_publication_date and Europe PMC FIRST_PDATE ranges include the end date. Agent F's historical_rediscovery_v01.json records 2020-06-23; the harness uses this protocol's date when one is given",
+        "answer": {
+          "finding": "the tumour-specific keratinocyte programme sits at the leading edge with adjacent stroma enriched for fibroblast and endothelial transcripts",
+          "proxy_genes": [
+            "COL1A1",
+            "COL1A2",
+            "COL3A1",
+            "DCN",
+            "LUM",
+            "FAP",
+            "PDGFRB",
+            "PECAM1",
+            "VWF",
+            "CDH5",
+            "CLDN5",
+            "ENG"
+          ],
+          "proxy_sets": {
+            "fibroblast": [
+              "COL1A1",
+              "COL1A2",
+              "COL3A1",
+              "DCN",
+              "LUM",
+              "FAP",
+              "PDGFRB"
+            ],
+            "endothelial": [
+              "PECAM1",
+              "VWF",
+              "CDH5",
+              "CLDN5",
+              "ENG"
+            ]
+          },
+          "transforms": [
+            "nbr6",
+            "nbr18"
+          ],
+          "sign": 1
+        },
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "query_fraction": 0.5,
+        "split_seed": 20261015,
+        "literature": "date_limited",
+        "scoring_extra": "historical hit rank by Agent F's dbench.historical.score_ranked_list on the submitted claims in submission order (top 20; within-patient |r| >= 0.9 with an answer proxy under an allowed transform, sign of the variable's within-patient correlation with the target = the published direction), plus held-out validation",
+        "hidden_from_agent": [
+          "answer"
+        ],
+        "historical_protocol": "dbench/protocols/historical_rediscovery_v01.json",
+        "historical_task_id": "H1",
+        "patient_split": "Agent F's split (dbench.scripts.historical_rediscovery.task_episode: sorted patient keys shuffled with default_rng(0), first ceil(n/2) support), so agents, MORPHEUS alone and the baselines see the same support and query patients; query_fraction / split_seed are unused",
+        "target_construction": "Agent F's target: the own-spot target-set score (dbench.historical.target_values, within-patient standardised); the target set's genes are dropped from the catalog and own columns with within-patient |r| >= 0.9 with the target on support rows are removed (Agent F's leak guard)"
+      },
+      "H2": {
+        "kind": "historical",
+        "study": "valdeolivas2024_crc",
+        "dataset": "valdeolivas2024_crc_visium",
+        "target": "programme:spp1_macrophage",
+        "target_definition": "own-spot SPP1+ macrophage score (SPP1, APOE, C1QA, C1QB, C1QC, CD68), within-patient standardised",
+        "before_date": "2023-01-18",
+        "before_date_source": "the day before the bioRxiv preprint 10.1101/2023.01.23.525135 (2023-01-23; Agent F's record) and before the Zenodo dataset 10.5281/zenodo.7551712 dated 2023-01-19 (the earliest public trace, recorded here); journal version 10.1038/s41698-023-00488-4 (2024-01-10). Ranges include the end date; the harness uses this protocol's date",
+        "answer": {
+          "finding": "fibrotic stroma enriched for myofibroblasts and SPP1+ macrophages regardless of CMS",
+          "proxy_genes": [
+            "ACTA2",
+            "TAGLN",
+            "MYL9",
+            "MYH11",
+            "COL1A1"
+          ],
+          "transforms": [
+            "own",
+            "nbr6"
+          ],
+          "sign": 1
+        },
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "query_fraction": 0.5,
+        "split_seed": 20261015,
+        "literature": "date_limited",
+        "scoring_extra": "historical hit rank by Agent F's dbench.historical.score_ranked_list on the submitted claims in submission order (top 20; within-patient |r| >= 0.9 with an answer proxy under an allowed transform, sign of the variable's within-patient correlation with the target = the published direction), plus held-out validation",
+        "hidden_from_agent": [
+          "answer"
+        ],
+        "historical_protocol": "dbench/protocols/historical_rediscovery_v01.json",
+        "historical_task_id": "H2",
+        "patient_split": "Agent F's split (dbench.scripts.historical_rediscovery.task_episode: sorted patient keys shuffled with default_rng(0), first ceil(n/2) support), so agents, MORPHEUS alone and the baselines see the same support and query patients; query_fraction / split_seed are unused",
+        "target_construction": "Agent F's target: the own-spot target-set score (dbench.historical.target_values, within-patient standardised); the target set's genes are dropped from the catalog and own columns with within-patient |r| >= 0.9 with the target on support rows are removed (Agent F's leak guard)",
+        "zenodo_dataset_date": "2023-01-19"
+      },
+      "B1": {
+        "kind": "biology",
+        "study": "meylan2022_ccrcc",
+        "dataset": "meylan2022_ccrcc_visium",
+        "target": "morph_pc:1",
+        "target_definition": "a morphology axis of the spot: projection of the frozen H-Optimus-0 image embedding on its first principal direction fitted on the support patients (within-patient standardised); the question is which molecular state organises this morphology",
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "query_fraction": 0.3,
+        "split_seed": 20261015,
+        "literature": "full",
+        "scoring_extra": "held-out validation only (no known answer); the in-sample TLS -> plasma-cell sanity relation is not a task",
+        "episode_target": "programme:hallmark:HALLMARK_HYPOXIA",
+        "target_maps_to": "not a loader column: harness.morphology_axis_episode builds it from the episode's 'hoptimus' view (1536-d H-Optimus-0, present for meylan2022_ccrcc): spots without an embedding dropped (nothing imputed), within-patient centred, first principal direction fitted on support rows, projection within-patient standardised; the loader's own target exclusions are cleared (the target is morphological, candidates are genes and programmes only). The earlier name concept:morph_axis_1 did not parse (hest_multi concept targets are concept:<int> and computed model-side). episode_target only lets the loader build the episode"
+      },
+      "B2": {
+        "kind": "biology",
+        "study": "ependymoma_pfa",
+        "dataset": "ependymoma_visium",
+        "target": "programme:hallmark:HALLMARK_HYPOXIA",
+        "target_definition": "a gene-programme score of the spot, within-patient standardised; the question is which morphology (image embedding coordinates, learned concepts and their neighbourhoods) predicts it",
+        "candidate_views": [
+          "hoptimus"
+        ],
+        "query_fraction": 0.3,
+        "split_seed": 20261015,
+        "literature": "full",
+        "scoring_extra": "held-out validation only (blind-discovery cohort; the agent study uses its own split and is reported separately from the blind discovery campaign)",
+        "target_maps_to": "programme column 'hallmark:HALLMARK_HYPOXIA' (checked on ependymoma_pfa 2026-10-15)",
+        "build_note": "ependymoma_pfa has no H-Optimus-0 spot embeddings in the store yet (loader hoptimus = None, 2026-10-15; Agent E's embedding queue), so B2's candidate view is empty and B2 builds only after those embeddings exist"
+      }
+    },
+    "order": "C1, C2, H1, H2, B1, B2; within a task A0, A1, A2 (knowledge_guided), then the blind modes of A1 and A2 if the budget allows",
+    "build": "dbench.agent_study.harness.build_task_bundle: hest_multi.study_episode -> StudyEpisode.to_bench_substrate(comparison='nuisance') -> core.study_bundle (controlled: benchmark.tasks.make_world on the held-out family replaces the target by the planted world's response)"
+  },
+  "budgets": {
+    "per_task_arm": {
+      "max_llm_calls": 40,
+      "max_total_tokens": 1500000,
+      "max_wallclock_minutes": 90,
+      "max_executions": 40,
+      "max_claims": 10
+    },
+    "rule": "as agent_study_v01: identical for every arm; setup outside the clock; MORPHEUS tool latency inside it; on exhaustion the run ends and claims already submitted stand"
+  },
+  "scoring": {
+    "who": "the harness after the agent has stopped; no agent can call it",
+    "unit": "each submitted relation, scored alone with content-only hashes",
+    "machinery": "run_general_discovery_packet._evaluate_rows on the task's support -> query patients, relation v07_ho (general gain + G_HO decomposition), comparison model = the StudyEpisode nuisance columns (depth, platform), spatial-block / within-patient-permutation / interaction-break nulls",
+    "relation": "v07_ho",
+    "null_draws": 199,
+    "seeds": {
+      "n": 5,
+      "receipt": "the seed with the median held-out gain (as agent_study_v01)",
+      "other_seed_null_draws": {}
+    },
+    "supported_hypothesis": "held-out R2 > 0, gain CI lower bound > 0, within_patient_perm p <= 0.05 on the median-seed receipt",
+    "higher_order_hypothesis": "a supported hypothesis whose v07_ho G_HO patient-bootstrap CI lower bound is > 0",
+    "per_arm_outcomes": {
+      "primary": [
+        "number of independently supported hypotheses",
+        "number of supported hypotheses with G_HO CI > 0"
+      ],
+      "secondary": [
+        "historical hit rank (H1, H2)",
+        "planted-set recovery rank (C1, C2)",
+        "hypotheses tested (validate calls, discover_relationships calls)",
+        "time and API cost (Sonnet 5.5 list prices) per run and per supported hypothesis",
+        "whether the agent used the tool's output: claims that are exactly a set returned by discover_relationships, and how many of them are supported",
+        "false-claim rate, direction agreement, novelty label of supported relations (literature cutoff on historical tasks)"
+      ]
+    },
+    "comparisons": {
+      "primary": "A2 vs A1 and A2 vs A0, paired over the six tasks: supported and higher-order counts (paired differences with a task-bootstrap 95% CI; Wilcoxon signed-rank reported beside it)",
+      "secondary": "A1 vs A0 (does classical MORPHEUS already help); blind vs knowledge-guided where run"
+    },
+    "contamination_rule": "as agent_study_v01 isolation.audit_rule; additionally, on controlled tasks the audit flags any executed code naming the planted family or the world id"
+  },
+  "isolation": {
+    "agent_side": "as agent_study_v01",
+    "service_side": "~/morpheus_venv harness process; the tool service holds the task bundle and exposes only support-patient computations; the planted family, world id and historical answers live in bundle.meta and are never written to the workspace"
+  },
+  "prompts": {
+    "common": {
+      "controlled_heldout": "You are a computational biologist analysing a spatial transcriptomics study with matched H&E (dataset {dataset}). Task target: {target} = {target_definition}.\n\nGoal: find and justify relations between {target} and the measurement bank that hold in held-out patients, i.e. relations that add predictive information about {target} in patients you have not seen, beyond a comparison model that contains sequencing depth (and platform where it varies). The bank has {n_variables} variables (exact names and views in data/catalog.json): measured genes and gene-programme scores; any variable may also be used through its spatial neighbourhood (nbr6:<name> = mean over the 6 nearest spots, nbr18:<name> = two-hop ring, contrast:<name> = own - nbr6). A relation is one variable, a product (interaction) of 2-5 variables, a weighted sum of 2-5 variables, or a flexible relation over 1-4 variables (shape left to the scorer's flexible fit).\n\nAfter you finish, an independent scorer tests every relation you submitted on held-out patients against the comparison model with permutation and spatial nulls, and records whether the relation carries information beyond its lower-order parts. Relations that fail count as false claims. Budget: {max_llm_calls} model calls, {max_wallclock_minutes} minutes, at most {max_claims} relations. Work only with files under the current working directory.",
+      "historical": "You are a computational biologist analysing a spatial transcriptomics study with matched H&E (dataset {dataset}). Task target: {target} = {target_definition}.\n\nGoal: find and justify relations between {target} and the measurement bank that hold in held-out patients, beyond a comparison model that contains sequencing depth. The bank has {n_variables} variables (exact names and views in data/catalog.json): measured genes and gene-programme scores; any variable may also be used through its spatial neighbourhood (nbr6:<name>, nbr18:<name>, contrast:<name> = own - nbr6). A relation is one variable, a product of 2-5 variables, a weighted sum of 2-5 variables, or a flexible relation over 1-4 variables. Literature search is limited to work published before this dataset.\n\nAfter you finish, an independent scorer tests every relation you submitted on held-out patients with permutation and spatial nulls. Relations that fail count as false claims. Budget: {max_llm_calls} model calls, {max_wallclock_minutes} minutes, at most {max_claims} relations. Work only with files under the current working directory.",
+      "biology": "You are a computational biologist analysing a spatial transcriptomics study with matched H&E (dataset {dataset}). Task target: {target} = {target_definition}.\n\nGoal: find and justify relations between {target} and the measurement bank that hold in held-out patients, beyond a comparison model that contains sequencing depth. The bank has {n_variables} variables (exact names and views in data/catalog.json); any variable may also be used through its spatial neighbourhood (nbr6:<name>, nbr18:<name>, contrast:<name> = own - nbr6). A relation is one variable, a product of 2-5 variables, a weighted sum of 2-5 variables, or a flexible relation over 1-4 variables.\n\nAfter you finish, an independent scorer tests every relation you submitted on held-out patients with permutation and spatial nulls. Relations that fail count as false claims. Budget: {max_llm_calls} model calls, {max_wallclock_minutes} minutes, at most {max_claims} relations. Work only with files under the current working directory."
+    },
+    "A0": "Data: data/proposal_rows.h5ad (AnnData) holds the spots of the {unit}s available to you: X has every catalog variable (var['view'] gives its view), obs['response'] is the target, obs['patient'] is the {unit}, obs['x'] and obs['y'] are spot coordinates, obsm['competitor'] holds the comparison-model columns (names in uns['competitor_columns']). Use standard analysis (scanpy, statsmodels, scikit-learn, scipy; {unit}-grouped cross-validation is advisable) and the literature tools you have.",
+    "A_S": "Data: data/proposal_rows.h5ad (AnnData) holds the spots of the {unit}s available to you: X has every catalog variable (var['view'] gives its view), obs['response'] is the target, obs['patient'] is the {unit}, obs['x'] and obs['y'] are spot coordinates, obsm['competitor'] holds the comparison-model columns (names in uns['competitor_columns']). Use standard analysis (scanpy, statsmodels, scikit-learn, scipy; {unit}-grouped cross-validation is advisable) and the literature tools you have.",
+    "A1_knowledge_guided": "Data: data/proposal_rows.h5ad (AnnData) as described: X = catalog variables, obs['response'] = target, obs['patient'], obs['x'], obs['y'], obsm['competitor']. Standard analysis libraries and the literature tools you have are available.\n\nMORPHEUS tools (call them as Python functions; each returns a dict): bank_views(target), propose(target, family, proposer='all', top=16) for data-driven hypotheses, validate(hypothesis) to test a hypothesis with the registered statistics by cross-fitting over held-out {unit}s from your data (returns the mean gain and how many of 5 inner folds pass), characterise(hypothesis), ledger_lookup(hypothesis), novelty_check(hypothesis). A hypothesis is a dict {{'variables': [...], 'feature_form': 'single'|'product'|'linear_subspace'|'flexible', 'weights': [...], 'direction': 'positive'|'negative'|'nonmonotone'|'unspecified'}}.",
+    "A1_blind": "Data: data/proposal_rows.h5ad (AnnData) as described: X = catalog variables, obs['response'] = target, obs['patient'], obs['x'], obs['y'], obsm['competitor']. Standard analysis libraries are available.\n\nMORPHEUS tools (call them as Python functions; each returns a dict): bank_views(target), propose(target, family, proposer='all', top=16), validate(hypothesis) (cross-fitting over held-out {unit}s from your data), characterise(hypothesis), ledger_lookup(hypothesis), novelty_check(hypothesis). A hypothesis is a dict {{'variables': [...], 'feature_form': 'single'|'product'|'linear_subspace'|'flexible', 'weights': [...], 'direction': ...}}. Blind mode: no literature tools; novelty_check works only after a hypothesis is submitted.",
+    "A2_knowledge_guided": "Data: data/proposal_rows.h5ad (AnnData) as described: X = catalog variables, obs['response'] = target, obs['patient'], obs['x'], obs['y'], obsm['competitor']. Standard analysis libraries and the literature tools you have are available.\n\nMORPHEUS tools (call them as Python functions; each returns a dict): discover_relationships(dataset='{dataset}', target, relation_type='open'|'molecular'|'morphology'|'spatial', top=16) runs MORPHEUS's trained scientific-search model on your data and returns ranked variable sets worth testing, each with its fitted response surface on your data (relation shape left free: feature_form 'flexible'); bank_views(target), propose(target, family, proposer='all', top=16), validate(hypothesis) to test a hypothesis with the registered statistics by cross-fitting over held-out {unit}s from your data (returns the mean gain and how many of 5 inner folds pass), characterise(hypothesis), ledger_lookup(hypothesis), novelty_check(hypothesis). A hypothesis is a dict {{'variables': [...], 'feature_form': 'single'|'product'|'linear_subspace'|'flexible', 'weights': [...], 'direction': 'positive'|'negative'|'nonmonotone'|'unspecified'}}.",
+    "A2_blind": "Data: data/proposal_rows.h5ad (AnnData) as described. Standard analysis libraries are available.\n\nMORPHEUS tools: discover_relationships(dataset='{dataset}', target, relation_type='open'|'molecular'|'morphology'|'spatial', top=16) (trained scientific-search model; ranked variable sets with support-data response surfaces), bank_views(target), propose(target, family, proposer='all', top=16), validate(hypothesis), characterise(hypothesis), ledger_lookup(hypothesis), novelty_check(hypothesis). A hypothesis is a dict {{'variables': [...], 'feature_form': 'single'|'product'|'linear_subspace'|'flexible', 'weights': [...], 'direction': ...}}. Blind mode: no literature tools; novelty_check works only after a hypothesis is submitted.",
+    "submission": "Assert each relation by calling submit_relation(variables=[...], feature_form=..., direction=..., justification=..., source=...) inside an <execute> block and printing its return value (feature_form 'single', 'product', 'linear_subspace' or 'flexible'). Only submitted relations count, and they cannot be withdrawn. When you are done, give a <solution> listing the submitted claim hashes with one sentence per relation."
+  },
+  "target_definitions": {
+    "controlled_heldout": {
+      "template": "{target}",
+      "targets": {}
+    },
+    "historical": {
+      "template": "{target}",
+      "targets": {}
+    },
+    "biology": {
+      "template": "{target}",
+      "targets": {}
+    }
+  },
+  "scripted_policies": {
+    "claims_per_arm": 5,
+    "A1_validate_top": 4,
+    "A1_min_passing_inner_folds": 3,
+    "A0_claims": {},
+    "A0_policy": "with data: the 5 catalog variables with the largest |correlation| with the target's residual after least squares on the comparison-model columns (support rows), submitted as single relations",
+    "A1_policy": "propose(all, top 8); validate the top 4; submit those passing the registered rule in >= 3 of 5 inner folds; characterise and novelty_check each submitted one",
+    "A2_policy": "probe the contract (a wrong dataset id must be refused); discover_relationships(open, top 8); validate the top 4 as flexible relations; submit those passing >= 3 of 5 inner folds (source morpheus_discover); the remaining claim budget follows the A1 policy"
+  },
+  "synthetic_dry_run": {
+    "command": "PYTHONPATH=$PWD:$HOME/q_pylib MORPHEUS_LEARNED_CHECKPOINT=stub:marginal_screen ~/morpheus_venv/bin/python -m dbench.agent_study.harness --protocol dbench/protocols/agent_study_v02.json --task-id C1 --task-id H1 --task-id B2 --synthetic 0 --scripted --offline-novelty --arm A0 --arm A1 --arm A2 --score-n-null 19 --validate-n-null 19 --out-root runs/development/sprint_v06/agent_study_v02_dryrun",
+    "n_patients": 12,
+    "episode": "morpheus.tier2.substrates.hest_multi.synthetic_study_episode(seed, n_patients=12): planted target gene:G0 = tanh(G1*G2) + 0.8*nbr6(G3) + noise",
+    "overrides": {
+      "controlled_heldout": {
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ]
+      },
+      "historical": {
+        "answer": {
+          "finding": "synthetic: nbr6(G3) is planted",
+          "proxy_genes": [
+            "G3"
+          ],
+          "transforms": [
+            "nbr6"
+          ],
+          "sign": 1
+        },
+        "candidate_views": [
+          "raw_genes",
+          "programmes"
+        ],
+        "historical_protocol": null,
+        "historical_task_id": null
+      },
+      "biology": {}
+    },
+    "key": "never touched: launch.sh --scripted strips the key variables and never reads the key file"
+  },
+  "cost_model": {
+    "prices_usd_per_mtok": {
+      "input": 2.0,
+      "output": 10.0,
+      "cache_read": 0.2,
+      "cache_write": 2.5
+    },
+    "estimate_full_v02": "6 tasks x 3 arms (knowledge-guided) = 18 runs at ~$1-2 each with caching (~$20-40); the blind modes of A1/A2 add 12 runs"
+  },
+  "revision_log": {
+    "rev 5": "2026-10-15 initial v02 draft",
+    "rev 6": "2026-10-15 coordinator decisions: C2 stays on He 2020 (meta-training key he2020_breast_idc, sprint_partitions_v01 revision 2); historical cutoffs = the day before each paper's date (OpenAlex / Europe PMC ranges include the end date); every target checked against the hest_multi loader's columns, B1 target made resolvable (morph_pc:1)"
+  }
+}

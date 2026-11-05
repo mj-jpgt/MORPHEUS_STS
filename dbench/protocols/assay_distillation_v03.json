@@ -1,0 +1,34 @@
+{
+  "schema": "morpheus_assay_distillation/v3",
+  "protocol_id": "assay-distillation-v03",
+  "created_utc": "2026-10-21",
+  "governing_plan": ".claude/learned_search_v02.md 'MORPHEUS Downstream' Sections 5, 7, 8; coordinator decision 2026-10-21 after the G18 7b diagnosis",
+  "status": "FROZEN before any blind finding arrives; canonical hash in dbench/protocols/assay_distillation_v03.sha256; assay_distillation_v02 stays on record",
+  "supersedes": {
+    "protocol_id": "assay-distillation-v02",
+    "path": "dbench/protocols/assay_distillation_v02.json",
+    "canonical_sha256": "0aab1eacb4b11c6c8ecc2c42502bc27f7b2b0f14fca275e99baf9450eeeb6e95",
+    "reason": "7b(ii) on G18: a state locked with per-patient intercepts has zero between-patient variance by construction (share 0.000), so a patient-level bulk proxy and the 7a success rule can never be met for any such finding whatever the student; the fix is in the protocol (which state each claim uses), not in the analysis"
+  },
+  "state_definitions": {
+    "rule": "every finding carries two state definitions, both frozen at the characterisation lock and recorded in the state card field state_definitions with their canonical hashes (dbench.downstream.locks.StateCard.set_state_definitions)",
+    "a_within_patient": {
+      "definition": "the state as locked in the relation/characterisation (per-patient intercepts: within-patient centring of target, candidates, covariates; for a residual programme, the frozen loading on the covariate-adjusted residual after within-patient centring)",
+      "eligible_for": ["spot-level and slide-level claims", "7b(i) held-out spot Spearman", "within-slide heterogeneity endpoints", "characterisation 1.1-1.7"],
+      "not_eligible_for": ["7a", "7c", "Section 5 patient-level comparisons stated as translation", "Section 8 clinical tests"]
+    },
+    "b_between_patient_inclusive": {
+      "definition": "the same frozen projection without per-patient intercepts (relation: f_S applied to support-standardised, not within-centred, candidates; residual programme: the frozen loading on the covariate-adjusted residual with a single intercept)",
+      "eligible_for": ["7a bulk translation and its success rule", "7c bulk-anchored detector", "Section 8 clinical use"],
+      "card_enforcement": "a distillation 7a result or a clinical result must carry state_definition_hash equal to the hash of (b); a result computed on (a) is rejected by the card writer"
+    }
+  },
+  "ladder": {
+    "7a_primary": "unchanged from v02 except that the target is state (b); students trained on spatial patients only; success = best student TCGA pooled Spearman > 0.3 with patient-bootstrap CI above the permuted-target null q95 and within-site-centred Spearman above the available STPath / DeepSpot baselines",
+    "7b_diagnosis": "reported, never gated: (i) held-out spot Spearman on state (a) and on state (b), each with the permuted-target null, and the patient-level Spearman with its 2000-draw patient-bootstrap 95% interval beside it; (ii) between-patient variance share of state (b) (the share of (a) is 0 by construction and is not reported as a finding); (iii) slide agreement split by preparation class (TCGA DX FFPE; CPTAC tumor_tissue_collection_frozen_with_oct)",
+    "7c_bulk_anchored": "unchanged from v02, computed against the bulk score of state (b); separate card block; never called spatial-to-bulk transfer"
+  },
+  "small_sample_note": "the discovery cohort has 24 patients: a patient-level Spearman has a very wide interval (for example the G18 state (b) held-out patient Spearman -0.51 carries the bootstrap interval reported beside it and is not interpreted alone); patient-level numbers are always reported with that interval",
+  "deepspot": "unchanged from v02 (launch script dbench/downstream/scripts/deepspot_inference.sh; deferred until the GPU is free after the freeze; kidney model trained on HEST data that includes the discovery cohort)",
+  "gates": "7a success on state (b) is the only declared success rule; 7b and 7c are reported, never gated"
+}

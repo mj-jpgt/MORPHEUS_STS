@@ -1,0 +1,47 @@
+{
+  "schema": "morpheus-vnext-abcd-v1",
+  "status": "pending_object_admission",
+  "purpose": "Matched diagnostic comparison of open-object vocabulary, search, and claim-specific confirmation.",
+  "shared_contract": {
+    "unit_of_independence": "patient",
+    "support_query_split": "patient_disjoint",
+    "candidate_generation": "support_only",
+    "support_relation_fits": 256,
+    "heldout_relation_fits": 16,
+    "max_operands": 4,
+    "fdr_scope": "all hypotheses proposed by an arm within an evaluation family",
+    "forbidden": ["query_rows_in_candidate_generation", "query_outcomes_in_training", "altering_candidate_definition_after_query"]
+  },
+  "arms": {
+    "A_current": {
+      "vocabulary": "frozen pre-vNext measurement bank",
+      "search": "frozen current learned search",
+      "confirmation": "legacy relation stack",
+      "role": "historical baseline; never overwritten"
+    },
+    "B_expanded_current": {
+      "vocabulary": "A plus only support-fitted, admitted vNext objects",
+      "search": "same frozen current learned search architecture retrained only on meta-training episodes with expanded input grammar",
+      "confirmation": "legacy relation stack",
+      "interpretation": "representation-vocabulary effect"
+    },
+    "C_expanded_family": {
+      "vocabulary": "same as B",
+      "search": "same as B",
+      "confirmation": "claim-specific molecular, morphology, spatial, higher-order, and contextual validators",
+      "interpretation": "evaluation/claim-specific confirmation effect"
+    },
+    "D_expanded_classical": {
+      "vocabulary": "same as B/C",
+      "search": "budget-matched classical support search",
+      "confirmation": "same as C",
+      "interpretation": "learned-search versus classical-search effect"
+    }
+  },
+  "advance_gate": {
+    "molecular": "per-object patient-held-out aligned loading stability >= 0.70 in >=60% folds and technical sensitivity <=0.35",
+    "morphology": "uses meta-frozen dictionary; no individual centre is a discovery without independent molecular correspondence",
+    "contextual": "support-fitted, query-projected component with technical sensitivity <=0.35 and block-null spatial coherence p<=0.05 in >=80% folds",
+    "failure_action": "exclude failing family/object from B-D vocabulary, retain receipt, do not tune on query folds"
+  }
+}

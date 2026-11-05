@@ -1,0 +1,38 @@
+{
+  "schema": "morpheus_clinical_prespec/v1",
+  "status": "TEMPLATE 2026-10-15 (copy, fill every <...> field, then freeze with dbench.translational.write_survival_spec BEFORE any outcome is loaded; the frozen record's sha256 is the registration)",
+  "purpose": "ajas.md 'Clinical claims': one pre-specified clinically relevant endpoint for the strongest H&E-distilled or directly measurable discovery; the score counts clinically only if it adds information beyond stage, grade and the other essential clinicopathological variables",
+  "endpoint": {
+    "name": "<overall_survival | progression_free_survival | recurrence | treatment_response>",
+    "time_column": "<days to event or censoring>",
+    "event_column": "<1 = event, 0 = censored>",
+    "definition": "<exact clinical definition and source table>",
+    "preference_order": ["treatment_response (if available)", "progression / recurrence", "overall survival", "an established grade/stage phenotype"]
+  },
+  "cohort": {
+    "name": "<e.g. cptac_ccrcc | tcga_kirc>",
+    "source": "<clinical table path + sha256>",
+    "unit": "patient",
+    "inclusion": "<e.g. primary tumour, one slide per patient, finite score and covariates, time > 0>",
+    "score_source": "<H&E student slide score (dbench/scripts/he_student.py output path + sha256) or measured score>"
+  },
+  "covariates": ["stage", "grade", "age", "sex"],
+  "covariate_coding": {
+    "stage": "ordinal I-IV as numeric (missing -> patient excluded, count reported)",
+    "grade": "ordinal 1-4 as numeric; where the cohort has no grade it is listed under covariates_unavailable, never imputed",
+    "age": "years at diagnosis, continuous",
+    "sex": "binary (female = 1)"
+  },
+  "model": "cox_tertiles",
+  "model_definition": "dbench.translational.fit_cox_tertiles: Cox proportional hazards (statsmodels PHReg, Efron ties), covariates alone vs covariates + score tertile dummies (low = reference); tertile cuts from the cohort's own score distribution",
+  "primary_metric": "incremental_C_and_LRT",
+  "primary_metric_definition": "likelihood-ratio test of the two tertile terms (chi2, df 2) and the incremental Harrell C (covariates + tertiles minus covariates) with a percentile bootstrap interval (both models refit per resample, n_boot 200, seed fixed below); calibration of the full model reported beside it",
+  "direction": "<higher score -> higher hazard | higher score -> lower hazard> (stated before fitting; a significant effect in the other direction is reported as such, not as support)",
+  "frozen_candidates_sha256": "<sha256 of the frozen list of scores entering the test (one per discovery; the family size enters the BH adjustment)>",
+  "multiplicity": "BH across the frozen candidates (run_predeclared_survival's bh_q_family)",
+  "decision_rule": "a stronger clinical claim only if the LRT p (BH q across the frozen family) <= 0.05 AND the incremental-C bootstrap interval excludes 0, in the stated direction; otherwise the biological / translational result stands and no further endpoint is tried",
+  "n_boot": 200,
+  "seed": 20261015,
+  "events_per_parameter_floor": 10,
+  "not_allowed": ["choosing the endpoint after looking at outcomes", "re-cutting tertiles", "adding or dropping covariates after fitting", "cycling through endpoints"]
+}

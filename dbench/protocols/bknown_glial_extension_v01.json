@@ -1,0 +1,11 @@
+{
+ "schema": "morpheus_baseline_extension/v1",
+ "id": "bknown_glial_extension_v01",
+ "status": "DECLARED post hoc and hashed before application (coordinator 2026-10-26); a nuisance alternative (Delta0) tested on saved rows, reported beside the registered B_known, never replacing it",
+ "cohorts": ["ependymoma_pfa", "gse237183_glioma (when run)"],
+ "reason": "CellViT (PanNuke) has no glial class, so glial abundance is absent from the B_known composition block in brain cohorts",
+ "proxy": "own-spot mean log1p-CPM of GFAP, AQP4, S100B, NDRG2, GJA1, CST3, NTRK2 (genes present in the panel), added to the B_known composition block",
+ "overlap_rule": "for a row whose variables contain any proxy gene (any spatial version), the proxy is computed without those genes",
+ "test": "saved ependymoma passing rows (the programme-level objects and all 34 morphology-target objects of supplementary pooling v2, best row each) re-scored without refitting the search: pooled leave-one-patient-out gain of the relation family (v03_rff) over depth + registered B_known covariates (+ the proxy), patient-bootstrap 95% CI over the per-patient LOPO gains; an object keeps a B_known-level pass when the B_known+glial gain CI lower bound is > 0",
+ "reported": "per object: LOPO gain over B_known and over B_known+glial with CIs, keep/lose"
+}

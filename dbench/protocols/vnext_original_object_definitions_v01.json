@@ -1,0 +1,26 @@
+[
+  {
+    "object_id": "S08",
+    "operands": ["s08_lung_molecular_state", "multiscale_he_morphology"],
+    "operator": "boundary",
+    "source": "original-paper relation: organisation beyond abundance"
+  },
+  {
+    "object_id": "G18",
+    "operands": ["g18_complement_antibody_vs_emt_state", "connective_fraction"],
+    "operator": "neighbor6",
+    "source": "original-paper relation: state versus six-neighbour connective fraction"
+  },
+  {
+    "object_id": "T03",
+    "operands": ["t03_locked_121_gene_score", "t03_tissue_membership"],
+    "operator": "own",
+    "source": "original-paper relation: locked gene score versus frozen tissue state"
+  },
+  {
+    "object_id": "G03",
+    "operands": ["g03_ciliated_ependymal_pole", "g03_mesenchymal_pole"],
+    "operator": "contrast",
+    "source": "original-paper relation: signed ciliated/ependymal versus mesenchymal axis"
+  }
+]

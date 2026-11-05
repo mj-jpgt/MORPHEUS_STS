@@ -1,0 +1,52 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "renal-spatial-v01-20260925",
+  "release": {
+    "name": "spatial-morpheus-v0.1",
+    "contract": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/contract.json",
+      "sha256": "26bf6b052a4fe71c67f76f9ab6a2b0ac28889a1311905926020d6efd4ba98c3c"
+    },
+    "sealed_evidence": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/sealed/hest_panel.json",
+      "sha256": "ae402d8b13c56f0bce27a73f66ed8903c9020731132c4430910fba6fa96ec72a"
+    }
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "patient_unit": true,
+    "literature_blind": true,
+    "outer_split": "five grouped patient folds when >=15 patients; largest feasible grouped split for 11-14",
+    "advance_rule": "patient-held-out recurrence, incremental gain, candidate-appropriate null survival, family-level multiplicity, and declared competing-explanation review"
+  },
+  "cohorts": [
+    {
+      "id": "hest_ccrcc_discovery",
+      "role": "fresh measured-ST plus morphology discovery",
+      "gates": [
+        {"id": "hest_ccrcc_archive", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc", "required": true},
+        {"id": "hest_ccrcc_patient_and_provenance_manifest", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc/PROSPECTIVE_PATIENT_PROVENANCE.json", "required": true}
+      ]
+    },
+    {
+      "id": "cptac_ccrcc_external",
+      "role": "locked RNA-protein-H&E external and orthogonal validation",
+      "gates": [
+        {"id": "cptac_molecular_tables", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/proteomics__umich.parquet", "required": true},
+        {"id": "cptac_patient_mapping", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/cptac_ccrcc_patient_mapping.json", "required": true}
+      ]
+    }
+  ],
+  "translation": {
+    "cptac": "RNA-protein-H&E triangle only",
+    "tcga_kirc": "predeclared prognosis and H&E-readout analysis after state lock",
+    "treatment_claim": "blocked pending raw patient-level randomized JAVELIN or CheckMate data",
+    "forbidden": ["derived JAVELIN contrast tables as patient-level treatment evidence", "outcome-guided state selection"]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "legacy_phase2_candidates_as_prospective_candidates": false,
+    "candidate_redefinition_after_external": false
+  },
+  "ledger": {"filename": "renal_spatial_v01_ledger.jsonl"}
+}

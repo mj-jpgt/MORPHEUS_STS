@@ -1,0 +1,71 @@
+{
+ "schema": "morpheus_component_experiments/v1",
+ "id": "E1_E5_v01",
+ "source": "METHOD_BENCHMARK_SPEC.md Addendum (owner 2026-10-27) with coordinator annotations",
+ "common": {
+  "studies": "confirmed test studies; patients, targets, splits and labels exactly as Table 1 (spec 2.1/2.2); label cache shared",
+  "relation_family": "v03_rff, B_known primary",
+  "budget": "64 fitted sets per (study,target,split)",
+  "confirmed_relation": "a beam pick whose binary label (spec 2.2.2, RFF family) is 1",
+  "null_pass_rate": "share of the beam's picks passing the label rule when the same method is run on patient-permuted targets (core.null_task kind=patient, 5 draws per split); reported beside every confirmed count",
+  "seconds": "wall-clock per (study,target,split) on the shared GPU, excluding label computation",
+  "statistics": "hierarchical bootstrap per spec 5.2; paired differences against the learned beam"
+ },
+ "E1": {
+  "row": "Table 1 row 'adopted method: learned beam K=64 vs exhaustive support-fit scoring of the same pool'",
+  "metrics": [
+   "AP singles",
+   "AP pairs",
+   "paired bootstrap difference"
+  ],
+  "pool": "spec 2.1 pool (singles + 2,000 pairs)",
+  "beam_scoring": "beam picks are scored by exact support gain; unpicked pool members receive the score of the lowest picked set minus rank order (beam score = support-fit ordering restricted to the 64 fitted sets, others ranked below, ties random)"
+ },
+ "E2": {
+  "scores": {
+   "A": "pair joint support gain over B_known",
+   "B": "pair gain over the best proper-subset decomposition (G_HO, support-chosen decomposition, B_decomp)"
+  },
+  "metrics": [
+   "pair AP",
+   "null pass rate among top 20 pairs",
+   "planted pure-interaction recovery@k, k in {1,5,10}"
+  ],
+  "data": "test studies (labels as Table 1; B_decomp label as supplementary label) and controlled pure-interaction worlds from dbench/benchmark/generators.py (residualised interactions, marginals ~ 0), effect sizes 0.5/1/2/5 %"
+ },
+ "E3": {
+  "pools": {
+   "pairs": [
+    500,
+    2000,
+    8000
+   ],
+   "triples": 2000
+  },
+  "beams": [
+   "learned beam (release checkpoint 13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446)",
+   "random beam",
+   "marginal-screen beam (candidate sets ranked by the mean of their constituents' single support gains)"
+  ],
+  "exhaustive": "scored wherever feasible (500 and 2,000 pairs; 8,000 pairs and triples if time permits, else reported not run with the estimated seconds)",
+  "metrics": [
+   "confirmed relations found among the 64 picks",
+   "null pass rate of picks",
+   "seconds"
+  ],
+  "pool_construction": "pairs and triples drawn uniformly from the singles of the (study,target,split) pool, seeded by hash(study,target,size); the smaller pools are nested prefixes of the larger"
+ },
+ "E4": {
+  "design": "E3 at 2,000 pairs with the existing patient-shared (row-split) checkpoint runs/development/learned_search_v03/release_rowsplit/frozen.pt (sha256 139b317c...), step 2000, same architecture; no retrain; stated in the table as the pre-existing row-split model",
+  "metrics": "as E3"
+ },
+ "E5": {
+  "design": "E3 at 2,000 pairs on the withheld-organ test studies at transfer level L2 (support from a different organ: kidney_injury); plus the learned predictor's predicted shrinkage (delta output) against realised shrinkage = support gain minus query gain",
+  "metrics": [
+   "E3 metrics",
+   "calibration slope",
+   "Spearman of predicted vs realised shrinkage"
+  ]
+ },
+ "note": "protocol written and hashed before any E run; any later change is a logged amendment"
+}

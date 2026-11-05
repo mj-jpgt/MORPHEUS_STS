@@ -1,0 +1,34 @@
+{
+  "schema": "morpheus-vnext-higher-order-retrieval-v1",
+  "status": "draft_before_execution",
+  "purpose": "Evaluate ranking of nonadditive, multiscale relation programs without using held-out labels in proposal or model scoring.",
+  "development_cache": "runs/development/vnext_phase07/20261030T000001Z/dev24_c234",
+  "unit_of_independence": "patient-disjoint episode",
+  "candidate_bank": {
+    "size": 384,
+    "arity": [2, 3, 4],
+    "construction": "deterministic vocabulary-only stratified sampling; no target values, support association, query rows, truth labels, or literature annotations",
+    "strata": [
+      "cross_modal: at least one molecular and one morphology operand",
+      "spatial_context: at least one own and one non-own spatial transform with distinct base quantities",
+      "conditional_multiscale: three or four operands containing a spatial transform and at least two biological measurement families"
+    ],
+    "legality": "distinct base quantities; max two operands from one source family; all operands named and reportable"
+  },
+  "methods": {
+    "morpheus": "frozen composer scores every candidate program from support inputs only",
+    "ebm": "main-effect importance over exactly the compiled program-feature columns",
+    "gbm": "support-only permutation importance over exactly the compiled program-feature columns",
+    "random": "seeded uniform ranking of the identical program bank"
+  },
+  "hidden_evaluator": {
+    "open_after": "all method scores are serialized",
+    "primary_label": "positive held-out full-program gain beyond known-biology baseline AND positive held-out gain beyond the strongest proper-subset decomposition",
+    "continuous_endpoints": ["B_known gain", "proper-subset decomposition gain"],
+    "stability_requirement": "patient-bootstrap lower confidence bound above zero and nonnegative gain in the prespecified majority of held-out patients",
+    "controls": ["patient-disjoint split", "known-biology baseline", "proper-subset decomposition", "matched spatial null", "candidate-scramble null"]
+  },
+  "metrics": ["AUROC", "average_precision", "precision_at_10", "precision_at_20", "recall_at_20", "exact_program_recall", "constituent_recall", "null_positive_rate"],
+  "inference": "paired bootstrap over episodes, with patient-within-episode resampling for certified labels; no candidate-level independence assumption",
+  "interpretation": "This is a diagnostic evaluation of a frozen model. Its labels never enter current-model training. If it motivates retraining, the untouched historical and blind cohorts remain prohibited from all training, selection, and tuning."
+}

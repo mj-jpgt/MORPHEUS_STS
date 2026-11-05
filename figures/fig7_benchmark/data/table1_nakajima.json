@@ -1,0 +1,6871 @@
+{
+ "prevalence": {
+  "single": {
+   "nakajima_luad_b3": 0.0343471764645909
+  },
+  "pair": {
+   "nakajima_luad_b3": 0.048855
+  }
+ },
+ "rows": {
+  "sel_screen": {
+   "ap_single": {
+    "mean": 0.36522087615011606,
+    "lo": 0.2637004761340271,
+    "hi": 0.4756759748112137,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.36522087615011606
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6375958707157163,
+    "lo": 0.5592249674914606,
+    "hi": 0.7157813776982577,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6375958707157163
+    }
+   },
+   "p5_single": {
+    "mean": 0.3938545688545689,
+    "lo": 0.2868398148148148,
+    "hi": 0.4947911671069566,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3938545688545689
+    }
+   },
+   "p10_single": {
+    "mean": 0.32964500214500214,
+    "lo": 0.22893059692345405,
+    "hi": 0.432043612691639,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.32964500214500214
+    }
+   },
+   "p20_single": {
+    "mean": 0.28329257829257826,
+    "lo": 0.18179367224367224,
+    "hi": 0.3857208172458172,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.28329257829257826
+    }
+   },
+   "p50_single": {
+    "mean": 0.2310812955812956,
+    "lo": 0.14365553350970017,
+    "hi": 0.3248317570546737,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2310812955812956
+    }
+   },
+   "r10_single": {
+    "mean": 0.26650390617477643,
+    "lo": 0.15718595456631562,
+    "hi": 0.39649585473413507,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.26650390617477643
+    }
+   },
+   "r20_single": {
+    "mean": 0.288180042800405,
+    "lo": 0.1782227289386142,
+    "hi": 0.41823846223863204,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.288180042800405
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7192192192192192,
+    "lo": 0.5774484352773827,
+    "hi": 0.849422514619883,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7192192192192192
+    }
+   },
+   "mrr_single": {
+    "mean": 0.6151054415081071,
+    "lo": 0.48819530855384297,
+    "hi": 0.7394457051382886,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6151054415081071
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6698145851972113,
+    "lo": 0.620505438964314,
+    "hi": 0.7241361229383627,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6698145851972113
+    }
+   },
+   "f1_single": {
+    "mean": 0.36647929925511424,
+    "lo": 0.2676609338499995,
+    "hi": 0.4722571439306266,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.36647929925511424
+    }
+   },
+   "rho_single": {
+    "mean": 0.12134112428119477,
+    "lo": 0.10056199980814386,
+    "hi": 0.14256015472289202,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.12134112428119477
+    }
+   },
+   "ap_pair": {
+    "mean": 0.45672418854070734,
+    "lo": 0.35448303685285004,
+    "hi": 0.5651266626001038,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.45672418854070734
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.6976844318344079,
+    "lo": 0.6036332771445406,
+    "hi": 0.7920375439409365,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6976844318344079
+    }
+   },
+   "p5_pair": {
+    "mean": 0.6002201740911419,
+    "lo": 0.4824666832010582,
+    "hi": 0.7121108173154318,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6002201740911419
+    }
+   },
+   "p10_pair": {
+    "mean": 0.4945199692780338,
+    "lo": 0.3867038095238095,
+    "hi": 0.6049299564631596,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4945199692780338
+    }
+   },
+   "p20_pair": {
+    "mean": 0.40136840757808495,
+    "lo": 0.29013844716364884,
+    "hi": 0.5181528552827379,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.40136840757808495
+    }
+   },
+   "p50_pair": {
+    "mean": 0.3278430619559652,
+    "lo": 0.21660308225440716,
+    "hi": 0.4508499682539682,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3278430619559652
+    }
+   },
+   "r10_pair": {
+    "mean": 0.3131715770794068,
+    "lo": 0.178666556539103,
+    "hi": 0.46807315623138035,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3131715770794068
+    }
+   },
+   "r20_pair": {
+    "mean": 0.3347915780574891,
+    "lo": 0.19947377236702327,
+    "hi": 0.4901425893545052,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3347915780574891
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7946748591909881,
+    "lo": 0.6591541477702191,
+    "hi": 0.9128851943076081,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7946748591909881
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.7017987069214277,
+    "lo": 0.5787348366535302,
+    "hi": 0.8196018800475026,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7017987069214277
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6958295133870825,
+    "lo": 0.6467115823874542,
+    "hi": 0.7485109758427637,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6958295133870825
+    }
+   },
+   "f1_pair": {
+    "mean": 0.43378334951197817,
+    "lo": 0.3372854059404659,
+    "hi": 0.5335104838912333,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.43378334951197817
+    }
+   },
+   "rho_pair": {
+    "mean": 0.16153694267581653,
+    "lo": 0.12691896459194463,
+    "hi": 0.19994632667854356,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16153694267581653
+    }
+   }
+  },
+  "sel_screen_joint": {
+   "ap_single": {
+    "mean": 0.36522087615011606,
+    "lo": 0.2637004761340271,
+    "hi": 0.4756759748112137,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.36522087615011606
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6375958707157163,
+    "lo": 0.5592249674914606,
+    "hi": 0.7157813776982577,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6375958707157163
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.3938545688545689,
+    "lo": 0.2868398148148148,
+    "hi": 0.4947911671069566,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3938545688545689
+    }
+   },
+   "p10_single": {
+    "mean": 0.32964500214500214,
+    "lo": 0.22893059692345405,
+    "hi": 0.432043612691639,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.32964500214500214
+    }
+   },
+   "p20_single": {
+    "mean": 0.28329257829257826,
+    "lo": 0.18179367224367224,
+    "hi": 0.3857208172458172,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.28329257829257826
+    }
+   },
+   "p50_single": {
+    "mean": 0.2310812955812956,
+    "lo": 0.14365553350970017,
+    "hi": 0.3248317570546737,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2310812955812956
+    }
+   },
+   "r10_single": {
+    "mean": 0.26650390617477643,
+    "lo": 0.15718595456631562,
+    "hi": 0.39649585473413507,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.26650390617477643
+    }
+   },
+   "r20_single": {
+    "mean": 0.288180042800405,
+    "lo": 0.1782227289386142,
+    "hi": 0.41823846223863204,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.288180042800405
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7192192192192192,
+    "lo": 0.5774484352773827,
+    "hi": 0.849422514619883,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7192192192192192
+    }
+   },
+   "mrr_single": {
+    "mean": 0.6151054415081071,
+    "lo": 0.48819530855384297,
+    "hi": 0.7394457051382886,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6151054415081071
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6698145851972113,
+    "lo": 0.620505438964314,
+    "hi": 0.7241361229383627,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6698145851972113
+    }
+   },
+   "f1_single": {
+    "mean": 0.36647929925511424,
+    "lo": 0.2676609338499995,
+    "hi": 0.4722571439306266,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.36647929925511424
+    }
+   },
+   "rho_single": {
+    "mean": 0.12134112428119477,
+    "lo": 0.10056199980814386,
+    "hi": 0.14256015472289202,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.12134112428119477
+    }
+   },
+   "ap_pair": {
+    "mean": 0.47963026869106185,
+    "lo": 0.37053455901747934,
+    "hi": 0.5947044839079004,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.47963026869106185
+    },
+    "diff_ours_minus": -0.02316633761693528,
+    "diff_lo": -0.03834814006268504,
+    "diff_hi": -0.010138037688110692,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.7099829543864502,
+    "lo": 0.6183899089348153,
+    "hi": 0.8020187250900713,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7099829543864502
+    },
+    "diff_ours_minus": -0.012272108300937454,
+    "diff_lo": -0.05112271091886261,
+    "diff_hi": 0.011884742303513194,
+    "p_one_sided": 0.7145,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.6151305683563748,
+    "lo": 0.4951610257723161,
+    "hi": 0.7284649897593445,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6151305683563748
+    }
+   },
+   "p10_pair": {
+    "mean": 0.5022977470558115,
+    "lo": 0.3916185714285714,
+    "hi": 0.6144569892473116,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5022977470558115
+    }
+   },
+   "p20_pair": {
+    "mean": 0.405629160266257,
+    "lo": 0.29354957917306707,
+    "hi": 0.5244058419738862,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.405629160266257
+    }
+   },
+   "p50_pair": {
+    "mean": 0.33039682539682536,
+    "lo": 0.21854904039572817,
+    "hi": 0.45342335331143946,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33039682539682536
+    }
+   },
+   "r10_pair": {
+    "mean": 0.3187474439249685,
+    "lo": 0.18150518028881996,
+    "hi": 0.47532313271741233,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3187474439249685
+    }
+   },
+   "r20_pair": {
+    "mean": 0.33550493464958864,
+    "lo": 0.19987029480021856,
+    "hi": 0.49231384922286686,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33550493464958864
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7914490527393753,
+    "lo": 0.6571308321308321,
+    "hi": 0.9093002645502644,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7914490527393753
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.7221180760391721,
+    "lo": 0.5992168098027152,
+    "hi": 0.8364837192325685,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7221180760391721
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.7133523009410563,
+    "lo": 0.658767150484641,
+    "hi": 0.7725299489960682,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7133523009410563
+    }
+   },
+   "f1_pair": {
+    "mean": 0.4687107255306242,
+    "lo": 0.36006762085050775,
+    "hi": 0.5807225414565037,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4687107255306242
+    }
+   },
+   "rho_pair": {
+    "mean": 0.14867241121182187,
+    "lo": 0.11266855974251731,
+    "hi": 0.1870792458966799,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.14867241121182187
+    }
+   }
+  },
+  "hybrid_lin_sel": {
+   "ap_single": {
+    "mean": 0.3042809874356629,
+    "lo": 0.21588884828529428,
+    "hi": 0.4068618816382899,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3042809874356629
+    },
+    "diff_ours_minus": 0.06072472882629424,
+    "diff_lo": 0.03547137368201159,
+    "diff_hi": 0.08861584733059708,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6555577192046327,
+    "lo": 0.5805932861760643,
+    "hi": 0.7299340279628784,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6555577192046327
+    },
+    "diff_ours_minus": -0.01809169037314732,
+    "diff_lo": -0.044284149475797306,
+    "diff_hi": 0.014136888937194052,
+    "p_one_sided": 0.8875,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.30530459030459034,
+    "lo": 0.2271953262786596,
+    "hi": 0.3810185810810811,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30530459030459034
+    }
+   },
+   "p10_single": {
+    "mean": 0.25099635349635346,
+    "lo": 0.17768366302661417,
+    "hi": 0.3256373231784415,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25099635349635346
+    }
+   },
+   "p20_single": {
+    "mean": 0.21067245817245817,
+    "lo": 0.14075853085228088,
+    "hi": 0.2846076911027569,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21067245817245817
+    }
+   },
+   "p50_single": {
+    "mean": 0.1758906048906049,
+    "lo": 0.10801961167800453,
+    "hi": 0.24727249034749035,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1758906048906049
+    }
+   },
+   "r10_single": {
+    "mean": 0.2532797571495509,
+    "lo": 0.14133124995903892,
+    "hi": 0.383407690433052,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2532797571495509
+    }
+   },
+   "r20_single": {
+    "mean": 0.2700243124594342,
+    "lo": 0.16109404160144936,
+    "hi": 0.40004513779503864,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2700243124594342
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6786786786786787,
+    "lo": 0.5360566816816816,
+    "hi": 0.8096913580246913,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6786786786786787
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5421204639383796,
+    "lo": 0.42265880573918657,
+    "hi": 0.6595672022379218,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5421204639383796
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6289826964169996,
+    "lo": 0.5903418190929487,
+    "hi": 0.6749954210034548,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6289826964169996
+    }
+   },
+   "f1_single": {
+    "mean": 0.2876256897348094,
+    "lo": 0.21181901910755663,
+    "hi": 0.3770551494072002,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2876256897348094
+    }
+   },
+   "rho_single": {
+    "mean": 0.10208906883483879,
+    "lo": 0.08216315723576723,
+    "hi": 0.12229701319667464,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10208906883483879
+    }
+   },
+   "ap_pair": {
+    "mean": 0.45672418854070734,
+    "lo": 0.35448303685285004,
+    "hi": 0.5651266626001038,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.45672418854070734
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.6976844318344079,
+    "lo": 0.6036332771445406,
+    "hi": 0.7920375439409365,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6976844318344079
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.6002201740911419,
+    "lo": 0.4824666832010582,
+    "hi": 0.7121108173154318,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6002201740911419
+    }
+   },
+   "p10_pair": {
+    "mean": 0.4945199692780338,
+    "lo": 0.3867038095238095,
+    "hi": 0.6049299564631596,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4945199692780338
+    }
+   },
+   "p20_pair": {
+    "mean": 0.40136840757808495,
+    "lo": 0.29013844716364884,
+    "hi": 0.5181528552827379,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.40136840757808495
+    }
+   },
+   "p50_pair": {
+    "mean": 0.3278430619559652,
+    "lo": 0.21660308225440716,
+    "hi": 0.4508499682539682,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3278430619559652
+    }
+   },
+   "r10_pair": {
+    "mean": 0.3131715770794068,
+    "lo": 0.178666556539103,
+    "hi": 0.46807315623138035,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3131715770794068
+    }
+   },
+   "r20_pair": {
+    "mean": 0.3347915780574891,
+    "lo": 0.19947377236702327,
+    "hi": 0.4901425893545052,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3347915780574891
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7946748591909881,
+    "lo": 0.6591541477702191,
+    "hi": 0.9128851943076081,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7946748591909881
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.7017987069214277,
+    "lo": 0.5787348366535302,
+    "hi": 0.8196018800475026,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7017987069214277
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6958295133870825,
+    "lo": 0.6467115823874542,
+    "hi": 0.7485109758427637,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6958295133870825
+    }
+   },
+   "f1_pair": {
+    "mean": 0.43378334951197817,
+    "lo": 0.3372854059404659,
+    "hi": 0.5335104838912333,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.43378334951197817
+    }
+   },
+   "rho_pair": {
+    "mean": 0.16153694267581653,
+    "lo": 0.12691896459194463,
+    "hi": 0.19994632667854356,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16153694267581653
+    }
+   }
+  },
+  "hybrid_lin_joint": {
+   "ap_single": {
+    "mean": 0.3042809874356629,
+    "lo": 0.21588884828529428,
+    "hi": 0.4068618816382899,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3042809874356629
+    },
+    "diff_ours_minus": 0.06072472882629424,
+    "diff_lo": 0.03547137368201159,
+    "diff_hi": 0.08861584733059708,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6555577192046327,
+    "lo": 0.5805932861760643,
+    "hi": 0.7299340279628784,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6555577192046327
+    },
+    "diff_ours_minus": -0.01809169037314732,
+    "diff_lo": -0.044284149475797306,
+    "diff_hi": 0.014136888937194052,
+    "p_one_sided": 0.8875,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.30530459030459034,
+    "lo": 0.2271953262786596,
+    "hi": 0.3810185810810811,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30530459030459034
+    }
+   },
+   "p10_single": {
+    "mean": 0.25099635349635346,
+    "lo": 0.17768366302661417,
+    "hi": 0.3256373231784415,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25099635349635346
+    }
+   },
+   "p20_single": {
+    "mean": 0.21067245817245817,
+    "lo": 0.14075853085228088,
+    "hi": 0.2846076911027569,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21067245817245817
+    }
+   },
+   "p50_single": {
+    "mean": 0.1758906048906049,
+    "lo": 0.10801961167800453,
+    "hi": 0.24727249034749035,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1758906048906049
+    }
+   },
+   "r10_single": {
+    "mean": 0.2532797571495509,
+    "lo": 0.14133124995903892,
+    "hi": 0.383407690433052,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2532797571495509
+    }
+   },
+   "r20_single": {
+    "mean": 0.2700243124594342,
+    "lo": 0.16109404160144936,
+    "hi": 0.40004513779503864,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2700243124594342
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6786786786786787,
+    "lo": 0.5360566816816816,
+    "hi": 0.8096913580246913,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6786786786786787
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5421204639383796,
+    "lo": 0.42265880573918657,
+    "hi": 0.6595672022379218,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5421204639383796
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6289826964169996,
+    "lo": 0.5903418190929487,
+    "hi": 0.6749954210034548,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6289826964169996
+    }
+   },
+   "f1_single": {
+    "mean": 0.2876256897348094,
+    "lo": 0.21181901910755663,
+    "hi": 0.3770551494072002,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2876256897348094
+    }
+   },
+   "rho_single": {
+    "mean": 0.10208906883483879,
+    "lo": 0.08216315723576723,
+    "hi": 0.12229701319667464,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10208906883483879
+    }
+   },
+   "ap_pair": {
+    "mean": 0.47963026869106185,
+    "lo": 0.37053455901747934,
+    "hi": 0.5947044839079004,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.47963026869106185
+    },
+    "diff_ours_minus": -0.02316633761693528,
+    "diff_lo": -0.03834814006268504,
+    "diff_hi": -0.010138037688110692,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.7099829543864502,
+    "lo": 0.6183899089348153,
+    "hi": 0.8020187250900713,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7099829543864502
+    },
+    "diff_ours_minus": -0.012272108300937454,
+    "diff_lo": -0.05112271091886261,
+    "diff_hi": 0.011884742303513194,
+    "p_one_sided": 0.7145,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.6151305683563748,
+    "lo": 0.4951610257723161,
+    "hi": 0.7284649897593445,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6151305683563748
+    }
+   },
+   "p10_pair": {
+    "mean": 0.5022977470558115,
+    "lo": 0.3916185714285714,
+    "hi": 0.6144569892473116,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5022977470558115
+    }
+   },
+   "p20_pair": {
+    "mean": 0.405629160266257,
+    "lo": 0.29354957917306707,
+    "hi": 0.5244058419738862,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.405629160266257
+    }
+   },
+   "p50_pair": {
+    "mean": 0.33039682539682536,
+    "lo": 0.21854904039572817,
+    "hi": 0.45342335331143946,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33039682539682536
+    }
+   },
+   "r10_pair": {
+    "mean": 0.3187474439249685,
+    "lo": 0.18150518028881996,
+    "hi": 0.47532313271741233,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3187474439249685
+    }
+   },
+   "r20_pair": {
+    "mean": 0.33550493464958864,
+    "lo": 0.19987029480021856,
+    "hi": 0.49231384922286686,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33550493464958864
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7914490527393753,
+    "lo": 0.6571308321308321,
+    "hi": 0.9093002645502644,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7914490527393753
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.7221180760391721,
+    "lo": 0.5992168098027152,
+    "hi": 0.8364837192325685,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7221180760391721
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.7133523009410563,
+    "lo": 0.658767150484641,
+    "hi": 0.7725299489960682,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7133523009410563
+    }
+   },
+   "f1_pair": {
+    "mean": 0.4687107255306242,
+    "lo": 0.36006762085050775,
+    "hi": 0.5807225414565037,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4687107255306242
+    }
+   },
+   "rho_pair": {
+    "mean": 0.14867241121182187,
+    "lo": 0.11266855974251731,
+    "hi": 0.1870792458966799,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.14867241121182187
+    }
+   }
+  },
+  "random": {
+   "ap_single": {
+    "mean": 0.042887679815662466,
+    "lo": 0.029187558197716186,
+    "hi": 0.057225970480938415,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.042887679815662466
+    },
+    "diff_ours_minus": 0.3246507107617745,
+    "diff_lo": 0.22047383536915258,
+    "diff_hi": 0.43766247026690813,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5002034764723533,
+    "lo": 0.4934869909888983,
+    "hi": 0.5065718095200974,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5002034764723533
+    },
+    "diff_ours_minus": 0.13842953056012625,
+    "diff_lo": 0.05844194265156532,
+    "diff_hi": 0.21533714259578954,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.0394466966966967,
+    "lo": 0.025059590840840845,
+    "hi": 0.05491471734892788,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0394466966966967
+    }
+   },
+   "p10_single": {
+    "mean": 0.038802338052338056,
+    "lo": 0.024720178809762145,
+    "hi": 0.05389473905723906,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.038802338052338056
+    }
+   },
+   "p20_single": {
+    "mean": 0.038639988202488214,
+    "lo": 0.02464118368838764,
+    "hi": 0.05356779858355378,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.038639988202488214
+    }
+   },
+   "p50_single": {
+    "mean": 0.03882534320034321,
+    "lo": 0.024760994270369277,
+    "hi": 0.05357352418467385,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03882534320034321
+    }
+   },
+   "r10_single": {
+    "mean": 0.008137807769004185,
+    "lo": 0.005749378884923722,
+    "hi": 0.011208850957653702,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.008137807769004185
+    }
+   },
+   "r20_single": {
+    "mean": 0.013661930497392357,
+    "lo": 0.010922641559421332,
+    "hi": 0.016697434096019165,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.013661930497392357
+    }
+   },
+   "hit10_single": {
+    "mean": 0.2531585156585157,
+    "lo": 0.1674003844058991,
+    "hi": 0.34344456018518515,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2531585156585157
+    }
+   },
+   "mrr_single": {
+    "mean": 0.10825176889984861,
+    "lo": 0.07297828809856088,
+    "hi": 0.14457215311677066,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10825176889984861
+    }
+   },
+   "bacc_single": {
+    "mean": 0.500271173265733,
+    "lo": 0.4997521064027001,
+    "hi": 0.5008462273156894,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.500271173265733
+    }
+   },
+   "f1_single": {
+    "mean": 0.038522379239358785,
+    "lo": 0.02467918360098945,
+    "hi": 0.05296843896934219,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.038522379239358785
+    }
+   },
+   "rho_single": {
+    "mean": -0.00023571206043171224,
+    "lo": -0.0013708790107836608,
+    "hi": 0.0009090255341941332,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.00023571206043171224
+    }
+   },
+   "ap_pair": {
+    "mean": 0.0670408353450367,
+    "lo": 0.043890365521794365,
+    "hi": 0.09202386471139354,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0670408353450367
+    },
+    "diff_ours_minus": 0.3926997141417611,
+    "diff_lo": 0.28225327407491085,
+    "diff_hi": 0.5087275952558709,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5032325491217228,
+    "lo": 0.4971082411506892,
+    "hi": 0.5107156415345951,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5032325491217228
+    },
+    "diff_ours_minus": 0.19666410570587312,
+    "diff_lo": 0.09866837379469195,
+    "diff_hi": 0.2902755422920741,
+    "p_one_sided": 0.0005,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.06386687147977473,
+    "lo": 0.04083034703850678,
+    "hi": 0.08900764511150935,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06386687147977473
+    }
+   },
+   "p10_pair": {
+    "mean": 0.06373559907834102,
+    "lo": 0.04001799242424243,
+    "hi": 0.08930002164502165,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06373559907834102
+    }
+   },
+   "p20_pair": {
+    "mean": 0.06342665130568356,
+    "lo": 0.039957153848755415,
+    "hi": 0.08862752739984882,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06342665130568356
+    }
+   },
+   "p50_pair": {
+    "mean": 0.06338737839221711,
+    "lo": 0.0400173318883713,
+    "hi": 0.08827777586206899,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06338737839221711
+    }
+   },
+   "r10_pair": {
+    "mean": 0.004833789732340699,
+    "lo": 0.0038475306300691484,
+    "hi": 0.005920646136038362,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.004833789732340699
+    }
+   },
+   "r20_pair": {
+    "mean": 0.009418656034560845,
+    "lo": 0.007771158191782179,
+    "hi": 0.01111566034614996,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.009418656034560845
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.3525172811059908,
+    "lo": 0.22804811894168123,
+    "hi": 0.4774903067129629,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3525172811059908
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.1494074148253733,
+    "lo": 0.09896836139465663,
+    "hi": 0.20217320134281194,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1494074148253733
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5000770094847387,
+    "lo": 0.49973944876851406,
+    "hi": 0.500486200716002,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5000770094847387
+    }
+   },
+   "f1_pair": {
+    "mean": 0.0635956412959785,
+    "lo": 0.0403882183328968,
+    "hi": 0.08856405216138562,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0635956412959785
+    }
+   },
+   "rho_pair": {
+    "mean": 7.54948166434135e-05,
+    "lo": -0.0006515697951084202,
+    "hi": 0.0008483313866323709,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 7.54948166434135e-05
+    }
+   }
+  },
+  "linear_screen": {
+   "ap_single": {
+    "mean": 0.3042809874356629,
+    "lo": 0.21588884828529428,
+    "hi": 0.4068618816382899,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3042809874356629
+    },
+    "diff_ours_minus": 0.06072472882629424,
+    "diff_lo": 0.03547137368201159,
+    "diff_hi": 0.08861584733059708,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6555577192046327,
+    "lo": 0.5805932861760643,
+    "hi": 0.7299340279628784,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6555577192046327
+    },
+    "diff_ours_minus": -0.01809169037314732,
+    "diff_lo": -0.044284149475797306,
+    "diff_hi": 0.014136888937194052,
+    "p_one_sided": 0.8875,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.30530459030459034,
+    "lo": 0.2271953262786596,
+    "hi": 0.3810185810810811,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30530459030459034
+    }
+   },
+   "p10_single": {
+    "mean": 0.25099635349635346,
+    "lo": 0.17768366302661417,
+    "hi": 0.3256373231784415,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25099635349635346
+    }
+   },
+   "p20_single": {
+    "mean": 0.21067245817245817,
+    "lo": 0.14075853085228088,
+    "hi": 0.2846076911027569,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21067245817245817
+    }
+   },
+   "p50_single": {
+    "mean": 0.1758906048906049,
+    "lo": 0.10801961167800453,
+    "hi": 0.24727249034749035,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1758906048906049
+    }
+   },
+   "r10_single": {
+    "mean": 0.2532797571495509,
+    "lo": 0.14133124995903892,
+    "hi": 0.383407690433052,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2532797571495509
+    }
+   },
+   "r20_single": {
+    "mean": 0.2700243124594342,
+    "lo": 0.16109404160144936,
+    "hi": 0.40004513779503864,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2700243124594342
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6786786786786787,
+    "lo": 0.5360566816816816,
+    "hi": 0.8096913580246913,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6786786786786787
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5421204639383796,
+    "lo": 0.42265880573918657,
+    "hi": 0.6595672022379218,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5421204639383796
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6289826964169996,
+    "lo": 0.5903418190929487,
+    "hi": 0.6749954210034548,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6289826964169996
+    }
+   },
+   "f1_single": {
+    "mean": 0.2876256897348094,
+    "lo": 0.21181901910755663,
+    "hi": 0.3770551494072002,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2876256897348094
+    }
+   },
+   "rho_single": {
+    "mean": 0.10208906883483879,
+    "lo": 0.08216315723576723,
+    "hi": 0.12229701319667464,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10208906883483879
+    }
+   },
+   "ap_pair": {
+    "mean": 0.0771936897584275,
+    "lo": 0.051228639690698616,
+    "hi": 0.1054171060571237,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0771936897584275
+    },
+    "diff_ours_minus": 0.382558896965723,
+    "diff_lo": 0.27206777133942145,
+    "diff_hi": 0.4983112938676377,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5241737307448777,
+    "lo": 0.49201910273472255,
+    "hi": 0.5573647669738142,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5241737307448777
+    },
+    "diff_ours_minus": 0.17549439354404917,
+    "diff_lo": 0.09184181860220413,
+    "diff_hi": 0.2579226727039458,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.1435663082437276,
+    "lo": 0.09208502668308705,
+    "hi": 0.20020618686868688,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1435663082437276
+    }
+   },
+   "p10_pair": {
+    "mean": 0.12161290322580647,
+    "lo": 0.07703075396825397,
+    "hi": 0.16867115384615383,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.12161290322580647
+    }
+   },
+   "p20_pair": {
+    "mean": 0.11168906810035843,
+    "lo": 0.06986098251028805,
+    "hi": 0.15603113425925927,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11168906810035843
+    }
+   },
+   "p50_pair": {
+    "mean": 0.09954019457245264,
+    "lo": 0.06255287581699347,
+    "hi": 0.1392616760361552,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.09954019457245264
+    }
+   },
+   "r10_pair": {
+    "mean": 0.009384593772632305,
+    "lo": 0.004564718794955301,
+    "hi": 0.016106823777512918,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.009384593772632305
+    }
+   },
+   "r20_pair": {
+    "mean": 0.016290681295506117,
+    "lo": 0.010190882303269684,
+    "hi": 0.024301001825002354,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.016290681295506117
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.46344086021505376,
+    "lo": 0.3155402298850575,
+    "hi": 0.6086143695014662,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.46344086021505376
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.2966135623554474,
+    "lo": 0.19839865172204477,
+    "hi": 0.4031316124087169,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2966135623554474
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5092253853639692,
+    "lo": 0.5054025182028905,
+    "hi": 0.5132210474446981,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5092253853639692
+    }
+   },
+   "f1_pair": {
+    "mean": 0.07956413328691064,
+    "lo": 0.05154830851616677,
+    "hi": 0.10877116774413022,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.07956413328691064
+    }
+   },
+   "rho_pair": {
+    "mean": 0.018587436495217248,
+    "lo": 0.012617178105883928,
+    "hi": 0.02535082218561318,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.018587436495217248
+    }
+   }
+  },
+  "nid": {
+   "ap_single": {
+    "mean": 0.30491393596802435,
+    "lo": 0.2128452292877068,
+    "hi": 0.4131266806520276,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30491393596802435
+    },
+    "diff_ours_minus": 0.059951559390848834,
+    "diff_lo": 0.03249031965826271,
+    "diff_hi": 0.08889301493862906,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6810795314332636,
+    "lo": 0.6193830841056431,
+    "hi": 0.7431691553605371,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6810795314332636
+    },
+    "diff_ours_minus": -0.04404689250453813,
+    "diff_lo": -0.12148413959738007,
+    "diff_hi": 0.0216296983603165,
+    "p_one_sided": 0.8805,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.3082475332475333,
+    "lo": 0.23217785642785646,
+    "hi": 0.3774989528218694,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3082475332475333
+    }
+   },
+   "p10_single": {
+    "mean": 0.25917202917202914,
+    "lo": 0.1838102614977615,
+    "hi": 0.3349041353383458,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25917202917202914
+    }
+   },
+   "p20_single": {
+    "mean": 0.22107786357786355,
+    "lo": 0.14811446267696268,
+    "hi": 0.29477809873949573,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.22107786357786355
+    }
+   },
+   "p50_single": {
+    "mean": 0.16992664092664095,
+    "lo": 0.10817102316602316,
+    "hi": 0.23560131578947358,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16992664092664095
+    }
+   },
+   "r10_single": {
+    "mean": 0.2546982066440203,
+    "lo": 0.14320077339695464,
+    "hi": 0.38477684271166446,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2546982066440203
+    }
+   },
+   "r20_single": {
+    "mean": 0.2856336193963169,
+    "lo": 0.17536564768028284,
+    "hi": 0.41074291110063843,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2856336193963169
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6921921921921922,
+    "lo": 0.5482431773879142,
+    "hi": 0.8271011396011395,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6921921921921922
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5592000115025215,
+    "lo": 0.4385020190893454,
+    "hi": 0.6753523939504614,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5592000115025215
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6329271905907671,
+    "lo": 0.5900964861479573,
+    "hi": 0.6831611064358638,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6329271905907671
+    }
+   },
+   "f1_single": {
+    "mean": 0.2972014507896068,
+    "lo": 0.21351569844228652,
+    "hi": 0.39497598181678345,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2972014507896068
+    }
+   },
+   "rho_single": {
+    "mean": 0.0147722149387574,
+    "lo": -0.0047118724617218315,
+    "hi": 0.03433391525263866,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0147722149387574
+    }
+   },
+   "ap_pair": {
+    "mean": 0.17892793833322088,
+    "lo": 0.14358106081050326,
+    "hi": 0.21607509996596713,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.17892793833322088
+    },
+    "diff_ours_minus": 0.2799484605894198,
+    "diff_lo": 0.19637591359277298,
+    "diff_hi": 0.3669526503424873,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.6885116879296024,
+    "lo": 0.62654969178939,
+    "hi": 0.7529181106592912,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6885116879296024
+    },
+    "diff_ours_minus": 0.00962941008849435,
+    "diff_lo": -0.07020317574403975,
+    "diff_hi": 0.07922046884117154,
+    "p_one_sided": 0.3755,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.3156272401433692,
+    "lo": 0.23371553819444443,
+    "hi": 0.4030143625192011,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3156272401433692
+    }
+   },
+   "p10_pair": {
+    "mean": 0.279905273937532,
+    "lo": 0.20352475434618292,
+    "hi": 0.35818888888888883,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.279905273937532
+    }
+   },
+   "p20_pair": {
+    "mean": 0.258905529953917,
+    "lo": 0.18269106168509067,
+    "hi": 0.33646641414141404,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.258905529953917
+    }
+   },
+   "p50_pair": {
+    "mean": 0.2177432155657962,
+    "lo": 0.14561203432881772,
+    "hi": 0.293038805579703,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2177432155657962
+    }
+   },
+   "r10_pair": {
+    "mean": 0.1240657222890037,
+    "lo": 0.06787258658406049,
+    "hi": 0.1878333024470124,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1240657222890037
+    }
+   },
+   "r20_pair": {
+    "mean": 0.17676474772336512,
+    "lo": 0.1039684133268907,
+    "hi": 0.2599573341272374,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.17676474772336512
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7672427035330261,
+    "lo": 0.6266199285030103,
+    "hi": 0.8915717046238785,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7672427035330261
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.4879995188413419,
+    "lo": 0.379739098115756,
+    "hi": 0.5993319600543373,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4879995188413419
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5676195126445179,
+    "lo": 0.5509145887253462,
+    "hi": 0.5851688723573454,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5676195126445179
+    }
+   },
+   "f1_pair": {
+    "mean": 0.191025395012159,
+    "lo": 0.15173664547161153,
+    "hi": 0.22910494204037885,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.191025395012159
+    }
+   },
+   "rho_pair": {
+    "mean": 0.035214659448107505,
+    "lo": 0.014311493921958535,
+    "hi": 0.055887243334902456,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.035214659448107505
+    }
+   }
+  },
+  "misty": {
+   "ap_single": {
+    "mean": 0.19881885564964544,
+    "lo": 0.15665659811478214,
+    "hi": 0.24210712901258735,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.19881885564964544
+    },
+    "diff_ours_minus": 0.16795730697873348,
+    "diff_lo": 0.09759105551405103,
+    "diff_hi": 0.24795842208874014,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5659304502293931,
+    "lo": 0.5174480869890966,
+    "hi": 0.6158195849082114,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5659304502293931
+    },
+    "diff_ours_minus": 0.07273719088027644,
+    "diff_lo": -0.03858368593083855,
+    "diff_hi": 0.1838572444011123,
+    "p_one_sided": 0.101,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.3325160875160875,
+    "lo": 0.22684180672268908,
+    "hi": 0.4390815655209453,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3325160875160875
+    }
+   },
+   "p10_single": {
+    "mean": 0.2891108966108966,
+    "lo": 0.1831239731272626,
+    "hi": 0.3932342259842259,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2891108966108966
+    }
+   },
+   "p20_single": {
+    "mean": 0.25853442728442727,
+    "lo": 0.16224248120300752,
+    "hi": 0.3580587998712998,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25853442728442727
+    }
+   },
+   "p50_single": {
+    "mean": 0.20386422136422136,
+    "lo": 0.12180906954887219,
+    "hi": 0.2888770102339181,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20386422136422136
+    }
+   },
+   "r10_single": {
+    "mean": 0.11146415886787463,
+    "lo": 0.07327155709143132,
+    "hi": 0.15568330043440856,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11146415886787463
+    }
+   },
+   "r20_single": {
+    "mean": 0.16152306026420815,
+    "lo": 0.1111331564147427,
+    "hi": 0.2153649642020186,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16152306026420815
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6481767481767481,
+    "lo": 0.52012715855573,
+    "hi": 0.7715680272108844,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6481767481767481
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5685554425467526,
+    "lo": 0.45213002727636764,
+    "hi": 0.6829744108553513,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5685554425467526
+    }
+   },
+   "bacc_single": {
+    "mean": 0.58704522346935,
+    "lo": 0.5674945860211804,
+    "hi": 0.6074582473655119,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.58704522346935
+    }
+   },
+   "f1_single": {
+    "mean": 0.20416449617451063,
+    "lo": 0.16112220863354815,
+    "hi": 0.2478069560415975,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20416449617451063
+    }
+   },
+   "rho_single": {
+    "mean": 0.03117697189809942,
+    "lo": 0.004158754691085619,
+    "hi": 0.05656492043002216,
+    "n_targets": {
+     "nakajima_luad_b3": 37
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03117697189809942
+    }
+   },
+   "ap_pair": {
+    "mean": 0.16675439313951354,
+    "lo": 0.11989332373807181,
+    "hi": 0.21362841496391205,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16675439313951354
+    },
+    "diff_ours_minus": 0.2930562455941051,
+    "diff_lo": 0.19113320691621127,
+    "diff_hi": 0.40261301161147106,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.532153921038899,
+    "lo": 0.48030874948803587,
+    "hi": 0.5823781450708554,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.532153921038899
+    },
+    "diff_ours_minus": 0.16866078808876178,
+    "diff_lo": 0.025871048390994522,
+    "diff_hi": 0.3034834597905264,
+    "p_one_sided": 0.011,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_pair": {
+    "mean": 0.35850998463901695,
+    "lo": 0.24064866018091827,
+    "hi": 0.48353702791461417,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.35850998463901695
+    }
+   },
+   "p10_pair": {
+    "mean": 0.33366231438812083,
+    "lo": 0.21667962184873948,
+    "hi": 0.45755330951525724,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33366231438812083
+    }
+   },
+   "p20_pair": {
+    "mean": 0.3055965181771633,
+    "lo": 0.19127119135624682,
+    "hi": 0.4261724429563492,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3055965181771633
+    }
+   },
+   "p50_pair": {
+    "mean": 0.2666561699948797,
+    "lo": 0.16346794061302683,
+    "hi": 0.37883314093314086,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2666561699948797
+    }
+   },
+   "r10_pair": {
+    "mean": 0.06219877751796052,
+    "lo": 0.033879242439353995,
+    "hi": 0.09684582533436673,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06219877751796052
+    }
+   },
+   "r20_pair": {
+    "mean": 0.08830475977965216,
+    "lo": 0.05583429975016787,
+    "hi": 0.12383957467879042,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08830475977965216
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6502048131080389,
+    "lo": 0.5057938311688311,
+    "hi": 0.7932594677363697,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6502048131080389
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.5119224673016058,
+    "lo": 0.3819808451939585,
+    "hi": 0.6446412405203148,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5119224673016058
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5573131596569753,
+    "lo": 0.5404214201146361,
+    "hi": 0.574520701318989,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5573131596569753
+    }
+   },
+   "f1_pair": {
+    "mean": 0.16727795553857874,
+    "lo": 0.12015265121075151,
+    "hi": 0.21503330212600325,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16727795553857874
+    }
+   },
+   "rho_pair": {
+    "mean": 0.021381257715098575,
+    "lo": 0.004892243905287933,
+    "hi": 0.039104404325729994,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.021381257715098575
+    }
+   }
+  },
+  "knockoffs": {
+   "ap_single": {
+    "mean": 0.2797443713413253,
+    "lo": 0.19898643270723512,
+    "hi": 0.37522308642363916,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2797443713413253
+    },
+    "diff_ours_minus": 0.15081466470436122,
+    "diff_lo": 0.09054444045294707,
+    "diff_hi": 0.22187719051458293,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6661337680526731,
+    "lo": 0.6014701575895753,
+    "hi": 0.7414323966848415,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6661337680526731
+    },
+    "diff_ours_minus": 0.04913717727397062,
+    "diff_lo": 0.0029359158900464375,
+    "diff_hi": 0.10206803154870404,
+    "p_one_sided": 0.019,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 31
+    }
+   },
+   "p5_single": {
+    "mean": 0.3172043010752688,
+    "lo": 0.24606283422459896,
+    "hi": 0.3952422003284072,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3172043010752688
+    }
+   },
+   "p10_single": {
+    "mean": 0.27580645161290324,
+    "lo": 0.20110714285714285,
+    "hi": 0.36075685947348907,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.27580645161290324
+    }
+   },
+   "p20_single": {
+    "mean": 0.23790322580645162,
+    "lo": 0.16023511904761906,
+    "hi": 0.32248411534701854,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.23790322580645162
+    }
+   },
+   "p50_single": {
+    "mean": 0.18959139784946238,
+    "lo": 0.12105500000000002,
+    "hi": 0.26526430976430954,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.18959139784946238
+    }
+   },
+   "r10_single": {
+    "mean": 0.2939373785705985,
+    "lo": 0.1652877170879897,
+    "hi": 0.4446364759179337,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2939373785705985
+    }
+   },
+   "r20_single": {
+    "mean": 0.30786292285318917,
+    "lo": 0.1834704237638473,
+    "hi": 0.45370650850590155,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30786292285318917
+    }
+   },
+   "hit10_single": {
+    "mean": 0.8064516129032258,
+    "lo": 0.6767676767676768,
+    "hi": 0.9222222222222222,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.8064516129032258
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5446072886287784,
+    "lo": 0.43384743366177925,
+    "hi": 0.6600635877580139,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5446072886287784
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6101051987584758,
+    "lo": 0.5741242300739666,
+    "hi": 0.6544938527500264,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6101051987584758
+    }
+   },
+   "f1_single": {
+    "mean": 0.2578374617645158,
+    "lo": 0.1843563424255061,
+    "hi": 0.3441164471522664,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2578374617645158
+    }
+   },
+   "rho_single": {
+    "mean": 0.02567010985467208,
+    "lo": 0.015463133059463029,
+    "hi": 0.0367765795474541,
+    "n_targets": {
+     "nakajima_luad_b3": 31
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.02567010985467208
+    }
+   },
+   "ap_pair": {
+    "mean": 0.09380297282426794,
+    "lo": 0.06290771404147695,
+    "hi": 0.12622664637202075,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.09380297282426794
+    },
+    "diff_ours_minus": 0.373603163980585,
+    "diff_lo": 0.2645304946482361,
+    "diff_hi": 0.4834486392824976,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5096783020536968,
+    "lo": 0.49096265927548133,
+    "hi": 0.5318866269243194,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5096783020536968
+    },
+    "diff_ours_minus": 0.2054591639059255,
+    "diff_lo": 0.12031625790029844,
+    "diff_hi": 0.2873461757061883,
+    "p_one_sided": 0.0005,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "p5_pair": {
+    "mean": 0.20804597701149424,
+    "lo": 0.12666666666666665,
+    "hi": 0.29909722222222207,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20804597701149424
+    }
+   },
+   "p10_pair": {
+    "mean": 0.20344827586206898,
+    "lo": 0.12873338721264369,
+    "hi": 0.2889043209876543,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20344827586206898
+    }
+   },
+   "p20_pair": {
+    "mean": 0.19752873563218393,
+    "lo": 0.12110344827586207,
+    "hi": 0.2824914197530863,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.19752873563218393
+    }
+   },
+   "p50_pair": {
+    "mean": 0.1395402298850575,
+    "lo": 0.0874432319223986,
+    "hi": 0.19697440476190475,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1395402298850575
+    }
+   },
+   "r10_pair": {
+    "mean": 0.0377564975096957,
+    "lo": 0.013006869103247887,
+    "hi": 0.0801235274533608,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0377564975096957
+    }
+   },
+   "r20_pair": {
+    "mean": 0.050763417288529136,
+    "lo": 0.02370887004659676,
+    "hi": 0.09393562146388122,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.050763417288529136
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.5747126436781609,
+    "lo": 0.41974776500638566,
+    "hi": 0.7246765010351963,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5747126436781609
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.2992406648716277,
+    "lo": 0.2011136542046568,
+    "hi": 0.40880879248884244,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2992406648716277
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5109619547404519,
+    "lo": 0.5060169261538444,
+    "hi": 0.5165298302478696,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5109619547404519
+    }
+   },
+   "f1_pair": {
+    "mean": 0.08959416027464377,
+    "lo": 0.06154486624211911,
+    "hi": 0.11874584337908718,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08959416027464377
+    }
+   },
+   "rho_pair": {
+    "mean": 0.0024261707795916747,
+    "lo": -0.0006177283264675059,
+    "hi": 0.005318017911993969,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0024261707795916747
+    }
+   }
+  },
+  "gbm_shap": {
+   "ap_single": {
+    "mean": 0.3665240596475801,
+    "lo": 0.2567313657804084,
+    "hi": 0.49128158682857753,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3665240596475801
+    },
+    "diff_ours_minus": 0.04467713398348147,
+    "diff_lo": 0.004059530999511277,
+    "diff_hi": 0.08460079684223193,
+    "p_one_sided": 0.0155,
+    "p_holm": 0.0465,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 30
+    }
+   },
+   "auroc_single": {
+    "mean": 0.725789471410049,
+    "lo": 0.6678688231925799,
+    "hi": 0.7890260863669156,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.725789471410049
+    },
+    "diff_ours_minus": -0.019880543941475728,
+    "diff_lo": -0.07236557463929659,
+    "diff_hi": 0.039970409982106755,
+    "p_one_sided": 0.7735,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 30
+    }
+   },
+   "p5_single": {
+    "mean": 0.3911111111111111,
+    "lo": 0.3033306451612904,
+    "hi": 0.4793147656940761,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3911111111111111
+    }
+   },
+   "p10_single": {
+    "mean": 0.3194444444444445,
+    "lo": 0.2382671957671958,
+    "hi": 0.4032430555555555,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3194444444444445
+    }
+   },
+   "p20_single": {
+    "mean": 0.25583333333333336,
+    "lo": 0.18176432291666667,
+    "hi": 0.33204296875,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25583333333333336
+    }
+   },
+   "p50_single": {
+    "mean": 0.183,
+    "lo": 0.12342098214285716,
+    "hi": 0.2455258620689655,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.183
+    }
+   },
+   "r10_single": {
+    "mean": 0.2969264251927013,
+    "lo": 0.16641567206540195,
+    "hi": 0.4530157262355395,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2969264251927013
+    }
+   },
+   "r20_single": {
+    "mean": 0.33512092798880494,
+    "lo": 0.20272955734626125,
+    "hi": 0.4907350149332749,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33512092798880494
+    }
+   },
+   "hit10_single": {
+    "mean": 0.8388888888888888,
+    "lo": 0.7126306165099268,
+    "hi": 0.9540229885057471,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.8388888888888888
+    }
+   },
+   "mrr_single": {
+    "mean": 0.7352678564439422,
+    "lo": 0.612440913991437,
+    "hi": 0.8548962341193191,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7352678564439422
+    }
+   },
+   "bacc_single": {
+    "mean": 0.662089294365589,
+    "lo": 0.6074733791646845,
+    "hi": 0.724730236947143,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.662089294365589
+    }
+   },
+   "f1_single": {
+    "mean": 0.36359462542344617,
+    "lo": 0.2600455289018086,
+    "hi": 0.48339415610052144,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.36359462542344617
+    }
+   },
+   "rho_single": {
+    "mean": 0.10683768298254312,
+    "lo": 0.08419791545037343,
+    "hi": 0.12965487534240175,
+    "n_targets": {
+     "nakajima_luad_b3": 30
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10683768298254312
+    }
+   },
+   "ap_pair": {
+    "mean": 0.10431110246911499,
+    "lo": 0.07445202130816532,
+    "hi": 0.13490752073290446,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10431110246911499
+    },
+    "diff_ours_minus": 0.35882874556075417,
+    "diff_lo": 0.2590596285273359,
+    "diff_hi": 0.46099002212183376,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5075959247633588,
+    "lo": 0.491129568458973,
+    "hi": 0.5279899512307283,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5075959247633588
+    },
+    "diff_ours_minus": 0.2072573364924462,
+    "diff_lo": 0.12026626961514515,
+    "diff_hi": 0.2940853718015755,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "p5_pair": {
+    "mean": 0.22827586206896555,
+    "lo": 0.1555448717948718,
+    "hi": 0.3081760752688172,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.22827586206896555
+    }
+   },
+   "p10_pair": {
+    "mean": 0.1631034482758621,
+    "lo": 0.10868444055944057,
+    "hi": 0.22343459595959594,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1631034482758621
+    }
+   },
+   "p20_pair": {
+    "mean": 0.11408045977011495,
+    "lo": 0.07485565476190477,
+    "hi": 0.15535659722222217,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11408045977011495
+    }
+   },
+   "p50_pair": {
+    "mean": 0.08742528735632184,
+    "lo": 0.05658928571428572,
+    "hi": 0.1201551724137931,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08742528735632184
+    }
+   },
+   "r10_pair": {
+    "mean": 0.03708748814015966,
+    "lo": 0.014871236608187108,
+    "hi": 0.06698672336563395,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03708748814015966
+    }
+   },
+   "r20_pair": {
+    "mean": 0.0418792940463414,
+    "lo": 0.019639271046807124,
+    "hi": 0.07183685371256303,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0418792940463414
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6114942528735633,
+    "lo": 0.45333333333333337,
+    "hi": 0.7615476190476188,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6114942528735633
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.44249624265194576,
+    "lo": 0.32680381099887207,
+    "hi": 0.5593150155676739,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.44249624265194576
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5162579090670532,
+    "lo": 0.5050038097194065,
+    "hi": 0.5316023753781608,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5162579090670532
+    }
+   },
+   "f1_pair": {
+    "mean": 0.1013900608938496,
+    "lo": 0.07064282407436104,
+    "hi": 0.13194790873286558,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1013900608938496
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0005641511062091437,
+    "lo": -0.003498598723079181,
+    "hi": 0.002165415944103125,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0005641511062091437
+    }
+   }
+  },
+  "rulefit": {
+   "ap_single": {
+    "mean": 0.3821574167553092,
+    "lo": 0.26336352623597387,
+    "hi": 0.5248737187402998,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3821574167553092
+    },
+    "diff_ours_minus": 0.07633820811828351,
+    "diff_lo": 0.02855200228918928,
+    "diff_hi": 0.12510859077599476,
+    "p_one_sided": 0.001,
+    "p_holm": 0.004,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6967726944044192,
+    "lo": 0.6289479241437125,
+    "hi": 0.772416565296735,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6967726944044192
+    },
+    "diff_ours_minus": 0.026452386363743186,
+    "diff_lo": -0.028521292754121415,
+    "diff_hi": 0.07520057397935452,
+    "p_one_sided": 0.1645,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "p5_single": {
+    "mean": 0.3896551724137931,
+    "lo": 0.3053653922739944,
+    "hi": 0.47531695156695153,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3896551724137931
+    }
+   },
+   "p10_single": {
+    "mean": 0.2798850574712644,
+    "lo": 0.21719086021505374,
+    "hi": 0.3448774509803921,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2798850574712644
+    }
+   },
+   "p20_single": {
+    "mean": 0.2074712643678161,
+    "lo": 0.15241720430107525,
+    "hi": 0.2655309343434344,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2074712643678161
+    }
+   },
+   "p50_single": {
+    "mean": 0.14896551724137932,
+    "lo": 0.10358888888888888,
+    "hi": 0.19818704284221525,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.14896551724137932
+    }
+   },
+   "r10_single": {
+    "mean": 0.3388184942435427,
+    "lo": 0.1967031498992724,
+    "hi": 0.49915393763711974,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3388184942435427
+    }
+   },
+   "r20_single": {
+    "mean": 0.3693716855251,
+    "lo": 0.22696590579673076,
+    "hi": 0.5317924798938427,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3693716855251
+    }
+   },
+   "hit10_single": {
+    "mean": 0.8793103448275862,
+    "lo": 0.7678571428571429,
+    "hi": 0.967741935483871,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.8793103448275862
+    }
+   },
+   "mrr_single": {
+    "mean": 0.7618069324344343,
+    "lo": 0.650661180277035,
+    "hi": 0.8667413307915758,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7618069324344343
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6678530320368249,
+    "lo": 0.604996460890733,
+    "hi": 0.7420692660735831,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6678530320368249
+    }
+   },
+   "f1_single": {
+    "mean": 0.3800469785085802,
+    "lo": 0.2658375429581688,
+    "hi": 0.5183863025461061,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3800469785085802
+    }
+   },
+   "rho_single": {
+    "mean": 0.02052241636410898,
+    "lo": 0.012386982766907438,
+    "hi": 0.028282894458595154,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.02052241636410898
+    }
+   },
+   "ap_pair": {
+    "mean": 0.09296483606655737,
+    "lo": 0.057280607376494444,
+    "hi": 0.13495024938649283,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.09296483606655737
+    },
+    "diff_ours_minus": 0.3908368733095289,
+    "diff_lo": 0.28202657120231717,
+    "diff_hi": 0.5092061285942363,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 28
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5030297708584606,
+    "lo": 0.4885736520216014,
+    "hi": 0.5234326245590253,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5030297708584606
+    },
+    "diff_ours_minus": 0.22995578162145097,
+    "diff_lo": 0.14434251295727835,
+    "diff_hi": 0.309477241076118,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 28
+    }
+   },
+   "p5_pair": {
+    "mean": 0.06761904761904762,
+    "lo": 0.04419753086419753,
+    "hi": 0.0915974512743628,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06761904761904762
+    }
+   },
+   "p10_pair": {
+    "mean": 0.06833333333333333,
+    "lo": 0.044194444444444446,
+    "hi": 0.09255648148148146,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06833333333333333
+    }
+   },
+   "p20_pair": {
+    "mean": 0.06916666666666667,
+    "lo": 0.04399104938271606,
+    "hi": 0.09516696428571428,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06916666666666667
+    }
+   },
+   "p50_pair": {
+    "mean": 0.07126190476190478,
+    "lo": 0.04580809523809524,
+    "hi": 0.09692166666666663,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.07126190476190478
+    }
+   },
+   "r10_pair": {
+    "mean": 0.02189776971521985,
+    "lo": 0.002311733569173185,
+    "hi": 0.06374595932524718,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.02189776971521985
+    }
+   },
+   "r20_pair": {
+    "mean": 0.026982420940137693,
+    "lo": 0.005698615866647908,
+    "hi": 0.0682877738362361,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.026982420940137693
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.4071428571428571,
+    "lo": 0.2793562610229277,
+    "hi": 0.5333585858585858,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4071428571428571
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.20416435232733918,
+    "lo": 0.13001433288358671,
+    "hi": 0.28325413611175393,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20416435232733918
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5085885120696053,
+    "lo": 0.4984361614254654,
+    "hi": 0.529940616030748,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5085885120696053
+    }
+   },
+   "f1_pair": {
+    "mean": 0.08887720934897743,
+    "lo": 0.05291239970687174,
+    "hi": 0.13150629998116187,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08887720934897743
+    }
+   },
+   "rho_pair": {
+    "mean": -0.002641840170038573,
+    "lo": -0.005196292546867987,
+    "hi": -0.000305142247471202,
+    "n_targets": {
+     "nakajima_luad_b3": 28
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.002641840170038573
+    }
+   }
+  },
+  "stability_selection": {
+   "ap_single": {
+    "mean": 0.10072017697002461,
+    "lo": 0.07118527345306266,
+    "hi": 0.1304458917578027,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10072017697002461
+    },
+    "diff_ours_minus": 0.14387668502736983,
+    "diff_lo": 0.08684411013014358,
+    "diff_hi": 0.20388999530024618,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 18
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5322251965131548,
+    "lo": 0.4917790354399231,
+    "hi": 0.591533234072551,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5322251965131548
+    },
+    "diff_ours_minus": 0.07586948184836328,
+    "diff_lo": 0.000400411241281283,
+    "diff_hi": 0.144754514651423,
+    "p_one_sided": 0.0245,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 18
+    }
+   },
+   "p5_single": {
+    "mean": 0.28555555555555556,
+    "lo": 0.19636195286195288,
+    "hi": 0.37334782608695644,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.28555555555555556
+    }
+   },
+   "p10_single": {
+    "mean": 0.26037037037037036,
+    "lo": 0.1786001705029838,
+    "hi": 0.34152847222222216,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.26037037037037036
+    }
+   },
+   "p20_single": {
+    "mean": 0.24472222222222223,
+    "lo": 0.16576064814814814,
+    "hi": 0.3222818627450979,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.24472222222222223
+    }
+   },
+   "p50_single": {
+    "mean": 0.17829629629629629,
+    "lo": 0.12332888888888889,
+    "hi": 0.2338906862745098,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.17829629629629629
+    }
+   },
+   "r10_single": {
+    "mean": 0.01960459713766373,
+    "lo": 0.013896719335493657,
+    "hi": 0.025149038875275333,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.01960459713766373
+    }
+   },
+   "r20_single": {
+    "mean": 0.035165781007977154,
+    "lo": 0.023979167092719997,
+    "hi": 0.04603086753918427,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.035165781007977154
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7277777777777777,
+    "lo": 0.5263060428849903,
+    "hi": 0.9051562499999998,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7277777777777777
+    }
+   },
+   "mrr_single": {
+    "mean": 0.4703711169498279,
+    "lo": 0.32614547756638135,
+    "hi": 0.6033866662736912,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4703711169498279
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5247383196313066,
+    "lo": 0.5147376858266397,
+    "hi": 0.5346980298883134,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5247383196313066
+    }
+   },
+   "f1_single": {
+    "mean": 0.11381727656881832,
+    "lo": 0.07866638456236318,
+    "hi": 0.14914634105238342,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11381727656881832
+    }
+   },
+   "rho_single": {
+    "mean": 0.003690237200811746,
+    "lo": -0.021651184737567376,
+    "hi": 0.028025608657575342,
+    "n_targets": {
+     "nakajima_luad_b3": 18
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.003690237200811746
+    }
+   },
+   "ap_pair": {
+    "mean": 0.12318114704376297,
+    "lo": 0.08808709790096372,
+    "hi": 0.15969933456811464,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.12318114704376297
+    },
+    "diff_ours_minus": 0.1992676252061758,
+    "diff_lo": 0.12354565925292293,
+    "diff_hi": 0.2746724372614469,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 16
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.48692717606716407,
+    "lo": 0.43060568086196643,
+    "hi": 0.5272279500021015,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.48692717606716407
+    },
+    "diff_ours_minus": 0.09959640009880155,
+    "diff_lo": -0.00022744837724451457,
+    "diff_hi": 0.17138316910984527,
+    "p_one_sided": 0.0255,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 16
+    }
+   },
+   "p5_pair": {
+    "mean": 0.21208333333333335,
+    "lo": 0.1441625,
+    "hi": 0.2859325396825396,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21208333333333335
+    }
+   },
+   "p10_pair": {
+    "mean": 0.18041666666666667,
+    "lo": 0.12314561403508771,
+    "hi": 0.2415157342657343,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.18041666666666667
+    }
+   },
+   "p20_pair": {
+    "mean": 0.16270833333333332,
+    "lo": 0.11339704106280193,
+    "hi": 0.21333552631578948,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16270833333333332
+    }
+   },
+   "p50_pair": {
+    "mean": 0.14545833333333336,
+    "lo": 0.10305520833333334,
+    "hi": 0.18904979166666663,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.14545833333333336
+    }
+   },
+   "r10_pair": {
+    "mean": 0.0067135363013303695,
+    "lo": 0.0047448331354102815,
+    "hi": 0.008647564066730895,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0067135363013303695
+    }
+   },
+   "r20_pair": {
+    "mean": 0.012225578647192302,
+    "lo": 0.008963761932624463,
+    "hi": 0.015217766134851658,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.012225578647192302
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.7208333333333333,
+    "lo": 0.5272488038277512,
+    "hi": 0.8941176470588235,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7208333333333333
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.4446392838743704,
+    "lo": 0.30266092032263575,
+    "hi": 0.5967948915710508,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4446392838743704
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5071360435351798,
+    "lo": 0.5036412243558732,
+    "hi": 0.5108557357063772,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5071360435351798
+    }
+   },
+   "f1_pair": {
+    "mean": 0.1229205290404369,
+    "lo": 0.08731454300986712,
+    "hi": 0.15866354077711117,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1229205290404369
+    }
+   },
+   "rho_pair": {
+    "mean": 0.03248364655243013,
+    "lo": 0.017647052059593486,
+    "hi": 0.04711948924491276,
+    "n_targets": {
+     "nakajima_luad_b3": 16
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03248364655243013
+    }
+   }
+  },
+  "gbm_h": {
+   "ap_single": {
+    "mean": 0.05148526162918778,
+    "lo": 0.03356505612158014,
+    "hi": 0.07092202725849923,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05148526162918778
+    },
+    "diff_ours_minus": 0.2857585231287311,
+    "diff_lo": 0.19439259994159294,
+    "diff_hi": 0.389983724147956,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "auroc_single": {
+    "mean": 0.49431161736452933,
+    "lo": 0.46868216650142597,
+    "hi": 0.5220010282076576,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.49431161736452933
+    },
+    "diff_ours_minus": 0.17056445187450697,
+    "diff_lo": 0.09345981029287465,
+    "diff_hi": 0.2520355320379132,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "p5_single": {
+    "mean": 0.06222222222222223,
+    "lo": 0.03709983896940419,
+    "hi": 0.09013396825396827,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06222222222222223
+    }
+   },
+   "p10_single": {
+    "mean": 0.05271604938271605,
+    "lo": 0.032142619047619045,
+    "hi": 0.07523985890652557,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05271604938271605
+    }
+   },
+   "p20_single": {
+    "mean": 0.05030864197530865,
+    "lo": 0.030551666666666664,
+    "hi": 0.07202832181259597,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05030864197530865
+    }
+   },
+   "p50_single": {
+    "mean": 0.04844444444444445,
+    "lo": 0.030329320987654326,
+    "hi": 0.06852920771756979,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.04844444444444445
+    }
+   },
+   "r10_single": {
+    "mean": 0.0048247548168306445,
+    "lo": 0.003076064474166045,
+    "hi": 0.006694033712910784,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0048247548168306445
+    }
+   },
+   "r20_single": {
+    "mean": 0.008200967359443161,
+    "lo": 0.005328172088708483,
+    "hi": 0.01106297501782718,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.008200967359443161
+    }
+   },
+   "hit10_single": {
+    "mean": 0.3345679012345679,
+    "lo": 0.21234567901234572,
+    "hi": 0.46269722222222204,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3345679012345679
+    }
+   },
+   "mrr_single": {
+    "mean": 0.15117707492777208,
+    "lo": 0.0959297326039697,
+    "hi": 0.21153015003711234,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.15117707492777208
+    }
+   },
+   "bacc_single": {
+    "mean": 0.4994756888709671,
+    "lo": 0.4987480861351675,
+    "hi": 0.5003460688481242,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4994756888709671
+    }
+   },
+   "f1_single": {
+    "mean": 0.04691935507495052,
+    "lo": 0.029217080197345598,
+    "hi": 0.06671906642474136,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.04691935507495052
+    }
+   },
+   "rho_single": {
+    "mean": -0.0020442739385745914,
+    "lo": -0.005158062290749541,
+    "hi": 0.0011474986513171233,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0020442739385745914
+    }
+   },
+   "ap_pair": {
+    "mean": 0.085854013931019,
+    "lo": 0.059909380951104645,
+    "hi": 0.1129891142090979,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.085854013931019
+    },
+    "diff_ours_minus": 0.3208601631493101,
+    "diff_lo": 0.2256939696526486,
+    "diff_hi": 0.42518698184474296,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 26
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5834914000185171,
+    "lo": 0.5359902337664617,
+    "hi": 0.6411824529190226,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5834914000185171
+    },
+    "diff_ours_minus": 0.09827681490990338,
+    "diff_lo": 0.02086868596744464,
+    "diff_hi": 0.16940855902227103,
+    "p_one_sided": 0.01,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 26
+    }
+   },
+   "p5_pair": {
+    "mean": 0.0858974358974359,
+    "lo": 0.04911060606060606,
+    "hi": 0.12631815114709852,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0858974358974359
+    }
+   },
+   "p10_pair": {
+    "mean": 0.08525641025641026,
+    "lo": 0.051812850729517405,
+    "hi": 0.11860339506172833,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08525641025641026
+    }
+   },
+   "p20_pair": {
+    "mean": 0.10282051282051283,
+    "lo": 0.06602564102564103,
+    "hi": 0.13928454968944093,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10282051282051283
+    }
+   },
+   "p50_pair": {
+    "mean": 0.11143589743589742,
+    "lo": 0.07750464669738863,
+    "hi": 0.14894930555555555,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11143589743589742
+    }
+   },
+   "r10_pair": {
+    "mean": 0.01012299415610444,
+    "lo": 0.0026798192437622395,
+    "hi": 0.024658571113332514,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.01012299415610444
+    }
+   },
+   "r20_pair": {
+    "mean": 0.034007022940758524,
+    "lo": 0.011236540075562624,
+    "hi": 0.06747589178643301,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.034007022940758524
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.4461538461538461,
+    "lo": 0.2786642857142857,
+    "hi": 0.6153846153846154,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4461538461538461
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.17202983017109913,
+    "lo": 0.1106463544565682,
+    "hi": 0.23768732816243704,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.17202983017109913
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5069658642406968,
+    "lo": 0.5033897908972094,
+    "hi": 0.511072788597812,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5069658642406968
+    }
+   },
+   "f1_pair": {
+    "mean": 0.08143524242712666,
+    "lo": 0.049829105229375344,
+    "hi": 0.11296326650867031,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08143524242712666
+    }
+   },
+   "rho_pair": {
+    "mean": 0.01005530724316263,
+    "lo": 0.004894881999296242,
+    "hi": 0.014769904539740471,
+    "n_targets": {
+     "nakajima_luad_b3": 26
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.01005530724316263
+    }
+   }
+  },
+  "ebm": {
+   "ap_single": {
+    "mean": 0.4241885387029447,
+    "lo": 0.30950355141003616,
+    "hi": 0.5587072458516136,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4241885387029447
+    },
+    "diff_ours_minus": 0.015495827452534708,
+    "diff_lo": -0.020393402070509336,
+    "diff_hi": 0.04948959083190671,
+    "p_one_sided": 0.1855,
+    "p_holm": 0.371,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "auroc_single": {
+    "mean": 0.7830923609852382,
+    "lo": 0.7374778829959459,
+    "hi": 0.8378164138158318,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7830923609852382
+    },
+    "diff_ours_minus": -0.052844820920007335,
+    "diff_lo": -0.10387475255195085,
+    "diff_hi": -0.008537298324776678,
+    "p_one_sided": 0.9945,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "p5_single": {
+    "mean": 0.39540229885057476,
+    "lo": 0.3122166666666667,
+    "hi": 0.478579365079365,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.39540229885057476
+    }
+   },
+   "p10_single": {
+    "mean": 0.3327586206896551,
+    "lo": 0.24310113088616978,
+    "hi": 0.4282651321398124,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3327586206896551
+    }
+   },
+   "p20_single": {
+    "mean": 0.27959770114942534,
+    "lo": 0.18794753086419752,
+    "hi": 0.37390229885057463,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.27959770114942534
+    }
+   },
+   "p50_single": {
+    "mean": 0.21149425287356322,
+    "lo": 0.1370971264367816,
+    "hi": 0.2897229938271605,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21149425287356322
+    }
+   },
+   "r10_single": {
+    "mean": 0.34602849855909734,
+    "lo": 0.2070605093170111,
+    "hi": 0.5079677967870518,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.34602849855909734
+    }
+   },
+   "r20_single": {
+    "mean": 0.3674263741820851,
+    "lo": 0.23340234222834072,
+    "hi": 0.5248986947510593,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3674263741820851
+    }
+   },
+   "hit10_single": {
+    "mean": 0.8678160919540229,
+    "lo": 0.7469074074074072,
+    "hi": 0.9702380952380951,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.8678160919540229
+    }
+   },
+   "mrr_single": {
+    "mean": 0.712319949061423,
+    "lo": 0.5971635129820158,
+    "hi": 0.8228910514032854,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.712319949061423
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6912292890290969,
+    "lo": 0.6350949797798268,
+    "hi": 0.7616821806330161,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6912292890290969
+    }
+   },
+   "f1_single": {
+    "mean": 0.41773243410659744,
+    "lo": 0.30541612912039123,
+    "hi": 0.5516459196274676,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.41773243410659744
+    }
+   },
+   "rho_single": {
+    "mean": 0.11473886155419134,
+    "lo": 0.08659114100574848,
+    "hi": 0.1422141235315334,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.11473886155419134
+    }
+   },
+   "ap_pair": {
+    "mean": 0.3932175889181996,
+    "lo": 0.29969593668907685,
+    "hi": 0.5020678428775921,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3932175889181996
+    },
+    "diff_ours_minus": 0.08124804064650695,
+    "diff_lo": 0.01392465815058022,
+    "diff_hi": 0.15881198131694926,
+    "p_one_sided": 0.011,
+    "p_holm": 0.044,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.81575947001136,
+    "lo": 0.7653531209516146,
+    "hi": 0.867457846580081,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.81575947001136
+    },
+    "diff_ours_minus": -0.0855701564861762,
+    "diff_lo": -0.16874258992037175,
+    "diff_hi": -0.019292084994790484,
+    "p_one_sided": 0.9995,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "p5_pair": {
+    "mean": 0.40370370370370373,
+    "lo": 0.3111111111111111,
+    "hi": 0.4989516129032256,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.40370370370370373
+    }
+   },
+   "p10_pair": {
+    "mean": 0.3728395061728395,
+    "lo": 0.2866666666666666,
+    "hi": 0.46027173913043473,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3728395061728395
+    }
+   },
+   "p20_pair": {
+    "mean": 0.3200617283950617,
+    "lo": 0.23433148148148145,
+    "hi": 0.40834104938271604,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3200617283950617
+    }
+   },
+   "p50_pair": {
+    "mean": 0.2741975308641975,
+    "lo": 0.1827582826233942,
+    "hi": 0.3740340579710143,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2741975308641975
+    }
+   },
+   "r10_pair": {
+    "mean": 0.28470169758361974,
+    "lo": 0.1519886005558673,
+    "hi": 0.43733824753482864,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.28470169758361974
+    }
+   },
+   "r20_pair": {
+    "mean": 0.32505008424573084,
+    "lo": 0.18305670426596032,
+    "hi": 0.48882821214295386,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.32505008424573084
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.845679012345679,
+    "lo": 0.7221774193548386,
+    "hi": 0.9473911070780398,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.845679012345679
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.5852977224599449,
+    "lo": 0.46416996846189296,
+    "hi": 0.7081479888730269,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5852977224599449
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6784620040785799,
+    "lo": 0.6312820947245733,
+    "hi": 0.7326323363330421,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6784620040785799
+    }
+   },
+   "f1_pair": {
+    "mean": 0.40231325732422457,
+    "lo": 0.309706126647515,
+    "hi": 0.5064578882297066,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.40231325732422457
+    }
+   },
+   "rho_pair": {
+    "mean": 0.07308742928949559,
+    "lo": 0.005554049258858323,
+    "hi": 0.14256981788144363,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.07308742928949559
+    }
+   }
+  },
+  "irf": {
+   "ap_single": {
+    "mean": 0.3428613863632753,
+    "lo": 0.24283347250844448,
+    "hi": 0.4557227989155924,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3428613863632753
+    },
+    "diff_ours_minus": 0.060085592170128065,
+    "diff_lo": 0.031652496777987794,
+    "diff_hi": 0.08867237853001608,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "auroc_single": {
+    "mean": 0.7081954988323396,
+    "lo": 0.6430381746032997,
+    "hi": 0.7775375055347425,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7081954988323396
+    },
+    "diff_ours_minus": -0.005451540907799853,
+    "diff_lo": -0.054993147514120856,
+    "diff_hi": 0.056905419398499996,
+    "p_one_sided": 0.61,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 29
+    }
+   },
+   "p5_single": {
+    "mean": 0.35517241379310344,
+    "lo": 0.27165757575757576,
+    "hi": 0.44692129629629623,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.35517241379310344
+    }
+   },
+   "p10_single": {
+    "mean": 0.30747126436781613,
+    "lo": 0.2219788461538462,
+    "hi": 0.3994196428571428,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.30747126436781613
+    }
+   },
+   "p20_single": {
+    "mean": 0.2574712643678161,
+    "lo": 0.17653718171296293,
+    "hi": 0.3459852150537634,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2574712643678161
+    }
+   },
+   "p50_single": {
+    "mean": 0.20321839080459772,
+    "lo": 0.13128,
+    "hi": 0.2798091397849461,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.20321839080459772
+    }
+   },
+   "r10_single": {
+    "mean": 0.28083316918048473,
+    "lo": 0.15087924263070374,
+    "hi": 0.43087267386601097,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.28083316918048473
+    }
+   },
+   "r20_single": {
+    "mean": 0.31302064858714135,
+    "lo": 0.18441302774614668,
+    "hi": 0.4631430168513759,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.31302064858714135
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7931034482758621,
+    "lo": 0.6602499999999999,
+    "hi": 0.9118039215686272,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7931034482758621
+    }
+   },
+   "mrr_single": {
+    "mean": 0.7226813027034211,
+    "lo": 0.5890718725214379,
+    "hi": 0.845227370491712,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7226813027034211
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6510617165588,
+    "lo": 0.6061210678295572,
+    "hi": 0.7030282299124077,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6510617165588
+    }
+   },
+   "f1_single": {
+    "mean": 0.33617280345788464,
+    "lo": 0.24838868003282477,
+    "hi": 0.43415665720168334,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33617280345788464
+    }
+   },
+   "rho_single": {
+    "mean": 0.06744791867173891,
+    "lo": 0.043305497887950094,
+    "hi": 0.09374308426694729,
+    "n_targets": {
+     "nakajima_luad_b3": 29
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06744791867173891
+    }
+   },
+   "ap_pair": {
+    "mean": 0.06988077159439278,
+    "lo": 0.04411751963413242,
+    "hi": 0.09743900395581861,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06988077159439278
+    },
+    "diff_ours_minus": 0.39018533812143685,
+    "diff_lo": 0.27140637132168677,
+    "diff_hi": 0.5133417602268477,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.49225963835140096,
+    "lo": 0.4826431407147963,
+    "hi": 0.5034903154537294,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.49225963835140096
+    },
+    "diff_ours_minus": 0.21369548419180637,
+    "diff_lo": 0.11845380540332072,
+    "diff_hi": 0.3003247619349718,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 27
+    }
+   },
+   "p5_pair": {
+    "mean": 0.05308641975308642,
+    "lo": 0.030931604938271608,
+    "hi": 0.07760623655913977,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05308641975308642
+    }
+   },
+   "p10_pair": {
+    "mean": 0.05864197530864198,
+    "lo": 0.035050435227854594,
+    "hi": 0.08253410256410255,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05864197530864198
+    }
+   },
+   "p20_pair": {
+    "mean": 0.0638888888888889,
+    "lo": 0.03854991948470209,
+    "hi": 0.0904173611111111,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0638888888888889
+    }
+   },
+   "p50_pair": {
+    "mean": 0.06651851851851852,
+    "lo": 0.04184266666666666,
+    "hi": 0.09257714285714283,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06651851851851852
+    }
+   },
+   "r10_pair": {
+    "mean": 0.0025803357638082636,
+    "lo": 0.0016528535564904125,
+    "hi": 0.003566143519251097,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0025803357638082636
+    }
+   },
+   "r20_pair": {
+    "mean": 0.007750821229546747,
+    "lo": 0.003939719766470742,
+    "hi": 0.013184229434874017,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.007750821229546747
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.33950617283950624,
+    "lo": 0.21237445887445888,
+    "hi": 0.4688908045977011,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33950617283950624
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.13533849506600804,
+    "lo": 0.08094214087175887,
+    "hi": 0.19050407789823515,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.13533849506600804
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.4991109941503784,
+    "lo": 0.49815369927774467,
+    "hi": 0.49996849352233796,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4991109941503784
+    }
+   },
+   "f1_pair": {
+    "mean": 0.06621582019756432,
+    "lo": 0.04015225974573641,
+    "hi": 0.09405073136663639,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06621582019756432
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0036420339344588703,
+    "lo": -0.006449723754900355,
+    "hi": -0.0008301759759864964,
+    "n_targets": {
+     "nakajima_luad_b3": 27
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0036420339344588703
+    }
+   }
+  },
+  "fair_gbm": {
+   "ap_single": {
+    "mean": 0.2558167943580223,
+    "lo": 0.21990651509097908,
+    "hi": 0.2862709120319811,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2558167943580223
+    },
+    "diff_ours_minus": 0.09306804471394202,
+    "diff_lo": 0.06440035849843156,
+    "diff_hi": 0.1224066281812409,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6668350254118858,
+    "lo": 0.644828834921496,
+    "hi": 0.6896249818423147,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6668350254118858
+    },
+    "diff_ours_minus": 0.0010155586358074717,
+    "diff_lo": -0.018084168764343336,
+    "diff_hi": 0.02344943476153784,
+    "p_one_sided": 0.477,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.6,
+    "lo": 0.49329166666666663,
+    "hi": 0.6999999999999998,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6
+    }
+   },
+   "p10_single": {
+    "mean": 0.5233333333333332,
+    "lo": 0.41666666666666663,
+    "hi": 0.620842803030303,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5233333333333332
+    }
+   },
+   "p20_single": {
+    "mean": 0.475,
+    "lo": 0.41409722222222217,
+    "hi": 0.5309598214285713,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.475
+    }
+   },
+   "p50_single": {
+    "mean": 0.4,
+    "lo": 0.351512987012987,
+    "hi": 0.44334523809523807,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4
+    }
+   },
+   "r10_single": {
+    "mean": 0.035308832318719695,
+    "lo": 0.027683502581666408,
+    "hi": 0.043058934485597826,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.035308832318719695
+    }
+   },
+   "r20_single": {
+    "mean": 0.0669737168901277,
+    "lo": 0.05555458903516561,
+    "hi": 0.07744583213749048,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0669737168901277
+    }
+   },
+   "hit10_single": {
+    "mean": 0.9333333333333332,
+    "lo": 0.8333333333333333,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9333333333333332
+    }
+   },
+   "mrr_single": {
+    "mean": 0.7926040591675265,
+    "lo": 0.692147546152964,
+    "hi": 0.8935185185185185,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7926040591675265
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6161000312698208,
+    "lo": 0.6030971354755033,
+    "hi": 0.627738375320125,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6161000312698208
+    }
+   },
+   "f1_single": {
+    "mean": 0.3038743933887512,
+    "lo": 0.2742615182828976,
+    "hi": 0.33038369334132295,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3038743933887512
+    }
+   },
+   "rho_single": {
+    "mean": 0.13373373188708054,
+    "lo": 0.11385978433899549,
+    "hi": 0.15641225908583972,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.13373373188708054
+    }
+   },
+   "ap_pair": {
+    "mean": 0.16187033921913757,
+    "lo": 0.13698942267610642,
+    "hi": 0.18771240955565752,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16187033921913757
+    },
+    "diff_ours_minus": 0.25713908880412023,
+    "diff_lo": 0.1965123866947193,
+    "diff_hi": 0.3141422333630835,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.497796140335952,
+    "lo": 0.49161186467893697,
+    "hi": 0.5044219807892981,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.497796140335952
+    },
+    "diff_ours_minus": 0.1957322264301122,
+    "diff_lo": 0.16215420144540382,
+    "diff_hi": 0.22853451066283215,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.52,
+    "lo": 0.4362878787878788,
+    "hi": 0.612151515151515,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.52
+    }
+   },
+   "p10_pair": {
+    "mean": 0.45666666666666667,
+    "lo": 0.380952380952381,
+    "hi": 0.5433333333333332,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.45666666666666667
+    }
+   },
+   "p20_pair": {
+    "mean": 0.4086666666666666,
+    "lo": 0.3458221153846154,
+    "hi": 0.47634166666666655,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4086666666666666
+    }
+   },
+   "p50_pair": {
+    "mean": 0.254,
+    "lo": 0.21549583333333333,
+    "hi": 0.2936202380952381,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.254
+    }
+   },
+   "r10_pair": {
+    "mean": 0.01703471863377446,
+    "lo": 0.01395557430670997,
+    "hi": 0.020239190430504178,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.01703471863377446
+    }
+   },
+   "r20_pair": {
+    "mean": 0.029733888354931414,
+    "lo": 0.025346102597072956,
+    "hi": 0.03366417558819302,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.029733888354931414
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.9666666666666666,
+    "lo": 0.8888888888888888,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9666666666666666
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.6946296296296296,
+    "lo": 0.5902761243386242,
+    "hi": 0.7995486111111111,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6946296296296296
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5085881995351178,
+    "lo": 0.5044725953707169,
+    "hi": 0.5125184657329875,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5085881995351178
+    }
+   },
+   "f1_pair": {
+    "mean": 0.1543938564863542,
+    "lo": 0.13235423412191208,
+    "hi": 0.17729268223234526,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1543938564863542
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0002810696745616187,
+    "lo": -0.002874923816100421,
+    "hi": 0.0027884870082455497,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0002810696745616187
+    }
+   }
+  },
+  "fair_misty": {
+   "ap_single": {
+    "mean": 0.2529043910064829,
+    "lo": 0.20562070579550687,
+    "hi": 0.2932741918692563,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2529043910064829
+    },
+    "diff_ours_minus": 0.09595975446239448,
+    "diff_lo": 0.07301073358725023,
+    "diff_hi": 0.11835285802808145,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5695379446578623,
+    "lo": 0.5531535878497329,
+    "hi": 0.5854918691708242,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5695379446578623
+    },
+    "diff_ours_minus": 0.0982952446500473,
+    "diff_lo": 0.06959240868334592,
+    "diff_hi": 0.1249624109819923,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.6933333333333334,
+    "lo": 0.5399848484848484,
+    "hi": 0.8333333333333333,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6933333333333334
+    }
+   },
+   "p10_single": {
+    "mean": 0.6466666666666667,
+    "lo": 0.5151298701298701,
+    "hi": 0.7733333333333332,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6466666666666667
+    }
+   },
+   "p20_single": {
+    "mean": 0.6166666666666668,
+    "lo": 0.49373958333333334,
+    "hi": 0.719047619047619,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6166666666666668
+    }
+   },
+   "p50_single": {
+    "mean": 0.516,
+    "lo": 0.41480555555555554,
+    "hi": 0.6044499999999999,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.516
+    }
+   },
+   "r10_single": {
+    "mean": 0.043224815279079606,
+    "lo": 0.03646474472774958,
+    "hi": 0.05031161253080107,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.043224815279079606
+    }
+   },
+   "r20_single": {
+    "mean": 0.08428189876977081,
+    "lo": 0.07265463488530335,
+    "hi": 0.09596864084769843,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.08428189876977081
+    }
+   },
+   "hit10_single": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 1.0
+    }
+   },
+   "mrr_single": {
+    "mean": 0.846984126984127,
+    "lo": 0.7699819624819625,
+    "hi": 0.9280555555555554,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.846984126984127
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6006823357033467,
+    "lo": 0.5856346204120155,
+    "hi": 0.6153856344512177,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6006823357033467
+    }
+   },
+   "f1_single": {
+    "mean": 0.2775563539053948,
+    "lo": 0.24550182752671895,
+    "hi": 0.30549589549765616,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2775563539053948
+    }
+   },
+   "rho_single": {
+    "mean": 0.05138243467809409,
+    "lo": 0.024414357599727977,
+    "hi": 0.07799058041941927,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.05138243467809409
+    }
+   },
+   "ap_pair": {
+    "mean": 0.19551266168066903,
+    "lo": 0.15992110952558938,
+    "hi": 0.23051102056582445,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.19551266168066903
+    },
+    "diff_ours_minus": 0.2234864575189918,
+    "diff_lo": 0.17371320921317043,
+    "diff_hi": 0.26915599286343406,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5042638076889334,
+    "lo": 0.4940785198798874,
+    "hi": 0.5141105216508999,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5042638076889334
+    },
+    "diff_ours_minus": 0.18916866739674826,
+    "diff_lo": 0.1586034166814293,
+    "diff_hi": 0.21850460889597154,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.6066666666666667,
+    "lo": 0.49441666666666667,
+    "hi": 0.7249999999999999,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6066666666666667
+    }
+   },
+   "p10_pair": {
+    "mean": 0.55,
+    "lo": 0.4444444444444444,
+    "hi": 0.6667592592592587,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.55
+    }
+   },
+   "p20_pair": {
+    "mean": 0.5016666666666667,
+    "lo": 0.39759523809523806,
+    "hi": 0.6071428571428571,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5016666666666667
+    }
+   },
+   "p50_pair": {
+    "mean": 0.4040000000000001,
+    "lo": 0.31047619047619046,
+    "hi": 0.5,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4040000000000001
+    }
+   },
+   "r10_pair": {
+    "mean": 0.02033987196204065,
+    "lo": 0.016512258969902497,
+    "hi": 0.023567373380245057,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.02033987196204065
+    }
+   },
+   "r20_pair": {
+    "mean": 0.03612890657698479,
+    "lo": 0.03027578417895692,
+    "hi": 0.04166046753439998,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03612890657698479
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.9666666666666666,
+    "lo": 0.8888888888888888,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9666666666666666
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.7708080808080808,
+    "lo": 0.5916111111111111,
+    "hi": 0.9280303030303031,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.7708080808080808
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5327758626521037,
+    "lo": 0.5247699014145959,
+    "hi": 0.541590808024531,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5327758626521037
+    }
+   },
+   "f1_pair": {
+    "mean": 0.1960885578867236,
+    "lo": 0.16845359069551302,
+    "hi": 0.22311954824605038,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1960885578867236
+    }
+   },
+   "rho_pair": {
+    "mean": 0.011734209323566735,
+    "lo": 0.004541774794034715,
+    "hi": 0.019169538314767417,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.011734209323566735
+    }
+   }
+  },
+  "fair_ebm": {
+   "ap_single": {
+    "mean": 0.2665087527243134,
+    "lo": 0.2277095337148124,
+    "hi": 0.3004608000272801,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2665087527243134
+    },
+    "diff_ours_minus": 0.08238927773618608,
+    "diff_lo": 0.05665371839589175,
+    "diff_hi": 0.10745874563346132,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6691799583092513,
+    "lo": 0.6471262664042663,
+    "hi": 0.6919734650698933,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6691799583092513
+    },
+    "diff_ours_minus": -0.0013414988862153763,
+    "diff_lo": -0.020591008699204848,
+    "diff_hi": 0.021123594091650967,
+    "p_one_sided": 0.569,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.5199999999999999,
+    "lo": 0.41108974358974354,
+    "hi": 0.6296464646464646,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5199999999999999
+    }
+   },
+   "p10_single": {
+    "mean": 0.5266666666666666,
+    "lo": 0.41387499999999994,
+    "hi": 0.6303093434343434,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5266666666666666
+    }
+   },
+   "p20_single": {
+    "mean": 0.5233333333333333,
+    "lo": 0.4270729166666666,
+    "hi": 0.61,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5233333333333333
+    }
+   },
+   "p50_single": {
+    "mean": 0.44400000000000006,
+    "lo": 0.37777380952380957,
+    "hi": 0.5060166666666666,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.44400000000000006
+    }
+   },
+   "r10_single": {
+    "mean": 0.03643518855381743,
+    "lo": 0.027711459982697674,
+    "hi": 0.045182561696852454,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03643518855381743
+    }
+   },
+   "r20_single": {
+    "mean": 0.0731186940916054,
+    "lo": 0.061807108251098634,
+    "hi": 0.08459831002766116,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0731186940916054
+    }
+   },
+   "hit10_single": {
+    "mean": 0.9,
+    "lo": 0.7916666666666666,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9
+    }
+   },
+   "mrr_single": {
+    "mean": 0.6239261031366294,
+    "lo": 0.5379710260499734,
+    "hi": 0.7084117641728287,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6239261031366294
+    }
+   },
+   "bacc_single": {
+    "mean": 0.622700672150877,
+    "lo": 0.6066567273153537,
+    "hi": 0.6376729808732766,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.622700672150877
+    }
+   },
+   "f1_single": {
+    "mean": 0.31585849802721533,
+    "lo": 0.2815652240098207,
+    "hi": 0.34754267384236237,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.31585849802721533
+    }
+   },
+   "rho_single": {
+    "mean": 0.13579786001625402,
+    "lo": 0.11557962378666227,
+    "hi": 0.15918396859090064,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.13579786001625402
+    }
+   },
+   "ap_pair": {
+    "mean": 0.16118947457382107,
+    "lo": 0.13568725549053198,
+    "hi": 0.1873653935300864,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.16118947457382107
+    },
+    "diff_ours_minus": 0.2578156257777405,
+    "diff_lo": 0.19955622438199183,
+    "diff_hi": 0.3121831640673354,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.49612691518822044,
+    "lo": 0.49114336558380106,
+    "hi": 0.5018169731246077,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.49612691518822044
+    },
+    "diff_ours_minus": 0.1974190009200372,
+    "diff_lo": 0.165636009086177,
+    "diff_hi": 0.22819925657373502,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.5133333333333334,
+    "lo": 0.41904761904761906,
+    "hi": 0.6166666666666666,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5133333333333334
+    }
+   },
+   "p10_pair": {
+    "mean": 0.48,
+    "lo": 0.39999999999999997,
+    "hi": 0.5666666666666667,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.48
+    }
+   },
+   "p20_pair": {
+    "mean": 0.3986666666666666,
+    "lo": 0.32598095238095237,
+    "hi": 0.47851984126984126,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.3986666666666666
+    }
+   },
+   "p50_pair": {
+    "mean": 0.2492,
+    "lo": 0.20633055555555557,
+    "hi": 0.29333333333333333,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2492
+    }
+   },
+   "r10_pair": {
+    "mean": 0.017027511328167006,
+    "lo": 0.013424618855660795,
+    "hi": 0.020665134622567638,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.017027511328167006
+    }
+   },
+   "r20_pair": {
+    "mean": 0.028110452523481787,
+    "lo": 0.022864987627883023,
+    "hi": 0.03371626935308995,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.028110452523481787
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.9333333333333332,
+    "lo": 0.8333333333333333,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9333333333333332
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.6992983878261656,
+    "lo": 0.5801231563446841,
+    "hi": 0.8168323863636363,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6992983878261656
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5076091216762062,
+    "lo": 0.503894479079366,
+    "hi": 0.511660705242927,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5076091216762062
+    }
+   },
+   "f1_pair": {
+    "mean": 0.15257202431593747,
+    "lo": 0.1286926116843455,
+    "hi": 0.1761222920381529,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.15257202431593747
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0022144621600670685,
+    "lo": -0.005144480610342789,
+    "hi": 0.0005793834312769238,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0022144621600670685
+    }
+   }
+  },
+  "fair_irf": {},
+  "fair_rulefit": {
+   "ap_single": {
+    "mean": 0.2772281790073228,
+    "lo": 0.19795043113611113,
+    "hi": 0.34706535816409684,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2772281790073228
+    },
+    "diff_ours_minus": 0.05512710439112175,
+    "diff_lo": 0.04029038689727829,
+    "diff_hi": 0.06733999080074392,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 6
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6448636478082368,
+    "lo": 0.605877991396245,
+    "hi": 0.684388105272269,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6448636478082368
+    },
+    "diff_ours_minus": 0.01347396819425291,
+    "diff_lo": -0.009321104165680919,
+    "diff_hi": 0.03872265019699716,
+    "p_one_sided": 0.1385,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 6
+    }
+   },
+   "p5_single": {
+    "mean": 0.5388888888888889,
+    "lo": 0.3833333333333333,
+    "hi": 0.6666666666666667,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5388888888888889
+    }
+   },
+   "p10_single": {
+    "mean": 0.4861111111111111,
+    "lo": 0.3277777777777777,
+    "hi": 0.6458333333333334,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4861111111111111
+    }
+   },
+   "p20_single": {
+    "mean": 0.4958333333333334,
+    "lo": 0.35461309523809526,
+    "hi": 0.6097430555555557,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4958333333333334
+    }
+   },
+   "p50_single": {
+    "mean": 0.5183333333333333,
+    "lo": 0.3899583333333333,
+    "hi": 0.6122222222222222,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5183333333333333
+    }
+   },
+   "r10_single": {
+    "mean": 0.03272838306947202,
+    "lo": 0.022222222222222223,
+    "hi": 0.042776733215599466,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.03272838306947202
+    }
+   },
+   "r20_single": {
+    "mean": 0.06685230901423243,
+    "lo": 0.046709335798770665,
+    "hi": 0.08507040051796229,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.06685230901423243
+    }
+   },
+   "hit10_single": {
+    "mean": 0.9444444444444443,
+    "lo": 0.8333333333333333,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9444444444444443
+    }
+   },
+   "mrr_single": {
+    "mean": 0.6383333333333333,
+    "lo": 0.4565,
+    "hi": 0.8055555555555557,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6383333333333333
+    }
+   },
+   "bacc_single": {
+    "mean": 0.632711201219831,
+    "lo": 0.5899852054876149,
+    "hi": 0.6744566449973461,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.632711201219831
+    }
+   },
+   "f1_single": {
+    "mean": 0.33497655749845046,
+    "lo": 0.25963992237317274,
+    "hi": 0.4072571643657258,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.33497655749845046
+    }
+   },
+   "rho_single": {
+    "mean": 0.10666666017895358,
+    "lo": 0.08461032437383896,
+    "hi": 0.12731057494424822,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.10666666017895358
+    }
+   },
+   "ap_pair": {
+    "mean": 0.14721975058807307,
+    "lo": 0.11108059515700908,
+    "hi": 0.18655711957564353,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.14721975058807307
+    },
+    "diff_ours_minus": 0.26231386754578817,
+    "diff_lo": 0.16244154487366783,
+    "diff_hi": 0.3592261435015632,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 6
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.4965066830811618,
+    "lo": 0.48798892321972975,
+    "hi": 0.5067618887128502,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4965066830811618
+    },
+    "diff_ours_minus": 0.1929118396405974,
+    "diff_lo": 0.1405270573341983,
+    "diff_hi": 0.24730613302398854,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 6
+    }
+   },
+   "p5_pair": {
+    "mean": 0.4466666666666666,
+    "lo": 0.22,
+    "hi": 0.6622222222222222,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4466666666666666
+    }
+   },
+   "p10_pair": {
+    "mean": 0.2916666666666667,
+    "lo": 0.17843333333333333,
+    "hi": 0.3966666666666666,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2916666666666667
+    }
+   },
+   "p20_pair": {
+    "mean": 0.2125,
+    "lo": 0.1405496031746032,
+    "hi": 0.28125,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.2125
+    }
+   },
+   "p50_pair": {
+    "mean": 0.17122222222222225,
+    "lo": 0.12966666666666668,
+    "hi": 0.2112472222222223,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.17122222222222225
+    }
+   },
+   "r10_pair": {
+    "mean": 0.01051325399943071,
+    "lo": 0.006786728876451959,
+    "hi": 0.014291700537076972,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.01051325399943071
+    }
+   },
+   "r20_pair": {
+    "mean": 0.015446691867594986,
+    "lo": 0.011739221708587945,
+    "hi": 0.019739251722220637,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.015446691867594986
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.9,
+    "lo": 0.7499999999999999,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.6858580809622477,
+    "lo": 0.40541916416916424,
+    "hi": 0.9166666666666666,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6858580809622477
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5023175586026088,
+    "lo": 0.4989601721348382,
+    "hi": 0.506315686180499,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5023175586026088
+    }
+   },
+   "f1_pair": {
+    "mean": 0.1411527842701514,
+    "lo": 0.10647102460270909,
+    "hi": 0.17932186948853612,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1411527842701514
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0048938479126558205,
+    "lo": -0.009366789765027108,
+    "hi": -0.00054623796071959,
+    "n_targets": {
+     "nakajima_luad_b3": 6
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.0048938479126558205
+    }
+   }
+  },
+  "pysr": {
+   "ap_single": {
+    "mean": 0.1235679503222685,
+    "lo": 0.1027594622688128,
+    "hi": 0.14270092330675616,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1235679503222685
+    },
+    "diff_ours_minus": 0.22537387834474903,
+    "diff_lo": 0.18090372982455202,
+    "diff_hi": 0.265902808930659,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5107627250898569,
+    "lo": 0.5077854786866776,
+    "hi": 0.5138711364227022,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5107627250898569
+    },
+    "diff_ours_minus": 0.15722903322947038,
+    "diff_lo": 0.13309268738394342,
+    "diff_hi": 0.18049324434226785,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.5853333333333334,
+    "lo": 0.448875,
+    "hi": 0.7078961038961037,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.5853333333333334
+    }
+   },
+   "p10_single": {
+    "mean": 0.394,
+    "lo": 0.3019025974025974,
+    "hi": 0.4769629629629627,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.394
+    }
+   },
+   "p20_single": {
+    "mean": 0.25166666666666665,
+    "lo": 0.1996926406926407,
+    "hi": 0.29916898148148147,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.25166666666666665
+    }
+   },
+   "p50_single": {
+    "mean": 0.15506666666666666,
+    "lo": 0.12465666666666668,
+    "hi": 0.18154102564102564,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.15506666666666666
+    }
+   },
+   "r10_single": {
+    "mean": 0.027322181373020005,
+    "lo": 0.02307552804246868,
+    "hi": 0.03114027475986457,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.027322181373020005
+    }
+   },
+   "r20_single": {
+    "mean": 0.0345319100224638,
+    "lo": 0.030442842878928678,
+    "hi": 0.03841705274968741,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0345319100224638
+    }
+   },
+   "hit10_single": {
+    "mean": 0.9600000000000002,
+    "lo": 0.8962962962962963,
+    "hi": 1.0,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.9600000000000002
+    }
+   },
+   "mrr_single": {
+    "mean": 0.8285798809034104,
+    "lo": 0.7356630776086657,
+    "hi": 0.9186630579387931,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.8285798809034104
+    }
+   },
+   "bacc_single": {
+    "mean": 0.510486211749897,
+    "lo": 0.5078775190164763,
+    "hi": 0.5134164432883821,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.510486211749897
+    }
+   },
+   "f1_single": {
+    "mean": 0.1147517193891489,
+    "lo": 0.09500196723762619,
+    "hi": 0.13381173931336954,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1147517193891489
+    }
+   },
+   "rho_single": {
+    "mean": 0.008858728308049083,
+    "lo": 0.004247877704091445,
+    "hi": 0.01342899424230737,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.008858728308049083
+    }
+   },
+   "ap_pair": {
+    "mean": 0.1400944852984044,
+    "lo": 0.11449736474526512,
+    "hi": 0.16525911948569108,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.1400944852984044
+    },
+    "diff_ours_minus": 0.2790132176576648,
+    "diff_lo": 0.2161911322227381,
+    "diff_hi": 0.3384913467662466,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.4951130157562056,
+    "lo": 0.4908499003293496,
+    "hi": 0.5001987646335448,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4951130157562056
+    },
+    "diff_ours_minus": 0.198472589577592,
+    "diff_lo": 0.1650892561625727,
+    "diff_hi": 0.23204755989288756,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "nakajima_luad_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.09866666666666667,
+    "lo": 0.065,
+    "hi": 0.13333333333333333,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.09866666666666667
+    }
+   },
+   "p10_pair": {
+    "mean": 0.118,
+    "lo": 0.08570779220779222,
+    "hi": 0.147780303030303,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.118
+    }
+   },
+   "p20_pair": {
+    "mean": 0.12533333333333335,
+    "lo": 0.10233055555555556,
+    "hi": 0.14809523809523809,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.12533333333333335
+    }
+   },
+   "p50_pair": {
+    "mean": 0.13546666666666668,
+    "lo": 0.11256380952380952,
+    "hi": 0.15644545454545453,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.13546666666666668
+    }
+   },
+   "r10_pair": {
+    "mean": 0.0041820004267476875,
+    "lo": 0.0033777539295956585,
+    "hi": 0.004998464723840253,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.0041820004267476875
+    }
+   },
+   "r20_pair": {
+    "mean": 0.009178593671741229,
+    "lo": 0.008062856261746881,
+    "hi": 0.01039255721149608,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.009178593671741229
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6466666666666667,
+    "lo": 0.5211818181818181,
+    "hi": 0.75,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.6466666666666667
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.21504833605826504,
+    "lo": 0.16642835402507986,
+    "hi": 0.26706593294082503,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.21504833605826504
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.4981798471311487,
+    "lo": 0.49581531865488854,
+    "hi": 0.5005768763808189,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.4981798471311487
+    }
+   },
+   "f1_pair": {
+    "mean": 0.13631732006783553,
+    "lo": 0.11095271144785859,
+    "hi": 0.1620274327529923,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": 0.13631732006783553
+    }
+   },
+   "rho_pair": {
+    "mean": -0.004377430157680643,
+    "lo": -0.006656425859596369,
+    "hi": -0.001984790530019331,
+    "n_targets": {
+     "nakajima_luad_b3": 10
+    },
+    "per_study": {
+     "nakajima_luad_b3": -0.004377430157680643
+    }
+   }
+  },
+  "tabdistill": {}
+ },
+ "extra": {
+  "sel_screen": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 10.633213956513385,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.36522087615011617,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 9.348565930625469,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.45672418854070734,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "sel_screen_joint": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 10.633213956513385,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.36522087615011617,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 9.817424392407364,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.47963026869106185,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "hybrid_lin_sel": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 8.858981108661187,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.30428098743566295,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 9.348565930625469,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.45672418854070734,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "hybrid_lin_joint": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 8.858981108661187,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.30428098743566295,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 9.817424392407364,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.47963026869106185,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "random": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 1.248652268691609,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.042887679815662466,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 1.3722410264054181,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.06704083534503669,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "linear_screen": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 8.858981108661187,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.30428098743566295,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 1.580057102823201,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.07719368975842751,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "nid": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 8.877409072689437,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.30491393596802435,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 3.6624283764859453,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.17892793833322085,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "misty": {
+   "single": {
+    "ours_same_targets": 0.36522087615011606,
+    "ours_auroc_same_targets": 0.6375958707157163,
+    "lift_shared": 5.788506541567143,
+    "ours_lift_shared": 10.633213956513385,
+    "ap_timeouts_at_chance": 0.19881885564964544,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.45672418854070734,
+    "ours_auroc_same_targets": 0.6976844318344079,
+    "lift_shared": 3.4132513179718256,
+    "ours_lift_shared": 9.348565930625469,
+    "ap_timeouts_at_chance": 0.16675439313951357,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "knockoffs": {
+   "single": {
+    "ours_same_targets": 0.43065776310236104,
+    "ours_auroc_same_targets": 0.7150724189765992,
+    "lift_shared": 7.98708493236284,
+    "ours_lift_shared": 12.295868954171242,
+    "ap_timeouts_at_chance": 0.2797443713413252,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.46435648583848277,
+    "ours_auroc_same_targets": 0.7128857999522672,
+    "lift_shared": 1.877624143271418,
+    "ours_lift_shared": 9.294875446308245,
+    "ap_timeouts_at_chance": 0.09380297282426794,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "gbm_shap": {
+   "single": {
+    "ours_same_targets": 0.41167968853910636,
+    "ours_auroc_same_targets": 0.7055748329424858,
+    "lift_shared": 10.467108424700067,
+    "ours_lift_shared": 11.756652319983735,
+    "ap_timeouts_at_chance": 0.34415895561664733,
+    "timeout_or_error_splits": 4,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.46047717549365513,
+    "ours_auroc_same_targets": 0.7128771706332929,
+    "lift_shared": 2.0882232633430036,
+    "ours_lift_shared": 9.218377788587166,
+    "ap_timeouts_at_chance": 0.10439264798398323,
+    "timeout_or_error_splits": 4,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "rulefit": {
+   "single": {
+    "ours_same_targets": 0.45899543750406707,
+    "ours_auroc_same_targets": 0.7231476327320141,
+    "lift_shared": 10.145721361967238,
+    "ours_lift_shared": 12.185658608615286,
+    "ap_timeouts_at_chance": 0.34697565649381257,
+    "timeout_or_error_splits": 10,
+    "splits_attempted": 117,
+    "n_targets_shared": 37
+   },
+   "pair": {
+    "ours_same_targets": 0.4808427604139629,
+    "ours_auroc_same_targets": 0.730808229094734,
+    "lift_shared": 1.7234399671629006,
+    "ours_lift_shared": 8.91416223898954,
+    "ap_timeouts_at_chance": 0.08711648619403714,
+    "timeout_or_error_splits": 10,
+    "splits_attempted": 117,
+    "n_targets_shared": 37
+   }
+  },
+  "stability_selection": {
+   "single": {
+    "ours_same_targets": 0.2438861758764476,
+    "ours_auroc_same_targets": 0.607210121216641,
+    "lift_shared": 1.722325697623947,
+    "ours_lift_shared": 4.170479447551517,
+    "ap_timeouts_at_chance": 0.05798229535826625,
+    "timeout_or_error_splits": 43,
+    "splits_attempted": 101,
+    "n_targets_shared": 21
+   },
+   "pair": {
+    "ours_same_targets": 0.32164499206866476,
+    "ours_auroc_same_targets": 0.5857366611042714,
+    "lift_shared": 1.4640215561490484,
+    "ours_lift_shared": 3.8227863038864087,
+    "ap_timeouts_at_chance": 0.07601610339013802,
+    "timeout_or_error_splits": 43,
+    "splits_attempted": 101,
+    "n_targets_shared": 21
+   }
+  },
+  "gbm_h": {
+   "single": {
+    "ours_same_targets": 0.33417984667344325,
+    "ours_auroc_same_targets": 0.6626492419271709,
+    "lift_shared": 1.5291198925518437,
+    "ours_lift_shared": 9.92519092004755,
+    "ap_timeouts_at_chance": 0.048197783897790364,
+    "timeout_or_error_splits": 13,
+    "splits_attempted": 118,
+    "n_targets_shared": 38
+   },
+   "pair": {
+    "ours_same_targets": 0.40413782542517895,
+    "ours_auroc_same_targets": 0.6803092167122758,
+    "lift_shared": 1.826766382928686,
+    "ours_lift_shared": 8.599078362833353,
+    "ap_timeouts_at_chance": 0.08346787279007299,
+    "timeout_or_error_splits": 13,
+    "splits_attempted": 118,
+    "n_targets_shared": 38
+   }
+  },
+  "ebm": {
+   "single": {
+    "ours_same_targets": 0.43991219582756225,
+    "ours_auroc_same_targets": 0.7293575898826774,
+    "lift_shared": 12.697140156355122,
+    "ours_lift_shared": 13.167792849830066,
+    "ap_timeouts_at_chance": 0.40129168726721537,
+    "timeout_or_error_splits": 7,
+    "splits_attempted": 118,
+    "n_targets_shared": 38
+   },
+   "pair": {
+    "ours_same_targets": 0.4744175078083967,
+    "ours_auroc_same_targets": 0.7290957370781016,
+    "lift_shared": 8.365941330970886,
+    "ours_lift_shared": 10.0935185723244,
+    "ap_timeouts_at_chance": 0.37318987454739977,
+    "timeout_or_error_splits": 7,
+    "splits_attempted": 118,
+    "n_targets_shared": 38
+   }
+  },
+  "irf": {
+   "single": {
+    "ours_same_targets": 0.40231236187176916,
+    "ours_auroc_same_targets": 0.702599821579687,
+    "lift_shared": 9.62105675395286,
+    "ours_lift_shared": 11.289314633651934,
+    "ap_timeouts_at_chance": 0.31222469066657765,
+    "timeout_or_error_splits": 9,
+    "splits_attempted": 116,
+    "n_targets_shared": 36
+   },
+   "pair": {
+    "ours_same_targets": 0.456881329140839,
+    "ours_auroc_same_targets": 0.7036087961707591,
+    "lift_shared": 1.3782812093675607,
+    "ours_lift_shared": 9.011219202339516,
+    "ap_timeouts_at_chance": 0.07023612675373182,
+    "timeout_or_error_splits": 9,
+    "splits_attempted": 116,
+    "n_targets_shared": 36
+   }
+  },
+  "fair_gbm": {
+   "single": {
+    "ours_same_targets": 0.34890667230127254,
+    "ours_auroc_same_targets": 0.6678640293645269,
+    "lift_shared": 2.6758484684889425,
+    "ours_lift_shared": 3.6495703382800806,
+    "ap_timeouts_at_chance": 0.25581679435802235,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.41909341848948645,
+    "ours_auroc_same_targets": 0.6933650612339577,
+    "lift_shared": 1.1613321001014292,
+    "ours_lift_shared": 3.006768517203059,
+    "ap_timeouts_at_chance": 0.16187033921913757,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_misty": {
+   "single": {
+    "ours_same_targets": 0.34890667230127254,
+    "ours_auroc_same_targets": 0.6678640293645269,
+    "lift_shared": 2.6453846747908156,
+    "ours_lift_shared": 3.6495703382800806,
+    "ap_timeouts_at_chance": 0.2529043910064829,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.41909341848948645,
+    "ours_auroc_same_targets": 0.6933650612339577,
+    "lift_shared": 1.402697560784424,
+    "ours_lift_shared": 3.006768517203059,
+    "ap_timeouts_at_chance": 0.19551266168066903,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_ebm": {
+   "single": {
+    "ours_same_targets": 0.34890667230127254,
+    "ours_auroc_same_targets": 0.6678640293645269,
+    "lift_shared": 2.7876865535974087,
+    "ours_lift_shared": 3.6495703382800806,
+    "ap_timeouts_at_chance": 0.2665087527243134,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.41909341848948645,
+    "ours_auroc_same_targets": 0.6933650612339577,
+    "lift_shared": 1.1564472646692887,
+    "ours_lift_shared": 3.006768517203059,
+    "ap_timeouts_at_chance": 0.16118947457382105,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_irf": {
+   "single": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.09658243877088361,
+    "timeout_or_error_splits": 14,
+    "splits_attempted": 14,
+    "n_targets_shared": 0
+   },
+   "pair": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.13698604914042087,
+    "timeout_or_error_splits": 14,
+    "splits_attempted": 14,
+    "n_targets_shared": 0
+   }
+  },
+  "fair_rulefit": {
+   "single": {
+    "ours_same_targets": 0.3322886650605312,
+    "ours_auroc_same_targets": 0.6582943828409417,
+    "lift_shared": 2.949707824637915,
+    "ours_lift_shared": 3.5355513962440526,
+    "ap_timeouts_at_chance": 0.26741139292077126,
+    "timeout_or_error_splits": 1,
+    "splits_attempted": 18,
+    "n_targets_shared": 6
+   },
+   "pair": {
+    "ours_same_targets": 0.40945705899534124,
+    "ours_auroc_same_targets": 0.6893643946691782,
+    "lift_shared": 1.07350841020268,
+    "ours_lift_shared": 2.9857107806020426,
+    "ap_timeouts_at_chance": 0.14754413866794605,
+    "timeout_or_error_splits": 1,
+    "splits_attempted": 18,
+    "n_targets_shared": 6
+   }
+  },
+  "pysr": {
+   "single": {
+    "ours_same_targets": 0.34890667230127254,
+    "ours_auroc_same_targets": 0.6678640293645269,
+    "lift_shared": 1.2925230786896962,
+    "ours_lift_shared": 3.6495703382800806,
+    "ap_timeouts_at_chance": 0.12356795032226853,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.41909341848948645,
+    "ours_auroc_same_targets": 0.6933650612339577,
+    "lift_shared": 1.0051021305637047,
+    "ours_lift_shared": 3.006768517203059,
+    "ap_timeouts_at_chance": 0.1400944852984044,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "tabdistill": {
+   "single": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.09460033559215374,
+    "timeout_or_error_splits": 30,
+    "splits_attempted": 30,
+    "n_targets_shared": 0
+   },
+   "pair": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.1341961174954574,
+    "timeout_or_error_splits": 30,
+    "splits_attempted": 30,
+    "n_targets_shared": 0
+   }
+  }
+ },
+ "label_sources": {
+  "nakajima_luad_b3": "label engine v05"
+ }
+}

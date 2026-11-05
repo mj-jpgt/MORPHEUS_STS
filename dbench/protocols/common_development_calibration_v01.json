@@ -1,0 +1,39 @@
+{
+  "schema": "morpheus_common_development_calibration/v1",
+  "status": "FROZEN_DEVELOPMENT_ONLY",
+  "purpose": "A single, identical controlled real-substrate panel for method comparison. This is development calibration, not a paper claim or a sealed-cohort evaluation.",
+  "substrate": "HEST kidney-injury fold 0",
+  "world_count": 30,
+  "relation_families": [
+    "and_gate_2",
+    "xor_gate_2",
+    "residualised_3",
+    "context_threshold",
+    "spatial_mix_gp"
+  ],
+  "effect_fractions": [0.01, 0.02, 0.05],
+  "seeds": [0, 1],
+  "split": "patient-disjoint support and query patients supplied by the common benchmark harness",
+  "feature_vocabulary": "The identical broad benchmark feature matrix and spatial transforms produced by dbench.benchmark.run for every method.",
+  "methods": [
+    "learned_search",
+    "gbm_interaction",
+    "random_search_matched"
+  ],
+  "morpheus_checkpoint": "runs/development/learned_search_v02/gated_repair_fast/frozen.pt",
+  "candidate_budget": 16,
+  "secondary_budgets": [8, 32, 64, 128],
+  "primary_metrics": [
+    "complete variable-and-transform recovery at candidate budget 16",
+    "truth-token coverage at candidate budget 16",
+    "held-out query-side relation gain",
+    "number of relationships tested",
+    "wall-clock time"
+  ],
+  "rules": [
+    "Every method is run on every same deterministic world.",
+    "Every method uses support patients only for proposal/ranking.",
+    "Held-out query patients and planted truth are evaluation-only.",
+    "No comparative result may be combined with a different panel."
+  ]
+}

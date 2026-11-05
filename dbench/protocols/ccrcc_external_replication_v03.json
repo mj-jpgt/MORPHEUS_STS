@@ -1,0 +1,60 @@
+{
+  "schema": "morpheus_external_replication/v3",
+  "protocol_id": "ccrcc-external-replication-v03",
+  "created_utc": "2026-10-21",
+  "governing_plan": ".claude/learned_search_v02.md, 'MORPHEUS Downstream' Section 2 (external spatial replication protocol) with the definitions of .claude/morpheus_training_and_evaluation_spec.md Sections 0.3-0.11",
+  "status": "FROZEN before any finding of the learned-search registry is applied to an external cohort: canonical_hash (dbench.downstream.locks.canonical_hash == dbench.prospective_campaign.canonical_hash) recorded in dbench/protocols/ccrcc_external_replication_v03.sha256; a change is a new protocol id",
+  "runner": "dbench/downstream/replication_v03.py (Agent R); Agent E's v02 runner dbench/scripts/external_replication.py is unchanged and its v01/v02 results stay on record",
+  "applies_to": "every finding in the internally replicated set of a blind cohort (downstream Section 0 step 3); the family is that set, frozen and hashed before this protocol is applied",
+  "cohorts": {
+    "ccRCC": {
+      "discovery_cohort": "meylan2022_ccrcc (HEST INT1-INT24, Visium fresh-frozen)",
+      "external": ["li2022_ccrcc (Mendeley 10.17632/g67bkbnhhg.1, 16 sections, 8 patients, fresh-frozen whole transcriptome)",
+                   "gse250163 (GEO, 5 FFPE probe-based sections)",
+                   "zenodo14620362 (3 FFPE probe-based sections, TLS annotations not used)"],
+      "partition_check": "each external cohort is absent from meta-training, development and dictionary construction, confirmed by the partition manifest before the rule is locked",
+      "historical_exclusion": "if historical task H3b (li2022_ccrcc) is active, li2022_ccrcc leaves the external set before any rule is locked (historical_rediscovery_v02.json)"
+    },
+    "PFA_ependymoma": {
+      "external_spatial": "unavailable: no independent public PFA Visium cohort with adequate patient count is known; PFA findings are reported with external spatial replication marked unavailable (the 34-patient bulk replication of G03 and the held-aside Fu 2023 spatial patients are reported as such) and are not eligible for Section 4 prioritisation unless a public PFA spatial cohort appears before the lock"
+    }
+  },
+  "rule_file": "written per finding before any external value is read (dbench.downstream.replication_v03.rule_file): finding hash, exact candidates with spatial versions, the frozen relation parameters (f_S under B_nuis; f_S under B_known and the frozen B_decomp partition for reporting), the dominant term and its discovery sign, the baselines, the external cohort ids, this platform transformation, this success criterion and the multiplicity family; its canonical hash goes into the external_replication lock (dbench.downstream.locks) before the cohorts are opened",
+  "platform_transformation": {
+    "no_refit": "the relation is applied with its frozen parameters; nothing about S or f_S is re-estimated on external data",
+    "normalisation": "log1p CPM at 1e4 over each section's panel; gene-set scores = mean over the set's genes that entered the discovery computation",
+    "standardisation": "each candidate and the target are within-patient centred (per-patient intercepts) and divided by their pooled within-patient SD computed on the external cohort itself",
+    "nuisance_model": "N = ridge on within-patient standardised log1p depth fitted on the external cohort by patient cross-fitting (K = min(5, patients), numpy default_rng(20261016) shuffle of sorted patient keys); predictions for a patient never use that patient",
+    "known_baseline_reported": "B_known on the external cohort = N + the 50 Hallmark and 41 Gavish own-spot programme scores (minus the target's set and the candidates' own sets) + the ccRCC B_known catalogue gene-set scores (dbench/downstream/data/bknown_ccrcc_v01.json); CellViT composition is included only where computed for the external cohort and its absence is recorded",
+    "residual_programmes": "projected by the frozen loading vector onto the external cohort's covariate-adjusted, per-gene standardised expression; testable when the present genes carry >= 0.95 of the loading's squared norm",
+    "missing_genes": "a gene-defined candidate or target with any discovery gene absent from the external panel makes the finding not testable on that cohort; nothing is substituted, imputed or replaced",
+    "neighbours": "neighbour versions use the same neighbour counts (6 and 18 nearest spots within section) as discovery, not the same physical radius; contrast = own - 6-neighbour mean",
+    "chemistry": "no rank transform: FFPE probe-based and fresh-frozen cohorts receive the same arithmetic; the per-cohort gains are reported so a chemistry effect is visible"
+  },
+  "gain": "G(S, y, B_nuis, L_ext) = R2(base_N + f_S) - R2(base_N) on the within-patient standardised target, computed from per-patient sufficient statistics pooled over every patient of every testable external cohort",
+  "success_criterion": {
+    "all_required": ["ci_excludes_zero", "direction_agreement_ge_0.60", "bh_q_le_0.05"],
+    "ci_excludes_zero": "patient-bootstrap 95% percentile interval of the pooled G(S, y, B_nuis, L_ext) has lower bound > 0 (2000 draws, patients resampled within cohort strata, seed 20261021)",
+    "direction_agreement_ge_0.60": "the dominant term = the candidate with the largest standardised contribution on discovery (drop in R2 when replaced by its support mean); its discovery sign = sign of the mean partial derivative of f_S on discovery rows; per external patient (>= 10 rows) the sign of its coefficient in an OLS of the nuisance-residual target on all candidates of S; agreement in >= 60% of pooled external patients",
+    "bh_q_le_0.05": "Benjamini-Hochberg within the multiplicity family on the one-sided bootstrap p = (1 + #{draws <= 0}) / 2001"
+  },
+  "reported_not_gating": {
+    "B_known": "pooled gain and interval with the frozen f_S fitted after B_known on discovery",
+    "B_decomp": "for |S| >= 2: R2(base_N + f_S) - R2(base_N + f_decomp) with the frozen best proper partition",
+    "per_cohort": "gain, patients, rows, direction agreement per cohort",
+    "moran_matched_null": "optional; when computed, gene-defined constituents replaced by Moran-matched random programmes (Agent E's matched_programmes) with the frozen relation applied unchanged; never gates under v03"
+  },
+  "multiplicity": "family = all internally replicated findings of the cohort tested externally",
+  "outputs": "runs/development/downstream_v01/<run>/<finding_id>/ (locks/, records/, state_card.json); a replication table with one row per finding and cohort; failures are listed with their numbers and are never re-tested with modified variables",
+  "supersedes": {
+    "protocol_id": "ccrcc-external-replication-v02",
+    "path": "dbench/protocols/ccrcc_external_replication_v02.json",
+    "what_changes": "v02 refit the relation on external proposal patients, gated on a Moran-matched null and passed a relation in any one patient-level cohort; v03 applies the frozen relation without refitting, pools the external cohorts, gates on the pooled B_nuis interval + dominant-term sign agreement in >= 60% of external patients + BH within the family, and reports B_known, B_decomp and the matched null without gating (downstream Section 2.2)"
+  },
+  "anti_leakage": {
+    "rule_hashed_before_external_values": true,
+    "relation_refit_on_external": false,
+    "relation_redefinition_after_external": false,
+    "literature_before_characterisation_lock": false
+  }
+}

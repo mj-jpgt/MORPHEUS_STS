@@ -1,0 +1,59 @@
+{
+  "schema": "morpheus_bknown_catalogue/v1",
+  "catalogue_id": "bknown-ccrcc-v01",
+  "created_utc": "2026-10-21",
+  "governing_plan": ".claude/learned_search_v02.md, 'MORPHEUS Downstream' Section 9",
+  "use": "each entry with a gene set is scored per spot (mean log1p-CPM over the genes present; a set with no present gene is dropped and recorded) and added to B_known (training spec 0.8) on top of N + Hallmark + Gavish + composition; every entry, scorable or not, is part of the novelty catalogue read by dbench.downstream.novelty",
+  "gene_set_policy": "gene lists are the genes the declaration itself names, or a protocol marker set already used in this repository; they are NOT reconstructions of the papers' supplementary signatures, which are not read here; the reviewer may replace a set by the paper's own list before the B_known lock, as a new catalogue version",
+  "entries": [
+    {
+      "key": "tls_plasma_cell_propagation",
+      "finding": "Tertiary lymphoid structures generate and propagate antibody-producing plasma cells that disseminate into tumour beds along fibroblastic tracks",
+      "citation": "Meylan M, et al. Immunity 55(3):527-541 (2022), doi 10.1016/j.immuni.2022.02.001",
+      "role": "covariate, not a target (the paper is the discovery cohort itself)",
+      "gene_sets": {
+        "tls": ["CXCL13", "MS4A1", "CD19", "CR2", "CCL19", "LTB"],
+        "plasma_cell": ["MZB1", "JCHAIN", "XBP1", "SDC1"]
+      },
+      "gene_source": "historical_rediscovery_v02.json task S0 proxy sets (protocol marker sets)"
+    },
+    {
+      "key": "hyalinized_stroma_cp_col4a1",
+      "finding": "Hyalinized stroma associated with CP and COL4A1 expression",
+      "citation": "Li 2023 (as declared in the downstream specification, Section 9)",
+      "role": "covariate",
+      "gene_sets": {"hyalinized_stroma": ["CP", "COL4A1"]},
+      "gene_source": "the two genes named in the declaration"
+    },
+    {
+      "key": "integrin_collagen_iv_coupling",
+      "finding": "Integrin and collagen IV spatial coupling in the immunoresistant microenvironment",
+      "citation": "Genome Biology 2024 (as declared in the downstream specification, Section 9)",
+      "role": "covariate",
+      "gene_sets": {"collagen_iv_integrin": ["COL4A1", "COL4A2", "ITGA1", "ITGA2", "ITGB1"]},
+      "gene_source": "collagen IV chains and their canonical integrin receptors (alpha1beta1, alpha2beta1); a representation, flagged for reviewer replacement by the paper's list"
+    },
+    {
+      "key": "chemokine_macrophage_cd8_niche",
+      "finding": "Chemokine-driven macrophage and CD8 T-cell niches predictive of immunotherapy response",
+      "citation": "J Immunother Cancer 2025 (as declared in the downstream specification, Section 9)",
+      "role": "covariate",
+      "gene_sets": {"cxcl9_10_niche": ["CXCL9", "CXCL10", "CXCL11", "CXCR3", "CD8A", "CD8B", "GZMB", "CD68", "CD163"]},
+      "gene_source": "CXCR3-ligand chemokines, their receptor and CD8 T-cell / macrophage markers; a representation, flagged for reviewer replacement by the paper's list"
+    },
+    {
+      "key": "interior_periphery_variation",
+      "finding": "Metabolic and immune variation between tumour interior and periphery",
+      "citation": "declared in the downstream specification, Section 9",
+      "role": "novelty catalogue only",
+      "gene_sets": {},
+      "not_scorable_reason": "a position-in-tumour contrast, not a gene programme; no gene-set covariate represents it; it enters the novelty catalogue and the spatial-context novelty queries"
+    }
+  ],
+  "excluded_historical_rediscovery": [
+    {"task_id": "H1", "study": "Ji 2020 cSCC (TSK ~ fibroblast/endothelial neighbourhood)", "reason": "evaluation target"},
+    {"task_id": "H2", "study": "Valdeolivas 2024 CRC (SPP1+ macrophage ~ myofibroblast)", "reason": "evaluation target"},
+    {"task_id": "H3", "study": "Kiviaho 2024 prostate (PMN-MDSC ~ club cells)", "reason": "evaluation target"},
+    {"task_id": "H3b", "study": "Li 2022 ccRCC (EMT meta-programme ~ IL1B macrophages)", "reason": "evaluation target; its EMT and TR Mac.2 gene lists are deliberately NOT covariates"}
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "effect_metric": "held-out gain over baseline (R2)",
+  "figure_id": "fig6_evidence_card_G5_93b02a9038ea",
+  "generated_by": [
+    "C:\\Users\\mobar\\OneDrive\\biorag\\figures\\fig6_evidence_cards\\plot_evidence_cards_v01.py",
+    "C:\\Users\\mobar\\OneDrive\\biorag\\figures\\fig6_evidence_cards\\plot_evidence_cards_v02.py",
+    "C:\\Users\\mobar\\OneDrive\\biorag\\figures\\fig6_evidence_cards\\plot_evidence_cards_v02_k.py"
+  ],
+  "he_mapping": {
+    "downsample_per_axis": [
+      8.0,
+      7.999052132701422
+    ],
+    "image": "INT21_ds8.png",
+    "image_wh": [
+      2141,
+      2110
+    ],
+    "origin": "top, rows increase downward",
+    "scale_bar": "none (pixel size not certified)",
+    "x_img": "x_px / 8",
+    "y_img": "y_px / 8"
+  },
+  "held_out_score": "a_spatial is held-out: fit on the other 23 patients, predicted on INT21 (box ~/scratch_w7/heldout_int21.py); in-sample v01 kept as a_spatial_insample_v01",
+  "independent_unit": "patient; spots for visualisation only",
+  "k_transfer_source": "translation_v10/layer_p5.json + p5_known_addendum.json; frozen f_S, no refit; patient bootstrap 95% CI; 99-draw Moran-matched null",
+  "legend_placement": "outside_axes (colorbars outside or below; d_external legend right)",
+  "notes": [
+    "a_spatial: no scale bar because pixel size is not certified; equal aspect, y inverted; coords columns read as (x, y)",
+    "e_umap: patient panel has no legend (24 patients); tab20 extended with the first tab20b colours so every patient is distinct; random draw order seed 0",
+    "f_crops: crops extracted from the W1d card render at about 256 px (left clean H&E half, margins and title trimmed); CellViT boxes omitted",
+    "b_response: stored surface indexed [x, y] (verified against marginal partial dependence) and transposed for contourf",
+    "d_external: per-cohort gains have no interval in forest.json",
+    "k_transfer: not-testable cohorts - GSE294385: discovery genes absent from the panel (G3: CAV3, PDE4DIP; G4: DAPL1; G5/G7: BNIP3); Ji 2020: legacy ST panel lacks 53 myogenesis genes (G3), 31 apical-junction genes (G4), SLC3A1 (G5/G7); positive control also fails there",
+    "k_transfer: null tick omitted where the matched-null 95th percentile is null; known-biology gain not computed for this relation, only nuisance markers drawn"
+  ],
+  "panels": {
+    "a_spatial": [
+      "a_spatial.pdf",
+      "a_spatial.svg",
+      "a_spatial.png",
+      "a_spatial_plot_data.parquet"
+    ],
+    "a_spatial_insample_v01": [
+      "a_spatial_insample_v01.pdf",
+      "a_spatial_insample_v01.svg",
+      "a_spatial_insample_v01.png",
+      "a_spatial_insample_v01_plot_data.parquet"
+    ],
+    "b_response": [
+      "b_response.pdf",
+      "b_response.svg",
+      "b_response.png",
+      "b_response_plot_data.*"
+    ],
+    "c_ladder": [
+      "c_ladder.pdf",
+      "c_ladder.svg",
+      "c_ladder.png",
+      "c_ladder_plot_data.*"
+    ],
+    "d_external": [
+      "d_external.pdf",
+      "d_external.svg",
+      "d_external.png",
+      "d_external_plot_data.*"
+    ],
+    "e_umap": [
+      "e_umap.pdf",
+      "e_umap.svg",
+      "e_umap.png",
+      "e_umap_plot_data.*"
+    ],
+    "f_crops": [
+      "f_crops.pdf",
+      "f_crops.svg",
+      "f_crops.png",
+      "f_crops_plot_data.*"
+    ],
+    "g_he_state": [
+      "g_he_state.pdf",
+      "g_he_state.svg",
+      "g_he_state.png",
+      "g_he_state_plot_data.parquet"
+    ],
+    "g_he_target": [
+      "g_he_target.pdf",
+      "g_he_target.svg",
+      "g_he_target.png",
+      "g_he_target_plot_data.parquet"
+    ],
+    "g_he_tissue": [
+      "g_he_tissue.pdf",
+      "g_he_tissue.svg",
+      "g_he_tissue.png",
+      "g_he_tissue_plot_data.parquet"
+    ],
+    "h_residual": [
+      "h_residual.pdf",
+      "h_residual.svg",
+      "h_residual.png",
+      "h_residual_plot_data.parquet"
+    ],
+    "i_constituents": [
+      "i_constituents.pdf",
+      "i_constituents.svg",
+      "i_constituents.png",
+      "i_constituents_plot_data.parquet"
+    ],
+    "j_composition": [
+      "j_composition.pdf",
+      "j_composition.svg",
+      "j_composition.png",
+      "j_composition_plot_data.parquet"
+    ],
+    "k_transfer": [
+      "k_transfer.pdf",
+      "k_transfer.svg",
+      "k_transfer.png",
+      "k_transfer_plot_data.parquet"
+    ]
+  },
+  "plot_family": "evidence card (spatial, response, ladder, forest, embedding, contact sheet)",
+  "relation": "Glutathione gradient <- hypoxia grad. + SLC3A1",
+  "scale_rule": "panel a: shared symmetric limit +-2.211 at the 98th percentile of |values| over both maps; panel b: 1-D panels share y, 2-D surface symmetric about zero (+-1.6); panel e: state symmetric +-1.521 (98th percentile), neoplastic 0-1",
+  "scale_rule_v02": {
+    "a_spatial": "shared symmetric limit +-2.252 (98th percentile of |target, held-out score|)",
+    "g_he_state/g_he_target": "same limit +-2.252, RdBu_r, alpha 0.85, spots > 1.0 only",
+    "h_residual": "shared symmetric limit +-2.296 (98th percentile of |both residuals|)",
+    "i_constituents": "per-map symmetric limit at the 98th percentile: Hypoxia grad. 2.89, SLC3A1 2.24, Held-out score 2.11",
+    "j_composition": "shared 0-1 viridis",
+    "k_transfer": "x-limits shared across the four cards: -0.331 to 0.429; zero dashed; positive-control values in plot data, not drawn"
+  },
+  "selection_rule": "spatial section = most scored spots (INT21, 4974), identical for all four cards; UMAP frozen upstream (20,000 spots); crops = six stored composition-matched pairs",
+  "selection_rule_v02": "section INT21; g_he_state/g_he_target draw only spots with value > 1.0 (within-patient z units); i_constituents standardised over INT21 rows only",
+  "source_files": [
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\93b02a9038ea_heldout_int21.npz",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\crops\\index.json",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\forest.json",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\ladder.json",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\response_surface.json",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\spot_values.npz",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\93b02a9038ea\\umap.npz",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\cards\\p5_transfer_values.json",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\int21\\INT21_ds8.png",
+    "C:\\Users\\mobar\\AppData\\Local\\Temp\\claude\\C--Users-mobar-OneDrive-biorag\\183cb9cc-8cb0-4a9d-ad6f-8c70cbac5491\\scratchpad\\int21\\image_meta.json"
+  ],
+  "source_version": "characterisation_v10/cards; W1d crops",
+  "uncertainty": "patient-bootstrap 95% interval (ladder, pooled external rows); per-cohort gains have no interval"
+}

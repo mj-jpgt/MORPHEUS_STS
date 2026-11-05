@@ -1,0 +1,11 @@
+{
+ "section": "INT21",
+ "downsample": 8,
+ "full_dims_wh": [
+  17128,
+  16878
+ ],
+ "level_used": 2,
+ "level_downsample": 4.0002370229912305,
+ "source": "spatial/hest_data/wsis/INT21.tif"
+}

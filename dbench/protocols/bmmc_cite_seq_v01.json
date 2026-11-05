@@ -1,0 +1,101 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "bmmc-cite-seq-v01-20260926",
+  "supersedes": "bmmc-cite-seq-v01-20260926 draft (this file, same version): discovery.targets.protein_panel used a 'protein_1..protein_134' placeholder; replaced with the measured 'channels' list (the 134 ADT var_names exactly as read from the live GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad on the box after anndata's var_names_make_unique, e.g. 'CD86-1' where an ADT name collided with a GEX gene symbol) -- Seat F's gate/target-name fix, no other field changed.",
+  "registry_source": {"registry": "dbench/protocols/DATASET_REGISTRY.json", "record_id": "bmmc_cite_seq", "suitability_rank": 2},
+  "release": {
+    "name": "source arm only for this substrate: no frozen morpheus_factorized representation checkpoint has been trained on BMMC CITE-seq yet (the existing spatial-morpheus-v0.1 contract is HEST-specific and is not reused here)",
+    "contract": {
+      "path": "/home/ubuntu/morpheus_work/runs/bmmc_representation/contract.json",
+      "sha256": "not_yet_trained"
+    },
+    "sealed_evidence": {
+      "path": "/home/ubuntu/morpheus_work/runs/bmmc_representation/sealed/bmmc_panel.json",
+      "sha256": "not_yet_trained"
+    },
+    "evidence_note": "no sealed development evidence exists for this substrate; the morpheus_factorized arm below is predeclared but blocked (required=true, exists=false) until a representation checkpoint is trained and frozen for BMMC"
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "candidate_budget_meaning": "frozen candidates entering the ledger at stage 'proposed' after the fold sweep; raw per-target proposals are internal search and are never ledger entries. Until a morpheus_factorized checkpoint is trained, only the 'source' arm (30 of the 50) is executable; the remaining 20-candidate 'morpheus_factorized' allocation stays reserved and unfilled rather than being silently reassigned to 'source'.",
+    "arm_split": {"source": 30, "morpheus_factorized": 20},
+    "environment_unit": "donor x site (12 observed batches: 9 donors, 4 sites); donor is the Level-1 fold-grouping unit, site is the Level-2 replication unit",
+    "literature_blind": true,
+    "fold_seed": 20260926,
+    "n_folds": 5,
+    "outer_split": "five grouped donor folds over the 9 BMMC donors (grouped by DonorID; a donor's cells across all sites/batches it appears in stay in the same fold), deterministic shuffle with fold_seed; each fold in turn is D_R, the other four are D_P. RNA highest-variance gene selection, size-factor statistics and donor fixed-effect removal are fit on D_P only. This is distinct from the Level-2 held-out-site check below, which groups by Site instead of DonorID.",
+    "proposals_per_target": 16,
+    "targets": {
+      "definition_rule": "the target is the surface-protein (ADT) panel measurement itself, response-free by construction: the 134-channel panel composition was fixed by the original GEO/NeurIPS curators before this campaign, never chosen by looking at which channel correlates with any candidate gene. Each of the 134 channels (e.g. CD3, CD4, CD8, CD19, CD14, CD16, CD56, CD25, CD127, HLA-A-B-C, ...; full list = var_names where feature_types==ADT in the released object) is a separate predeclared target; no isotype-control channel names were found in this panel by substring match ('isotype'/'control'/'IgG') but this must be re-verified against the live var_names before the box run and logged, since ADT_iso_count in obs implies isotype background was tracked somewhere in the pipeline even if not as a separate reported channel here.",
+      "protein_panel": "protein_1..protein_134 placeholder retired -- see 'channels' below for the measured, exact target list",
+      "channels": ["CD86-1", "CD274", "CD270", "CD155", "CD112", "CD47-1", "CD48-1", "CD40-1", "CD154", "CD52-1", "CD3", "CD8", "CD56", "CD19-1", "CD33-1", "CD11c", "HLA-A-B-C", "CD45RA", "CD123", "CD7-1", "CD105", "CD49f", "CD194", "CD4-1", "CD44-1", "CD14-1", "CD16", "CD25", "CD45RO", "CD279", "TIGIT-1", "CD20", "CD335", "CD31", "Podoplanin", "CD146", "IgM", "CD5-1", "CD195", "CD32", "CD196", "CD185", "CD103", "CD69-1", "CD62L", "CD161", "CD152", "CD223", "KLRG1-1", "CD27-1", "CD107a", "CD95", "CD134", "HLA-DR", "CD1c", "CD11b", "CD64", "CD141", "CD1d", "CD314", "CD35", "CD57", "CD272", "CD278", "CD58-1", "CD39", "CX3CR1-1", "CD24-1", "CD21", "CD11a", "CD79b", "CD244-1", "CD169", "integrinB7", "CD268", "CD42b", "CD54", "CD62P", "CD119", "TCR", "CD192", "CD122", "FceRIa", "CD41", "CD137", "CD163-1", "CD83-1", "CD124", "CD13", "CD2-1", "CD226-1", "CD29", "CD303", "CD49b", "CD81-1", "IgD", "CD18", "CD28-1", "CD38-1", "CD127", "CD45", "CD22-1", "CD71", "CD26", "CD115", "CD63-1", "CD304", "CD36-1", "CD172a", "CD72-1", "CD158", "CD93-1", "CD49a", "CD49d", "CD73", "CD9-1", "TCRVa7.2", "TCRVd2", "LOX-1", "CD158b", "CD158e1", "CD142", "CD319", "CD352", "CD94", "CD162", "CD85j", "CD23", "CD328", "HLA-E-1", "CD82-1", "CD101-1", "CD88", "CD224"],
+      "channels_note": "the 134 ADT var_names exactly as returned by `anndata.read_h5ad(..., backed='r')` on S/bmmc_cite_reacquired_20260906/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad after `.var_names_make_unique()` (measured on the box 2026-09-26; a name ending '-1', e.g. 'CD86-1', is an ADT channel whose base name collided with a GEX gene symbol and was disambiguated by that call, not a typo); `real_episode`'s own `.var_names_make_unique()` call reproduces these exact strings, so a --target value must be copied verbatim from this list"
+    },
+    "candidate_variables": "the D_P-selected 300 highest-variance genes from the 13,953-gene GEX block (size-factor normalised per GEX_size_factors, donor fixed effect removed, z-scored with D_P statistics) and, for the morpheus_factorized arm (blocked until trained), its representation coordinates mapped back to genes by response-free observed-coordinate links",
+    "excluded_from_candidates": ["any ADT/protein channel other than the one being modelled as the current target (candidates are RNA-only by design, so the orthogonal-modality relationship is RNA -> protein, never protein -> protein)", "DonorID", "Site/batch identity", "cell_type label", "ADT_total_counts", "ADT_iso_count", "GEX_size_factors", "GEX_pct_counts_mt"],
+    "competitor_set": {
+      "always": ["log1p GEX_size_factors (library size)", "GEX_pct_counts_mt", "GEX_phase (cell-cycle phase, one-hot)", "cell_type (45-class one-hot; controls for the well-known fact that surface-marker level is largely determined by cell identity, so gain measures RNA signal beyond trivial cell-type-average protein expression)", "ADT_total_counts (protein-library depth/background control)"],
+      "when_candidate_has_context": "not applicable in this substrate (no spatial/neighbour context; cells are dissociated)",
+      "when_order_ge_3": ["all pairwise products of the candidate's variables"],
+      "rule": "the simpler model is fit on D_P and frozen; gain = R2(simpler + candidate feature, D_R) - R2(simpler, D_R)",
+      "exclusion_clause": "the simpler model never contains the response or a deterministic function of it: cell_type is retained in the baseline deliberately (as a confound control), never excluded, because dropping it would let a candidate 'discover' nothing more than cell-identity information already implied by cell_type; receipts record the baseline column names, adopted from the start per the renal_spatial_v03 lesson rather than re-discovered on this substrate"
+    },
+    "null_suite": {
+      "within_donor_perm": "permutation of the target protein channel's values across cells within donor on D_R (breaks the cell-level RNA-protein pairing while preserving each donor's protein marginal distribution and donor-level batch structure)",
+      "cross_site_environment_break": "block-permutation of the Site label across donors on D_R, holding each cell's real donor/RNA/protein triple fixed, then refitting the site-conditional baseline and recomputing gain (tests whether the observed gain is actually a site-batch artifact rather than a real RNA-protein relationship; if gain is driven by site, it collapses under this null even though the within_donor_perm null may not catch it)",
+      "draws": 199,
+      "p_value": "(1 + #null gains >= observed) / (draws + 1)"
+    },
+    "advance_rule": {
+      "proposed": "top 30 (source) + top 20 (morpheus_factorized, currently unfilled/blocked) candidates by mean replication gain over donor-folds in which they recur; recorded with fold_gains, null p per kind, baseline_width, arm, proposal mechanism, budget",
+      "internal": "recurrence in >= 3 of 5 donor folds with replication gain >= 0.02 in each, both structured nulls p <= 0.05 in the recurring folds, BH q <= 0.10 over the 50 frozen candidates",
+      "external": "Level 2, held-out site: leave-one-site-out transfer of the frozen candidate (fit on the other 3 sites' donors, evaluated on the held-out site's donors), same sign and p <= 0.05 in at least 3 of the 4 site-holdouts",
+      "orthogonal": "Level 3 is satisfied automatically upon reaching 'internal', because the response variable (surface protein) is itself an orthogonal assay relative to the RNA candidate features -- no separate acquisition step is required; recorded explicitly in the ledger as 'orthogonal-by-construction' rather than treated as a future action",
+      "actionable": "Level 4: DepMap 24Q2 CRISPR-dependency lookup (CRISPRGeneEffect.csv) for the frozen candidate gene across hematopoietic/lymphoid-lineage cell lines (Model.csv lineage columns), reported as actionability-adjacent evidence, never as causal or clinical proof; followed by an EIG-ranked discriminating experiment recommendation (e.g. a targeted flow-cytometry or CRISPR-knockdown-plus-CITE-seq validation) -- treatment/clinical claims remain blocked, since no patient-level clinical trial data exists for this cohort",
+      "no_post_hoc_change": true
+    },
+    "stop_rules": [
+      "no candidate reaches 'internal' at budget 50: every candidate logged with stop_reason; report 'no discovery at budget 50 under bmmc-cite-seq-v01'; a v0.2 may change the target subset (e.g. restrict to lineage-defining channels only), never this advance rule",
+      "all survivors labelled 'known' by the novelty tool (e.g. rediscovering that CD3 transcript predicts CD3 protein): report as independent replication of known biology, no novelty claim",
+      "sign reversal on the held-out-site transfer: candidate stops at 'internal'; hash stays locked",
+      "morpheus_factorized arm stays at 0/20 filled candidates if no representation checkpoint is trained before the budget sweep: report the source-arm-only 30-candidate result honestly rather than reassigning its budget to source"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "bmmc_cite_discovery",
+      "role": "fresh measured RNA+protein discovery (Level 1 replication = held-out donors; Level 2 = held-out site)",
+      "gates": [
+        {"id": "bmmc_processed_h5ad", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/bmmc_cite_reacquired_20260906/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad", "required": true, "exists": true},
+        {"id": "bmmc_manifest", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/bmmc_cite_reacquired_20260906/MANIFEST.json", "required": true, "exists": true}
+      ]
+    },
+    {
+      "id": "bmmc_morpheus_factorized_checkpoint",
+      "role": "frozen representation checkpoint for the morpheus_factorized arm",
+      "gates": [
+        {"id": "bmmc_representation_contract", "path": "/home/ubuntu/morpheus_work/runs/bmmc_representation/contract.json", "required": true, "exists": false, "note": "no representation has been trained for this substrate; the morpheus_factorized arm is blocked until this exists"}
+      ]
+    },
+    {
+      "id": "depmap_actionability",
+      "role": "Level 4 actionability-adjacent perturbation lookup",
+      "gates": [
+        {"id": "depmap_crispr_gene_effect", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/depmap_24q2/CRISPRGeneEffect.csv", "required": true, "exists": true},
+        {"id": "depmap_model_metadata", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/depmap_24q2/Model.csv", "required": true, "exists": true}
+      ]
+    }
+  ],
+  "translation": {
+    "depmap": "gene-level CRISPR dependency lookup in hematopoietic/lymphoid-lineage cell lines only, reported as actionability-adjacent evidence, never causal or clinical proof",
+    "treatment_claim": "blocked: no patient-level clinical trial or treatment-outcome data exists for this cohort",
+    "forbidden": ["derived DepMap contrasts as patient-level treatment evidence", "outcome-guided target-channel selection", "calling a held-out donor fold an external (Level 2) replication", "treating protein->protein prediction as evidence of an RNA-derived discovery", "silently unblocking the morpheus_factorized arm by copying the HEST spatial-morpheus-v0.1 checkpoint onto this substrate"]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "legacy_phase2_candidates_as_prospective_candidates": false,
+    "candidate_redefinition_after_external": false,
+    "truth_or_outcome_in_discovery": false
+  },
+  "ledger": {"filename": "bmmc_cite_seq_v01_ledger.jsonl"}
+}

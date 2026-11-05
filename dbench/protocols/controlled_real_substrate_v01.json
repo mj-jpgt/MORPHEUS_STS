@@ -1,0 +1,53 @@
+{
+  "schema": "morpheus_controlled_real_substrate/v1",
+  "protocol_id": "controlled-real-substrate-v01",
+  "status": "FROZEN: development calibration and paper OOD confirmation are separate results",
+  "purpose": "Evaluate whether a support-only learned relationship searcher recovers complete molecular, morphology, and spatial variable sets from measured HEST tissue data when the response contains a calibrated relation. This is not an expression simulator and not evidence of label-free biological discovery.",
+  "substrate": {
+    "source": "HEST paired H&E and measured spatial transcriptomics",
+    "response": "a patient-disjoint ridge residual of a measured target after the declared B3 comparison ladder",
+    "candidate_variables": "measured genes and frozen programme/foundation-model coordinates with own, nbr6, nbr18, and contrast transforms",
+    "prohibited": ["simulated expression matrices", "planted truth supplied to a method", "held-out patient rows in proposal or fitting"]
+  },
+  "families": [
+    "and_gate_2",
+    "xor_gate_2",
+    "residualised_3",
+    "context_threshold",
+    "spatial_lag",
+    "gp_2",
+    "piecewise_3",
+    "spatial_mix_gp",
+    "product_2"
+  ],
+  "family_contract": {
+    "boolean": "AND and XOR use per-patient median gates and are residualised against flexible proper-subset functions, so marginal signals are not a shortcut.",
+    "residualised_3": "A three-variable real-substrate relation is residualised against all single and pairwise flexible lower-order bases.",
+    "context_and_spatial": "Context and spatial relations use fixed within-sample k-nearest-neighbour transforms of measured variables.",
+    "unseen_function": "GP and piecewise functions are held out from meta-training; spatial_mix_gp combines an own value with a neighbor value."
+  },
+  "worlds": {
+    "primary_effect_fractions": [0.01, 0.02, 0.05],
+    "descriptive_sensitivity_fraction": 0.005,
+    "seeds_per_family_fraction": 10,
+    "primary_world_count": 270,
+    "calibration": "variance(signal)/variance(residual) per world, recorded both overall and in support/query patients"
+  },
+  "partitions": {
+    "development": "kidney-injury only; may select implementation but can never support an OOD headline",
+    "primary_ood": "leave the entire bladder study out of concept fitting, learned-search meta-training, normalisation fitting, and architecture selection; evaluate the frozen model on bladder",
+    "secondary_platform_ood": "leave all st_100um studies out of concept fitting and learned-search meta-training; evaluate them only after primary OOD is sealed"
+  },
+  "methods": {
+    "learned": "patient-disjoint episodically meta-trained MORPHEUS searcher",
+    "ablation": "same architecture trained with row-split support/query episodes",
+    "baselines": ["linear interaction screen", "EBM GA2M", "gradient boosting interaction extraction", "RuleFit", "TabDistill or TabPFN interaction attribution", "PySR shortlist", "budget-matched random search"],
+    "expressibility": "A method that cannot represent the truth object is reported not-expressible, never counted as a MORPHEUS win."
+  },
+  "endpoints": {
+    "primary": "complete variable-and-transform set recovery at top 16, with paired family/fraction-stratified world bootstrap confidence intervals",
+    "secondary": ["mean reciprocal rank", "variable recall", "recovery-budget area at 8/16/32/64/128", "false share at 5 and 16", "held-out query general gain", "held-out higher-order gain versus the strongest flexible proper-subset decomposition", "tested candidate count", "runtime"],
+    "reporting": "Primary comparisons use BH correction across the predeclared method contrasts. Oracle scores are diagnostics only."
+  },
+  "advance_rule": "A method claim requires the bladder OOD comparison, not development: lower 95% paired confidence bound > 0.05 over row-split at top 16, >=0.10 absolute recovery advantage, no false-share worsening >0.05, and benefit in at least two difficult groups among AND/XOR, residualised triple, context, and spatial. A miss triggers one targeted N+1 engineering diagnosis; it does not redefine the protocol."
+}

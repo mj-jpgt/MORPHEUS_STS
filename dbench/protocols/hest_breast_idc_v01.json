@@ -1,0 +1,130 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "hest-breast-idc-v01-20260926",
+  "supersedes": {
+    "by": "Seat G, 2026-09-26, gate closure pass over the draft Seat D wrote",
+    "changed": [
+      "hest_idc_hoptimus_embeddings: exists false -> true. A live probe (organ=='Breast' & oncotree_code=='IDC', intersected with on-store st+wsis+cellvit_seg, non-empty license) found 107 eligible samples / 32 patients, not the draft's provisional 116/31 (recorded in runs/prospective/G0_idc_availability.json; 5 samples excluded for an empty license column: SPA0-3, NCBI776). Ran a new per-spot H-Optimus-0 embedder (dbench/scripts/hest_fm_embed_hoptimus.py, a sibling of hest_fm_embed_dinov2.py/gigapath.py for this backbone, since none existed) over all 107 samples from local S/spatial/hest_data/patches/*.h5, then hest_fm_finalize.py (unmodified) to assemble embeddings/hoptimus/<sample_id>.npz. Known-answer check: re-embedding TCIA/HEST sample TENX152 from the byte-identical raw patch file used by the original H-Optimus-0 route-A pass (S/external/hest_patches_hoptimus_20260809) reproduced that pass's embedding exactly (max abs diff 0.0, 4096x1536).",
+      "tcga_brca_tables: exists false -> true. Acquired via dbench/scripts/tcga_kirc_acquisition.py --study brca_tcga_pan_can_atlas_2018 (script generalised with a --study argument; --study omitted keeps the original KIRC behaviour byte-for-byte) -- 1082 patients x 18,484 protein-coding genes RNA-seq v2, 1084 patients clinical, from the same public cBioPortal REST route as tcga_kirc_20260925.",
+      "cptac_brca_patient_mapping / cptac_brca_wsi / cptac_brca_he_descriptors: left exists=false -- verified genuinely absent from the public domain, not merely unattempted. See each gate's updated note and runs/prospective/G0_idc_availability.json.tcia_cptac_brca_slide_manifest for the four independent checks (TCIA/NBIA collection list, the exact PathDB crosswalk CSV the ccRCC mapping used, GDC CPTAC-2 files facets, and this store's own BRCA tables) that all confirm no public CPTAC-BRCA whole-slide-image route exists. `required` flags were left untouched -- this campaign's ready_for_discovery therefore correctly remains false until either a genuine WSI route is found or this arm is descoped in a v0.2, not silently patched around here."
+    ]
+  },
+  "registry_source": {"registry": "dbench/protocols/DATASET_REGISTRY.json", "record_id": "hest_breast_idc", "suitability_rank": 3},
+  "release": {
+    "name": "spatial-morpheus-v0.1 (same frozen morpheus_factorized representation configuration as renal_spatial_v02/v03, full width, no variance/covariance penalty)",
+    "contract": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/contract.json",
+      "sha256": "26bf6b052a4fe71c67f76f9ab6a2b0ac28889a1311905926020d6efd4ba98c3c"
+    },
+    "sealed_evidence": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/sealed/hest_panel.json",
+      "sha256": "ae402d8b13c56f0bce27a73f66ed8903c9020731132c4430910fba6fa96ec72a"
+    },
+    "evidence_note": "the sealed evidence above is a ccRCC development result on one slide (INT1) with shared spots between proposal and replication splits; it fixes the representation configuration only, was never breast-specific, and is not cited as independent replication for this campaign"
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "candidate_budget_meaning": "frozen candidates entering the ledger at stage 'proposed' after the fold sweep; raw per-target proposals are internal search and are never ledger entries",
+    "arm_split": {"source": 30, "morpheus_factorized": 20},
+    "patient_unit": true,
+    "literature_blind": true,
+    "fold_seed": 20260926,
+    "n_folds": 5,
+    "outer_split": "five grouped patient folds over the 31 HEST breast-IDC patients on-store (1 sample = 1 patient for fold-grouping; a few patients contribute multiple sections, all sections of a patient stay in the same fold), deterministic shuffle with fold_seed; each fold in turn is D_R, the other four are D_P; HVG selection, z-score statistics, PCA of image embeddings and program ranking are fit on D_P only",
+    "proposals_per_target": 32,
+    "targets": {
+      "definition_rule": "every response is response-free defined, within-patient centred, and never derived from a gene set under test",
+      "morphology": {
+        "morph_pc1": "H-optimus per-spot embedding PC 1, PCA fit on D_P, patient-residualised",
+        "morph_pc2": "H-optimus per-spot embedding PC 2",
+        "morph_pc3": "H-optimus per-spot embedding PC 3",
+        "morph_pc4": "H-optimus per-spot embedding PC 4",
+        "morph_pc5": "H-optimus per-spot embedding PC 5",
+        "cv_count": "CellViT nuclei assigned to the spot (nearest-spot assignment, radius = spot_diameter_fullres / 2, per-sample spot_diameter from HEST_v1_3_0.csv so it generalises across the legacy ST and Visium/Visium HD platforms mixed in this cohort), log1p",
+        "cv_area": "mean nuclear polygon area of the spot's nuclei",
+        "cv_frac_Neoplastic": "fraction of the spot's nuclei in CellViT class Neoplastic",
+        "cv_frac_Connective": "fraction Connective",
+        "cv_frac_Epithelial": "fraction Epithelial",
+        "cv_frac_Inflammatory": "fraction Inflammatory",
+        "cv_frac_Dead": "fraction Dead"
+      },
+      "spatial_organisation": {
+        "nbr_mp1..nbr_mp8": "neighbour-mean (k=6, within sample) of the 8 Gavish malignant metaprogram scores with the highest within-patient Moran's I on D_P; program identities recorded per fold in the receipt"
+      }
+    },
+    "candidate_variables": "the D_P-selected 300 highest-variance genes (log-CPM, patient fixed effect removed, z-scored with D_P statistics) and, for the morpheus_factorized arm, its representation coordinates mapped back to genes by response-free observed-coordinate links",
+    "excluded_from_candidates": ["spot depth", "patient identity", "CellViT descriptors", "image embeddings", "st_technology platform indicator (legacy 'Spatial Transcriptomics' vs Visium vs Visium HD)"],
+    "competitor_set": {
+      "always": ["log1p spot depth", "CellViT class fractions", "the 41 Gavish program scores of the spot", "st_technology platform indicator (one-hot: legacy ST / Visium / Visium HD)"],
+      "when_candidate_has_context": ["neighbour-mean of the 41 program scores"],
+      "when_order_ge_3": ["all pairwise products of the candidate's variables"],
+      "rule": "the simpler model is fit on D_P and frozen; gain = R2(simpler + candidate feature, D_R) - R2(simpler, D_R)",
+      "exclusion_clause": "the simpler model never contains the response or a deterministic function of it: for cv_frac_<class> targets all CellViT class fractions are excluded from the baseline (they sum to one); for nbr_mp<k> targets the target program's own neighbour mean is excluded (the other 40 neighbour-mean programs and the spot's own 41 program scores remain); receipts record the baseline column names. This clause is carried in from renal_spatial_v03 (registered after v02's baseline leaked the response for these same target families) and is adopted here from the start rather than re-discovered."
+    },
+    "null_suite": {
+      "spatial_block": "within-patient 2D block swap (6x6 grid) of the response on D_R (destroys spatial organisation, keeps marginals)",
+      "within_patient_perm": "permutation of the response within patient on D_R",
+      "interaction_break": "for |S| >= 2, within-patient block swap of one constituent variable on D_R (breaks joint structure, keeps marginals)",
+      "draws": 199,
+      "p_value": "(1 + #null gains >= observed) / (draws + 1)"
+    },
+    "advance_rule": {
+      "proposed": "top 30 (source) + top 20 (morpheus_factorized) candidates by mean replication gain over folds in which they recur; recorded with fold_gains, null p per kind, baseline_width, arm, proposal mechanism, budget",
+      "internal": "recurrence in >= 3 of 5 folds with replication gain >= 0.02 in each, all three nulls p <= 0.05 in the recurring folds, BH q <= 0.10 over the 50 frozen candidates",
+      "external": "CPTAC BRCA (121 RNA patients, 125 protein patients) bulk-RNA transfer of the frozen feature vs slide-level H&E descriptors (H-optimus slide mean/std PCs, CellViT slide summaries, once acquired): scale extension, same sign, p <= 0.05",
+      "orthogonal": "CPTAC BRCA proteomics transfer of the frozen feature, same sign, p <= 0.05",
+      "actionable": "predeclared prognosis (CPTAC BRCA clinical/followup; a second public breast-cancer survival cohort such as TCGA-BRCA via cBioPortal, same acquisition method as tcga_kirc_20260925, not yet on-store) after state lock and an EIG-ranked discriminating experiment; treatment claims remain blocked pending raw patient-level randomized trial data",
+      "no_post_hoc_change": true
+    },
+    "stop_rules": [
+      "no candidate reaches 'internal' at budget 50: every candidate logged with stop_reason; report 'no discovery at budget 50 under hest-breast-idc-v01'; a v0.2 for this campaign may change the target class, never this advance rule",
+      "all survivors labelled 'known' by the novelty tool: report as independent replication of known biology (levels 1-3), no novelty claim",
+      "sign reversal on any external transfer: candidate stops at 'internal'; hash stays locked"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "hest_breast_idc_discovery",
+      "role": "fresh measured-ST plus morphology discovery (Level 1 replication = held-out patients)",
+      "gates": [
+        {"id": "hest_idc_st_files", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st", "required": true, "exists": true, "note": "31-patient/116-sample subset identified by id-matching HEST_v1_3_0.csv oncotree_code=IDC against this directory; not yet split into a dedicated per-cohort mirror the way ccRCC was"},
+        {"id": "hest_idc_wsis", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis", "required": true, "exists": true},
+        {"id": "hest_idc_cellvit_seg", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg", "required": true, "exists": true},
+        {"id": "hest_meta_catalogue", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_meta/HEST_v1_3_0.csv", "required": true, "exists": true, "note": "source of the organ/oncotree_code/patient columns used to define the 31-patient cohort; a dedicated PROSPECTIVE_PATIENT_PROVENANCE.json for IDC (analogous to the ccRCC mirror's) does not exist yet"},
+        {"id": "hest_idc_hoptimus_embeddings", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/breast_idc/embeddings/hoptimus", "required": true, "exists": true, "note": "CLOSED 2026-09-26 (Seat G): per-spot H-Optimus-0 embeddings for all 107 eligible on-store breast-IDC samples (32 patients; see supersedes and runs/prospective/G0_idc_availability.json for why 107/32 rather than the draft's provisional 116/31), one npz per sample_id with keys embeddings/barcodes/indices/sample_id, produced by dbench/scripts/hest_fm_embed_hoptimus.py + the unmodified hest_fm_finalize.py; manifest.json (coverage/dim/NaN checks + per-file sha256) sits alongside the embeddings/ tree; sha256 manifest also at runs/prospective/G1_hoptimus_manifest.json"}
+      ]
+    },
+    {
+      "id": "cptac_brca_external",
+      "role": "external (Level 2) RNA transfer and orthogonal (Level 3) protein transfer; H&E scale-extension arm gated separately below",
+      "gates": [
+        {"id": "cptac_brca_rna_table", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/brca/transcriptomics__washu.parquet", "required": true, "exists": true},
+        {"id": "cptac_brca_protein_table", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/brca/proteomics__umich.parquet", "required": true, "exists": true},
+        {"id": "cptac_brca_clinical_table", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/brca/clinical__mssm.csv", "required": true, "exists": true},
+        {"id": "cptac_brca_patient_mapping", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/cptac_brca_patient_mapping.json", "required": true, "exists": false, "note": "STILL ABSENT (verified 2026-09-26, Seat G, not merely unattempted): build_cptac_patient_mapping() in dbench/prospective_renal_preflight.py needs a real pathology-slide manifest, which does not exist for BRCA -- see cptac_brca_wsi below. No slide<->patient mapping can honestly be produced without one."},
+        {"id": "cptac_brca_wsi", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_brca_wsi_20260926", "required": true, "exists": false, "note": "STILL ABSENT (verified 2026-09-26, Seat G): the draft's assumed route ('TCIA CPTAC-BRCA collection, same as ccRCC B1') does not exist -- TCIA/NBIA's live getCollectionValues lists only the CPTAC3 cohorts (CCRCC/LUAD/LSCC/UCEC/STAD/PDA/GBM/CM/HNSCC/SAR/AML), no CPTAC-BRCA; the exact PathDB pathology-crosswalk CSV the ccRCC mapping used (sha256 6f999cec...) covers only those same 11 tumor types, zero BRCA rows; GDC project CPTAC-2 ('CPTAC-Breast, Colon, Ovary', this store's actual 01BR0xx pilot cohort) carries only WXS/RNA-seq/miRNA-seq files, zero Slide Image files (checked via /files facets); and no on-store BRCA table carries a CPTAC<->TCGA barcode crosswalk that would let a TCGA-BRCA slide stand in instead (Tumor_Sample_Barcode is '01BRxxx_T', not a TCGA barcode). This is a verified public-data absence for the original 2016 CPTAC BRCA/OV/CO pilot cohort, not a licence/account gate -- see runs/prospective/G0_idc_availability.json.tcia_cptac_brca_slide_manifest for the full evidence trail. dbench/scripts/cptac_hoptimus_descriptors.py and cptac_cellvit_descriptors.py were still generalised with a --cohort argument (verified byte-identical on --cohort ccrcc) so this arm needs no further script work once/if a WSI route is ever found."},
+        {"id": "cptac_brca_he_descriptors", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_brca_he_descriptors_20260926/embeddings.h5", "required": true, "exists": false, "note": "STILL ABSENT: depends entirely on cptac_brca_wsi (verified absent above); dbench/scripts/cptac_hoptimus_descriptors.py --cohort brca (correctly) raises FileNotFoundError rather than fabricate a descriptor file."}
+      ]
+    },
+    {
+      "id": "second_breast_prognostic_cohort",
+      "role": "second prognostic cohort after state lock (public acquisition, analogous to tcga_kirc_prognosis)",
+      "gates": [
+        {"id": "tcga_brca_tables", "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/tcga_brca_20260926", "required": true, "exists": true, "note": "CLOSED 2026-09-26 (Seat G): acquired from the public cBioPortal REST API (no account/auth), study brca_tcga_pan_can_atlas_2018 -- 1082 patients x 18,484 protein-coding genes RNA-seq v2 (rna_seq_v2_mrna.parquet), 1084 patients clinical (clinical.parquet), MANIFEST.json with sha256 per file. dbench.cohorts.load_tcga_brca(endpoint=\"os\"|\"os_months\") added, tests in dbench/tests/test_cohorts.py."}
+      ]
+    }
+  ],
+  "translation": {
+    "cptac": "RNA-protein-H&E triangle intended; H&E arm blocked on a WSI acquisition+embedding pass that has not been run for BRCA",
+    "second_cohort": "predeclared prognosis and H&E-readout analysis after state lock, once TCGA-BRCA is acquired",
+    "treatment_claim": "blocked pending raw patient-level randomized treatment-trial data (none identified for this cohort)",
+    "forbidden": ["derived contrast tables as patient-level treatment evidence", "outcome-guided state selection", "calling a held-out HEST fold an external replication", "silently dropping the legacy-ST-platform patients to only keep Visium ones after seeing which arm looks stronger"]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "legacy_phase2_candidates_as_prospective_candidates": false,
+    "candidate_redefinition_after_external": false,
+    "truth_or_outcome_in_discovery": false
+  },
+  "ledger": {"filename": "hest_breast_idc_v01_ledger.jsonl"}
+}

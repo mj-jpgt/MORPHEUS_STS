@@ -1,0 +1,27 @@
+{
+ "schema": "morpheus_hypothesis_prespec/v1",
+ "id": "p1_division_of_labour_prespec_v01",
+ "status": "PRESPECIFIED (written and hashed before any result is read; coordinator ruling 2026-10-26)",
+ "written_by": "Agent R",
+ "question": "Do epithelial (consumer) metabolic states depend on producer-side metabolism measured specifically in the stromal-immune neighbourhood, beyond shared-environment coordination?",
+ "kind": "hypothesis-level test (no search, no proposer)",
+ "cohorts": [
+  {"order": 1, "study_key": "meylan2022_ccrcc", "patients": 24, "intervals": "patient-bootstrap over the pooled held-out patients"},
+  {"order": 2, "study_key": "valdeolivas2024_crc", "patients": 6, "intervals": "per-patient held-out gains, unit bootstrap and sign count (the < 8-patient rule)", "role": "direction contrast"}
+ ],
+ "spots": "epithelial-dominant spots: CellViT epithelial + neoplastic nuclear fraction >= 0.5 (tissue_architecture.MIN_EPITHELIAL) on covered spots",
+ "targets": ["programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION", "programme:mp:Respiration", "gene:SLC16A1"],
+ "explanatory": {
+  "producer_programmes": ["programme:hallmark:HALLMARK_GLYCOLYSIS", "programme:mp:Hypoxia", "gene:SLC16A3"],
+  "stromal_neighbour_term": "nbrS6 and nbrS18: the producer programme averaged over the 6 / 18 nearest neighbours that are stromal-immune dominant (M's operators)",
+  "epithelial_neighbour_term": "nbrE6 and nbrE18: the SAME producer programme averaged over the epithelial-dominant neighbours (swap control, in the same model)",
+  "model": "one model per (target, producer programme, radius): target ~ f(nbrS, nbrE) with relation v03_rff (256 RFF + linear terms, LOPO penalty from {0.01, 0.1, 1, 10}), patient folds, baselines B_nuis and B_known (relation_v03.known_covariates; overlapping programmes as the registered rule, reported with the second-catalogue flag)"
+ },
+ "declared_success": "for at least one (target, producer, radius) cell, all of: (1) the stromal-neighbour term carries held-out gain beyond B_known (drop-one gain of nbrS within the joint model, patient-bootstrap CI > 0) that the epithelial-neighbour term does not (drop-one gain of nbrE CI includes 0 or is smaller with the difference CI > 0); (2) the stromal-neighbour partial slope has the complementary sign (opposite direction to the epithelial-neighbour slope, or the sign expected for producer-consumer coupling: producer glycolysis/MCT4 up -> consumer OXPHOS/MCT1 up); (3) the stromal gain survives the composition-matched null (stromal-dominant neighbour sets replaced by random neighbour sets matched on the stromal fraction), (4) the Moran-matched smooth-programme null (producer programme replaced by Moran-matched random gene programmes), and (5) a distance-ring decay: the stromal-neighbour gain at ring 1 >= ring 2 >= ring 3 (rings of the hexagonal grid), with ring 1 > ring 3 by a bootstrap CI.",
+ "multiplicity": "BH over the 3 targets x 3 producers x 2 radii = 18 cells within each cohort; q <= 0.10",
+ "reported_regardless": ["calibration slope of the frozen model across patient folds", "sign of the stromal partial slope per patient", "per-cell gains and intervals", "null distributions"],
+ "failure_statement": "If no cell meets the declared success: 'no evidence of compartment-complementary metabolic dependency beyond shared-environment coordination' (the P1 line).",
+ "outputs": "runs/development/p1_prespec/",
+ "dependencies": "runs when M's nbrS6/nbrS18/nbrE6/nbrE18 operators land; the operator definitions are recorded with their commit in the result",
+ "multiplicity_note": "Meylan is the primary cohort; CRC v03 is a direction contrast and does not enter the Meylan BH family"
+}

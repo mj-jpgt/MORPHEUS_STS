@@ -1,0 +1,174 @@
+{
+ "fig6_evidence_cards/pair_G3_G4_state": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.67,
+  "colour_limit": 3.3847559452056872
+ },
+ "fig6_evidence_cards/pair_G5_G7_state": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.679,
+  "colour_limit": 1.9933654975891084
+ },
+ "card_G3_71ed4499fb99/a_spatial": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.681
+ },
+ "card_G3_71ed4499fb99/g_he_tissue": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.976
+ },
+ "card_G3_71ed4499fb99/g_he_state": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.889
+ },
+ "card_G3_71ed4499fb99/g_he_target": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.889
+ },
+ "card_G3_71ed4499fb99/h_residual": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.688
+ },
+ "card_G3_71ed4499fb99/i_constituents": {
+  "overlap_issues": [],
+  "n_axes": 8,
+  "nonwhite_fraction": 0.661
+ },
+ "card_G3_71ed4499fb99/j_composition": {
+  "overlap_issues": [],
+  "n_axes": 4,
+  "nonwhite_fraction": 0.713
+ },
+ "card_G4_67256d9e53d5/a_spatial": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.669
+ },
+ "card_G4_67256d9e53d5/g_he_tissue": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.976
+ },
+ "card_G4_67256d9e53d5/g_he_state": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.888
+ },
+ "card_G4_67256d9e53d5/g_he_target": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.889
+ },
+ "card_G4_67256d9e53d5/h_residual": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.685
+ },
+ "card_G4_67256d9e53d5/i_constituents": {
+  "overlap_issues": [],
+  "n_axes": 8,
+  "nonwhite_fraction": 0.656
+ },
+ "card_G4_67256d9e53d5/j_composition": {
+  "overlap_issues": [],
+  "n_axes": 4,
+  "nonwhite_fraction": 0.713
+ },
+ "card_G5_93b02a9038ea/a_spatial": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.69
+ },
+ "card_G5_93b02a9038ea/g_he_tissue": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.976
+ },
+ "card_G5_93b02a9038ea/g_he_state": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.888
+ },
+ "card_G5_93b02a9038ea/g_he_target": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.888
+ },
+ "card_G5_93b02a9038ea/h_residual": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.689
+ },
+ "card_G5_93b02a9038ea/i_constituents": {
+  "overlap_issues": [],
+  "n_axes": 6,
+  "nonwhite_fraction": 0.666
+ },
+ "card_G5_93b02a9038ea/j_composition": {
+  "overlap_issues": [],
+  "n_axes": 4,
+  "nonwhite_fraction": 0.713
+ },
+ "card_G7_caf32d321d27/a_spatial": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.682
+ },
+ "card_G7_caf32d321d27/g_he_tissue": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.976
+ },
+ "card_G7_caf32d321d27/g_he_state": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.875
+ },
+ "card_G7_caf32d321d27/g_he_target": {
+  "overlap_issues": [],
+  "n_axes": 2,
+  "nonwhite_fraction": 0.875
+ },
+ "card_G7_caf32d321d27/h_residual": {
+  "overlap_issues": [],
+  "n_axes": 3,
+  "nonwhite_fraction": 0.688
+ },
+ "card_G7_caf32d321d27/i_constituents": {
+  "overlap_issues": [],
+  "n_axes": 6,
+  "nonwhite_fraction": 0.665
+ },
+ "card_G7_caf32d321d27/j_composition": {
+  "overlap_issues": [],
+  "n_axes": 4,
+  "nonwhite_fraction": 0.713
+ },
+ "card_G3_71ed4499fb99/k_transfer": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.035
+ },
+ "card_G4_67256d9e53d5/k_transfer": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.039
+ },
+ "card_G5_93b02a9038ea/k_transfer": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.033
+ },
+ "card_G7_caf32d321d27/k_transfer": {
+  "overlap_issues": [],
+  "n_axes": 1,
+  "nonwhite_fraction": 0.033
+ }
+}

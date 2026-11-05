@@ -1,0 +1,17 @@
+numpy
+pandas
+pyarrow
+h5py
+scipy
+scikit-learn
+tabulate
+pytest
+pyyaml
+anndata
+tqdm
+matplotlib
+timm
+huggingface_hub
+transformers
+safetensors
+pillow

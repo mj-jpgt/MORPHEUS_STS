@@ -1,0 +1,17 @@
+{
+ "section": "ZEN42",
+ "level2_window_xywh": [
+  2122,
+  1896,
+  700,
+  700
+ ],
+ "fullres_window_xywh": [
+  8489,
+  7584,
+  2800,
+  2800
+ ],
+ "pixel_size_um": 0.4598,
+ "n_spots_hi_in_window": 56
+}

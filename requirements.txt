@@ -1,0 +1,45 @@
+# Base list: requirements-morpheus-gpu.txt of the clones (kept verbatim as requirements-morpheus-gpu.txt),
+# plus every third-party top-level module imported by a packaged .py file (static AST scan, see tests_static.log).
+# Python 3.10+; the runs were made on one A100 with CUDA torch.
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pillow
+h5py
+anndata
+pyarrow
+tabulate
+pyyaml
+tqdm
+pytest
+joblib
+threadpoolctl
+statsmodels
+shapely
+tifffile
+umap-learn
+torch
+timm
+huggingface_hub
+transformers
+safetensors
+
+# benchmark baselines (dbench/benchmark_v04/methods_*.py, dbench/benchmark_v05/methods_v05.py, dbench/harness/core8.py)
+lightgbm
+shap
+interpret        # EBM
+imodels          # RuleFit, iRF
+knockpy          # Model-X knockoffs
+pysr             # needs Julia
+tabpfn
+spectralexplain  # SPEX (TabPFN + SPEX baseline)
+
+# characterisation and cards (dbench/downstream/characterise.py, cards_v10.py)
+liana
+squidpy
+
+# figures (figures/_helpers/morpheus_style.py)
+cycler
+scienceplots

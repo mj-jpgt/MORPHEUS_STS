@@ -1,0 +1,350 @@
+{
+  "schema": "morpheus_dataset_registry/v1",
+  "ranked_at_utc": "2026-09-26T04:07:12Z",
+  "ranking_rule": "Suitability was ranked from availability/scale metadata only (patient/environment counts, modality lists, on-store paths, technology/platform notes) before any MORPHEUS discovery run, novelty check or literature read touched these datasets; no biological/physical finding or outcome for any candidate was read to produce this order, and none may be re-ranked after seeing results. Priority, in order: (1) meets or exceeds >=10 patients/environments for patient- or environment-disjoint folds -- every dataset below this threshold is ranked after every dataset that clears it, regardless of the remaining criteria; (2) richness of multivariate measurement among threshold-clearing datasets (independent modality count, feature dimensionality, whether an orthogonal assay is already co-measured); (3) whether an independent external replication route (Level 2) already has its data gated on-store vs. still requiring acquisition; (4) whether an orthogonal-modality (Level 3) route is already on-store; (5) scientific/actionability importance, including a native Level 4 perturbation/intervention route. Ties broken by n_entities descending. A dataset can be demoted below an otherwise-lower dataset by a documented leakage risk that a naive protocol would not control for (e.g. ground-truth labels physically present alongside blinded evaluation data).",
+  "records": [
+    {
+      "id": "hest_ccrcc",
+      "suitability_rank": 1,
+      "domain": "biological",
+      "modalities": ["spatial_transcriptomics_visium", "H&E_wsi", "nuclei_segmentation_cellvit", "pathology_fm_embeddings"],
+      "entity_type": "spot (within patient/slide)",
+      "spatial_support": "2D in-slide spot coordinates, 1 slide = 1 patient, Visium (55um spots, 24/24 samples)",
+      "temporal_support": "none (single timepoint per patient)",
+      "n_entities": 24,
+      "n_patients_or_environments": 24,
+      "context_variables_available": {
+        "space": true, "time": false, "graph": "spot k-NN within slide",
+        "environment": "patient (grouping unit for folds)", "intervention": false
+      },
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out patient folds within the 24-patient HEST ccRCC mirror (on-store)",
+        "level_2_independent_cohort": "CPTAC ccRCC bulk RNA, 185 patients, on-store (transcriptomics__washu.parquet); CPTAC H&E slide-level descriptors for 110 selected slides, on-store, labelled scale extension (spot -> slide)",
+        "level_3_orthogonal_modality": "CPTAC ccRCC proteomics, 194 patients, on-store (proteomics__umich.parquet)",
+        "level_4_perturbation": "none on-store for ccRCC directly; DepMap 24Q2 kidney-lineage lines usable as an actionability-adjacent lookup, not a matched perturbation cohort"
+      },
+      "licence_access": "HEST-1k: research use per HEST release terms (public, no account); CPTAC: NCI public-access tier, no DAC",
+      "on_store": [
+        {"path": "S/morpheus_substrate_mirror/hest/ccrcc", "size": "curated 24-patient mirror (*_st.h5ad, *_metadata.json, *_patches.h5, *_cellvit_seg.parquet)"},
+        {"path": "S/external/hest_fm_embeddings_20260906/ccrcc/embeddings/{hoptimus,dinov2,gigapath}", "size": "per-spot FM embeddings, 3 encoders"},
+        {"path": "S/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc", "size": "641M-scale parquet/csv tables (185 RNA, 194 protein patients)"},
+        {"path": "S/external/cptac_ccrcc_he_descriptors_20260925", "size": "110-slide H-optimus + CellViT slide descriptors"},
+        {"path": "S/external/tcga_kirc_20260925", "size": "71M, 512-patient RNA + clinical, public GDC/cBioPortal"}
+      ],
+      "known_leakage_risks": ["a held-out HEST fold is a Level 1 replication only, never external -- v0.2/v0.3 protocols enforce this explicitly", "the frozen sealed-evidence panel used one slide with shared spots across proposal/replication splits and must never be cited as independent replication"],
+      "preprocessing_needs": "none further; already the active prospective campaign (renal_spatial_v02/v03)",
+      "notes": "Reference/anchor record; already registered as campaign renal-spatial-v02-20260926 / v03. Included here for registry completeness and cross-cohort ranking, not re-litigated."
+    },
+    {
+      "id": "bmmc_cite_seq",
+      "suitability_rank": 2,
+      "domain": "biological",
+      "modalities": ["scRNA-seq", "CITE-seq_surface_protein_ADT"],
+      "entity_type": "cell",
+      "spatial_support": "none (dissociated single cells)",
+      "temporal_support": "none (cross-sectional)",
+      "n_entities": 90261,
+      "n_patients_or_environments": 12,
+      "context_variables_available": {
+        "space": false, "time": false, "graph": false,
+        "environment": "donor (9 unique DonorID) x site (4 unique Site) = 12 observed donor-site batches",
+        "intervention": false
+      },
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "within-donor held-out cells",
+        "level_2_independent_cohort": "held-out site (cross-site environment break, on-store, same object)",
+        "level_3_orthogonal_modality": "surface-protein panel (134 ADT features) already co-measured with RNA in the same cells -- built in, not acquired separately",
+        "level_4_perturbation": "DepMap 24Q2 CRISPR dependency lookup for actionability of any RNA-derived candidate (indirect: cell-line perturbation, not primary-cell perturbation of this cohort)"
+      },
+      "licence_access": "GEO GSE194122 / NeurIPS 2021 OpenProblems multimodal competition data, public, no account",
+      "on_store": [
+        {"path": "S/bmmc_cite_reacquired_20260906/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad", "size": "1.2G (624M .h5ad + 616M .h5ad.gz)"}
+      ],
+      "known_leakage_risks": ["9 donors is below the >=10 patient-disjoint threshold if donor alone is the fold unit; the predeclared environment unit for this campaign is the 12 donor x site batches, which does clear >=10 -- record both counts and do not silently swap the unit after seeing results", "cell_type labels (45 categories) exist in obs and must be excluded from candidate/competitor construction unless declared a target, since they are downstream of expression"],
+      "preprocessing_needs": "decode categorical obs columns (DonorID/Site/batch/cell_type stored as h5py category codes); split X into RNA (13953 genes) and ADT (134 proteins) blocks by var.feature_types",
+      "notes": "Rich orthogonal-modality dataset ready to use as-is; feeds protocol draft (b)."
+    },
+    {
+      "id": "hest_breast_idc",
+      "suitability_rank": 3,
+      "domain": "biological",
+      "modalities": ["spatial_transcriptomics_mixed_platform", "H&E_wsi", "nuclei_segmentation_cellvit"],
+      "entity_type": "spot (within patient/slide)",
+      "spatial_support": "2D in-slide spot coordinates; platform-heterogeneous (27 patients on the legacy 'Spatial Transcriptomics' ~100um-pitch platform, 4 patients on Visium/Visium HD)",
+      "temporal_support": "none (single timepoint per sample; some patients have multiple sections)",
+      "n_entities": 116,
+      "n_patients_or_environments": 31,
+      "context_variables_available": {
+        "space": true, "time": false, "graph": "spot k-NN within slide",
+        "environment": "patient (fold unit); platform/technology as a nuisance covariate", "intervention": false
+      },
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out patient folds within the 31-patient on-store cohort",
+        "level_2_independent_cohort": "CPTAC BRCA bulk RNA, 121 patients, on-store (transcriptomics__washu.parquet)",
+        "level_3_orthogonal_modality": "CPTAC BRCA proteomics, 125 patients, on-store (proteomics__umich.parquet)",
+        "level_4_perturbation": "none on-store for BRCA directly; DepMap 24Q2 breast-lineage lines usable as an actionability-adjacent lookup only"
+      },
+      "licence_access": "HEST-1k source studies: mix of Creative Commons and GEO/dbGaP-cleared public releases per HEST_v1_3_0.csv 'license' column (verify per-sample before use); CPTAC public-access tier",
+      "on_store": [
+        {"path": "S/spatial/hest_data/{st,wsis,cellvit_seg}", "size": "31 IDC patients / 116 samples verified present (id-matched against HEST_v1_3_0.csv); part of the 217G hest_data tree"},
+        {"path": "S/external/hf_tcga_cptac_cgga/cptac/tables/brca", "size": "585M-620M-scale parquet/csv (121 RNA, 125 protein patients)"}
+      ],
+      "known_leakage_risks": [
+        "technology is NOT uniform: 108/116 rows are the legacy 'Spatial Transcriptomics' platform (larger, sparser spots) and only 8/116 are Visium/Visium HD; platform must be added to the excluded-from-candidates set and to the always-on competitor baseline (a nuisance indicator), never left as an unmodelled confound",
+        "per-spot pathology FM embeddings (H-optimus/DINOv2/GigaPath) do NOT exist on-store for this cohort -- only ccrcc and kidney_injury are pre-embedded -- so morph_pc1..5 targets cannot be computed until an embedding pass is run",
+        "CPTAC BRCA has no H&E descriptors or WSIs on-store yet (only the ccRCC 110-slide set was acquired and embedded); the scale-extension arm of this cohort is gated required=true, exists=false until that acquisition repeats the ccRCC B1/B2 steps for BRCA"
+      ],
+      "preprocessing_needs": "compute per-spot H-optimus (or equivalent) embeddings for the 116 on-store samples; acquire+embed CPTAC BRCA WSIs for the external H&E arm; add platform/technology as an explicit baseline covariate",
+      "notes": "Highest-ranked HEST cohort beyond ccRCC clearing the >=10-patient threshold; candidate substrate for protocol draft (a)."
+    },
+    {
+      "id": "cptac_pancohort_molecular",
+      "suitability_rank": 4,
+      "domain": "biological",
+      "modalities": ["bulk_RNA", "proteomics", "phosphoproteomics", "CNV", "somatic_mutation", "clinical_phenotype"],
+      "entity_type": "patient",
+      "spatial_support": "none (bulk tissue)",
+      "temporal_support": "clinical follow-up (survival) fields present per cohort",
+      "n_entities": "9 non-ccRCC cohorts on-store: brca, coad, gbm, hnscc, lscc, luad, ov, pdac, ucec",
+      "n_patients_or_environments": "~100-200 per cohort (BRCA: 121 RNA / 125 protein; COAD: 106 RNA / 197 protein; per-cohort counts vary)",
+      "context_variables_available": {
+        "space": false, "time": "follow-up/survival fields", "graph": false,
+        "environment": "cohort/tumor type; clinical subgroup (stage, ancestry, purity)", "intervention": "medical_history/treatment fields present but not randomized"
+      },
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out patients within a cohort",
+        "level_2_independent_cohort": "cross-cohort transfer (e.g. a BRCA-discovered relation checked in another CPTAC tumor type) or TCGA public cohorts",
+        "level_3_orthogonal_modality": "proteomics/phosphoproteomics vs transcriptomics, native to every cohort",
+        "level_4_perturbation": "none native; DepMap lineage-matched lookup only"
+      },
+      "licence_access": "CPTAC public-access tier via NCI Proteomic Data Commons mirror, no DAC",
+      "on_store": [
+        {"path": "S/external/hf_tcga_cptac_cgga/cptac/tables/{brca,coad,gbm,hnscc,lscc,luad,ov,pdac,ucec}", "size": "585M-650M per cohort, transcriptomics/proteomics/phosphoproteomics/CNV/mutation/clinical/cibersort/xcell tables"}
+      ],
+      "known_leakage_risks": ["primarily a molecular-only substrate (no imaging); do not conflate its patient IDs with HEST/TCIA slide IDs without the same kind of explicit patient-mapping JSON the ccRCC campaign built"],
+      "preprocessing_needs": "per-cohort patient-ID mapping (none yet exist beyond ccRCC); harmonize gene symbol axis across washu/broad/bcm transcriptomics tables per cohort",
+      "notes": "Serves both as the external-replication resource for the HEST BRCA/COAD arms and as a standalone molecular discovery portfolio (RNA-protein relationships, clinical phenotype) across 9 tumor types."
+    },
+    {
+      "id": "perturbseq_replogle",
+      "suitability_rank": 5,
+      "domain": "biological",
+      "modalities": ["genome-wide_CRISPRi_perturbation", "scRNA-seq_pseudobulk"],
+      "entity_type": "perturbation (gene knockdown) pseudobulk profile",
+      "spatial_support": "none",
+      "temporal_support": "none (single endpoint per perturbation)",
+      "n_entities": "K562 essential + K562 genome-wide + RPE1 genome-wide screens",
+      "n_patients_or_environments": "3 screen environments (K562-essential, K562-genome-wide, RPE1-genome-wide); each contains thousands of distinct single-gene perturbations",
+      "context_variables_available": {
+        "space": false, "time": false, "graph": "gene-gene/perturbation similarity network derivable from pseudobulk profiles",
+        "environment": "cell line (K562 vs RPE1)", "intervention": "native: single-gene CRISPRi knockdown is the unit of observation"
+      },
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out perturbations within a screen",
+        "level_2_independent_cohort": "cross-cell-line transfer (K562 -> RPE1)",
+        "level_3_orthogonal_modality": "none built in (RNA readout only)",
+        "level_4_perturbation": "native -- this dataset IS the perturbation evidence, stronger than a lookup table"
+      },
+      "licence_access": "public (Replogle et al. genome-wide Perturb-seq release), no account",
+      "on_store": [
+        {"path": "S/data/perturbseq/K562_essential_normalized_bulk_01.h5ad", "size": "80M"},
+        {"path": "S/data/perturbseq/K562_gwps_normalized_bulk_01.h5ad", "size": "375M"},
+        {"path": "S/data/perturbseq/rpe1_normalized_bulk_01.h5ad", "size": "95M"}
+      ],
+      "known_leakage_risks": ["pseudobulk profiles already aggregate cells per perturbation -- any within-perturbation 'replication' is not independent of the aggregation and should be labelled Level 0/1, not stronger"],
+      "preprocessing_needs": "none further to load; needs a response-free target definition before any discovery use, per the anti-leakage rule",
+      "notes": "Not requested in the brief but found during the S/data inventory; genuine native Level-4 discovery substrate, distinct from DepMap's lookup-only role."
+    },
+    {
+      "id": "tcga_kirc_prognosis",
+      "suitability_rank": 6,
+      "domain": "biological",
+      "modalities": ["bulk_RNA", "clinical_survival"],
+      "entity_type": "patient",
+      "spatial_support": "none",
+      "temporal_support": "OS/DFS/DSS survival time-to-event fields",
+      "n_entities": 512,
+      "n_patients_or_environments": 512,
+      "context_variables_available": {"space": false, "time": "survival follow-up", "graph": false, "environment": "none beyond cohort", "intervention": "treatment fields present, not randomized"},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out patients",
+        "level_2_independent_cohort": "second prognostic cohort relative to CPTAC ccRCC (already designated this role in renal_spatial_v02/v03)",
+        "level_3_orthogonal_modality": "none (RNA + clinical only)",
+        "level_4_perturbation": "none"
+      },
+      "licence_access": "public GDC / cBioPortal (kirc_tcga_pan_can_atlas_2018), no account",
+      "on_store": [
+        {"path": "S/external/tcga_kirc_20260925/{clinical.parquet,rna_seq_v2_mrna.parquet,MANIFEST.json}", "size": "71M, 512 patients"}
+      ],
+      "known_leakage_risks": ["already reserved as the ccRCC campaign's second prognostic cohort; using it again as a primary discovery substrate risks double-counting the same 512 patients across two campaigns' significance budgets"],
+      "preprocessing_needs": "none further; loader `dbench.cohorts.load_tcga_kirc` already exists",
+      "notes": "Large, ready, but its designated role is external prognosis for ccRCC, not a fresh discovery substrate."
+    },
+    {
+      "id": "hest_epm_brain",
+      "suitability_rank": 7,
+      "domain": "biological",
+      "modalities": ["spatial_transcriptomics_visium", "H&E_wsi", "nuclei_segmentation_cellvit"],
+      "entity_type": "spot (within patient/slide)",
+      "spatial_support": "2D in-slide spot coordinates, uniform Visium platform (all 14 samples)",
+      "temporal_support": "none",
+      "n_entities": 14,
+      "n_patients_or_environments": 11,
+      "context_variables_available": {"space": true, "time": false, "graph": "spot k-NN within slide", "environment": "patient", "intervention": false},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out patient folds within the 11-patient on-store cohort",
+        "level_2_independent_cohort": "none on-store for ependymoma specifically",
+        "level_3_orthogonal_modality": "none on-store",
+        "level_4_perturbation": "none"
+      },
+      "licence_access": "per HEST_v1_3_0.csv license column for the EPM source study (verify before use)",
+      "on_store": [{"path": "S/spatial/hest_data/{st,wsis,cellvit_seg}", "size": "14 samples / 11 patients, all Visium, verified present"}],
+      "known_leakage_risks": ["no external molecular cohort identified on-store for ependymoma; a Level 2/3 claim would currently require a new public acquisition"],
+      "preprocessing_needs": "same FM-embedding gap as breast IDC (no pre-computed per-spot embeddings on-store)",
+      "notes": "Smaller than breast IDC (11 vs 31 patients) but technologically uniform (pure Visium), which removes the platform-heterogeneity risk breast IDC carries. Second choice if platform purity is prioritized over patient count."
+    },
+    {
+      "id": "climate_reanalysis_teleconnections",
+      "suitability_rank": 8,
+      "domain": "non-biological (climate/environmental)",
+      "modalities": ["gridded_reanalysis_fields_temperature_geopotential_precipitation", "teleconnection_index_timeseries"],
+      "entity_type": "monthly grid-cell/pressure-level observation; monthly climate-index value",
+      "spatial_support": "global lat/lon grid (73-94 x 144-192, varies by field), 17 pressure levels for geopotential height",
+      "temporal_support": "938 months, 1948-01 to 2026-02 (feed ended one month before the announced 2026-03 discontinuation -- recorded, not assumed current)",
+      "n_entities": "3 gridded fields x ~73x144 grid x 938 months; 12 index time series x ~920+ months",
+      "n_patients_or_environments": 12,
+      "context_variables_available": {"space": true, "time": true, "graph": "spatial adjacency on the lat/lon grid", "environment": "12 named teleconnection regimes (NAO/EA/WP/EP-NP/PNA/EA-WR/SCA/TNH/POL/PT/AO/ONI)", "intervention": false},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out later years of the same reanalysis product",
+        "level_2_independent_cohort": "NCEP/DOE Reanalysis 2 or 20CRv3 (noted as open, no-account alternatives, not yet acquired)",
+        "level_3_orthogonal_modality": "none built in",
+        "level_4_perturbation": "none"
+      },
+      "licence_access": "NOAA/NCEP public domain (US government work), no account",
+      "on_store": [
+        {"path": "S/morpheus_substrate_mirror/climate/ncep_ncar/{hgt,air.2m,prate.sfc}.mon.mean.nc", "size": "395M total, sha256-verified"},
+        {"path": "S/morpheus_substrate_mirror/climate/teleconnections/*.tim + *.ascii", "size": "12 index files"}
+      ],
+      "known_leakage_risks": ["EA and EA/WR indices are commonly conflated in other NOAA products; this mirror deliberately sourced them as distinct series -- do not re-merge them"],
+      "preprocessing_needs": "xarray load + regridding/alignment between the 3 fields (differing grid resolutions) and the 12 index series' native cadence",
+      "notes": "Non-biological discovery portfolio candidate 1 (D6 requirement); large temporal depth, ready to use, no account friction."
+    },
+    {
+      "id": "materials_oc20_is2re",
+      "suitability_rank": 9,
+      "domain": "non-biological (materials/physical science)",
+      "modalities": ["atomic_structure_graph", "adsorption_relaxed_energy_regression_target"],
+      "entity_type": "adsorbate-catalyst atomic system",
+      "spatial_support": "3D atomic coordinates + periodic cell (pos attribute currently unreadable, see risk below)",
+      "temporal_support": "none (single relaxed-energy endpoint per system)",
+      "n_entities": 635000,
+      "n_patients_or_environments": 4,
+      "context_variables_available": {"space": "3D atomic graph", "time": false, "graph": "atom bonding/adjacency", "environment": "4 predeclared domain-OOD splits (in-domain, OOD-adsorbate, OOD-catalyst, OOD-both)", "intervention": "initial structure vs relaxed structure is itself an intervention/response pair"},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out in-domain validation split",
+        "level_2_independent_cohort": "the 3 OOD validation/test splits (adsorbate, catalyst, both) -- a genuine environment-shift replication, already on-store",
+        "level_3_orthogonal_modality": "none built in",
+        "level_4_perturbation": "none (relaxation is a simulated response, not a real-world intervention)"
+      },
+      "licence_access": "CC-BY-4.0 (Open Catalyst Project / fairchem)",
+      "on_store": [{"path": "S/morpheus_substrate_mirror/materials/oc20_is2re/is2res_train_val_test_lmdbs.tar.gz", "size": "111,945,665,907 bytes (~112G) total across splits"}],
+      "known_leakage_risks": ["obj.pos (atom position tensor) fails to unpickle on every split with the currently installed torch_geometric (2.8.0.post1) -- an environment/tooling gap, not file corruption; any feature that needs raw 3D coordinates is blocked until a compatible PyG/fairchem loader is installed", "test splits legitimately carry no y_relaxed label by design -- must not be treated as a missing-data bug"],
+      "preprocessing_needs": "pin an older torch_geometric or use fairchem/ocp's own LmdbDataset shim to read obj.pos; natoms/atomic_numbers/cell/tags are readable now without it",
+      "notes": "Non-biological discovery portfolio candidate 2 (D6 requirement); largest n_entities of any registry record, but the position-tensor tooling gap is a real, documented blocker."
+    },
+    {
+      "id": "particle_physics_lhco2020",
+      "suitability_rank": 10,
+      "domain": "non-biological (particle physics)",
+      "modalities": ["jet_constituent_kinematics", "blind_anomaly_detection_events"],
+      "entity_type": "collision event (700 jet constituents x {pT, eta, phi})",
+      "spatial_support": "none (momentum-space features, not physical space)",
+      "temporal_support": "none (independent events)",
+      "n_entities": 4000000,
+      "n_patients_or_environments": 4,
+      "context_variables_available": {"space": false, "time": false, "graph": "jet substructure adjacency derivable from constituents", "environment": "4 event sets (1 labeled background MC + 3 Black Boxes)", "intervention": false},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out events within a Black Box",
+        "level_2_independent_cohort": "cross-Black-Box transfer of a discovered anomaly signature",
+        "level_3_orthogonal_modality": "none built in",
+        "level_4_perturbation": "none"
+      },
+      "licence_access": "CC-BY-4.0 (Zenodo record 4287846, G. Kasieczka et al.)",
+      "on_store": [
+        {"path": "S/morpheus_substrate_mirror/particle_physics/lhco2020/events_LHCO2020_backgroundMC_Pythia.h5", "size": "2,697,677,287 bytes, 1,000,000 events"},
+        {"path": "S/morpheus_substrate_mirror/particle_physics/lhco2020/events_LHCO2020_BlackBox{1,2,3}.h5", "size": "~2.2-3.5G each, 1,000,000 events each"},
+        {"path": "S/morpheus_substrate_mirror/particle_physics/lhco2020/events_LHCO2020_BlackBox{1,3}.masterkey", "size": "4,000,000 bytes each, ground-truth signal/background labels"}
+      ],
+      "known_leakage_risks": [
+        "the .masterkey ground-truth label files for BlackBox1 and BlackBox3 are physically present on-store alongside the blinded event files -- this is the exact literature/outcome leakage pattern the anti-leakage rule targets; masterkeys must not be read until after a candidate anomaly signature is frozen, exactly like prospective literature, and any access to them must be logged",
+        "BlackBox2 has no masterkey on-store (never released publicly) -- do not attempt to reconstruct its ground truth"
+      ],
+      "preprocessing_needs": "none to load (h5py-readable); a response-free anomaly-score definition must be predeclared before any masterkey is touched",
+      "notes": "Non-biological discovery portfolio candidate 3 (D6 requirement); ranked below materials because the ground-truth masterkeys sit on the same volume as the blinded data, which raises the anti-leakage discipline burden relative to a dataset with no embedded answer key at all."
+    },
+    {
+      "id": "hest_bladder_blca",
+      "suitability_rank": 11,
+      "domain": "biological",
+      "modalities": ["spatial_transcriptomics_visium", "H&E_wsi", "nuclei_segmentation_cellvit"],
+      "entity_type": "spot (within patient/slide)",
+      "spatial_support": "2D in-slide spot coordinates, uniform Visium platform",
+      "temporal_support": "none",
+      "n_entities": 6,
+      "n_patients_or_environments": 5,
+      "context_variables_available": {"space": true, "time": false, "graph": "spot k-NN within slide", "environment": "patient", "intervention": false},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "only 5 patients -- insufficient for a 5-fold patient-disjoint design at reasonable per-fold size",
+        "level_2_independent_cohort": "none identified on-store for bladder cancer",
+        "level_3_orthogonal_modality": "none on-store",
+        "level_4_perturbation": "none"
+      },
+      "licence_access": "per HEST_v1_3_0.csv license column (verify before use)",
+      "on_store": [{"path": "S/spatial/hest_data/{st,wsis,cellvit_seg}", "size": "6 samples / 5 patients, all Visium, verified present"}],
+      "known_leakage_risks": ["below the predeclared >=10-patient threshold for patient-disjoint folds; any discovery run here could only report Level 0 (internal, non-disjoint) evidence honestly"],
+      "preprocessing_needs": "same FM-embedding gap as breast IDC/EPM",
+      "notes": "Ranked below the >=10-patient threshold line per the predeclared rule; recorded for completeness, not selected for a campaign draft."
+    },
+    {
+      "id": "depmap_24q2",
+      "suitability_rank": 12,
+      "domain": "biological",
+      "modalities": ["genome-wide_CRISPR_gene_effect_scores", "bulk_RNA_expression", "cell_line_metadata"],
+      "entity_type": "cancer cell line (CRISPR knockout screen)",
+      "spatial_support": "none",
+      "temporal_support": "none",
+      "n_entities": "~1100 cell lines (Model.csv)",
+      "n_patients_or_environments": "~1100 cell-line environments (not patients)",
+      "context_variables_available": {"space": false, "time": false, "graph": false, "environment": "cell-line lineage/subtype (Model.csv)", "intervention": "native: genome-wide CRISPR knockout is the measurement itself"},
+      "replication_routes": {
+        "level_1_new_donors_same_acquisition": "held-out cell lines",
+        "level_2_independent_cohort": "none as a standalone discovery cohort",
+        "level_3_orthogonal_modality": "expression vs dependency score, native",
+        "level_4_perturbation": "native, but at the cell-line level, not matched to any specific patient cohort in this registry"
+      },
+      "licence_access": "public (Broad DepMap release), no account",
+      "on_store": [{"path": "S/depmap_24q2/{CRISPRGeneEffect.csv,OmicsExpressionProteinCodingGenesTPMLogp1.csv,Model.csv}", "size": "1.1G total"}],
+      "known_leakage_risks": ["explicitly designated a perturbational EVIDENCE resource for actionability lookups (Level 4-adjacent), not a primary discovery substrate -- using it to both generate and 'validate' a candidate in the same campaign would be circular"],
+      "preprocessing_needs": "gene-symbol harmonization against whichever discovery cohort's candidate list is being looked up",
+      "notes": "Per the owner brief, this is deliberately ranked as an ancillary actionability resource (used by protocol draft (b)'s Level 4 step), not as its own discovery campaign."
+    },
+    {
+      "id": "hest_coad",
+      "suitability_rank": 13,
+      "domain": "biological",
+      "modalities": ["spatial_transcriptomics (catalogued only)", "H&E_wsi (catalogued only)"],
+      "entity_type": "spot (within patient/slide), per HEST_v1_3_0.csv catalogue",
+      "spatial_support": "catalogued as Bowel/COAD in HEST_v1_3_0.csv but zero matching st/wsi/cellvit files found under S/spatial/hest_data",
+      "temporal_support": "none",
+      "n_entities": 0,
+      "n_patients_or_environments": 0,
+      "context_variables_available": {"space": "catalogued only, not verified locally", "time": false, "graph": false, "environment": "6 patients listed in the metadata catalogue (59 rows)", "intervention": false},
+      "replication_routes": {"level_1_new_donors_same_acquisition": "not usable until acquired", "level_2_independent_cohort": "CPTAC COAD (106 RNA / 197 protein patients) already on-store and ready once a HEST COAD arm exists", "level_3_orthogonal_modality": "CPTAC COAD proteomics, on-store", "level_4_perturbation": "none"},
+      "licence_access": "per HEST_v1_3_0.csv license column for the 59 catalogued COAD rows (source studies vary; verify per-sample before acquiring)",
+      "on_store": [],
+      "known_leakage_risks": ["none active -- there is no local data to leak; risk is a false claim of 'on-store' if the metadata catalogue is mistaken for acquired data"],
+      "preprocessing_needs": "NEEDS PUBLIC ACQUISITION: download the 59 catalogued HEST COAD samples' raw ST (h5ad), WSI and run CellViT segmentation. Source: HEST-1k public release (same distribution channel as the ccRCC/breast/EPM cohorts already on-store), licence per-sample per HEST_v1_3_0.csv (Creative Commons / GEO-cleared, verify each of the 6 patients' rows before download). Approximate size: comparable per-sample footprint to the on-store IDC/EPM Visium/ST samples already inventoried (tens of MB per h5ad, hundreds of MB-few GB per WSI) -- not acquired, not estimated further without an explicit acquisition pass.",
+      "notes": "Present in the full HEST catalogue (matches the owner's 'COAD 59' example) but absent from what is physically on-store; ranked last because it currently offers zero usable data despite CPTAC-side external replication already being ready."
+    }
+  ]
+}

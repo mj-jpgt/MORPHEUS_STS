@@ -1,0 +1,93 @@
+{
+ "schema": "morpheus_relation_novelty/v1",
+ "id": "relation_novelty_v08b",
+ "amendment": "v08b",
+ "reason": "relation-level grading replaces component-level grading",
+ "status": "FROZEN before any relation is graded (written and hashed by Agent R, 2026-10-26; owner amendment v08b, COUNTEREXAMPLE_PLAN.md)",
+ "unit_graded": "the full frozen relation: target, constituents, spatial versions (own / nbr6 / nbr18 / contrast / distance / compartment), direction of each constituent's contribution, context (row restriction, compartment, conditioning variable) and, for conserved relations, the organs in which it holds",
+ "labels": {
+  "gene": "the HGNC symbol; synonyms: none (exact symbol, case-sensitive word match in screening)",
+  "programme": "the label in programme_query_terms below (a fixed OR-group of names for the programme); a programme without an entry uses its humanised name",
+  "morphology_centre": "the descriptive H&E label from the characterisation record (e.g. 'eosinophilic granular tumour cells'); if none, the decoded meaning label; the centre id itself is never queried",
+  "composition": "the cell class name (e.g. 'stromal cells', 'immune cells', 'neoplastic cells')",
+  "other": "inferred CNV -> 'copy number'; budding_like -> 'tumour budding'; gland_architecture -> 'gland architecture'; normal_appearing -> 'normal-appearing epithelium'"
+ },
+ "programme_query_terms": {
+  "mp:EMT-I": "(\"epithelial-mesenchymal transition\" OR \"EMT\" OR \"cancer-associated fibroblast\" OR \"CAF\")",
+  "mp:EMT-II": "(\"epithelial-mesenchymal transition\" OR \"EMT\" OR \"myofibroblast\" OR \"cancer-associated fibroblast\")",
+  "mp:EMT-III": "(\"epithelial-mesenchymal transition\" OR \"EMT\" OR \"fibroblast\")",
+  "mp:EMT IV": "(\"epithelial-mesenchymal transition\" OR \"EMT\")",
+  "mp:Interferon/MHC-II (I)": "(\"MHC class II\" OR \"MHC-II\" OR \"HLA-DR\" OR \"interferon\" OR \"antigen presentation\")",
+  "mp:Interferon/MHC-II (II)": "(\"MHC class II\" OR \"MHC-II\" OR \"HLA-DR\" OR \"interferon\" OR \"antigen presentation\")",
+  "mp:Metal-response": "(\"metallothionein\" OR \"metal response\" OR \"MT1\" OR \"MT2A\")",
+  "mp:Glutathione": "(\"glutathione\")",
+  "mp:Hypoxia": "(\"hypoxia\" OR \"HIF\")",
+  "mp:IG": "(\"immunoglobulin\" OR \"plasma cell\" OR \"plasma cells\")",
+  "mp:Respiration": "(\"oxidative phosphorylation\" OR \"mitochondrial respiration\" OR \"OXPHOS\")",
+  "mp:MYC": "(\"MYC\")",
+  "mp:Cell Cylce HMG-rich": "(\"proliferation\" OR \"cell cycle\" OR \"HMGB\")",
+  "mp:Cell Cycle - G2/M": "(\"proliferation\" OR \"G2/M\" OR \"cell cycle\")",
+  "mp:Cell Cycle - G1/S": "(\"proliferation\" OR \"G1/S\" OR \"cell cycle\")",
+  "mp:PDAC-classical": "(\"classical subtype\" OR \"classical-like\" OR \"mucinous\")",
+  "mp:PDAC-related": "(\"PDAC-related\" OR \"mucin\" OR \"secretory\")",
+  "mp:Secreted II": "(\"secretory\" OR \"mucin\" OR \"goblet\")",
+  "mp:Astrocytes": "(\"astrocyte\" OR \"astrocytic\" OR \"GFAP\")",
+  "mp:Epithelial Senescence": "(\"senescence\" OR \"senescent\")",
+  "mp:Proteasomal degradation": "(\"proteasome\" OR \"proteasomal\")",
+  "mp:Stress": "(\"stress response\" OR \"heat shock\" OR \"AP-1\")",
+  "mp:Protein maturation": "(\"unfolded protein response\" OR \"ER stress\" OR \"protein folding\")",
+  "hallmark:*": "the humanised Hallmark name in quotes (e.g. \"oxidative phosphorylation\", \"hypoxia\", \"glycolysis\", \"epithelial-mesenchymal transition\", \"complement\", \"TNF-alpha signaling\" OR \"NF-kB\", \"p53\", \"fatty acid metabolism\", \"adipogenesis\", \"mTORC1\", \"E2F targets\", \"G2M checkpoint\", \"IL6 JAK STAT3\", \"angiogenesis\", \"apoptosis\", \"estrogen response\", \"allograft rejection\", \"interferon gamma\", \"pancreas beta cells\")"
+ },
+ "disease_terms": {
+  "meylan2022_ccrcc": "(\"clear cell renal cell carcinoma\" OR \"ccRCC\" OR \"renal cell carcinoma\")",
+  "valdeolivas2024_crc": "(\"colorectal cancer\" OR \"colorectal carcinoma\" OR \"colon cancer\" OR \"rectal cancer\")",
+  "gse208253_oscc": "(\"oral squamous cell carcinoma\" OR \"OSCC\" OR \"oral cancer\" OR \"head and neck squamous cell carcinoma\" OR \"HNSCC\")",
+  "ji2020_cscc": "(\"cutaneous squamous cell carcinoma\" OR \"cSCC\" OR \"skin squamous cell carcinoma\")",
+  "ependymoma_pfa": "(\"ependymoma\")",
+  "gse237183_glioma": "(\"glioma\" OR \"glioblastoma\")",
+  "kidney_injury": "(\"acute kidney injury\" OR \"kidney injury\" OR \"kidney fibrosis\")",
+  "tcga_kirc": "(\"clear cell renal cell carcinoma\" OR \"ccRCC\" OR \"renal cell carcinoma\")"
+ },
+ "spatial_terms": "(\"neighbourhood\" OR \"neighborhood\" OR \"adjacent\" OR \"boundary\" OR \"interface\" OR \"niche\" OR \"distance\" OR \"gradient\" OR \"compartment\" OR \"spatial\" OR \"proximity\" OR \"microenvironment\")",
+ "conserved_terms": "(\"pan-cancer\" OR \"across cancers\" OR \"multiple cancer types\") plus, one query per organ in which the relation holds, that organ's disease term",
+ "query_templates": [
+  {"family": "Q1_pair", "per": "constituent c", "text": "<target> AND <c> AND <disease>"},
+  {"family": "Q2_pair_spatial", "per": "constituent c", "text": "<target> AND <c> AND <disease> AND <spatial_terms>"},
+  {"family": "Q3_full", "per": "relation", "text": "<target> AND <c1> AND ... AND <ck> AND <disease>"},
+  {"family": "Q4_full_spatial", "per": "relation", "text": "<target> AND <c1> AND ... AND <ck> AND <spatial_terms>"},
+  {"family": "Q5_pair_any_disease", "per": "constituent c", "text": "<target> AND <c> AND (\"cancer\" OR \"tumor\" OR \"tumour\" OR \"tissue\")"},
+  {"family": "Q6_conserved", "per": "relation holding in >= 3 organs; each constituent c", "text": "<target> AND <c> AND <conserved_terms>"}
+ ],
+ "retrieval": "Europe PMC REST (resultType=core, up to 200 records per query, sorted by relevance) and OpenAlex (search, up to 200 per query) through dbench.downstream.novelty.fetch with its cache; OpenAlex runs without an API key on a shared daily budget (no account is created): when it is exhausted the query is logged with the error and Europe PMC stands alone (declared per query in the log); no date cutoff",
+ "screen": "a record is READ (title + abstract) when it mentions the target label and at least one constituent label (any synonym in the OR-group, word match); every other retrieved record is logged as 'not read: no target-constituent co-mention' (it cannot report the dependency)",
+ "prior_art_rule": {
+  "definition": "A record is prior art for a relation only if it reports the same dependency: a stated association, correlation, regulation, co-variation, co-localisation reported as a dependency, or a causal/mechanistic link between the target and the constituent(s), in the stated direction where the relation has one. Co-mention, shared pathway membership, shared cell type, appearing in the same gene list or signature, or being separately prognostic is NOT prior art for the relation.",
+  "levels": {
+   "same_dependency_same_spatial_same_disease": "the record reports the target-constituent dependency with the relation's spatial form (neighbourhood / adjacency / boundary / interface / niche / distance / compartment as the relation has it) in the same disease",
+   "same_dependency_other_disease": "the record reports the dependency (spatial form as above where the relation is spatial) in another disease or tissue",
+   "constituent_association_same_disease_not_spatial": "the record reports the target-constituent association in the same disease without the spatial form",
+   "individual_constituent_association": "the record reports the association of ONE constituent with the target (not the joint relation)"
+  },
+  "direction": "a record reporting the opposite direction is logged as 'association reported, opposite direction': it is not prior art for the dependency but counts as an association for category 5",
+  "evidence_unit": "title and abstract (full text not retrieved; declared)"
+ },
+ "decision_procedure_in_order": [
+  "1 no novelty identified: >= 1 record at level same_dependency_same_spatial_same_disease",
+  "2 context extension: >= 1 record at level same_dependency_other_disease and none at level 1",
+  "3 spatial extension: >= 1 record at level constituent_association_same_disease_not_spatial and the relation's spatial form is not reported (applies when the relation has a spatial term; a relation with own-spot terms only and such a record is 'no novelty identified')",
+  "4 compositional novelty: every constituent has a record at level individual_constituent_association (same disease), no record reports them jointly, and the relation passes the higher-order or conditional test (G_HO interval above 0, or a conditional/context test passed)",
+  "5 new association: no record reports any association between any constituent and the target in this disease",
+  "residual (some constituents individually associated, no joint record, no higher-order/conditional pass): graded 'no novelty identified' if the relation is own-spot only, otherwise 'spatial extension' (the additive combination of reported associations is not new; its spatial form is)"
+ ],
+ "secondary_tags": {
+  "Conserved": "the relation holds in >= 3 organs under both transfer rules (P5 v03.1 refit and no-refit) with decoded meaning preserved",
+  "Mechanistic": "an independent perturbation connection survives the coherent-random null and signature perturbation (Agent T, Strategy E)"
+ },
+ "tiers": {
+  "Candidate": "passes internal nulls and the artifact screen, grades 2-5",
+  "Confirmed": "a candidate that replicates externally without refit under the gain-above-null rule",
+  "Conserved": "a confirmed relation holding in >= 3 organs under both transfer rules, decoded meaning preserved"
+ },
+ "graders": "two independent graders from these frozen templates and this rule (Agent R, Agent T); grades are not shared until both are done; disagreements resolved by citing the specific record; every record considered is logged with the reason it is or is not prior art",
+ "decoding": "reported beside every grade (grader v2.1 decoding and tier); 'all components decode to known axes' is not a reason for category 1"
+}

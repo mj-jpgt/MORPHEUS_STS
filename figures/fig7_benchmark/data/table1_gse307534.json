@@ -1,0 +1,6552 @@
+{
+ "prevalence": {
+  "single": {
+   "gse307534_lung_precursor_b3": 0.015997675462115647
+  },
+  "pair": {
+   "gse307534_lung_precursor_b3": 0.0182925
+  }
+ },
+ "rows": {
+  "sel_screen": {
+   "ap_single": {
+    "mean": 0.27838740633085785,
+    "lo": 0.19221435514193608,
+    "hi": 0.37067336126469486,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.27838740633085785
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5710570137727525,
+    "lo": 0.5124156841067681,
+    "hi": 0.6320156338005433,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5710570137727525
+    }
+   },
+   "p5_single": {
+    "mean": 0.21453571428571433,
+    "lo": 0.15018809523809526,
+    "hi": 0.2766083333333333,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.21453571428571433
+    }
+   },
+   "p10_single": {
+    "mean": 0.13709623015873018,
+    "lo": 0.09612599206349207,
+    "hi": 0.17921197916666667,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13709623015873018
+    }
+   },
+   "p20_single": {
+    "mean": 0.09781051587301587,
+    "lo": 0.06537264384920635,
+    "hi": 0.13346059027777776,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09781051587301587
+    }
+   },
+   "p50_single": {
+    "mean": 0.06706646825396825,
+    "lo": 0.042614002976190474,
+    "hi": 0.09600752480158727,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06706646825396825
+    }
+   },
+   "r10_single": {
+    "mean": 0.26451694675649773,
+    "lo": 0.17550981995561088,
+    "hi": 0.36080197797196073,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26451694675649773
+    }
+   },
+   "r20_single": {
+    "mean": 0.28599832081215437,
+    "lo": 0.19710410658579405,
+    "hi": 0.3849197333688938,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.28599832081215437
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6138392857142857,
+    "lo": 0.4844300595238095,
+    "hi": 0.7343861607142856,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6138392857142857
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5234515836953199,
+    "lo": 0.38767201817085567,
+    "hi": 0.657529893630681,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5234515836953199
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6337242581211207,
+    "lo": 0.5915397612552002,
+    "hi": 0.6797107292075155,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6337242581211207
+    }
+   },
+   "f1_single": {
+    "mean": 0.28403378736131496,
+    "lo": 0.19949915333908652,
+    "hi": 0.3738182966337958,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.28403378736131496
+    }
+   },
+   "rho_single": {
+    "mean": 0.07052357056776666,
+    "lo": 0.05506012458371728,
+    "hi": 0.0849661553567142,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07052357056776666
+    }
+   },
+   "ap_pair": {
+    "mean": 0.31368449158955786,
+    "lo": 0.2096646380829214,
+    "hi": 0.4250499422322925,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.31368449158955786
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5847693270041944,
+    "lo": 0.5053716381142297,
+    "hi": 0.6625107653627027,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5847693270041944
+    }
+   },
+   "p5_pair": {
+    "mean": 0.3765,
+    "lo": 0.25503333333333333,
+    "hi": 0.49646111111111096,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3765
+    }
+   },
+   "p10_pair": {
+    "mean": 0.2765972222222222,
+    "lo": 0.1882059027777778,
+    "hi": 0.3676274305555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2765972222222222
+    }
+   },
+   "p20_pair": {
+    "mean": 0.17025,
+    "lo": 0.11372604166666668,
+    "hi": 0.22808506944444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17025
+    }
+   },
+   "p50_pair": {
+    "mean": 0.09266944444444446,
+    "lo": 0.05833305555555555,
+    "hi": 0.12999611111111106,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09266944444444446
+    }
+   },
+   "r10_pair": {
+    "mean": 0.2932236040872569,
+    "lo": 0.19051936311242515,
+    "hi": 0.40468069440504073,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2932236040872569
+    }
+   },
+   "r20_pair": {
+    "mean": 0.319011682556273,
+    "lo": 0.21163097430944627,
+    "hi": 0.43402683588879726,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.319011682556273
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.5931944444444445,
+    "lo": 0.45151041666666664,
+    "hi": 0.7302881944444444,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5931944444444445
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.48395776629427917,
+    "lo": 0.3462027228932104,
+    "hi": 0.6190089616436906,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.48395776629427917
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6440222254528865,
+    "lo": 0.5941076172860009,
+    "hi": 0.6987830076376506,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6440222254528865
+    }
+   },
+   "f1_pair": {
+    "mean": 0.3055173992831853,
+    "lo": 0.20661449691631667,
+    "hi": 0.41277629611550287,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3055173992831853
+    }
+   },
+   "rho_pair": {
+    "mean": 0.08008335071279075,
+    "lo": 0.06182320750874704,
+    "hi": 0.09737710185192193,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08008335071279075
+    }
+   }
+  },
+  "sel_screen_joint": {
+   "ap_single": {
+    "mean": 0.27838740633085785,
+    "lo": 0.19221435514193608,
+    "hi": 0.37067336126469486,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.27838740633085785
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5710570137727525,
+    "lo": 0.5124156841067681,
+    "hi": 0.6320156338005433,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5710570137727525
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.21453571428571433,
+    "lo": 0.15018809523809526,
+    "hi": 0.2766083333333333,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.21453571428571433
+    }
+   },
+   "p10_single": {
+    "mean": 0.13709623015873018,
+    "lo": 0.09612599206349207,
+    "hi": 0.17921197916666667,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13709623015873018
+    }
+   },
+   "p20_single": {
+    "mean": 0.09781051587301587,
+    "lo": 0.06537264384920635,
+    "hi": 0.13346059027777776,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09781051587301587
+    }
+   },
+   "p50_single": {
+    "mean": 0.06706646825396825,
+    "lo": 0.042614002976190474,
+    "hi": 0.09600752480158727,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06706646825396825
+    }
+   },
+   "r10_single": {
+    "mean": 0.26451694675649773,
+    "lo": 0.17550981995561088,
+    "hi": 0.36080197797196073,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26451694675649773
+    }
+   },
+   "r20_single": {
+    "mean": 0.28599832081215437,
+    "lo": 0.19710410658579405,
+    "hi": 0.3849197333688938,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.28599832081215437
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6138392857142857,
+    "lo": 0.4844300595238095,
+    "hi": 0.7343861607142856,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6138392857142857
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5234515836953199,
+    "lo": 0.38767201817085567,
+    "hi": 0.657529893630681,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5234515836953199
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6337242581211207,
+    "lo": 0.5915397612552002,
+    "hi": 0.6797107292075155,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6337242581211207
+    }
+   },
+   "f1_single": {
+    "mean": 0.28403378736131496,
+    "lo": 0.19949915333908652,
+    "hi": 0.3738182966337958,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.28403378736131496
+    }
+   },
+   "rho_single": {
+    "mean": 0.07052357056776666,
+    "lo": 0.05506012458371728,
+    "hi": 0.0849661553567142,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07052357056776666
+    }
+   },
+   "ap_pair": {
+    "mean": 0.32900208754696747,
+    "lo": 0.22283396002458816,
+    "hi": 0.44176232559057355,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.32900208754696747
+    },
+    "diff_ours_minus": -0.015595942660739359,
+    "diff_lo": -0.03482891015489292,
+    "diff_hi": 0.008476762682377082,
+    "p_one_sided": 0.917,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5803994904416673,
+    "lo": 0.49550333800959917,
+    "hi": 0.6623331027726578,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5803994904416673
+    },
+    "diff_ours_minus": 0.004452960025280918,
+    "diff_lo": -0.013765991489383508,
+    "diff_hi": 0.021718826610415118,
+    "p_one_sided": 0.312,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.4046666666666667,
+    "lo": 0.28357708333333337,
+    "hi": 0.5275249999999999,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4046666666666667
+    }
+   },
+   "p10_pair": {
+    "mean": 0.30194444444444446,
+    "lo": 0.21062465277777778,
+    "hi": 0.39624687499999983,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.30194444444444446
+    }
+   },
+   "p20_pair": {
+    "mean": 0.18369444444444444,
+    "lo": 0.12835729166666665,
+    "hi": 0.24300694444444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.18369444444444444
+    }
+   },
+   "p50_pair": {
+    "mean": 0.10112777777777779,
+    "lo": 0.067709375,
+    "hi": 0.13708402777777778,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10112777777777779
+    }
+   },
+   "r10_pair": {
+    "mean": 0.31699022684064254,
+    "lo": 0.2079394361870337,
+    "hi": 0.4304943470540123,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.31699022684064254
+    }
+   },
+   "r20_pair": {
+    "mean": 0.33762344919265275,
+    "lo": 0.226863652322505,
+    "hi": 0.4539363541453064,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.33762344919265275
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6476388888888889,
+    "lo": 0.5177534722222222,
+    "hi": 0.7698680555555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6476388888888889
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.5165749569476096,
+    "lo": 0.38910294706169324,
+    "hi": 0.6429603285775696,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5165749569476096
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6538009236064921,
+    "lo": 0.6016414093736755,
+    "hi": 0.7104371513508003,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6538009236064921
+    }
+   },
+   "f1_pair": {
+    "mean": 0.32470838225340615,
+    "lo": 0.21941294649269827,
+    "hi": 0.4344443248157172,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.32470838225340615
+    }
+   },
+   "rho_pair": {
+    "mean": 0.08743516363411794,
+    "lo": 0.06210694555556976,
+    "hi": 0.11234502190352448,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08743516363411794
+    }
+   }
+  },
+  "hybrid_lin_sel": {
+   "ap_single": {
+    "mean": 0.2684664088781282,
+    "lo": 0.18303416219110377,
+    "hi": 0.3596845509107637,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2684664088781282
+    },
+    "diff_ours_minus": 0.009944731121552648,
+    "diff_lo": -0.000992389566673799,
+    "diff_hi": 0.022496244224412657,
+    "p_one_sided": 0.038,
+    "p_holm": 0.266,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6033748350800996,
+    "lo": 0.5477149978571549,
+    "hi": 0.6602674985030342,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6033748350800996
+    },
+    "diff_ours_minus": -0.032120665455678384,
+    "diff_lo": -0.053268979331833416,
+    "diff_hi": -0.010492230297583628,
+    "p_one_sided": 0.9965,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.2067222222222222,
+    "lo": 0.13830952380952383,
+    "hi": 0.2730761904761905,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2067222222222222
+    }
+   },
+   "p10_single": {
+    "mean": 0.12590873015873016,
+    "lo": 0.08456071428571428,
+    "hi": 0.16947232142857144,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12590873015873016
+    }
+   },
+   "p20_single": {
+    "mean": 0.07937103174603174,
+    "lo": 0.04991937003968254,
+    "hi": 0.11207403273809521,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07937103174603174
+    }
+   },
+   "p50_single": {
+    "mean": 0.050366865079365074,
+    "lo": 0.026176865079365078,
+    "hi": 0.07952368055555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.050366865079365074
+    }
+   },
+   "r10_single": {
+    "mean": 0.25563617319276727,
+    "lo": 0.16630048459792446,
+    "hi": 0.3542172896893455,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25563617319276727
+    }
+   },
+   "r20_single": {
+    "mean": 0.2634123496420952,
+    "lo": 0.17327406221810657,
+    "hi": 0.36226766056763754,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2634123496420952
+    }
+   },
+   "hit10_single": {
+    "mean": 0.541795634920635,
+    "lo": 0.3921393849206349,
+    "hi": 0.6900044642857143,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.541795634920635
+    }
+   },
+   "mrr_single": {
+    "mean": 0.4889004168200469,
+    "lo": 0.345268794543148,
+    "hi": 0.6302254424057482,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4889004168200469
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6196691513181503,
+    "lo": 0.5784784263719529,
+    "hi": 0.6640434080492597,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6196691513181503
+    }
+   },
+   "f1_single": {
+    "mean": 0.2563802067956897,
+    "lo": 0.17534911994034638,
+    "hi": 0.34278724374304,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2563802067956897
+    }
+   },
+   "rho_single": {
+    "mean": 0.06810307569285219,
+    "lo": 0.05605153074088874,
+    "hi": 0.08215607765399827,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06810307569285219
+    }
+   },
+   "ap_pair": {
+    "mean": 0.31368449158955786,
+    "lo": 0.2096646380829214,
+    "hi": 0.4250499422322925,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.31368449158955786
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5847693270041944,
+    "lo": 0.5053716381142297,
+    "hi": 0.6625107653627027,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5847693270041944
+    },
+    "diff_ours_minus": 0.0,
+    "diff_lo": 0.0,
+    "diff_hi": 0.0,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.3765,
+    "lo": 0.25503333333333333,
+    "hi": 0.49646111111111096,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3765
+    }
+   },
+   "p10_pair": {
+    "mean": 0.2765972222222222,
+    "lo": 0.1882059027777778,
+    "hi": 0.3676274305555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2765972222222222
+    }
+   },
+   "p20_pair": {
+    "mean": 0.17025,
+    "lo": 0.11372604166666668,
+    "hi": 0.22808506944444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17025
+    }
+   },
+   "p50_pair": {
+    "mean": 0.09266944444444446,
+    "lo": 0.05833305555555555,
+    "hi": 0.12999611111111106,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09266944444444446
+    }
+   },
+   "r10_pair": {
+    "mean": 0.2932236040872569,
+    "lo": 0.19051936311242515,
+    "hi": 0.40468069440504073,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2932236040872569
+    }
+   },
+   "r20_pair": {
+    "mean": 0.319011682556273,
+    "lo": 0.21163097430944627,
+    "hi": 0.43402683588879726,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.319011682556273
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.5931944444444445,
+    "lo": 0.45151041666666664,
+    "hi": 0.7302881944444444,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5931944444444445
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.48395776629427917,
+    "lo": 0.3462027228932104,
+    "hi": 0.6190089616436906,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.48395776629427917
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6440222254528865,
+    "lo": 0.5941076172860009,
+    "hi": 0.6987830076376506,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6440222254528865
+    }
+   },
+   "f1_pair": {
+    "mean": 0.3055173992831853,
+    "lo": 0.20661449691631667,
+    "hi": 0.41277629611550287,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3055173992831853
+    }
+   },
+   "rho_pair": {
+    "mean": 0.08008335071279075,
+    "lo": 0.06182320750874704,
+    "hi": 0.09737710185192193,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08008335071279075
+    }
+   }
+  },
+  "hybrid_lin_joint": {
+   "ap_single": {
+    "mean": 0.2684664088781282,
+    "lo": 0.18303416219110377,
+    "hi": 0.3596845509107637,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2684664088781282
+    },
+    "diff_ours_minus": 0.009944731121552648,
+    "diff_lo": -0.000992389566673799,
+    "diff_hi": 0.022496244224412657,
+    "p_one_sided": 0.038,
+    "p_holm": 0.266,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6033748350800996,
+    "lo": 0.5477149978571549,
+    "hi": 0.6602674985030342,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6033748350800996
+    },
+    "diff_ours_minus": -0.032120665455678384,
+    "diff_lo": -0.053268979331833416,
+    "diff_hi": -0.010492230297583628,
+    "p_one_sided": 0.9965,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.2067222222222222,
+    "lo": 0.13830952380952383,
+    "hi": 0.2730761904761905,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2067222222222222
+    }
+   },
+   "p10_single": {
+    "mean": 0.12590873015873016,
+    "lo": 0.08456071428571428,
+    "hi": 0.16947232142857144,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12590873015873016
+    }
+   },
+   "p20_single": {
+    "mean": 0.07937103174603174,
+    "lo": 0.04991937003968254,
+    "hi": 0.11207403273809521,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07937103174603174
+    }
+   },
+   "p50_single": {
+    "mean": 0.050366865079365074,
+    "lo": 0.026176865079365078,
+    "hi": 0.07952368055555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.050366865079365074
+    }
+   },
+   "r10_single": {
+    "mean": 0.25563617319276727,
+    "lo": 0.16630048459792446,
+    "hi": 0.3542172896893455,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25563617319276727
+    }
+   },
+   "r20_single": {
+    "mean": 0.2634123496420952,
+    "lo": 0.17327406221810657,
+    "hi": 0.36226766056763754,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2634123496420952
+    }
+   },
+   "hit10_single": {
+    "mean": 0.541795634920635,
+    "lo": 0.3921393849206349,
+    "hi": 0.6900044642857143,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.541795634920635
+    }
+   },
+   "mrr_single": {
+    "mean": 0.4889004168200469,
+    "lo": 0.345268794543148,
+    "hi": 0.6302254424057482,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4889004168200469
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6196691513181503,
+    "lo": 0.5784784263719529,
+    "hi": 0.6640434080492597,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6196691513181503
+    }
+   },
+   "f1_single": {
+    "mean": 0.2563802067956897,
+    "lo": 0.17534911994034638,
+    "hi": 0.34278724374304,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2563802067956897
+    }
+   },
+   "rho_single": {
+    "mean": 0.06810307569285219,
+    "lo": 0.05605153074088874,
+    "hi": 0.08215607765399827,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06810307569285219
+    }
+   },
+   "ap_pair": {
+    "mean": 0.32900208754696747,
+    "lo": 0.22283396002458816,
+    "hi": 0.44176232559057355,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.32900208754696747
+    },
+    "diff_ours_minus": -0.015595942660739359,
+    "diff_lo": -0.03482891015489292,
+    "diff_hi": 0.008476762682377082,
+    "p_one_sided": 0.917,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5803994904416673,
+    "lo": 0.49550333800959917,
+    "hi": 0.6623331027726578,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5803994904416673
+    },
+    "diff_ours_minus": 0.004452960025280918,
+    "diff_lo": -0.013765991489383508,
+    "diff_hi": 0.021718826610415118,
+    "p_one_sided": 0.312,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.4046666666666667,
+    "lo": 0.28357708333333337,
+    "hi": 0.5275249999999999,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4046666666666667
+    }
+   },
+   "p10_pair": {
+    "mean": 0.30194444444444446,
+    "lo": 0.21062465277777778,
+    "hi": 0.39624687499999983,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.30194444444444446
+    }
+   },
+   "p20_pair": {
+    "mean": 0.18369444444444444,
+    "lo": 0.12835729166666665,
+    "hi": 0.24300694444444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.18369444444444444
+    }
+   },
+   "p50_pair": {
+    "mean": 0.10112777777777779,
+    "lo": 0.067709375,
+    "hi": 0.13708402777777778,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10112777777777779
+    }
+   },
+   "r10_pair": {
+    "mean": 0.31699022684064254,
+    "lo": 0.2079394361870337,
+    "hi": 0.4304943470540123,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.31699022684064254
+    }
+   },
+   "r20_pair": {
+    "mean": 0.33762344919265275,
+    "lo": 0.226863652322505,
+    "hi": 0.4539363541453064,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.33762344919265275
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6476388888888889,
+    "lo": 0.5177534722222222,
+    "hi": 0.7698680555555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6476388888888889
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.5165749569476096,
+    "lo": 0.38910294706169324,
+    "hi": 0.6429603285775696,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5165749569476096
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6538009236064921,
+    "lo": 0.6016414093736755,
+    "hi": 0.7104371513508003,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6538009236064921
+    }
+   },
+   "f1_pair": {
+    "mean": 0.32470838225340615,
+    "lo": 0.21941294649269827,
+    "hi": 0.4344443248157172,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.32470838225340615
+    }
+   },
+   "rho_pair": {
+    "mean": 0.08743516363411794,
+    "lo": 0.06210694555556976,
+    "hi": 0.11234502190352448,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08743516363411794
+    }
+   }
+  },
+  "random": {
+   "ap_single": {
+    "mean": 0.023763414003057155,
+    "lo": 0.015810491716343602,
+    "hi": 0.033651733454725,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.023763414003057155
+    },
+    "diff_ours_minus": 0.25515643017756046,
+    "diff_lo": 0.16698343159617568,
+    "diff_hi": 0.35042290875532084,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.4987826404400389,
+    "lo": 0.49483787162807474,
+    "hi": 0.5032200104999246,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4987826404400389
+    },
+    "diff_ours_minus": 0.07246195416621298,
+    "diff_lo": 0.012531450010144931,
+    "diff_hi": 0.13478786988300157,
+    "p_one_sided": 0.0105,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.019260714285714287,
+    "lo": 0.011424900793650794,
+    "hi": 0.02879914682539681,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.019260714285714287
+    }
+   },
+   "p10_single": {
+    "mean": 0.01898561507936508,
+    "lo": 0.011020992063492064,
+    "hi": 0.02844797619047617,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.01898561507936508
+    }
+   },
+   "p20_single": {
+    "mean": 0.01901651785714286,
+    "lo": 0.011217209821428572,
+    "hi": 0.02861946676587301,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.01901651785714286
+    }
+   },
+   "p50_single": {
+    "mean": 0.01926107142857143,
+    "lo": 0.011252116071428573,
+    "hi": 0.028875694940476187,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.01926107142857143
+    }
+   },
+   "r10_single": {
+    "mean": 0.0070953547173755625,
+    "lo": 0.005899271438257069,
+    "hi": 0.00845894914512023,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0070953547173755625
+    }
+   },
+   "r20_single": {
+    "mean": 0.014020334453346023,
+    "lo": 0.012430917684483551,
+    "hi": 0.015906722191403867,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.014020334453346023
+    }
+   },
+   "hit10_single": {
+    "mean": 0.14192956349206348,
+    "lo": 0.09480007440476192,
+    "hi": 0.19493519345238092,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14192956349206348
+    }
+   },
+   "mrr_single": {
+    "mean": 0.06364210062257203,
+    "lo": 0.044454833918798196,
+    "hi": 0.08613306158866406,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06364210062257203
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5000671922191777,
+    "lo": 0.49971854918211056,
+    "hi": 0.5004361342105177,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5000671922191777
+    }
+   },
+   "f1_single": {
+    "mean": 0.019312964166584557,
+    "lo": 0.011286235233578006,
+    "hi": 0.02905500471312705,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.019312964166584557
+    }
+   },
+   "rho_single": {
+    "mean": -0.00010559252080493196,
+    "lo": -0.000934139979646081,
+    "hi": 0.000629400343590298,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.00010559252080493196
+    }
+   },
+   "ap_pair": {
+    "mean": 0.024027310659946417,
+    "lo": 0.012762474444270172,
+    "hi": 0.03801408392772443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.024027310659946417
+    },
+    "diff_ours_minus": 0.2901707209878988,
+    "diff_lo": 0.1865306344622996,
+    "diff_hi": 0.4010884265555393,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5001115985102418,
+    "lo": 0.49591742889723384,
+    "hi": 0.5046330990793683,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5001115985102418
+    },
+    "diff_ours_minus": 0.08450071657522736,
+    "diff_lo": 0.003817089037094804,
+    "diff_hi": 0.16390077024929534,
+    "p_one_sided": 0.0185,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.02159444444444445,
+    "lo": 0.00963965277777778,
+    "hi": 0.036539826388888884,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02159444444444445
+    }
+   },
+   "p10_pair": {
+    "mean": 0.021509722222222225,
+    "lo": 0.009994756944444443,
+    "hi": 0.03575881944444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.021509722222222225
+    }
+   },
+   "p20_pair": {
+    "mean": 0.02104513888888889,
+    "lo": 0.009675138888888891,
+    "hi": 0.03524850694444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02104513888888889
+    }
+   },
+   "p50_pair": {
+    "mean": 0.020648888888888894,
+    "lo": 0.009551069444444447,
+    "hi": 0.03468431597222221,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.020648888888888894
+    }
+   },
+   "r10_pair": {
+    "mean": 0.004664160240591269,
+    "lo": 0.003809233601398207,
+    "hi": 0.005547144856315363,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.004664160240591269
+    }
+   },
+   "r20_pair": {
+    "mean": 0.009567538707115856,
+    "lo": 0.008317499807550793,
+    "hi": 0.01087107157298646,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.009567538707115856
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.13820833333333332,
+    "lo": 0.07961510416666666,
+    "hi": 0.20479670138888884,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13820833333333332
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.06320721661770276,
+    "lo": 0.03681161588969176,
+    "hi": 0.09330782423195069,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06320721661770276
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5000683644968988,
+    "lo": 0.4997459450263882,
+    "hi": 0.5004337944277655,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5000683644968988
+    }
+   },
+   "f1_pair": {
+    "mean": 0.020742392108760433,
+    "lo": 0.009344541849036322,
+    "hi": 0.03489761280764528,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.020742392108760433
+    }
+   },
+   "rho_pair": {
+    "mean": 0.00015374146245670918,
+    "lo": -0.00048725527501054523,
+    "hi": 0.0008032262522633631,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.00015374146245670918
+    }
+   }
+  },
+  "linear_screen": {
+   "ap_single": {
+    "mean": 0.2684664088781282,
+    "lo": 0.18303416219110377,
+    "hi": 0.3596845509107637,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2684664088781282
+    },
+    "diff_ours_minus": 0.009944731121552648,
+    "diff_lo": -0.000992389566673799,
+    "diff_hi": 0.022496244224412657,
+    "p_one_sided": 0.038,
+    "p_holm": 0.266,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6033748350800996,
+    "lo": 0.5477149978571549,
+    "hi": 0.6602674985030342,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6033748350800996
+    },
+    "diff_ours_minus": -0.032120665455678384,
+    "diff_lo": -0.053268979331833416,
+    "diff_hi": -0.010492230297583628,
+    "p_one_sided": 0.9965,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.2067222222222222,
+    "lo": 0.13830952380952383,
+    "hi": 0.2730761904761905,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2067222222222222
+    }
+   },
+   "p10_single": {
+    "mean": 0.12590873015873016,
+    "lo": 0.08456071428571428,
+    "hi": 0.16947232142857144,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12590873015873016
+    }
+   },
+   "p20_single": {
+    "mean": 0.07937103174603174,
+    "lo": 0.04991937003968254,
+    "hi": 0.11207403273809521,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07937103174603174
+    }
+   },
+   "p50_single": {
+    "mean": 0.050366865079365074,
+    "lo": 0.026176865079365078,
+    "hi": 0.07952368055555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.050366865079365074
+    }
+   },
+   "r10_single": {
+    "mean": 0.25563617319276727,
+    "lo": 0.16630048459792446,
+    "hi": 0.3542172896893455,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25563617319276727
+    }
+   },
+   "r20_single": {
+    "mean": 0.2634123496420952,
+    "lo": 0.17327406221810657,
+    "hi": 0.36226766056763754,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2634123496420952
+    }
+   },
+   "hit10_single": {
+    "mean": 0.541795634920635,
+    "lo": 0.3921393849206349,
+    "hi": 0.6900044642857143,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.541795634920635
+    }
+   },
+   "mrr_single": {
+    "mean": 0.4889004168200469,
+    "lo": 0.345268794543148,
+    "hi": 0.6302254424057482,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4889004168200469
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6196691513181503,
+    "lo": 0.5784784263719529,
+    "hi": 0.6640434080492597,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6196691513181503
+    }
+   },
+   "f1_single": {
+    "mean": 0.2563802067956897,
+    "lo": 0.17534911994034638,
+    "hi": 0.34278724374304,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2563802067956897
+    }
+   },
+   "rho_single": {
+    "mean": 0.06810307569285219,
+    "lo": 0.05605153074088874,
+    "hi": 0.08215607765399827,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06810307569285219
+    }
+   },
+   "ap_pair": {
+    "mean": 0.03998520099769288,
+    "lo": 0.02462668084381975,
+    "hi": 0.058217016474952206,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03998520099769288
+    },
+    "diff_ours_minus": 0.27424156843613273,
+    "diff_lo": 0.17696087401619742,
+    "diff_hi": 0.3795757677273756,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.505085053656023,
+    "lo": 0.4771153402320057,
+    "hi": 0.5331935539989242,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.505085053656023
+    },
+    "diff_ours_minus": 0.08005323019258327,
+    "diff_lo": 0.014501068407097193,
+    "diff_hi": 0.14611741639837067,
+    "p_one_sided": 0.007,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.04905555555555556,
+    "lo": 0.026109722222222225,
+    "hi": 0.0755013888888889,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04905555555555556
+    }
+   },
+   "p10_pair": {
+    "mean": 0.03955555555555555,
+    "lo": 0.02124652777777778,
+    "hi": 0.06130555555555556,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03955555555555555
+    }
+   },
+   "p20_pair": {
+    "mean": 0.03240277777777778,
+    "lo": 0.016054166666666668,
+    "hi": 0.05165520833333333,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03240277777777778
+    }
+   },
+   "p50_pair": {
+    "mean": 0.028100000000000003,
+    "lo": 0.012257916666666667,
+    "hi": 0.047063333333333304,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.028100000000000003
+    }
+   },
+   "r10_pair": {
+    "mean": 0.02993822044775017,
+    "lo": 0.013877959594318723,
+    "hi": 0.05062955277920689,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02993822044775017
+    }
+   },
+   "r20_pair": {
+    "mean": 0.036743632168561094,
+    "lo": 0.018305041690670952,
+    "hi": 0.058738150028655595,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.036743632168561094
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.25555555555555554,
+    "lo": 0.15500000000000003,
+    "hi": 0.3656041666666664,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25555555555555554
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.13979753651749247,
+    "lo": 0.080641613473357,
+    "hi": 0.20571075895956453,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13979753651749247
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5114374691949087,
+    "lo": 0.5040621103630217,
+    "hi": 0.5208098714190731,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5114374691949087
+    }
+   },
+   "f1_pair": {
+    "mean": 0.04310032291189988,
+    "lo": 0.02390732344798721,
+    "hi": 0.06466454461806584,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04310032291189988
+    }
+   },
+   "rho_pair": {
+    "mean": 0.011522365042500506,
+    "lo": 0.003695863113710286,
+    "hi": 0.01952799950495355,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011522365042500506
+    }
+   }
+  },
+  "nid": {
+   "ap_single": {
+    "mean": 0.2673989933527163,
+    "lo": 0.18189318331496754,
+    "hi": 0.3601700049638598,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2673989933527163
+    },
+    "diff_ours_minus": 0.010781090864588894,
+    "diff_lo": 3.862517026428696e-05,
+    "diff_hi": 0.022277404821210135,
+    "p_one_sided": 0.024,
+    "p_holm": 0.192,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6425453146187501,
+    "lo": 0.5923256410835689,
+    "hi": 0.6947673157196324,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6425453146187501
+    },
+    "diff_ours_minus": -0.0715442756132095,
+    "diff_lo": -0.0973234326382416,
+    "diff_hi": -0.0459348664990126,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.20954365079365084,
+    "lo": 0.14107222222222227,
+    "hi": 0.2768767857142857,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.20954365079365084
+    }
+   },
+   "p10_single": {
+    "mean": 0.12683035714285715,
+    "lo": 0.08476376488095237,
+    "hi": 0.17057358630952377,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12683035714285715
+    }
+   },
+   "p20_single": {
+    "mean": 0.08147718253968254,
+    "lo": 0.05112522321428572,
+    "hi": 0.11559848710317458,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08147718253968254
+    }
+   },
+   "p50_single": {
+    "mean": 0.05283353174603174,
+    "lo": 0.02911794642857143,
+    "hi": 0.08128377480158731,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05283353174603174
+    }
+   },
+   "r10_single": {
+    "mean": 0.25962087810767936,
+    "lo": 0.1701691158546651,
+    "hi": 0.3599668439264281,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25962087810767936
+    }
+   },
+   "r20_single": {
+    "mean": 0.2668790011703782,
+    "lo": 0.17708492007835275,
+    "hi": 0.3669211669877185,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2668790011703782
+    }
+   },
+   "hit10_single": {
+    "mean": 0.5472519841269842,
+    "lo": 0.39813913690476194,
+    "hi": 0.6926374007936505,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5472519841269842
+    }
+   },
+   "mrr_single": {
+    "mean": 0.4920354121440683,
+    "lo": 0.3511523055269144,
+    "hi": 0.6296493309664272,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4920354121440683
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6195958807476387,
+    "lo": 0.5778824703907274,
+    "hi": 0.6655422291517566,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6195958807476387
+    }
+   },
+   "f1_single": {
+    "mean": 0.25672432880821794,
+    "lo": 0.1723317814759837,
+    "hi": 0.34610767368868617,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25672432880821794
+    }
+   },
+   "rho_single": {
+    "mean": -0.015056493603997984,
+    "lo": -0.025135260572603964,
+    "hi": -0.005495691681441136,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.015056493603997984
+    }
+   },
+   "ap_pair": {
+    "mean": 0.11238722405902495,
+    "lo": 0.07643437561521232,
+    "hi": 0.15272034607395465,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.11238722405902495
+    },
+    "diff_ours_minus": 0.20165282169169121,
+    "diff_lo": 0.1237680944169197,
+    "diff_hi": 0.2850671071396786,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.6558714164380279,
+    "lo": 0.6053359994969646,
+    "hi": 0.7053016471133282,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6558714164380279
+    },
+    "diff_ours_minus": -0.07126390337112641,
+    "diff_lo": -0.12819428334716185,
+    "diff_hi": -0.01994083878432127,
+    "p_one_sided": 0.998,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.14797222222222223,
+    "lo": 0.0982763888888889,
+    "hi": 0.20120138888888886,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14797222222222223
+    }
+   },
+   "p10_pair": {
+    "mean": 0.11973611111111111,
+    "lo": 0.079290625,
+    "hi": 0.16311527777777773,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.11973611111111111
+    }
+   },
+   "p20_pair": {
+    "mean": 0.08988194444444444,
+    "lo": 0.056610416666666656,
+    "hi": 0.12718871527777775,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08988194444444444
+    }
+   },
+   "p50_pair": {
+    "mean": 0.06549722222222223,
+    "lo": 0.037788263888888896,
+    "hi": 0.09814215277777776,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06549722222222223
+    }
+   },
+   "r10_pair": {
+    "mean": 0.12220158085181158,
+    "lo": 0.07589988171556353,
+    "hi": 0.17304572591682607,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12220158085181158
+    }
+   },
+   "r20_pair": {
+    "mean": 0.15302844212622418,
+    "lo": 0.09938494193161745,
+    "hi": 0.21136589978345446,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.15302844212622418
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.5095833333333333,
+    "lo": 0.37580208333333337,
+    "hi": 0.6454166666666666,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5095833333333333
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.33154671030003546,
+    "lo": 0.22839858002728522,
+    "hi": 0.4375732647978843,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.33154671030003546
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5483823002184836,
+    "lo": 0.5299548150959809,
+    "hi": 0.5695767545643411,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5483823002184836
+    }
+   },
+   "f1_pair": {
+    "mean": 0.11624292172565953,
+    "lo": 0.07882336155294214,
+    "hi": 0.15704433977419824,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.11624292172565953
+    }
+   },
+   "rho_pair": {
+    "mean": -0.015219284540682054,
+    "lo": -0.02685988419766407,
+    "hi": -0.0035569073215551265,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.015219284540682054
+    }
+   }
+  },
+  "misty": {
+   "ap_single": {
+    "mean": 0.1004637329281897,
+    "lo": 0.07205679881626383,
+    "hi": 0.13218033515580804,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1004637329281897
+    },
+    "diff_ours_minus": 0.17840366628056023,
+    "diff_lo": 0.10546704161663194,
+    "diff_hi": 0.259758602196843,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5047682530559469,
+    "lo": 0.4595523029158683,
+    "hi": 0.5460652846284829,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5047682530559469
+    },
+    "diff_ours_minus": 0.06681620465035885,
+    "diff_lo": -0.024439269438638195,
+    "diff_hi": 0.16120449337286197,
+    "p_one_sided": 0.081,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_single": {
+    "mean": 0.10450992063492066,
+    "lo": 0.06463794642857144,
+    "hi": 0.1465284722222222,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10450992063492066
+    }
+   },
+   "p10_single": {
+    "mean": 0.08035416666666666,
+    "lo": 0.049573437500000005,
+    "hi": 0.11608110119047609,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08035416666666666
+    }
+   },
+   "p20_single": {
+    "mean": 0.06002728174603176,
+    "lo": 0.03493886408730158,
+    "hi": 0.08963375496031745,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06002728174603176
+    }
+   },
+   "p50_single": {
+    "mean": 0.04346011904761905,
+    "lo": 0.022405367063492065,
+    "hi": 0.06935434027777779,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04346011904761905
+    }
+   },
+   "r10_single": {
+    "mean": 0.08163824352873285,
+    "lo": 0.05369337336264891,
+    "hi": 0.11105854502957209,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08163824352873285
+    }
+   },
+   "r20_single": {
+    "mean": 0.09029486982805798,
+    "lo": 0.06168823207573756,
+    "hi": 0.1204437531611484,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09029486982805798
+    }
+   },
+   "hit10_single": {
+    "mean": 0.4295833333333333,
+    "lo": 0.3304717261904762,
+    "hi": 0.5297098214285713,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4295833333333333
+    }
+   },
+   "mrr_single": {
+    "mean": 0.3119954527984234,
+    "lo": 0.21718561372524595,
+    "hi": 0.4135127807153862,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3119954527984234
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5426686360421614,
+    "lo": 0.5281793352874932,
+    "hi": 0.5586710188202533,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5426686360421614
+    }
+   },
+   "f1_single": {
+    "mean": 0.10244515266673818,
+    "lo": 0.07152972889010961,
+    "hi": 0.13640390981072611,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10244515266673818
+    }
+   },
+   "rho_single": {
+    "mean": 0.028951293800080623,
+    "lo": -0.00045745091062699306,
+    "hi": 0.05802783850762968,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.028951293800080623
+    }
+   },
+   "ap_pair": {
+    "mean": 0.07241783633356684,
+    "lo": 0.04738593378203664,
+    "hi": 0.09707250226433413,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07241783633356684
+    },
+    "diff_ours_minus": 0.24186985544358697,
+    "diff_lo": 0.1475042004733103,
+    "diff_hi": 0.34753238628171657,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5069233676132032,
+    "lo": 0.46333869099572156,
+    "hi": 0.5490067046259924,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5069233676132032
+    },
+    "diff_ours_minus": 0.07762858876563901,
+    "diff_lo": -0.02666327414213458,
+    "diff_hi": 0.18958122318375772,
+    "p_one_sided": 0.089,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 40
+    }
+   },
+   "p5_pair": {
+    "mean": 0.1402222222222222,
+    "lo": 0.0828048611111111,
+    "hi": 0.19989027777777774,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1402222222222222
+    }
+   },
+   "p10_pair": {
+    "mean": 0.09984722222222223,
+    "lo": 0.05649166666666666,
+    "hi": 0.14562951388888884,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09984722222222223
+    }
+   },
+   "p20_pair": {
+    "mean": 0.0785277777777778,
+    "lo": 0.0448796875,
+    "hi": 0.11521597222222221,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0785277777777778
+    }
+   },
+   "p50_pair": {
+    "mean": 0.0531611111111111,
+    "lo": 0.02878861111111111,
+    "hi": 0.08231541666666664,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0531611111111111
+    }
+   },
+   "r10_pair": {
+    "mean": 0.055438081727299485,
+    "lo": 0.03204710606497505,
+    "hi": 0.08155278599907632,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.055438081727299485
+    }
+   },
+   "r20_pair": {
+    "mean": 0.07633739996578758,
+    "lo": 0.051018683636410524,
+    "hi": 0.10528669818402993,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07633739996578758
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.4065277777777778,
+    "lo": 0.28398958333333335,
+    "hi": 0.5334826388888888,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4065277777777778
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.2913143522347143,
+    "lo": 0.18989066747420288,
+    "hi": 0.3957855561208608,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2913143522347143
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5312513444913627,
+    "lo": 0.520009750664452,
+    "hi": 0.5431302386049066,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5312513444913627
+    }
+   },
+   "f1_pair": {
+    "mean": 0.08125352530490092,
+    "lo": 0.05338809231257676,
+    "hi": 0.10859265293265953,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08125352530490092
+    }
+   },
+   "rho_pair": {
+    "mean": 0.010864259286652083,
+    "lo": -0.014729159103544076,
+    "hi": 0.03528325772481798,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 40
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.010864259286652083
+    }
+   }
+  },
+  "knockoffs": {
+   "ap_single": {
+    "mean": 0.17680521317303793,
+    "lo": 0.1062437151143618,
+    "hi": 0.25425372823377,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17680521317303793
+    },
+    "diff_ours_minus": 0.10677081750615462,
+    "diff_lo": 0.06271976503791771,
+    "diff_hi": 0.15729277896869226,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6264412883454153,
+    "lo": 0.5823609951240742,
+    "hi": 0.6741116518523215,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6264412883454153
+    },
+    "diff_ours_minus": -0.05789512150107415,
+    "diff_lo": -0.08859613115108862,
+    "diff_hi": -0.028585141197823117,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.17927927927927928,
+    "lo": 0.11799686049686052,
+    "hi": 0.24334523809523803,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17927927927927928
+    }
+   },
+   "p10_single": {
+    "mean": 0.109009009009009,
+    "lo": 0.06969474153297683,
+    "hi": 0.15135135135135133,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.109009009009009
+    }
+   },
+   "p20_single": {
+    "mean": 0.07905405405405405,
+    "lo": 0.0491203022875817,
+    "hi": 0.11175889046941677,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07905405405405405
+    }
+   },
+   "p50_single": {
+    "mean": 0.05257657657657658,
+    "lo": 0.02984750700280112,
+    "hi": 0.07723012091038405,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05257657657657658
+    }
+   },
+   "r10_single": {
+    "mean": 0.2079483741250291,
+    "lo": 0.1191987092084556,
+    "hi": 0.3047386506000388,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2079483741250291
+    }
+   },
+   "r20_single": {
+    "mean": 0.2208473756339021,
+    "lo": 0.13215363890767015,
+    "hi": 0.3178653878424517,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2208473756339021
+    }
+   },
+   "hit10_single": {
+    "mean": 0.5315315315315314,
+    "lo": 0.3703703703703704,
+    "hi": 0.6846846846846847,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5315315315315314
+    }
+   },
+   "mrr_single": {
+    "mean": 0.3790359601259222,
+    "lo": 0.25492621530130594,
+    "hi": 0.5020199289827348,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3790359601259222
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5713371898174942,
+    "lo": 0.5376464748671279,
+    "hi": 0.6098079950193267,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5713371898174942
+    }
+   },
+   "f1_single": {
+    "mean": 0.1633605931999946,
+    "lo": 0.09650883849068805,
+    "hi": 0.2386449212418354,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1633605931999946
+    }
+   },
+   "rho_single": {
+    "mean": 0.006591869398496489,
+    "lo": 0.0016054230125123925,
+    "hi": 0.012185688611318385,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.006591869398496489
+    }
+   },
+   "ap_pair": {
+    "mean": 0.03653651788614329,
+    "lo": 0.02278586488367735,
+    "hi": 0.05118680524715501,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03653651788614329
+    },
+    "diff_ours_minus": 0.29094070741046574,
+    "diff_lo": 0.19041440767800974,
+    "diff_hi": 0.3960429290247164,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5189560283299557,
+    "lo": 0.4984044949263124,
+    "hi": 0.542670409509511,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5189560283299557
+    },
+    "diff_ours_minus": 0.10131480261459865,
+    "diff_lo": 0.04180754662340798,
+    "diff_hi": 0.16228840170173772,
+    "p_one_sided": 0.0005,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_pair": {
+    "mean": 0.050450450450450456,
+    "lo": 0.024761904761904763,
+    "hi": 0.07777777777777778,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.050450450450450456
+    }
+   },
+   "p10_pair": {
+    "mean": 0.0463963963963964,
+    "lo": 0.023682383040935673,
+    "hi": 0.07117117117117117,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0463963963963964
+    }
+   },
+   "p20_pair": {
+    "mean": 0.04207207207207207,
+    "lo": 0.021013888888888888,
+    "hi": 0.06597478070175432,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04207207207207207
+    }
+   },
+   "p50_pair": {
+    "mean": 0.03221621621621622,
+    "lo": 0.015170951720951722,
+    "hi": 0.05240603366524418,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03221621621621622
+    }
+   },
+   "r10_pair": {
+    "mean": 0.03833827755343642,
+    "lo": 0.012819714036691458,
+    "hi": 0.07301533638475595,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03833827755343642
+    }
+   },
+   "r20_pair": {
+    "mean": 0.04789656180246831,
+    "lo": 0.019132413205412032,
+    "hi": 0.08538620342179497,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04789656180246831
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.28378378378378377,
+    "lo": 0.1623873873873874,
+    "hi": 0.4099099099099099,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.28378378378378377
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.13408390790805744,
+    "lo": 0.0716577134575397,
+    "hi": 0.20306214030536604,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13408390790805744
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5044154923343112,
+    "lo": 0.500622412114532,
+    "hi": 0.5092674488220837,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5044154923343112
+    }
+   },
+   "f1_pair": {
+    "mean": 0.029995083155358707,
+    "lo": 0.01621862459369767,
+    "hi": 0.0449002001494021,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.029995083155358707
+    }
+   },
+   "rho_pair": {
+    "mean": 0.0016704803433868246,
+    "lo": -0.0014105443607077804,
+    "hi": 0.004642529492327917,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0016704803433868246
+    }
+   }
+  },
+  "gbm_shap": {
+   "ap_single": {
+    "mean": 0.2734271044093935,
+    "lo": 0.18751153245120097,
+    "hi": 0.3678370376661821,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2734271044093935
+    },
+    "diff_ours_minus": 0.009698498004799851,
+    "diff_lo": -0.0011737309701657392,
+    "diff_hi": 0.021821522423729683,
+    "p_one_sided": 0.0415,
+    "p_holm": 0.266,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6177647012929761,
+    "lo": 0.5680345953502088,
+    "hi": 0.6700439127341207,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6177647012929761
+    },
+    "diff_ours_minus": -0.049219324820103556,
+    "diff_lo": -0.07790117868741148,
+    "diff_hi": -0.021180820846944132,
+    "p_one_sided": 0.999,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.23873873873873871,
+    "lo": 0.17837129987129985,
+    "hi": 0.30087719298245613,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.23873873873873871
+    }
+   },
+   "p10_single": {
+    "mean": 0.1653153153153153,
+    "lo": 0.12221428571428569,
+    "hi": 0.2094610682110682,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1653153153153153
+    }
+   },
+   "p20_single": {
+    "mean": 0.10472972972972973,
+    "lo": 0.0726851851851852,
+    "hi": 0.13912037037037037,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10472972972972973
+    }
+   },
+   "p50_single": {
+    "mean": 0.06419819819819819,
+    "lo": 0.03814534534534535,
+    "hi": 0.09592522408963584,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06419819819819819
+    }
+   },
+   "r10_single": {
+    "mean": 0.25535471474265126,
+    "lo": 0.16451699295955868,
+    "hi": 0.356406648759832,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25535471474265126
+    }
+   },
+   "r20_single": {
+    "mean": 0.26312536241162465,
+    "lo": 0.17453985336813127,
+    "hi": 0.3651097463880957,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26312536241162465
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7567567567567568,
+    "lo": 0.6306306306306306,
+    "hi": 0.8791782407407407,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.7567567567567568
+    }
+   },
+   "mrr_single": {
+    "mean": 0.6379484565974695,
+    "lo": 0.5036555673912617,
+    "hi": 0.767034518041168,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6379484565974695
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6250630846412627,
+    "lo": 0.5824406070992637,
+    "hi": 0.6725131957378544,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6250630846412627
+    }
+   },
+   "f1_single": {
+    "mean": 0.26992019084291347,
+    "lo": 0.18663018891566352,
+    "hi": 0.3625111622207801,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26992019084291347
+    }
+   },
+   "rho_single": {
+    "mean": 0.06683452348291238,
+    "lo": 0.04390492959289173,
+    "hi": 0.09016706505346261,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06683452348291238
+    }
+   },
+   "ap_pair": {
+    "mean": 0.042932742992890176,
+    "lo": 0.02685151090497928,
+    "hi": 0.060925766500137264,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.042932742992890176
+    },
+    "diff_ours_minus": 0.2846638445165633,
+    "diff_lo": 0.1855133407583572,
+    "diff_hi": 0.3876195982175001,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5118564960579612,
+    "lo": 0.49509974515814814,
+    "hi": 0.5291745985766527,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5118564960579612
+    },
+    "diff_ours_minus": 0.10839311138681987,
+    "diff_lo": 0.04422863407034073,
+    "diff_hi": 0.17246634911688533,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_pair": {
+    "mean": 0.08198198198198198,
+    "lo": 0.044735538169748706,
+    "hi": 0.12444907407407406,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08198198198198198
+    }
+   },
+   "p10_pair": {
+    "mean": 0.057837837837837844,
+    "lo": 0.0275,
+    "hi": 0.09324047619047618,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.057837837837837844
+    }
+   },
+   "p20_pair": {
+    "mean": 0.040045045045045045,
+    "lo": 0.020323450854700855,
+    "hi": 0.06252543168168166,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.040045045045045045
+    }
+   },
+   "p50_pair": {
+    "mean": 0.029567567567567565,
+    "lo": 0.015080316680316681,
+    "hi": 0.04651531746031745,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.029567567567567565
+    }
+   },
+   "r10_pair": {
+    "mean": 0.02712568482915,
+    "lo": 0.01391788327955791,
+    "hi": 0.04450855028201486,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02712568482915
+    }
+   },
+   "r20_pair": {
+    "mean": 0.0352082171819112,
+    "lo": 0.02018671603428459,
+    "hi": 0.0559494563850852,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0352082171819112
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.3,
+    "lo": 0.19295519203413936,
+    "hi": 0.41351755601755597,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.20720586886557787,
+    "lo": 0.12792287558581245,
+    "hi": 0.2847795397889999,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.20720586886557787
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5097735999157259,
+    "lo": 0.50405519122817,
+    "hi": 0.5170376520522985,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5097735999157259
+    }
+   },
+   "f1_pair": {
+    "mean": 0.04072621080444606,
+    "lo": 0.02470349603961866,
+    "hi": 0.057832696733026476,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04072621080444606
+    }
+   },
+   "rho_pair": {
+    "mean": 0.000917971095680976,
+    "lo": -0.0016888628193339537,
+    "hi": 0.003555693754355523,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.000917971095680976
+    }
+   }
+  },
+  "rulefit": {
+   "ap_single": {
+    "mean": 0.25031385717179533,
+    "lo": 0.16397038242353862,
+    "hi": 0.34709747375426514,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25031385717179533
+    },
+    "diff_ours_minus": 0.03974631337283826,
+    "diff_lo": 0.015666296137108862,
+    "diff_hi": 0.07191703538574695,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 36
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6317890231564922,
+    "lo": 0.585384017835596,
+    "hi": 0.6835811908115875,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6317890231564922
+    },
+    "diff_ours_minus": -0.06020612221318561,
+    "diff_lo": -0.09337780650093634,
+    "diff_hi": -0.028844696822007604,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 36
+    }
+   },
+   "p5_single": {
+    "mean": 0.21481481481481485,
+    "lo": 0.15684742647058827,
+    "hi": 0.27544452347083925,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.21481481481481485
+    }
+   },
+   "p10_single": {
+    "mean": 0.13796296296296295,
+    "lo": 0.10225225225225225,
+    "hi": 0.1742913165266106,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13796296296296295
+    }
+   },
+   "p20_single": {
+    "mean": 0.0962962962962963,
+    "lo": 0.06863730506822611,
+    "hi": 0.1247678571428571,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0962962962962963
+    }
+   },
+   "p50_single": {
+    "mean": 0.06351851851851852,
+    "lo": 0.043330808080808074,
+    "hi": 0.08590579150579152,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06351851851851852
+    }
+   },
+   "r10_single": {
+    "mean": 0.23256848747916983,
+    "lo": 0.14096073631544206,
+    "hi": 0.3359955512754146,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.23256848747916983
+    }
+   },
+   "r20_single": {
+    "mean": 0.26585504812785815,
+    "lo": 0.17535366340663242,
+    "hi": 0.36979261727998247,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26585504812785815
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7037037037037037,
+    "lo": 0.572072072072072,
+    "hi": 0.8285714285714285,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.7037037037037037
+    }
+   },
+   "mrr_single": {
+    "mean": 0.591055688429966,
+    "lo": 0.4543845460123529,
+    "hi": 0.728287520990289,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.591055688429966
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6163420092582095,
+    "lo": 0.5723452648033535,
+    "hi": 0.664339744902096,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6163420092582095
+    }
+   },
+   "f1_single": {
+    "mean": 0.25396605126265487,
+    "lo": 0.1689359971525332,
+    "hi": 0.34779218568033193,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25396605126265487
+    }
+   },
+   "rho_single": {
+    "mean": 0.003934237802688433,
+    "lo": -0.005917408605559899,
+    "hi": 0.013019030399273587,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.003934237802688433
+    }
+   },
+   "ap_pair": {
+    "mean": 0.03195688016501493,
+    "lo": 0.02026720024257724,
+    "hi": 0.044790534369011384,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03195688016501493
+    },
+    "diff_ours_minus": 0.3029417108772151,
+    "diff_lo": 0.1978603383067198,
+    "diff_hi": 0.41551233507945473,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 36
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5036569298012793,
+    "lo": 0.49052078536132787,
+    "hi": 0.516276959642319,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5036569298012793
+    },
+    "diff_ours_minus": 0.12111674473691117,
+    "diff_lo": 0.05485747081921155,
+    "diff_hi": 0.1890069245463727,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 36
+    }
+   },
+   "p5_pair": {
+    "mean": 0.03814814814814815,
+    "lo": 0.021562745098039213,
+    "hi": 0.05555555555555555,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03814814814814815
+    }
+   },
+   "p10_pair": {
+    "mean": 0.030092592592592598,
+    "lo": 0.016569305019305022,
+    "hi": 0.04432732732732731,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.030092592592592598
+    }
+   },
+   "p20_pair": {
+    "mean": 0.02675925925925926,
+    "lo": 0.014644588744588745,
+    "hi": 0.04035136452241715,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02675925925925926
+    }
+   },
+   "p50_pair": {
+    "mean": 0.024351851851851854,
+    "lo": 0.012471842105263156,
+    "hi": 0.038090363090363094,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.024351851851851854
+    }
+   },
+   "r10_pair": {
+    "mean": 0.011605461182086094,
+    "lo": 0.00595810582984826,
+    "hi": 0.018871908021963476,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011605461182086094
+    }
+   },
+   "r20_pair": {
+    "mean": 0.020740912143291542,
+    "lo": 0.011634875458867046,
+    "hi": 0.03170007266059485,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.020740912143291542
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.2222222222222222,
+    "lo": 0.13241109530583214,
+    "hi": 0.31276430842607306,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2222222222222222
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.14211554951757327,
+    "lo": 0.08365111464549858,
+    "hi": 0.20291568318291697,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14211554951757327
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5031262246579487,
+    "lo": 0.5006996759420325,
+    "hi": 0.5059525665393507,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5031262246579487
+    }
+   },
+   "f1_pair": {
+    "mean": 0.028407487539462786,
+    "lo": 0.01683315770721092,
+    "hi": 0.04126675747976787,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.028407487539462786
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0004068593323148041,
+    "lo": -0.0028478707318759493,
+    "hi": 0.0021356442111928778,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 36
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.0004068593323148041
+    }
+   }
+  },
+  "stability_selection": {
+   "ap_single": {
+    "mean": 0.1507637608562565,
+    "lo": 0.09240558153006445,
+    "hi": 0.21064016404859548,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1507637608562565
+    },
+    "diff_ours_minus": 0.21909540129193897,
+    "diff_lo": 0.11511739995775806,
+    "diff_hi": 0.3253165657526132,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 17
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6493951177337786,
+    "lo": 0.5688108036347914,
+    "hi": 0.7302270905693063,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6493951177337786
+    },
+    "diff_ours_minus": -0.029561977457301866,
+    "diff_lo": -0.08930686775317845,
+    "diff_hi": 0.02595719548973539,
+    "p_one_sided": 0.8355,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 17
+    }
+   },
+   "p5_single": {
+    "mean": 0.16313725490196082,
+    "lo": 0.10665873015873015,
+    "hi": 0.2171507936507936,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.16313725490196082
+    }
+   },
+   "p10_single": {
+    "mean": 0.13392156862745097,
+    "lo": 0.09074007936507936,
+    "hi": 0.17485227272727272,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13392156862745097
+    }
+   },
+   "p20_single": {
+    "mean": 0.10490196078431373,
+    "lo": 0.06444374999999998,
+    "hi": 0.14885677083333332,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10490196078431373
+    }
+   },
+   "p50_single": {
+    "mean": 0.0688235294117647,
+    "lo": 0.033677976190476196,
+    "hi": 0.11181403186274505,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0688235294117647
+    }
+   },
+   "r10_single": {
+    "mean": 0.2695176776445733,
+    "lo": 0.13340017875065346,
+    "hi": 0.4063203248435894,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2695176776445733
+    }
+   },
+   "r20_single": {
+    "mean": 0.31686568984769586,
+    "lo": 0.1697162425020605,
+    "hi": 0.4647951049126467,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.31686568984769586
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7666666666666666,
+    "lo": 0.5721875000000001,
+    "hi": 0.9222368421052631,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.7666666666666666
+    }
+   },
+   "mrr_single": {
+    "mean": 0.355028034823858,
+    "lo": 0.24361468060699454,
+    "hi": 0.45768680923526567,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.355028034823858
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5529431828894287,
+    "lo": 0.5280226091358129,
+    "hi": 0.5792503307224744,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5529431828894287
+    }
+   },
+   "f1_single": {
+    "mean": 0.13080141553243177,
+    "lo": 0.08073330337569358,
+    "hi": 0.18181586624796953,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13080141553243177
+    }
+   },
+   "rho_single": {
+    "mean": -0.024631159884117012,
+    "lo": -0.06423866168740118,
+    "hi": 0.013613784953912217,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.024631159884117012
+    }
+   },
+   "ap_pair": {
+    "mean": 0.05507325623180121,
+    "lo": 0.026826787900638124,
+    "hi": 0.08563679505053474,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05507325623180121
+    },
+    "diff_ours_minus": 0.3869978319986055,
+    "diff_lo": 0.2203859129076281,
+    "diff_hi": 0.544474408789443,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 17
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5438516881598305,
+    "lo": 0.4829096506766232,
+    "hi": 0.6005230780999744,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5438516881598305
+    },
+    "diff_ours_minus": 0.15275106519061388,
+    "diff_lo": 0.09385539343278551,
+    "diff_hi": 0.20979313974993608,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 17
+    }
+   },
+   "p5_pair": {
+    "mean": 0.07019607843137254,
+    "lo": 0.031107843137254905,
+    "hi": 0.11209077380952377,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07019607843137254
+    }
+   },
+   "p10_pair": {
+    "mean": 0.06176470588235293,
+    "lo": 0.02457986111111111,
+    "hi": 0.10437812499999997,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06176470588235293
+    }
+   },
+   "p20_pair": {
+    "mean": 0.05892156862745097,
+    "lo": 0.023579687499999998,
+    "hi": 0.09938115530303027,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05892156862745097
+    }
+   },
+   "p50_pair": {
+    "mean": 0.05262745098039216,
+    "lo": 0.01910606060606061,
+    "hi": 0.092967094017094,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05262745098039216
+    }
+   },
+   "r10_pair": {
+    "mean": 0.02567334910473865,
+    "lo": 0.004037565713393997,
+    "hi": 0.05700858993472175,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02567334910473865
+    }
+   },
+   "r20_pair": {
+    "mean": 0.03733975526794085,
+    "lo": 0.012891161469887577,
+    "hi": 0.06766884955798498,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03733975526794085
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.3392156862745098,
+    "lo": 0.1618956043956044,
+    "hi": 0.5193250487329434,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3392156862745098
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.1752231330406304,
+    "lo": 0.07815067833686344,
+    "hi": 0.2924065544359919,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1752231330406304
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5146295861510874,
+    "lo": 0.5036002757322691,
+    "hi": 0.5284815815719093,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5146295861510874
+    }
+   },
+   "f1_pair": {
+    "mean": 0.05869074042639825,
+    "lo": 0.024827853650129628,
+    "hi": 0.09631334002673278,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05869074042639825
+    }
+   },
+   "rho_pair": {
+    "mean": 0.059647918794624444,
+    "lo": 0.030999427411433404,
+    "hi": 0.08986021832444618,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 17
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.059647918794624444
+    }
+   }
+  },
+  "gbm_h": {
+   "ap_single": {
+    "mean": 0.02585191014907635,
+    "lo": 0.017668335236626812,
+    "hi": 0.034890068369221816,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02585191014907635
+    },
+    "diff_ours_minus": 0.2568155627989156,
+    "diff_lo": 0.16487560419526723,
+    "diff_hi": 0.36014493481307003,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5000557522499289,
+    "lo": 0.48215905234489165,
+    "hi": 0.5158348464400502,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5000557522499289
+    },
+    "diff_ours_minus": 0.06904201770982907,
+    "diff_lo": 0.00023781507432879827,
+    "diff_hi": 0.14533410727324256,
+    "p_one_sided": 0.025,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.023603603603603605,
+    "lo": 0.012120813397129187,
+    "hi": 0.035789473684210524,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.023603603603603605
+    }
+   },
+   "p10_single": {
+    "mean": 0.024054054054054055,
+    "lo": 0.013946303258145365,
+    "hi": 0.034858399470899464,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.024054054054054055
+    }
+   },
+   "p20_single": {
+    "mean": 0.02328828828828829,
+    "lo": 0.014473684210526317,
+    "hi": 0.0324578320802005,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02328828828828829
+    }
+   },
+   "p50_single": {
+    "mean": 0.021621621621621623,
+    "lo": 0.013442567567567568,
+    "hi": 0.030527631578947365,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.021621621621621623
+    }
+   },
+   "r10_single": {
+    "mean": 0.006570565223273854,
+    "lo": 0.003979879489839127,
+    "hi": 0.00922259143233604,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.006570565223273854
+    }
+   },
+   "r20_single": {
+    "mean": 0.011695650025705372,
+    "lo": 0.008359925450427845,
+    "hi": 0.015243351959546545,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011695650025705372
+    }
+   },
+   "hit10_single": {
+    "mean": 0.17747747747747747,
+    "lo": 0.11165277777777778,
+    "hi": 0.24571428571428566,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17747747747747747
+    }
+   },
+   "mrr_single": {
+    "mean": 0.06844305898643117,
+    "lo": 0.04242082033617424,
+    "hi": 0.09695775101637946,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06844305898643117
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5002474833659009,
+    "lo": 0.49907532142009403,
+    "hi": 0.5015832230366832,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5002474833659009
+    }
+   },
+   "f1_single": {
+    "mean": 0.02226725603921469,
+    "lo": 0.0139179681214869,
+    "hi": 0.031112215284056766,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02226725603921469
+    }
+   },
+   "rho_single": {
+    "mean": -0.0038814893871926526,
+    "lo": -0.006673480793202394,
+    "hi": -0.0011798476203469849,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.0038814893871926526
+    }
+   },
+   "ap_pair": {
+    "mean": 0.03714460783217144,
+    "lo": 0.024274271352316606,
+    "hi": 0.05150065431010384,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03714460783217144
+    },
+    "diff_ours_minus": 0.28888841655958647,
+    "diff_lo": 0.1877740285751894,
+    "diff_hi": 0.39435867113177775,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5493545160919405,
+    "lo": 0.5222990626012638,
+    "hi": 0.5791197705962378,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5493545160919405
+    },
+    "diff_ours_minus": 0.07076585596565801,
+    "diff_lo": 0.016524654881614725,
+    "diff_hi": 0.12566383341340298,
+    "p_one_sided": 0.0045,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_pair": {
+    "mean": 0.04882882882882883,
+    "lo": 0.021567507002801124,
+    "hi": 0.08372884416924663,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04882882882882883
+    }
+   },
+   "p10_pair": {
+    "mean": 0.049189189189189186,
+    "lo": 0.026479354354354355,
+    "hi": 0.07601851851851851,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.049189189189189186
+    }
+   },
+   "p20_pair": {
+    "mean": 0.043153153153153156,
+    "lo": 0.02491452991452992,
+    "hi": 0.06297540303461355,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.043153153153153156
+    }
+   },
+   "p50_pair": {
+    "mean": 0.04016216216216217,
+    "lo": 0.023493243243243242,
+    "hi": 0.058630555555555554,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04016216216216217
+    }
+   },
+   "r10_pair": {
+    "mean": 0.03897390700809307,
+    "lo": 0.010793419328951583,
+    "hi": 0.07744855336323068,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03897390700809307
+    }
+   },
+   "r20_pair": {
+    "mean": 0.059238372616919235,
+    "lo": 0.028307304140191142,
+    "hi": 0.10053944360286746,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.059238372616919235
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.2801801801801802,
+    "lo": 0.16396208708708707,
+    "hi": 0.4019812091503266,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2801801801801802
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.08622126742529923,
+    "lo": 0.05678311234758874,
+    "hi": 0.12233606999834608,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08622126742529923
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5109102318293691,
+    "lo": 0.5053293355410056,
+    "hi": 0.5183512447943794,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5109102318293691
+    }
+   },
+   "f1_pair": {
+    "mean": 0.04197007941986717,
+    "lo": 0.024656296098598842,
+    "hi": 0.06110299598221562,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04197007941986717
+    }
+   },
+   "rho_pair": {
+    "mean": 0.00491845097287613,
+    "lo": 0.0016798224416520971,
+    "hi": 0.008282884527610635,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.00491845097287613
+    }
+   }
+  },
+  "ebm": {
+   "ap_single": {
+    "mean": 0.27788961142714724,
+    "lo": 0.18882351942058265,
+    "hi": 0.37537191924091445,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.27788961142714724
+    },
+    "diff_ours_minus": 0.005193903965814691,
+    "diff_lo": -0.005613037947714831,
+    "diff_hi": 0.017365519591746162,
+    "p_one_sided": 0.19,
+    "p_holm": 0.5700000000000001,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.6333018883934753,
+    "lo": 0.583912223388298,
+    "hi": 0.6819804423368876,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6333018883934753
+    },
+    "diff_ours_minus": -0.06501310865922184,
+    "diff_lo": -0.10234971482420203,
+    "diff_hi": -0.029086558636077207,
+    "p_one_sided": 0.9995,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.25045045045045045,
+    "lo": 0.1774774774774775,
+    "hi": 0.3245614035087719,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.25045045045045045
+    }
+   },
+   "p10_single": {
+    "mean": 0.159009009009009,
+    "lo": 0.1111111111111111,
+    "hi": 0.2104794372294372,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.159009009009009
+    }
+   },
+   "p20_single": {
+    "mean": 0.09954954954954956,
+    "lo": 0.06645238095238096,
+    "hi": 0.1357472439544808,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09954954954954956
+    }
+   },
+   "p50_single": {
+    "mean": 0.06387387387387387,
+    "lo": 0.03697793311403509,
+    "hi": 0.09509904970760232,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06387387387387387
+    }
+   },
+   "r10_single": {
+    "mean": 0.24978428373267464,
+    "lo": 0.15983392838556879,
+    "hi": 0.35454856785782735,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.24978428373267464
+    }
+   },
+   "r20_single": {
+    "mean": 0.26271204361087636,
+    "lo": 0.17136896187384118,
+    "hi": 0.3628018208047694,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26271204361087636
+    }
+   },
+   "hit10_single": {
+    "mean": 0.6756756756756757,
+    "lo": 0.5374884259259259,
+    "hi": 0.8063240872451396,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6756756756756757
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5929313120566629,
+    "lo": 0.4500813692943011,
+    "hi": 0.725595803005457,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5929313120566629
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6302935537286036,
+    "lo": 0.5843106096897359,
+    "hi": 0.6810763285816532,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6302935537286036
+    }
+   },
+   "f1_single": {
+    "mean": 0.2803969226161985,
+    "lo": 0.19177921512790275,
+    "hi": 0.37747117954450343,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2803969226161985
+    }
+   },
+   "rho_single": {
+    "mean": 0.05651897039997013,
+    "lo": 0.03238940488726119,
+    "hi": 0.08151826693574758,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05651897039997013
+    }
+   },
+   "ap_pair": {
+    "mean": 0.2579328965487867,
+    "lo": 0.17682079671283848,
+    "hi": 0.3395317038087781,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2579328965487867
+    },
+    "diff_ours_minus": 0.06916383422248899,
+    "diff_lo": 0.02087499198764802,
+    "diff_hi": 0.12164929693697729,
+    "p_one_sided": 0.0005,
+    "p_holm": 0.004,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.8516733026907776,
+    "lo": 0.8156302441789581,
+    "hi": 0.8851945334763809,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.8516733026907776
+    },
+    "diff_ours_minus": -0.23193648018947494,
+    "diff_lo": -0.28820121296264023,
+    "diff_hi": -0.1776163337152991,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_pair": {
+    "mean": 0.3162162162162162,
+    "lo": 0.2189064722617354,
+    "hi": 0.4162274774774774,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3162162162162162
+    }
+   },
+   "p10_pair": {
+    "mean": 0.23963963963963966,
+    "lo": 0.16972136222910214,
+    "hi": 0.3096509502923976,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.23963963963963966
+    }
+   },
+   "p20_pair": {
+    "mean": 0.16373873873873873,
+    "lo": 0.11944078947368421,
+    "hi": 0.20811373873873876,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.16373873873873873
+    }
+   },
+   "p50_pair": {
+    "mean": 0.10198198198198198,
+    "lo": 0.06921006113769272,
+    "hi": 0.13579113323850167,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10198198198198198
+    }
+   },
+   "r10_pair": {
+    "mean": 0.2665743837902255,
+    "lo": 0.16550824355221505,
+    "hi": 0.3711975985950041,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2665743837902255
+    }
+   },
+   "r20_pair": {
+    "mean": 0.3054151055961853,
+    "lo": 0.20039173180823006,
+    "hi": 0.41635365903128146,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.3054151055961853
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.6846846846846847,
+    "lo": 0.5394736842105263,
+    "hi": 0.8198198198198197,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6846846846846847
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.4523843865226344,
+    "lo": 0.33989626325279865,
+    "hi": 0.5643240240408322,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.4523843865226344
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.6095531732553523,
+    "lo": 0.5679629327176211,
+    "hi": 0.6512134221183166,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6095531732553523
+    }
+   },
+   "f1_pair": {
+    "mean": 0.23705293849236023,
+    "lo": 0.1549015378373332,
+    "hi": 0.3196968001112923,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.23705293849236023
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0605985125108966,
+    "lo": -0.125913173545304,
+    "hi": 0.002254905747832271,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.0605985125108966
+    }
+   }
+  },
+  "irf": {
+   "ap_single": {
+    "mean": 0.2338077055187952,
+    "lo": 0.15822748529101963,
+    "hi": 0.3204882641290632,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2338077055187952
+    },
+    "diff_ours_minus": 0.049351603486308404,
+    "diff_lo": 0.024376830415047956,
+    "diff_hi": 0.0792031113519692,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_single": {
+    "mean": 0.629455458875227,
+    "lo": 0.5798258774894987,
+    "hi": 0.6827739984159424,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.629455458875227
+    },
+    "diff_ours_minus": -0.06118378325045505,
+    "diff_lo": -0.09103850104627886,
+    "diff_hi": -0.032919693197970966,
+    "p_one_sided": 1.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_single": {
+    "mean": 0.2,
+    "lo": 0.14285409035409036,
+    "hi": 0.2596578947368421,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2
+    }
+   },
+   "p10_single": {
+    "mean": 0.13603603603603603,
+    "lo": 0.09906597222222223,
+    "hi": 0.17658102181128493,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13603603603603603
+    }
+   },
+   "p20_single": {
+    "mean": 0.09752252252252253,
+    "lo": 0.06794871794871796,
+    "hi": 0.130632722007722,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09752252252252253
+    }
+   },
+   "p50_single": {
+    "mean": 0.06027027027027027,
+    "lo": 0.03621032061473238,
+    "hi": 0.08798428362573099,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06027027027027027
+    }
+   },
+   "r10_single": {
+    "mean": 0.21766943991413046,
+    "lo": 0.14100600336115843,
+    "hi": 0.30543825436440586,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.21766943991413046
+    }
+   },
+   "r20_single": {
+    "mean": 0.2525611382610305,
+    "lo": 0.17074827795702213,
+    "hi": 0.3443470010898277,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2525611382610305
+    }
+   },
+   "hit10_single": {
+    "mean": 0.7477477477477477,
+    "lo": 0.6153846153846154,
+    "hi": 0.8728070175438596,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.7477477477477477
+    }
+   },
+   "mrr_single": {
+    "mean": 0.5621174334160305,
+    "lo": 0.41652133367618677,
+    "hi": 0.7018105794899394,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5621174334160305
+    }
+   },
+   "bacc_single": {
+    "mean": 0.6059521213743696,
+    "lo": 0.5693853433913535,
+    "hi": 0.6484674246898825,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.6059521213743696
+    }
+   },
+   "f1_single": {
+    "mean": 0.23202158144945698,
+    "lo": 0.15964860520770788,
+    "hi": 0.31348231955049477,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.23202158144945698
+    }
+   },
+   "rho_single": {
+    "mean": 0.01114267683873496,
+    "lo": -0.002346179728619642,
+    "hi": 0.021786409589612254,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.01114267683873496
+    }
+   },
+   "ap_pair": {
+    "mean": 0.04185659532172814,
+    "lo": 0.024284794156108416,
+    "hi": 0.0614128094638807,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04185659532172814
+    },
+    "diff_ours_minus": 0.2856015185373825,
+    "diff_lo": 0.1851068815602802,
+    "diff_hi": 0.3925207566548721,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5087646132113369,
+    "lo": 0.4926132183866357,
+    "hi": 0.5244180317196631,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5087646132113369
+    },
+    "diff_ours_minus": 0.11143432587036484,
+    "diff_lo": 0.047509623063558576,
+    "diff_hi": 0.17623705631083667,
+    "p_one_sided": 0.0,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 37
+    }
+   },
+   "p5_pair": {
+    "mean": 0.0363963963963964,
+    "lo": 0.019315315315315315,
+    "hi": 0.05526315789473685,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0363963963963964
+    }
+   },
+   "p10_pair": {
+    "mean": 0.028558558558558565,
+    "lo": 0.014998873873873875,
+    "hi": 0.04240740740740741,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.028558558558558565
+    }
+   },
+   "p20_pair": {
+    "mean": 0.025990990990990993,
+    "lo": 0.013771648672964465,
+    "hi": 0.0389923245614035,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.025990990990990993
+    }
+   },
+   "p50_pair": {
+    "mean": 0.023405405405405408,
+    "lo": 0.011751992481203007,
+    "hi": 0.03654605263157894,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.023405405405405408
+    }
+   },
+   "r10_pair": {
+    "mean": 0.021795878382204,
+    "lo": 0.007524926733490377,
+    "hi": 0.040974711325156364,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.021795878382204
+    }
+   },
+   "r20_pair": {
+    "mean": 0.030781171893492564,
+    "lo": 0.013799788355023242,
+    "hi": 0.05263953846346543,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.030781171893492564
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.2018018018018018,
+    "lo": 0.11764569716775598,
+    "hi": 0.29009660976766233,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.2018018018018018
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.12880687817071612,
+    "lo": 0.07699032885342263,
+    "hi": 0.1843367024880949,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12880687817071612
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5083129180682907,
+    "lo": 0.5015270212192102,
+    "hi": 0.517829880515439,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5083129180682907
+    }
+   },
+   "f1_pair": {
+    "mean": 0.03796757777641331,
+    "lo": 0.020617643186020173,
+    "hi": 0.05746287431738624,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03796757777641331
+    }
+   },
+   "rho_pair": {
+    "mean": -0.00012001132937714851,
+    "lo": -0.0025812223897817483,
+    "hi": 0.002395263758498035,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 37
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.00012001132937714851
+    }
+   }
+  },
+  "fair_gbm": {
+   "ap_single": {
+    "mean": 0.09784705482561659,
+    "lo": 0.01418826933801529,
+    "hi": 0.2599300883798791,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09784705482561659
+    },
+    "diff_ours_minus": 0.07458391029929926,
+    "diff_lo": 0.004965856348267145,
+    "diff_hi": 0.17440944056846142,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5515483139778203,
+    "lo": 0.4687097097233314,
+    "hi": 0.645130007528545,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5515483139778203
+    },
+    "diff_ours_minus": -0.10301053208358804,
+    "diff_lo": -0.15438548325519247,
+    "diff_hi": -0.04848071238937407,
+    "p_one_sided": 0.9995,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.05333333333333333,
+    "lo": 0.0,
+    "hi": 0.13333333333333333,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.05333333333333333
+    }
+   },
+   "p10_single": {
+    "mean": 0.03,
+    "lo": 0.0,
+    "hi": 0.07222222222222223,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03
+    }
+   },
+   "p20_single": {
+    "mean": 0.016666666666666666,
+    "lo": 0.0,
+    "hi": 0.041666666666666664,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.016666666666666666
+    }
+   },
+   "p50_single": {
+    "mean": 0.011333333333333332,
+    "lo": 0.0009523809523809525,
+    "hi": 0.02400256410256409,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011333333333333332
+    }
+   },
+   "r10_single": {
+    "mean": 0.08097583219334245,
+    "lo": 0.0,
+    "hi": 0.24683589197953085,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08097583219334245
+    }
+   },
+   "r20_single": {
+    "mean": 0.08430916552667579,
+    "lo": 0.0,
+    "hi": 0.25053959568323453,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08430916552667579
+    }
+   },
+   "hit10_single": {
+    "mean": 0.16666666666666666,
+    "lo": 0.0,
+    "hi": 0.4074074074074074,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.16666666666666666
+    }
+   },
+   "mrr_single": {
+    "mean": 0.14891870346203656,
+    "lo": 0.008602334436176712,
+    "hi": 0.38754814205910915,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14891870346203656
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5351184726606475,
+    "lo": 0.49252725941732983,
+    "hi": 0.6181775262735547,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5351184726606475
+    }
+   },
+   "f1_single": {
+    "mean": 0.08492466582006476,
+    "lo": 0.0018115942028985507,
+    "hi": 0.2500276738124259,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.08492466582006476
+    }
+   },
+   "rho_single": {
+    "mean": 0.0027893012648316437,
+    "lo": -0.042113331726418936,
+    "hi": 0.034363808134991375,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0027893012648316437
+    }
+   },
+   "ap_pair": {
+    "mean": 0.07008297023044685,
+    "lo": 0.008197393914582112,
+    "hi": 0.17695126400976455,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07008297023044685
+    },
+    "diff_ours_minus": 0.07131864807043871,
+    "diff_lo": 0.0009785137947596406,
+    "diff_hi": 0.21643607459902825,
+    "p_one_sided": 0.013,
+    "p_holm": 0.0805,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5322085786917535,
+    "lo": 0.47834135820454254,
+    "hi": 0.5968388785064259,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5322085786917535
+    },
+    "diff_ours_minus": -0.027593607997585992,
+    "diff_lo": -0.1225095899637507,
+    "diff_hi": 0.08877406895978118,
+    "p_one_sided": 0.7245,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.04,
+    "lo": 0.0,
+    "hi": 0.08888888888888889,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04
+    }
+   },
+   "p10_pair": {
+    "mean": 0.023333333333333334,
+    "lo": 0.0,
+    "hi": 0.05003205128205112,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.023333333333333334
+    }
+   },
+   "p20_pair": {
+    "mean": 0.011666666666666667,
+    "lo": 0.0,
+    "hi": 0.02501602564102556,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011666666666666667
+    }
+   },
+   "p50_pair": {
+    "mean": 0.008733333333333333,
+    "lo": 0.0010650000000000002,
+    "hi": 0.019268333333333325,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.008733333333333333
+    }
+   },
+   "r10_pair": {
+    "mean": 0.06399029126213593,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06399029126213593
+    }
+   },
+   "r20_pair": {
+    "mean": 0.06399029126213593,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06399029126213593
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.19999999999999998,
+    "lo": 0.0,
+    "hi": 0.4444444444444444,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.19999999999999998
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.14774066037464337,
+    "lo": 0.007931284825759256,
+    "hi": 0.3091866714040699,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14774066037464337
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5297192138423038,
+    "lo": 0.49715991001326604,
+    "hi": 0.5843089178110102,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5297192138423038
+    }
+   },
+   "f1_pair": {
+    "mean": 0.06644983818770227,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06644983818770227
+    }
+   },
+   "rho_pair": {
+    "mean": 0.0018334068661337126,
+    "lo": -0.004911141994566882,
+    "hi": 0.008533997992923302,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0018334068661337126
+    }
+   }
+  },
+  "fair_misty": {
+   "ap_single": {
+    "mean": 0.041517516674391894,
+    "lo": 0.013293890457718165,
+    "hi": 0.08406956069511715,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.041517516674391894
+    },
+    "diff_ours_minus": 0.13125040372316713,
+    "diff_lo": 0.019143224542560167,
+    "diff_hi": 0.26678172703984726,
+    "p_one_sided": 0.0005,
+    "p_holm": 0.0045000000000000005,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.48252818971584155,
+    "lo": 0.4102643701672153,
+    "hi": 0.5601128535471671,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.48252818971584155
+    },
+    "diff_ours_minus": -0.036120660630208266,
+    "diff_lo": -0.18281854231637065,
+    "diff_hi": 0.12009551062332763,
+    "p_one_sided": 0.6985,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.053333333333333344,
+    "lo": 0.0,
+    "hi": 0.14666666666666667,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.053333333333333344
+    }
+   },
+   "p10_single": {
+    "mean": 0.026666666666666672,
+    "lo": 0.0,
+    "hi": 0.07333333333333333,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.026666666666666672
+    }
+   },
+   "p20_single": {
+    "mean": 0.015,
+    "lo": 0.0,
+    "hi": 0.041666666666666664,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.015
+    }
+   },
+   "p50_single": {
+    "mean": 0.008666666666666666,
+    "lo": 0.0,
+    "hi": 0.01925925925925926,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.008666666666666666
+    }
+   },
+   "r10_single": {
+    "mean": 0.037735978112175106,
+    "lo": 0.0,
+    "hi": 0.09394477558465243,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.037735978112175106
+    }
+   },
+   "r20_single": {
+    "mean": 0.038123575011399916,
+    "lo": 0.0,
+    "hi": 0.09459538466549405,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.038123575011399916
+    }
+   },
+   "hit10_single": {
+    "mean": 0.16666666666666666,
+    "lo": 0.0,
+    "hi": 0.41666666666666663,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.16666666666666666
+    }
+   },
+   "mrr_single": {
+    "mean": 0.10102567942552916,
+    "lo": 0.006009299205949707,
+    "hi": 0.2564860527718477,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.10102567942552916
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5130837402875532,
+    "lo": 0.49258290191574894,
+    "hi": 0.5410421990670763,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5130837402875532
+    }
+   },
+   "f1_single": {
+    "mean": 0.040950196300868616,
+    "lo": 0.0,
+    "hi": 0.09627792977656177,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.040950196300868616
+    }
+   },
+   "rho_single": {
+    "mean": 0.04263836177472089,
+    "lo": 0.01722090211177742,
+    "hi": 0.0676800381490846,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04263836177472089
+    }
+   },
+   "ap_pair": {
+    "mean": 0.016928099146496595,
+    "lo": 0.0064852665637824235,
+    "hi": 0.03596946709647839,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.016928099146496595
+    },
+    "diff_ours_minus": 0.12392229692247478,
+    "diff_lo": 0.003666346100613166,
+    "diff_hi": 0.28653943044853497,
+    "p_one_sided": 0.0115,
+    "p_holm": 0.0805,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5090938249849684,
+    "lo": 0.4608520716621306,
+    "hi": 0.5681524448382995,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5090938249849684
+    },
+    "diff_ours_minus": -0.0034524547248979687,
+    "diff_lo": -0.09311282368317075,
+    "diff_hi": 0.1242601868436676,
+    "p_one_sided": 0.573,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.006666666666666666,
+    "lo": 0.0,
+    "hi": 0.022222222222222223,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.006666666666666666
+    }
+   },
+   "p10_pair": {
+    "mean": 0.006666666666666666,
+    "lo": 0.0,
+    "hi": 0.016666666666666666,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.006666666666666666
+    }
+   },
+   "p20_pair": {
+    "mean": 0.0075000000000000015,
+    "lo": 0.0,
+    "hi": 0.016666666666666666,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0075000000000000015
+    }
+   },
+   "p50_pair": {
+    "mean": 0.0036666666666666666,
+    "lo": 0.0,
+    "hi": 0.008333333333333335,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0036666666666666666
+    }
+   },
+   "r10_pair": {
+    "mean": 0.008656957928802589,
+    "lo": 0.0,
+    "hi": 0.028137360661632502,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.008656957928802589
+    }
+   },
+   "r20_pair": {
+    "mean": 0.011543136790591206,
+    "lo": 0.0,
+    "hi": 0.03117374524993515,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011543136790591206
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.06666666666666667,
+    "lo": 0.0,
+    "hi": 0.16666666666666666,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06666666666666667
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.04689443057296605,
+    "lo": 0.00590426015115615,
+    "hi": 0.1251221811363239,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04689443057296605
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5025194668708883,
+    "lo": 0.4971948538057957,
+    "hi": 0.5126240065251938,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5025194668708883
+    }
+   },
+   "f1_pair": {
+    "mean": 0.012190385981529718,
+    "lo": 0.0,
+    "hi": 0.03206339183132931,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.012190385981529718
+    }
+   },
+   "rho_pair": {
+    "mean": 0.00300440960677907,
+    "lo": -0.0054031910788033665,
+    "hi": 0.012007388555555025,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.00300440960677907
+    }
+   }
+  },
+  "fair_ebm": {
+   "ap_single": {
+    "mean": 0.1055325607671496,
+    "lo": 0.01492434519034928,
+    "hi": 0.26816222108907173,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1055325607671496
+    },
+    "diff_ours_minus": 0.06686120655955298,
+    "diff_lo": 0.0050333572302153785,
+    "diff_hi": 0.16036100345887086,
+    "p_one_sided": 0.0,
+    "p_holm": 0.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5518012308822522,
+    "lo": 0.4684245125196606,
+    "hi": 0.6452805340021679,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5518012308822522
+    },
+    "diff_ours_minus": -0.1032953034267248,
+    "diff_lo": -0.15360345986888072,
+    "diff_hi": -0.05011271560094784,
+    "p_one_sided": 0.9995,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.06333333333333332,
+    "lo": 0.0,
+    "hi": 0.14444444444444443,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06333333333333332
+    }
+   },
+   "p10_single": {
+    "mean": 0.04666666666666666,
+    "lo": 0.00625,
+    "hi": 0.09999999999999999,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04666666666666666
+    }
+   },
+   "p20_single": {
+    "mean": 0.029166666666666664,
+    "lo": 0.004545454545454546,
+    "hi": 0.062037037037037036,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.029166666666666664
+    }
+   },
+   "p50_single": {
+    "mean": 0.01566666666666667,
+    "lo": 0.0038080357142857148,
+    "hi": 0.031111111111111114,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.01566666666666667
+    }
+   },
+   "r10_single": {
+    "mean": 0.13830039359685123,
+    "lo": 0.0010964912280701754,
+    "hi": 0.3098644485844109,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.13830039359685123
+    }
+   },
+   "r20_single": {
+    "mean": 0.14267921856625146,
+    "lo": 0.0021929824561403508,
+    "hi": 0.3156291049671601,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.14267921856625146
+    }
+   },
+   "hit10_single": {
+    "mean": 0.26666666666666666,
+    "lo": 0.0625,
+    "hi": 0.5238553113553112,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.26666666666666666
+    }
+   },
+   "mrr_single": {
+    "mean": 0.16263594038263962,
+    "lo": 0.01926764223418075,
+    "hi": 0.40035053450274705,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.16263594038263962
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5395890911123894,
+    "lo": 0.49354821497655404,
+    "hi": 0.6249902560669464,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5395890911123894
+    }
+   },
+   "f1_single": {
+    "mean": 0.09372378064453746,
+    "lo": 0.002974778387311149,
+    "hi": 0.2618838914713112,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.09372378064453746
+    }
+   },
+   "rho_single": {
+    "mean": 0.00324001570302717,
+    "lo": -0.04216856724277681,
+    "hi": 0.0351960079641262,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.00324001570302717
+    }
+   },
+   "ap_pair": {
+    "mean": 0.07116396259473723,
+    "lo": 0.009094622532309745,
+    "hi": 0.17796468539018417,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.07116396259473723
+    },
+    "diff_ours_minus": 0.07025735136831975,
+    "diff_lo": -0.00031354760349222376,
+    "diff_hi": 0.21571819070171402,
+    "p_one_sided": 0.0285,
+    "p_holm": 0.114,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5491677830752973,
+    "lo": 0.5052642801486477,
+    "hi": 0.602482186780391,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5491677830752973
+    },
+    "diff_ours_minus": -0.04415710825053432,
+    "diff_lo": -0.13189348535316017,
+    "diff_hi": 0.06937395595356706,
+    "p_one_sided": 0.81,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.04666666666666667,
+    "lo": 0.0,
+    "hi": 0.10006410256410224,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04666666666666667
+    }
+   },
+   "p10_pair": {
+    "mean": 0.023333333333333334,
+    "lo": 0.0,
+    "hi": 0.05003205128205112,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.023333333333333334
+    }
+   },
+   "p20_pair": {
+    "mean": 0.013333333333333332,
+    "lo": 0.0,
+    "hi": 0.03,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.013333333333333332
+    }
+   },
+   "p50_pair": {
+    "mean": 0.010266666666666667,
+    "lo": 0.003,
+    "hi": 0.019166911764705884,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.010266666666666667
+    }
+   },
+   "r10_pair": {
+    "mean": 0.06264724919093852,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06264724919093852
+    }
+   },
+   "r20_pair": {
+    "mean": 0.06297087378640778,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06297087378640778
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.19999999999999998,
+    "lo": 0.0,
+    "hi": 0.4444444444444444,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.19999999999999998
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.1843209825796055,
+    "lo": 0.011985357665416623,
+    "hi": 0.38560362864300934,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1843209825796055
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5288433433805773,
+    "lo": 0.4971131025820158,
+    "hi": 0.5840168779038947,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5288433433805773
+    }
+   },
+   "f1_pair": {
+    "mean": 0.06471844660194175,
+    "lo": 0.0,
+    "hi": 0.17333333333333334,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06471844660194175
+    }
+   },
+   "rho_pair": {
+    "mean": -0.0013797946374242745,
+    "lo": -0.00940807574523233,
+    "hi": 0.00643889348896751,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.0013797946374242745
+    }
+   }
+  },
+  "fair_irf": {},
+  "fair_rulefit": {},
+  "pysr": {
+   "ap_single": {
+    "mean": 0.1807795924908489,
+    "lo": 0.046866709164940165,
+    "hi": 0.32941861060019173,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1807795924908489
+    },
+    "diff_ours_minus": -0.0082370922248919,
+    "diff_lo": -0.13034691295655465,
+    "diff_hi": 0.07912525994496461,
+    "p_one_sided": 0.523,
+    "p_holm": 1.0,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_single": {
+    "mean": 0.5973351947903952,
+    "lo": 0.5353257044821347,
+    "hi": 0.6665471175730591,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5973351947903952
+    },
+    "diff_ours_minus": -0.149041499652556,
+    "diff_lo": -0.24832929978838392,
+    "diff_hi": -0.06297991196542822,
+    "p_one_sided": 0.999,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_single": {
+    "mean": 0.12000000000000002,
+    "lo": 0.06332407407407406,
+    "hi": 0.18666666666666668,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.12000000000000002
+    }
+   },
+   "p10_single": {
+    "mean": 0.06433333333333333,
+    "lo": 0.036361952861952866,
+    "hi": 0.09666666666666666,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.06433333333333333
+    }
+   },
+   "p20_single": {
+    "mean": 0.03933333333333334,
+    "lo": 0.02333333333333333,
+    "hi": 0.057669444444444426,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.03933333333333334
+    }
+   },
+   "p50_single": {
+    "mean": 0.02586666666666667,
+    "lo": 0.015272390572390573,
+    "hi": 0.03785427350427349,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.02586666666666667
+    }
+   },
+   "r10_single": {
+    "mean": 0.1737602707726538,
+    "lo": 0.03231490833134311,
+    "hi": 0.32942739855858577,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1737602707726538
+    }
+   },
+   "r20_single": {
+    "mean": 0.17818880514883267,
+    "lo": 0.03765801114756394,
+    "hi": 0.33172102312295565,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.17818880514883267
+    }
+   },
+   "hit10_single": {
+    "mean": 0.5433333333333333,
+    "lo": 0.3333333333333333,
+    "hi": 0.7428690476190475,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5433333333333333
+    }
+   },
+   "mrr_single": {
+    "mean": 0.34109827627555334,
+    "lo": 0.16988689317700645,
+    "hi": 0.539485054100855,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.34109827627555334
+    }
+   },
+   "bacc_single": {
+    "mean": 0.5797568864409051,
+    "lo": 0.5148719792274599,
+    "hi": 0.652065206227203,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5797568864409051
+    }
+   },
+   "f1_single": {
+    "mean": 0.1737268417904568,
+    "lo": 0.047250994331069746,
+    "hi": 0.31614214553638637,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.1737268417904568
+    }
+   },
+   "rho_single": {
+    "mean": -0.0048186237454695465,
+    "lo": -0.009271845669851076,
+    "hi": -0.00029130473199492804,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": -0.0048186237454695465
+    }
+   },
+   "ap_pair": {
+    "mean": 0.011241389882436337,
+    "lo": 0.0071927166556753925,
+    "hi": 0.016044825297201724,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.011241389882436337
+    },
+    "diff_ours_minus": 0.12964793154185844,
+    "diff_lo": 0.0014960211266589888,
+    "diff_hi": 0.30530861684482874,
+    "p_one_sided": 0.0195,
+    "p_holm": 0.0975,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "auroc_pair": {
+    "mean": 0.5106577030132831,
+    "lo": 0.48834232109644066,
+    "hi": 0.5345031689619519,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5106577030132831
+    },
+    "diff_ours_minus": -0.006182677890618075,
+    "diff_lo": -0.10902000410035925,
+    "diff_hi": 0.11694471713321465,
+    "p_one_sided": 0.572,
+    "p_holm": NaN,
+    "n_paired_targets": {
+     "gse307534_lung_precursor_b3": 10
+    }
+   },
+   "p5_pair": {
+    "mean": 0.007333333333333335,
+    "lo": 0.0,
+    "hi": 0.018359848484848344,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.007333333333333335
+    }
+   },
+   "p10_pair": {
+    "mean": 0.005333333333333333,
+    "lo": 0.0,
+    "hi": 0.012777777777777777,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.005333333333333333
+    }
+   },
+   "p20_pair": {
+    "mean": 0.007666666666666666,
+    "lo": 0.0025,
+    "hi": 0.013333333333333332,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.007666666666666666
+    }
+   },
+   "p50_pair": {
+    "mean": 0.008733333333333333,
+    "lo": 0.003,
+    "hi": 0.015428571428571427,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.008733333333333333
+    }
+   },
+   "r10_pair": {
+    "mean": 0.004618688036163764,
+    "lo": 0.0,
+    "hi": 0.011360030527852996,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.004618688036163764
+    }
+   },
+   "r20_pair": {
+    "mean": 0.020897344223557816,
+    "lo": 0.004604115985660715,
+    "hi": 0.0440339947089947,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.020897344223557816
+    }
+   },
+   "hit10_pair": {
+    "mean": 0.04666666666666667,
+    "lo": 0.0,
+    "hi": 0.10555555555555556,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.04666666666666667
+    }
+   },
+   "mrr_pair": {
+    "mean": 0.024346355034825972,
+    "lo": 0.01193430994562557,
+    "hi": 0.04101823268992838,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.024346355034825972
+    }
+   },
+   "bacc_pair": {
+    "mean": 0.5006163924316469,
+    "lo": 0.4991030117712177,
+    "hi": 0.5021828567957763,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.5006163924316469
+    }
+   },
+   "f1_pair": {
+    "mean": 0.00830254251409828,
+    "lo": 0.0024000000000000002,
+    "hi": 0.015012442068942181,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.00830254251409828
+    }
+   },
+   "rho_pair": {
+    "mean": 0.0003597129469741328,
+    "lo": -0.005374118286132643,
+    "hi": 0.005983554668404655,
+    "n_targets": {
+     "gse307534_lung_precursor_b3": 10
+    },
+    "per_study": {
+     "gse307534_lung_precursor_b3": 0.0003597129469741328
+    }
+   }
+  },
+  "tabdistill": {}
+ },
+ "extra": {
+  "sel_screen": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 17.40174108357877,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.27838740633085785,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 17.148257022799392,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.3136844915895579,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "sel_screen_joint": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 17.40174108357877,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.27838740633085785,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 17.985627308840645,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.32900208754696747,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "hybrid_lin_sel": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 16.781588644793292,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.2684664088781282,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 17.148257022799392,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.3136844915895579,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "hybrid_lin_joint": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 16.781588644793292,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.2684664088781282,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 17.985627308840645,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.32900208754696747,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "random": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 1.4854291837168268,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.023763414003057155,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 1.3135061178049154,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.024027310659946417,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "linear_screen": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 16.781588644793292,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.2684664088781282,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 2.1858795133356774,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.03998520099769288,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "nid": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 16.714865480672373,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.2673989933527163,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 6.143896354190239,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.11238722405902495,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "misty": {
+   "single": {
+    "ours_same_targets": 0.27838740633085785,
+    "ours_auroc_same_targets": 0.5710570137727525,
+    "lift_shared": 6.279895673974603,
+    "ours_lift_shared": 17.40174108357877,
+    "ap_timeouts_at_chance": 0.1004637329281897,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.31368449158955786,
+    "ours_auroc_same_targets": 0.5847693270041944,
+    "lift_shared": 3.9588813083814043,
+    "ours_lift_shared": 17.148257022799392,
+    "ap_timeouts_at_chance": 0.07241783633356684,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 400,
+    "n_targets_shared": 40
+   }
+  },
+  "knockoffs": {
+   "single": {
+    "ours_same_targets": 0.2831814202350342,
+    "ours_auroc_same_targets": 0.5685720997517001,
+    "lift_shared": 10.468740281683893,
+    "ours_lift_shared": 16.76733783939714,
+    "ap_timeouts_at_chance": 0.17680521317303796,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.3267597815779401,
+    "ours_auroc_same_targets": 0.6204600045688553,
+    "lift_shared": 2.0185921484057068,
+    "ours_lift_shared": 18.05302660651603,
+    "ap_timeouts_at_chance": 0.03653651788614329,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "gbm_shap": {
+   "single": {
+    "ours_same_targets": 0.2831814202350342,
+    "ours_auroc_same_targets": 0.5685720997517001,
+    "lift_shared": 16.18977908322963,
+    "ours_lift_shared": 16.76733783939714,
+    "ap_timeouts_at_chance": 0.27342710440939344,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.3267597815779401,
+    "ours_auroc_same_targets": 0.6204600045688553,
+    "lift_shared": 2.3719747509884077,
+    "ours_lift_shared": 18.05302660651603,
+    "ap_timeouts_at_chance": 0.042932742992890176,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "rulefit": {
+   "single": {
+    "ours_same_targets": 0.290296549116365,
+    "ours_auroc_same_targets": 0.5718130179766476,
+    "lift_shared": 14.73179038562654,
+    "ours_lift_shared": 17.084902767959512,
+    "ap_timeouts_at_chance": 0.24358644123547404,
+    "timeout_or_error_splits": 2,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.33415565362865013,
+    "ours_auroc_same_targets": 0.6250289502439065,
+    "lift_shared": 1.7596997222906006,
+    "ours_lift_shared": 18.400219541327527,
+    "ap_timeouts_at_chance": 0.0311571804528418,
+    "timeout_or_error_splits": 2,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "stability_selection": {
+   "single": {
+    "ours_same_targets": 0.3680287423215502,
+    "ours_auroc_same_targets": 0.620447992593586,
+    "lift_shared": 6.973093369889047,
+    "ours_lift_shared": 17.021987037440688,
+    "ap_timeouts_at_chance": 0.07197028044881529,
+    "timeout_or_error_splits": 54,
+    "splits_attempted": 100,
+    "n_targets_shared": 20
+   },
+   "pair": {
+    "ours_same_targets": 0.4391464939621994,
+    "ours_auroc_same_targets": 0.6955100983670404,
+    "lift_shared": 2.127749757828765,
+    "ours_lift_shared": 16.96638096441208,
+    "ap_timeouts_at_chance": 0.03220235285070884,
+    "timeout_or_error_splits": 54,
+    "splits_attempted": 100,
+    "n_targets_shared": 20
+   }
+  },
+  "gbm_h": {
+   "single": {
+    "ours_same_targets": 0.2820537656833121,
+    "ours_auroc_same_targets": 0.5686259171535876,
+    "lift_shared": 1.5447640834275598,
+    "ours_lift_shared": 16.85393939212033,
+    "ap_timeouts_at_chance": 0.02627240517752598,
+    "timeout_or_error_splits": 1,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.32525730592076063,
+    "ours_auroc_same_targets": 0.6203190933319295,
+    "lift_shared": 2.1195211316502958,
+    "ours_lift_shared": 18.559618026862232,
+    "ap_timeouts_at_chance": 0.03783246963515183,
+    "timeout_or_error_splits": 1,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "ebm": {
+   "single": {
+    "ours_same_targets": 0.2831814202350342,
+    "ours_auroc_same_targets": 0.5685720997517001,
+    "lift_shared": 16.45400673882672,
+    "ours_lift_shared": 16.76733783939714,
+    "ap_timeouts_at_chance": 0.2778896114271473,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.3267597815779401,
+    "ours_auroc_same_targets": 0.6204600045688553,
+    "lift_shared": 14.250436273413632,
+    "ours_lift_shared": 18.05302660651603,
+    "ap_timeouts_at_chance": 0.25793289654878676,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "irf": {
+   "single": {
+    "ours_same_targets": 0.2831814202350342,
+    "ours_auroc_same_targets": 0.5685720997517001,
+    "lift_shared": 13.843891257534237,
+    "ours_lift_shared": 16.76733783939714,
+    "ap_timeouts_at_chance": 0.2338077055187952,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   },
+   "pair": {
+    "ours_same_targets": 0.3267597815779401,
+    "ours_auroc_same_targets": 0.6204600045688553,
+    "lift_shared": 2.312519078548516,
+    "ours_lift_shared": 18.05302660651603,
+    "ap_timeouts_at_chance": 0.04185659532172814,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 120,
+    "n_targets_shared": 40
+   }
+  },
+  "fair_gbm": {
+   "single": {
+    "ours_same_targets": 0.17362894726677677,
+    "ours_auroc_same_targets": 0.44810488029740514,
+    "lift_shared": 9.757751042531149,
+    "ours_lift_shared": 17.315064252321513,
+    "ap_timeouts_at_chance": 0.09784705482561659,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.14092303618200683,
+    "ours_auroc_same_targets": 0.5057878352097319,
+    "lift_shared": 13.923768919956325,
+    "ours_lift_shared": 27.997954208345725,
+    "ap_timeouts_at_chance": 0.07008297023044685,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_misty": {
+   "single": {
+    "ours_same_targets": 0.17362894726677677,
+    "ours_auroc_same_targets": 0.44810488029740514,
+    "lift_shared": 4.1403146199428695,
+    "ours_lift_shared": 17.315064252321513,
+    "ap_timeouts_at_chance": 0.041517516674391894,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.14092303618200683,
+    "ours_auroc_same_targets": 0.5057878352097319,
+    "lift_shared": 3.363198505926475,
+    "ours_lift_shared": 27.997954208345725,
+    "ap_timeouts_at_chance": 0.016928099146496595,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_ebm": {
+   "single": {
+    "ours_same_targets": 0.17362894726677677,
+    "ours_auroc_same_targets": 0.44810488029740514,
+    "lift_shared": 10.524184470159875,
+    "ours_lift_shared": 17.315064252321513,
+    "ap_timeouts_at_chance": 0.1055325607671496,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.14092303618200683,
+    "ours_auroc_same_targets": 0.5057878352097319,
+    "lift_shared": 14.138535614848454,
+    "ours_lift_shared": 27.997954208345725,
+    "ap_timeouts_at_chance": 0.07116396259473723,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "fair_irf": {
+   "single": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": NaN,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 0,
+    "n_targets_shared": 0
+   },
+   "pair": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": NaN,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 0,
+    "n_targets_shared": 0
+   }
+  },
+  "fair_rulefit": {
+   "single": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": NaN,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 0,
+    "n_targets_shared": 0
+   },
+   "pair": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": NaN,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 0,
+    "n_targets_shared": 0
+   }
+  },
+  "pysr": {
+   "single": {
+    "ours_same_targets": 0.17362894726677677,
+    "ours_auroc_same_targets": 0.44810488029740514,
+    "lift_shared": 18.028158949083846,
+    "ours_lift_shared": 17.315064252321513,
+    "ap_timeouts_at_chance": 0.1807795924908489,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   },
+   "pair": {
+    "ours_same_targets": 0.14092303618200683,
+    "ours_auroc_same_targets": 0.5057878352097319,
+    "lift_shared": 2.233388718364835,
+    "ours_lift_shared": 27.997954208345725,
+    "ap_timeouts_at_chance": 0.011241389882436337,
+    "timeout_or_error_splits": 0,
+    "splits_attempted": 30,
+    "n_targets_shared": 10
+   }
+  },
+  "tabdistill": {
+   "single": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.015749429727884123,
+    "timeout_or_error_splits": 30,
+    "splits_attempted": 30,
+    "n_targets_shared": 0
+   },
+   "pair": {
+    "ours_same_targets": NaN,
+    "ours_auroc_same_targets": NaN,
+    "lift_shared": NaN,
+    "ours_lift_shared": NaN,
+    "ap_timeouts_at_chance": 0.009143488069584572,
+    "timeout_or_error_splits": 30,
+    "splits_attempted": 30,
+    "n_targets_shared": 0
+   }
+  }
+ },
+ "label_sources": {
+  "gse307534_lung_precursor_b3": "label engine v05"
+ }
+}

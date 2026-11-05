@@ -1,0 +1,178 @@
+# tests_static.log  (static checks only; torch and the box packages are not installed on the build machine)
+
+## Counts
+(root): 6 files, 0 .py
+cscd: 8 files, 8 .py
+dbench: 281 files, 192 .py
+docs: 7 files, 0 .py
+figures: 35 files, 21 .py
+morpheus: 10 files, 10 .py
+morpheus-rebase: 3 files, 0 .py
+morpheus_encoder: 62 files, 61 .py
+scripts: 19 files, 8 .py
+total: 431 files, 7.80 MB; largest file: figures\fig7_benchmark\data\table1_pooled_3studies.json 262 KB
+
+## py_compile (compile() of every .py)
+300 files, 0 failures
+
+## Intra-package imports (dbench, morpheus, morpheus_encoder, cscd; relative imports included)
+unresolved: 1
+  dbench.translation_v10.relation  <- dbench/translation_v10/values_v06_eaca09b.py
+sibling-script imports (resolved against the importing file's directory):
+  plot_evidence_cards_v01 <- figures/fig6_evidence_cards/plot_evidence_cards_v02.py, figures/fig6_evidence_cards/plot_evidence_cards_v02_k.py
+  plot_evidence_cards_v02 <- figures/fig6_evidence_cards/plot_evidence_cards_v02_k.py
+
+## External imports not covered by requirements.txt
+  none
+
+## Figure-script local modules (not pip packages)
+  plot_evidence_cards_v01 / _v02: sibling files in figures/fig6_evidence_cards/ (present); the per-card plot_code*.py files are provenance copies of the root scripts and import them as siblings, so they run only from the fig6 root
+  export_figure, morpheus_style: reached through a hard-coded sys.path entry (SKILL) in plot_evidence_cards_v01.py; copies in figures/_helpers/
+
+## External imports covered: PIL, anndata, cycler, h5py, huggingface_hub, imodels, interpret, joblib, knockpy, liana, lightgbm, matplotlib, numpy, pandas, pysr, pytest, scienceplots, scipy, shap, shapely, sklearn, spectralexplain, squidpy, statsmodels, tabpfn, threadpoolctl, tifffile, timm, torch, umap
+
+## Shell syntax (bash -n)
+17 scripts, 0 failures []
+
+## Import closure
+entry points: 124; static AST walk over dbench, morpheus, morpheus_encoder, cscd; dynamic edges (string module/path constants, `-m`/path in shell entries): 4
+  dynamic: morpheus_encoder/general_discovery.py -> morpheus_encoder/residual_bank_generator.py
+  dynamic: scripts/second_wave/finalize_v04.py -> dbench/prospective_campaign.py
+  dynamic: dbench/scripts/run_v08_residual_external_batches_v01.sh -> dbench/scripts/run_v08_external_batches_v01.py
+  dynamic: dbench/scripts/blind_sweep.sh -> dbench/downstream/scripts/make_blind_drafts.py
+pruned: morpheus/protocol/__init__.py (dbench/object_cards.py falls back to loading morpheus/protocol/language.py by path)
+
+## Tests included (all package imports inside the closure): 54; excluded (pull modules outside the closure): 108
+
+## Entry points (path <- source clone)
+  dbench/benchmark_v04/chain_labels.sh <- morpheus_work_bench
+  dbench/benchmark_v04/e12.py <- morpheus_work_bench
+  dbench/benchmark_v04/freeze.py <- morpheus_work_bench
+  dbench/benchmark_v04/labels.py <- morpheus_work_bench
+  dbench/benchmark_v04/manifest.py <- morpheus_work_bench
+  dbench/benchmark_v04/run_bounded_baselines.sh <- morpheus_work_bench
+  dbench/benchmark_v04/run_labels.sh <- morpheus_work_bench
+  dbench/benchmark_v04/score_methods.py <- morpheus_work_bench
+  dbench/benchmark_v04/study_lean.py <- morpheus_work_bench
+  dbench/benchmark_v04/tables.py <- morpheus_work_bench
+  dbench/benchmark_v05/__init__.py <- morpheus_work_bench
+  dbench/benchmark_v05/ablation_ops.py <- morpheus_work_bench
+  dbench/benchmark_v05/addendum.py <- morpheus_work_bench
+  dbench/benchmark_v05/b4b5.py <- morpheus_work_bench
+  dbench/benchmark_v05/b6_zenodo.py <- morpheus_work_bench
+  dbench/benchmark_v05/b7_summary.py <- morpheus_work_bench
+  dbench/benchmark_v05/budget_sweep_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/calib_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/check_h_equal.py <- morpheus_work_bench
+  dbench/benchmark_v05/e12_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/e1_matched_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/fdr_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/fewshot_table.py <- morpheus_work_bench
+  dbench/benchmark_v05/fewshot_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/labels_fast.py <- morpheus_work_bench
+  dbench/benchmark_v05/methods_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/metrics_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/profile_methods.py <- morpheus_work_bench
+  dbench/benchmark_v05/run_scores.py <- morpheus_work_bench
+  dbench/benchmark_v05/seconds_table.py <- morpheus_work_bench
+  dbench/benchmark_v05/stability_v05.py <- morpheus_work_bench
+  dbench/benchmark_v05/study_lean2.py <- morpheus_work_bench
+  dbench/benchmark_v05/transfer_v05.py <- morpheus_work_bench
+  dbench/downstream/blind.py <- morpheus_work_v06
+  dbench/downstream/cards_v10.py <- morpheus_work_v06
+  dbench/downstream/characterise_v10.py <- morpheus_work_v06
+  dbench/downstream/decode_v10.py <- morpheus_work_v06
+  dbench/downstream/evidence_table_v01.py <- morpheus_w5_wt
+  dbench/downstream/novelty_v10_score.py <- morpheus_work_v06
+  dbench/downstream/scripts/make_blind_drafts.py <- morpheus_work_v06
+  dbench/downstream/scripts/relation_grades.py <- morpheus_work_v06
+  dbench/downstream/values.py <- morpheus_work_v06
+  dbench/harness/__init__.py <- morpheus_work_v06
+  dbench/harness/ablation_selection.py <- morpheus_work_v06
+  dbench/harness/ablation_table.py <- morpheus_work_v06
+  dbench/harness/baselines.py <- morpheus_work_v06
+  dbench/harness/bladder_decomp.py <- morpheus_work_v06
+  dbench/harness/cap_rerank.py <- morpheus_work_v06
+  dbench/harness/core.py <- morpheus_work_v06
+  dbench/harness/core8.py <- morpheus_work_v06
+  dbench/harness/decomp_paired.py <- morpheus_work_v06
+  dbench/harness/dev_flags.py <- morpheus_work_v06
+  dbench/harness/dev_known.py <- morpheus_work_v06
+  dbench/harness/dev_metric.py <- morpheus_work_v06
+  dbench/harness/dev_registry.py <- morpheus_work_v06
+  dbench/harness/dev_retrieval_v2.py <- morpheus_work_v06
+  dbench/harness/diag_noise.py <- morpheus_work_v06
+  dbench/harness/fewshot.py <- morpheus_work_v06
+  dbench/harness/fewshot_compare.py <- morpheus_work_v06
+  dbench/harness/fewshot_table.py <- morpheus_work_v06
+  dbench/harness/historical_adopted.py <- morpheus_work_v06
+  dbench/harness/historical_capped_view.py <- morpheus_work_v06
+  dbench/harness/historical_gpu.py <- morpheus_work_v06
+  dbench/harness/historical_redundancy.py <- morpheus_work_v06
+  dbench/harness/historical_repair_table.py <- morpheus_work_v06
+  dbench/harness/historical_repair_v03.py <- morpheus_work_v06
+  dbench/harness/historical_yield.py <- morpheus_work_v06
+  dbench/harness/l2_transfer.py <- morpheus_work_v06
+  dbench/harness/pool.py <- morpheus_work_v06
+  dbench/harness/proposer_repair_v01.py <- morpheus_work_v06
+  dbench/harness/public_metrics.py <- morpheus_work_v06
+  dbench/harness/public_table.py <- morpheus_work_v06
+  dbench/harness/q2_compare.py <- morpheus_work_v06
+  dbench/harness/rerank_variants.py <- morpheus_work_v06
+  dbench/harness/rescore_checkpoints.py <- morpheus_work_v06
+  dbench/harness/second_catalogue.py <- morpheus_work_v06
+  dbench/harness/stat_baselines.py <- morpheus_work_v06
+  dbench/harness/summary.py <- morpheus_work_v06
+  dbench/harness/transfer.py <- morpheus_work_v06
+  dbench/harness/transfer_compare.py <- morpheus_work_v06
+  dbench/harness/transfer_pool.py <- morpheus_work_v06
+  dbench/harness/worlds.py <- morpheus_work_v06
+  dbench/harness/xstudy_transfer.py <- morpheus_work_v06
+  dbench/novelty_check.py <- morpheus_work_v06
+  dbench/prospective_campaign.py <- morpheus_work_v08
+  dbench/scripts/aggregate_v08_external_batches_v01.py <- morpheus_work_v06
+  dbench/scripts/aggregate_v08_external_family_bh_v01.py <- morpheus_work_v06
+  dbench/scripts/blind_sweep.sh <- morpheus_work_v08
+  dbench/scripts/blind_sweep_cells.py <- morpheus_work_v08
+  dbench/scripts/convert_external_visium.py <- morpheus_work_v06
+  dbench/scripts/external_replication.py <- morpheus_work_v06
+  dbench/scripts/hest_fm_embed_hoptimus.py <- morpheus_work_v06
+  dbench/scripts/run_v08_compartment_external_batches_v01.sh <- morpheus_work_v06
+  dbench/scripts/run_v08_external_batches_v01.py <- morpheus_work_v06
+  dbench/scripts/run_v08_proposed_heter_external_batches_v01.sh <- morpheus_work_v06
+  dbench/scripts/run_v08_residual_external_batches_v01.sh <- morpheus_work_v06
+  dbench/translation_v10/s10_p5.py <- morpheus_work_tx
+  dbench/translation_v10/s10b_p5_matrix.py <- morpheus_work_tx
+  dbench/translation_v10/s11_p5_known.py <- morpheus_work_tx
+  dbench/translation_v10/s11b_addendum.py <- morpheus_work_tx
+  dbench/unified_discovery.py <- morpheus_work_v06
+  morpheus/tier2/substrates/hest_multi.py <- morpheus_work_v06
+  morpheus_encoder/general_discovery.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/ablation.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/episodes_v03.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/model.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/model_v03.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/propose.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/relation_v03.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/search_v03.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/train.py <- morpheus_work_v06
+  morpheus_encoder/learned_search/train_v03.py <- morpheus_work_v06
+  morpheus_encoder/measurement_bank.py <- morpheus_work_v06
+  morpheus_encoder/run_general_discovery_packet.py <- morpheus_work_v06
+  morpheus_encoder/scripts/run_general_discovery_packet.py <- morpheus_work_v06
+  morpheus_encoder/spatial_operator_bank.py <- morpheus_work_v06
+  scripts/second_wave/build_second_wave_drafts.py <- morpheus_work_sw
+  scripts/second_wave/convert_geo_crc.py <- morpheus_work_sw
+  scripts/second_wave/convert_valdeolivas_healthy.py <- morpheus_work_sw
+  scripts/second_wave/draft_partitions_diff.py <- morpheus_work_sw
+  scripts/second_wave/finalize_v02.py <- morpheus_work_sw
+  scripts/second_wave/finalize_v03.py <- morpheus_work_sw
+  scripts/second_wave/finalize_v04.py <- morpheus_work_sw
+  scripts/second_wave/tumour_elevated_targets.py <- morpheus_work_sw
+
+## Placement notes
+  MISSING from every archived clone: dbench/translation_v10/relation.py (imported lazily at values_v06_eaca09b.py:266, `from .relation import within_centre`; dbench/downstream/relation.py defines within_centre)
+  PLACED from outside the archive: morpheus_encoder/learned_search/tokens.py <- C:/Users/mobar/OneDrive/biorag/.codex_tmp/morpheus_impl/tokens.py (absent from all 21 archived clones; imported by model.py, morphology_compare.py)
+  NOT PLACED: morpheus_compiler/, morpheus_registry/ (local biorag top-level packages, imported only by morpheus/protocol/__init__.py and morpheus/experiment/*, which are outside the closure)
+  NOT PLACED: freeze addenda runs/benchmark_v05/freeze_addendum_N.json (run outputs, not in archive)
+  NOT PLACED: dbench/translation_v10/s0..s9 (catalogue, scores, student, panels, clinical, protein): not imported by s10_p5 and outside the requested entry set

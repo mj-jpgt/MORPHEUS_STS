@@ -1,0 +1,792 @@
+{
+  "schema": "morpheus_historical_rediscovery/v1",
+  "protocol_id": "historical-rediscovery-v02",
+  "created_utc": "2026-10-16",
+  "governing_plan": ".claude/SPRINT_PLAN.md section 1 (historical findings and hit rule), section 6; ajas.md 'Historical rediscovery'",
+  "status": "FROZEN before any learned-search run on these studies; canonical_hash (dbench.prospective_campaign.canonical_hash) recorded in runs/development/sprint_v06/historical_protocol_v02_sha256.txt with the raw-byte sha256; the v01 baseline ranked lists are re-scored under v02 without re-running the methods; any change is a new protocol id",
+  "purpose": "untouched retrospective test: given only the data and the broad target available to a researcher before publication, does a method rank the published spatial relation in its top 20 hypotheses? A paper result, never a tuning loop: a failure is reported, not repaired by changing the model for this task",
+  "literature_rule": "the publications below were read only to transcribe the finding, the gene sets and the publication dates; nothing from them is given to any method beyond the target definition in given_to_morpheus",
+  "episode": {
+    "loader": "morpheus.tier2.substrates.hest_multi.study_episode (Agent D) on the study's sprint_partitions_v01 entry",
+    "split": "patients of the study sorted by key, shuffled with numpy default_rng(20261015), first ceil(n/2) = support (proposal) patients, the rest = query (held-out) patients",
+    "gene_matrix_for_scores": "target and proxy scores use the study's full common gene panel (StudyRaw.logcpm aligned to episode rows by sample id and barcode) when the loader provides it, else the episode's genes view; the number of proxy genes present is reported per proxy and per study",
+    "neighbours": "episode.neighbours[6] and [18] (within-sample KD-tree; never across samples or patients)"
+  },
+  "score_definition": "programme score = mean over the set's genes present in the panel of within-patient-centred log1p-CPM (CPM at 1e4); target scores are then within-patient standardised on the task rows; nbr6 / nbr18 = mean over the 6 / 18 within-sample neighbours (a spot without neighbours keeps its own value); contrast = own - nbr6",
+  "given_to_morpheus_defaults": {
+    "variable_pools": [
+      "genes",
+      "programmes"
+    ],
+    "variable_pool_note": "genes = the episode's 768 highly variable genes chosen on support rows; programmes = 41 Gavish meta-programmes + 50 Hallmark scores on the full panel; the H-Optimus-0 view is not in the pool for these tasks (every published finding here is transcript-defined); the pool is identical for every method",
+    "transforms": [
+      "own",
+      "nbr6",
+      "nbr18",
+      "contrast"
+    ],
+    "transform_note": "every pool column is offered under all four transforms as precomputed design columns named '<transform>:<view>:<column>' (own columns unprefixed); a method may also build its own neighbour means through the MethodInput / propose neighbours",
+    "excluded": [
+      "the target set's genes under every transform",
+      "own-transform pool columns with within-patient |r| >= 0.9 with the target on support rows (leak guard; listed in every output)",
+      "the H-Optimus-0 view"
+    ],
+    "comparison_model": "log1p depth (+ platform one-hot when it varies), within-patient centred; nuisance only"
+  },
+  "scoring": {
+    "top_k": 20,
+    "budget": 128,
+    "budget_note": "every method returns up to 128 ranked variable sets from support rows only; the top 20 are scored; random_search_matched evaluates as many sets as the learned search reports having evaluated for the same task (at least 128)",
+    "hit_rule": "a top-20 hypothesis is a hit if it contains a variable that, under one of the task's stated transforms, (a) is among the 10 design columns under that transform with the largest within-patient |r| with the answer proxy score (a variable outside the design qualifies when its |r| is at least the 10th largest), (b) has |r| >= 0.5, and (c) has the stated sign: sign(r_proxy) x sign(r_target) equals the stated direction; r computed on all task rows (support and query)",
+    "rank_statistic": "rank (1-based) of the first hit among the top 20 (infinity if none), with the hit's |r| with the proxy, the task ceiling (largest |r| any design column reaches with any answer proxy under a stated transform) and the number of candidate sets the method evaluated",
+    "heldout_evaluation": "the first hit is frozen and evaluated on the query patients with general_discovery.evaluate_frozen_candidate, relation v07_ho (v06 if v07_ho is unavailable), comparison = the nuisance model above, 200 patient-bootstrap draws: general gain with CI and G_HO with CI (k >= 2)",
+    "identical_for_every_method": true,
+    "methods": [
+      "learned_search",
+      "ebm_ga2m",
+      "gbm_interaction",
+      "linear_interaction_screen",
+      "random_search_matched"
+    ],
+    "failure_rule": "a miss is reported with the method's top-20 list; no architecture, budget or pool change is made for a task after its first run",
+    "hit_rule_version": "v02_top10_representative",
+    "representative_top_n": 10,
+    "representative_min_abs_r": 0.5,
+    "secondary_metric": "for every method, hit or not: the largest proxy |r| with the stated sign among its top-20 variables under a stated transform, divided by the task ceiling"
+  },
+  "tasks": [
+    {
+      "task_id": "H1",
+      "study_key": "ji2020_cscc",
+      "untouched": true,
+      "publication": {
+        "citation": "Ji AL, Rubin AJ, Thrane K, et al. Multimodal Analysis of Composition and Spatial Architecture in Human Squamous Cell Carcinoma. Cell 182(2):497-514.e22 (2020)",
+        "doi": "10.1016/j.cell.2020.05.039",
+        "pmid": "32579974",
+        "pmcid": "PMC7391009",
+        "first_published": "2020-06-23",
+        "preprint": null,
+        "before_date": "2020-06-23",
+        "before_date_rule": "earliest public date of the finding (journal online date; no preprint found in Europe PMC)"
+      },
+      "data": {
+        "accession": "GEO GSE144240",
+        "hest_ids": "NCBI759-NCBI770",
+        "sections": 12,
+        "patients": 4
+      },
+      "finding_text": [
+        "cSCC exhibited four tumor subpopulations, three recapitulating normal epidermal states, and a tumor-specific keratinocyte (TSK) population unique to cancer, which localized to a fibrovascular niche. (Summary)",
+        "In tumors with clear leading edges, the TSK-adjacent stroma (C4 in patient 2, C2 in patient 10), was enriched for cancer-associated fibroblast (CAF) and endothelial transcripts, highlighting a fibrovascular niche ( Figures 3 D and S3 I). (Results)",
+        "Analysis of stroma at a distance of one spot (∼100 μm) away from the TSK-high leading edge demonstrated an enrichment of endothelial and CAF-associated transcripts, further supporting a fibrovascular niche surrounding TSK cells ( Figure S3 M). (Results)"
+      ],
+      "relation": {
+        "target": "tsk",
+        "answer_variables": [
+          "fibroblast",
+          "endothelial"
+        ],
+        "transform": [
+          "nbr6",
+          "nbr18"
+        ],
+        "direction": 1,
+        "spatial_relation": "own-spot TSK score rises with the neighbourhood mean (6 or 18 neighbours) of the fibroblast or endothelial score"
+      },
+      "given_to_morpheus": {
+        "target_definition": "own-spot TSK score: mean within-patient-centred log1p-CPM of the 10 top TSK signature genes (Ji 2020 Table S3, ranks 1-10), within-patient standardised, all spots",
+        "rows": {
+          "rule": "all"
+        },
+        "variable_pools": [
+          "genes",
+          "programmes"
+        ],
+        "transforms": [
+          "own",
+          "nbr6",
+          "nbr18",
+          "contrast"
+        ],
+        "excluded": [
+          "tsk genes (all transforms)",
+          "leak guard |r| >= 0.9 own columns",
+          "H-Optimus-0 view"
+        ]
+      },
+      "proxy_sets": {
+        "tsk": {
+          "role": "target",
+          "genes": [
+            "MMP10",
+            "PTHLH",
+            "FEZ1",
+            "IL24",
+            "KCNMA1",
+            "INHBA",
+            "MAGEA4",
+            "NT5E",
+            "LAMC2",
+            "SLITRK6"
+          ],
+          "source": "Ji 2020 Table S3 'TSK Signature Genes', first 10 rows verbatim (the 100-gene signature); MMP10, PTHLH, LAMC2, SLITRK6 are also the paper's curated specific TSK set (STAR Methods)"
+        },
+        "fibroblast": {
+          "role": "answer",
+          "genes": [
+            "COL1A1",
+            "COL1A2",
+            "LUM",
+            "COL3A1",
+            "DCN",
+            "FAP",
+            "PDGFRB"
+          ],
+          "source": "COL1A1, COL1A2, LUM: fibroblast markers named in Ji 2020 STAR Methods; COL3A1, DCN, FAP, PDGFRB: canonical CAF markers added by this protocol (SPRINT_PLAN section 1), not named in the paper"
+        },
+        "endothelial": {
+          "role": "answer",
+          "genes": [
+            "TFF3",
+            "CLDN5",
+            "VWF",
+            "PECAM1",
+            "CDH5",
+            "ENG"
+          ],
+          "source": "TFF3, CLDN5, VWF: endothelial markers named in Ji 2020 STAR Methods; PECAM1, CDH5, ENG: canonical endothelial markers added by this protocol, not named in the paper"
+        }
+      },
+      "scoring": {
+        "top_k": 20,
+        "hit_rule": "see scoring.hit_rule",
+        "rank_statistic": "see scoring.rank_statistic",
+        "answer_proxies": [
+          "fibroblast",
+          "endothelial"
+        ],
+        "answer_transforms": [
+          "nbr6",
+          "nbr18"
+        ]
+      },
+      "modality": "legacy ST (100 um spots, square grid) with H&E; molecular-spatial finding; H-Optimus-0 embeddings exist but are not in the pool"
+    },
+    {
+      "task_id": "H2",
+      "study_key": "valdeolivas2024_crc",
+      "untouched": true,
+      "publication": {
+        "citation": "Valdeolivas A, Amberg B, Giroud N, et al. Profiling the heterogeneity of colorectal cancer consensus molecular subtypes using spatial transcriptomics. npj Precision Oncology 8:10 (2024)",
+        "doi": "10.1038/s41698-023-00488-4",
+        "pmid": "38200223",
+        "pmcid": "PMC10781769",
+        "first_published": "2024-01-10",
+        "preprint": {
+          "doi": "10.1101/2023.01.23.525135",
+          "server": "bioRxiv",
+          "posted": "2023-01-23",
+          "title": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics"
+        },
+        "before_date": "2023-01-23",
+        "before_date_rule": "earliest public date (bioRxiv preprint; the HEST dataset_title is the preprint title)"
+      },
+      "data": {
+        "accession": "Zenodo 10.5281/zenodo.7551712",
+        "hest_ids": "ZEN36, ZEN38-ZEN40, ZEN42-ZEN49",
+        "sections": 12,
+        "patients": 6
+      },
+      "finding_text": [
+        "Irrespective of the CMS phenotype, SPP1+ macrophages and myofibroblasts were enriched in stromal fibrotic regions, echoing recent findings showing that proportions of these populations influence prognosis beyond CMS classification [7]. (Results)",
+        "CMS1-dominated regions displayed a solid growth pattern and immune-rich profile, whereas CMS2-dominated regions were associated with a tubular growth pattern and were immune-deprived (Fig. 3g–j , Supplementary Fig. S4d ), in accordance with previous studies on these molecular subtypes [27]. (Results; secondary)"
+      ],
+      "relation": {
+        "target": "spp1_macrophage",
+        "answer_variables": [
+          "myofibroblast"
+        ],
+        "transform": [
+          "own",
+          "nbr6"
+        ],
+        "direction": 1,
+        "spatial_relation": "own-spot SPP1+ macrophage score rises with the own-spot or 6-neighbour myofibroblast score (co-enrichment in fibrotic stroma)"
+      },
+      "secondary": {
+        "finding": "CMS2-dominated regions are immune-deprived",
+        "status": "reported, not scored: the paper's CMS calls come from cell2location deconvolution against the Lee et al. 2020 scRNA-seq reference and it names no gene-level CMS2 or immune marker set in its text, so no proxy can be transcribed verbatim"
+      },
+      "given_to_morpheus": {
+        "target_definition": "own-spot SPP1+ macrophage score (genes below), within-patient standardised, all spots",
+        "rows": {
+          "rule": "all"
+        },
+        "variable_pools": [
+          "genes",
+          "programmes"
+        ],
+        "transforms": [
+          "own",
+          "nbr6",
+          "nbr18",
+          "contrast"
+        ],
+        "excluded": [
+          "spp1_macrophage genes (all transforms)",
+          "leak guard |r| >= 0.9 own columns",
+          "H-Optimus-0 view"
+        ]
+      },
+      "proxy_sets": {
+        "spp1_macrophage": {
+          "role": "target",
+          "genes": [
+            "SPP1",
+            "APOE",
+            "C1QA",
+            "C1QB",
+            "C1QC",
+            "CD68"
+          ],
+          "source": "protocol marker set (SPRINT_PLAN section 1); the paper names the cell type (deconvolution class) but no marker genes in its text"
+        },
+        "myofibroblast": {
+          "role": "answer",
+          "genes": [
+            "ACTA2",
+            "TAGLN",
+            "MYL9",
+            "MYH11",
+            "COL1A1"
+          ],
+          "source": "protocol marker set (SPRINT_PLAN section 1); the paper names the cell type (deconvolution class) but no marker genes in its text"
+        }
+      },
+      "scoring": {
+        "top_k": 20,
+        "hit_rule": "see scoring.hit_rule",
+        "rank_statistic": "see scoring.rank_statistic",
+        "answer_proxies": [
+          "myofibroblast"
+        ],
+        "answer_transforms": [
+          "own",
+          "nbr6"
+        ]
+      },
+      "modality": "Visium (55 um spots) with H&E; molecular-spatial finding"
+    },
+    {
+      "task_id": "H3",
+      "study_key": "kiviaho2024_prostate",
+      "untouched": true,
+      "pending_conversion": true,
+      "pending_note": "GEO GSE278936 processed matrices are converted by Agent E; if conversion is not ready at benchmark time task H3b replaces H3 (and li2022_ccrcc then leaves the external replication set)",
+      "publication": {
+        "citation": "Kiviaho A, Eerola SK, Kallio HML, et al. Single cell and spatial transcriptomics highlight the interaction of club-like cells with immunosuppressive myeloid cells in prostate cancer. Nature Communications 15:9949 (2024)",
+        "doi": "10.1038/s41467-024-54364-1",
+        "pmid": "39550375",
+        "pmcid": "PMC11569175",
+        "first_published": "2024-11-16",
+        "preprint": {
+          "doi": "10.1101/2024.03.25.586330",
+          "server": "bioRxiv",
+          "posted": "2024-03-25",
+          "europepmc_first_publication": "2024-03-28",
+          "title": "Immunosuppression in the prostate tumor microenvironment is tied to androgen deprivation therapy-resistant club-like cells"
+        },
+        "before_date": "2024-03-25",
+        "before_date_rule": "earliest public date (bioRxiv DOI date of the preprint)"
+      },
+      "data": {
+        "accession": "GEO GSE278936",
+        "sections": 48,
+        "patients": 48,
+        "cohort": "discovery cohort only (the validation cohort is not deposited)"
+      },
+      "finding_text": [
+        "Club-like cells display a senescence-associated secretory phenotype and their presence is linked to increased polymorphonuclear myeloid-derived suppressor cell (PMN-MDSC) activity. (Abstract)",
+        "The fraction of Club region spots in a sample correlated positively with its PMN-MDSC activity score calculated from non-Club region spots in both cohorts (Fig. 4b ). Tumor region spots had a higher PMN-MDSC activity score when proximal to Club region spots (Fig. 4c ). (Results)",
+        "All non-club spots within 3 rings (300 μm) of two or more adjacent Club region spots were then annotated as ‘proximal’, and all spots further than 3 rings away as ‘distant’. (Methods)"
+      ],
+      "relation": {
+        "target": "pmn_mdsc",
+        "answer_variables": [
+          "club"
+        ],
+        "transform": [
+          "nbr6",
+          "nbr18"
+        ],
+        "direction": 1,
+        "spatial_relation": "PMN-MDSC activity of non-Club spots rises with the neighbourhood mean of the Club score"
+      },
+      "given_to_morpheus": {
+        "target_definition": "PMN-MDSC activity score (CD300LD-downstream set, below) on non-Club spots, within-patient standardised on those rows",
+        "rows": {
+          "rule": "own_score_at_or_below_within_sample_quantile",
+          "proxy": "club",
+          "quantile": 0.9,
+          "note": "non-Club spots = own Club score at or below its within-sample 90th percentile; the paper's Club region is a deconvolution label (single-cell mapping regions), which is not reproducible from the deposited matrices, so the score rule stands in for it; neighbour means are computed on all spots before the row restriction"
+        },
+        "variable_pools": [
+          "genes",
+          "programmes"
+        ],
+        "transforms": [
+          "own",
+          "nbr6",
+          "nbr18",
+          "contrast"
+        ],
+        "excluded": [
+          "pmn_mdsc genes (all transforms)",
+          "genes shared by the Club and PMN-MDSC sets (LCN2, SLPI) are removed from both scores",
+          "leak guard |r| >= 0.9 own columns",
+          "H-Optimus-0 view"
+        ]
+      },
+      "shared_genes_removed_from_both_scores": [
+        "LCN2",
+        "SLPI"
+      ],
+      "proxy_sets": {
+        "pmn_mdsc": {
+          "role": "target",
+          "genes": [
+            "RPL21",
+            "XAF1",
+            "CLEC5A",
+            "CAMP",
+            "CD63",
+            "LTF",
+            "ANXA3",
+            "S100A8",
+            "OAS2",
+            "ALOX5",
+            "IFIT1",
+            "CD177",
+            "S100A9",
+            "CEBPE",
+            "LCN2",
+            "ANXA1",
+            "CTSG",
+            "MPO",
+            "GSTM1",
+            "MEGF9",
+            "PYGL",
+            "PRTN3",
+            "YTHDF3",
+            "EMILIN1",
+            "ELANE",
+            "CHI3L1",
+            "LTA4H",
+            "VILL",
+            "HMGN2",
+            "C3",
+            "MS4A3",
+            "ITGAM",
+            "CLEC12A",
+            "CST7",
+            "HSD11B1",
+            "C5AR1",
+            "F13A1",
+            "ADPGK",
+            "HP",
+            "IDH1",
+            "DHRS7",
+            "PGLYRP1",
+            "MMP9",
+            "ALDH3B1",
+            "IGSF6",
+            "CYBB",
+            "AP3S1",
+            "NKG7",
+            "RAB31",
+            "MSRA",
+            "OAS3",
+            "SLPI",
+            "SYNE1",
+            "MECR",
+            "PRDX5",
+            "MCFD2",
+            "RAB3D",
+            "PILRA",
+            "SCP2",
+            "ALAS1",
+            "CPNE3",
+            "NCF1",
+            "MAPKAPK3",
+            "ACOT7",
+            "CD9",
+            "IFITM3",
+            "MMP8",
+            "PLAC8",
+            "NAMPT",
+            "ZMPSTE24",
+            "ARHGDIB",
+            "LGALS1",
+            "PADI4",
+            "ENO1",
+            "DSTN",
+            "IFI27L1",
+            "MYO1F",
+            "ETHE1",
+            "CEACAM1",
+            "SH3BGRL3",
+            "GSN"
+          ],
+          "source": "Kiviaho 2024 Supplementary Data S7 (41467_2024_54364_MOESM9_ESM.xlsx, sheet 'Gene sets', row 'CD300LD downstream', 81 genes verbatim); the paper's 'CRISPR-Cas9 validated signature of polymorphonuclear MDSC (PMN-MDSC) immunosuppression' (ref. 46, Wang et al. 2023 Nature, CD300ld)"
+        },
+        "club": {
+          "role": "answer",
+          "genes": [
+            "SCGB3A1",
+            "LCN2",
+            "PIGR",
+            "PSCA",
+            "OLFM4",
+            "RARRES1",
+            "SPINK1",
+            "CD74",
+            "S100P",
+            "WFDC2",
+            "FCGBP",
+            "GDF15",
+            "AGR2",
+            "HLA-DRA",
+            "PI3",
+            "FAM3D",
+            "SLPI",
+            "C15orf48",
+            "TXNIP",
+            "DUOXA2",
+            "ANKRD36C",
+            "CXCL17",
+            "TMSB4X",
+            "ADGRF1",
+            "VSIG2",
+            "HLA-DRB1",
+            "TFF1",
+            "CRABP2",
+            "CLDN3",
+            "ASS1",
+            "RHOV",
+            "CEACAM6",
+            "B2M",
+            "CP",
+            "TMEM45B",
+            "SRD5A3",
+            "PDZK1IP1",
+            "AGR3",
+            "CEACAM5",
+            "BIK",
+            "LINC01207",
+            "HLA-DRB5",
+            "SCCPDH",
+            "MMP7",
+            "ZG16B",
+            "TSPAN3",
+            "ELF3",
+            "NEAT1",
+            "S100A6",
+            "AZGP1",
+            "PPDPF",
+            "MAL2",
+            "FOXO3",
+            "RAB11FIP1",
+            "CYP3A5",
+            "FTH1",
+            "REEP3",
+            "ADIRF",
+            "CXCL6",
+            "GPRC5A",
+            "GLUL",
+            "DUSP5",
+            "CD24",
+            "TMEM165",
+            "MGST1",
+            "HPGD",
+            "CYP1B1",
+            "SAA1",
+            "GPX2"
+          ],
+          "source": "Kiviaho 2024 Supplementary Data S7, row 'Club' (Henry et al. 2018 club-cell signature, 69 genes verbatim)"
+        }
+      },
+      "sensitivity_proxy_sets": {
+        "club_region_markers_text": {
+          "genes": [
+            "S100A11",
+            "WFDC2",
+            "KRT19",
+            "KLF5",
+            "ATP1B1",
+            "KRT4",
+            "MET",
+            "CXCL1",
+            "CXCL2",
+            "CXCL8",
+            "CXCL16",
+            "CCL20"
+          ],
+          "source": "Club-region-specific markers named in Kiviaho 2024 Results (luminal progenitor markers and chemokines); scored and reported separately, never used for the primary hit"
+        }
+      },
+      "scoring": {
+        "top_k": 20,
+        "hit_rule": "see scoring.hit_rule",
+        "rank_statistic": "see scoring.rank_statistic",
+        "answer_proxies": [
+          "club"
+        ],
+        "answer_transforms": [
+          "nbr6",
+          "nbr18"
+        ]
+      },
+      "modality": "Visium (55 um spots), processed matrices from GEO; molecular + spatial only unless a full-resolution H&E is found in the archive"
+    },
+    {
+      "task_id": "H3b",
+      "study_key": "li2022_ccrcc",
+      "untouched": true,
+      "fallback_for": "H3",
+      "active_only_if": "Agent E has not converted GSE278936 at benchmark time; when H3b is used, li2022_ccrcc is removed from the external replication set",
+      "pending_conversion": true,
+      "publication": {
+        "citation": "Li R, Ferdinand JR, Loudon KW, et al. Mapping single-cell transcriptomes in the intra-tumoral and associated territories of kidney cancer. Cancer Cell 40(12):1583-1599.e10 (2022)",
+        "doi": "10.1016/j.ccell.2022.11.001",
+        "pmid": "36423636",
+        "pmcid": "PMC9767677",
+        "first_published": "2022-11-23",
+        "preprint": {
+          "doi": "10.1101/2021.11.12.468373",
+          "server": "bioRxiv",
+          "posted": "2021-11-12",
+          "title": "Multi-regional characterisation of renal cell carcinoma and microenvironment at single cell resolution"
+        },
+        "before_date": "2021-11-12",
+        "before_date_rule": "earliest public date (bioRxiv preprint)"
+      },
+      "data": {
+        "accession": "Mendeley Data 10.17632/g67bkbnhhg.1 (h5ad count objects); raw data EGA controlled, not requested",
+        "sections": 16,
+        "patients": 8
+      },
+      "finding_text": [
+        "We report six conserved meta-programs that distinguish tumor cell function, and find an epithelial-mesenchymal transition meta-program highly enriched at the tumor-normal interface that co-localizes with IL1B-expressing macrophages, offering a potential therapeutic target. (Summary)",
+        "Taken together, our findings indicate that IL1B -expressing macrophages (TR Mac.2) are co-localized with EMT high RCC cells macroscopically and microscopically both at the tumor-normal interface and in the tumor core ( Figures S7 C and S7D). (Results)",
+        "To take into account cell-types proximally co-localised, the 6 adjacent spots were identified for each spot in the slide. (Methods)"
+      ],
+      "relation": {
+        "target": "emt_meta_programme",
+        "answer_variables": [
+          "il1b_macrophage"
+        ],
+        "transform": [
+          "own",
+          "nbr6"
+        ],
+        "direction": 1,
+        "spatial_relation": "own-spot EMT meta-programme score rises with the own-spot or 6-neighbour IL1B+ macrophage (TR Mac.2) score"
+      },
+      "given_to_morpheus": {
+        "target_definition": "own-spot EMT meta-programme score (Li 2022 Table S5, sheet 'Meta-programmes', column 'EMT', 20 genes), within-patient standardised, all spots",
+        "rows": {
+          "rule": "all"
+        },
+        "variable_pools": [
+          "genes",
+          "programmes"
+        ],
+        "transforms": [
+          "own",
+          "nbr6",
+          "nbr18",
+          "contrast"
+        ],
+        "excluded": [
+          "emt_meta_programme genes (all transforms)",
+          "leak guard |r| >= 0.9 own columns",
+          "H-Optimus-0 view"
+        ]
+      },
+      "proxy_sets": {
+        "emt_meta_programme": {
+          "role": "target",
+          "genes": [
+            "CAV1",
+            "TGM2",
+            "FSTL3",
+            "SERPINE1",
+            "FLNA",
+            "KRT19",
+            "C3",
+            "S100A6",
+            "EMP3",
+            "MT2A",
+            "TM4SF1",
+            "TGFBI",
+            "SMIM3",
+            "ITGA3",
+            "LGALS1",
+            "MARCKSL1",
+            "BIRC3",
+            "LOX",
+            "ANXA2",
+            "MMP7"
+          ],
+          "source": "Li 2022 Table S5 (mmc6.xlsx), sheet 'Meta-programmes', column 'EMT', all 20 genes verbatim"
+        },
+        "il1b_macrophage": {
+          "role": "answer",
+          "genes": [
+            "AREG",
+            "THBS1",
+            "PLAUR",
+            "NAMPT",
+            "IL1B",
+            "EREG",
+            "MALAT1",
+            "SLC2A3",
+            "FOSB",
+            "SRGN",
+            "SAMSN1",
+            "FOS",
+            "CXCL8",
+            "BTG1",
+            "SAT1",
+            "NR4A2",
+            "MCL1",
+            "TNFAIP3",
+            "HBEGF",
+            "ZFP36"
+          ],
+          "source": "Li 2022 Table S4 (mmc5.xlsx), sheet 'Myeloid', annotation 'TR Mac.2', first 20 rows verbatim (table order)"
+        }
+      },
+      "scoring": {
+        "top_k": 20,
+        "hit_rule": "see scoring.hit_rule",
+        "rank_statistic": "see scoring.rank_statistic",
+        "answer_proxies": [
+          "il1b_macrophage"
+        ],
+        "answer_transforms": [
+          "own",
+          "nbr6"
+        ]
+      },
+      "modality": "Visium (55 um spots), h5ad objects; H&E per section if present in the objects"
+    },
+    {
+      "task_id": "S0",
+      "study_key": "meylan2022_ccrcc",
+      "untouched": false,
+      "label": "not untouched: in-sample sanity check on the kidney cohort used throughout MORPHEUS development; never reported as rediscovery",
+      "publication": {
+        "citation": "Meylan M, Petitprez F, Becht E, et al. Tertiary lymphoid structures generate and propagate anti-tumor antibody-producing plasma cells in renal cell cancer. Immunity 55(3):527-541.e5 (2022)",
+        "doi": "10.1016/j.immuni.2022.02.001",
+        "pmid": "35231421",
+        "pmcid": null,
+        "first_published": "2022-02-28",
+        "preprint": null,
+        "before_date": "2022-02-28",
+        "before_date_rule": "journal online date (no preprint found in Europe PMC)"
+      },
+      "data": {
+        "hest_ids": "INT1-INT24",
+        "sections": 24,
+        "patients": 24
+      },
+      "finding_text": [
+        "In TLS+ tumors, IgG- and IgA-producing PCs disseminated into the tumor beds along fibroblastic tracks. (Summary)"
+      ],
+      "relation": {
+        "target": "plasma_cell",
+        "answer_variables": [
+          "tls"
+        ],
+        "transform": [
+          "nbr18"
+        ],
+        "direction": 1,
+        "spatial_relation": "own-spot plasma-cell score rises with the 18-neighbour TLS score"
+      },
+      "given_to_morpheus": {
+        "target_definition": "own-spot plasma-cell score (MZB1, JCHAIN, XBP1, SDC1), within-patient standardised, all spots",
+        "rows": {
+          "rule": "all"
+        },
+        "variable_pools": [
+          "genes",
+          "programmes"
+        ],
+        "transforms": [
+          "own",
+          "nbr6",
+          "nbr18",
+          "contrast"
+        ],
+        "excluded": [
+          "plasma_cell genes (all transforms)",
+          "leak guard |r| >= 0.9 own columns",
+          "H-Optimus-0 view"
+        ]
+      },
+      "proxy_sets": {
+        "plasma_cell": {
+          "role": "target",
+          "genes": [
+            "MZB1",
+            "JCHAIN",
+            "XBP1",
+            "SDC1"
+          ],
+          "source": "protocol marker set (SPRINT_PLAN section 1); not verified against the paper (no open full text)"
+        },
+        "tls": {
+          "role": "answer",
+          "genes": [
+            "CXCL13",
+            "MS4A1",
+            "CD19",
+            "CR2",
+            "CCL19",
+            "LTB"
+          ],
+          "source": "protocol marker set (SPRINT_PLAN section 1); not verified against the paper (no open full text)"
+        }
+      },
+      "scoring": {
+        "top_k": 20,
+        "hit_rule": "see scoring.hit_rule",
+        "rank_statistic": "see scoring.rank_statistic",
+        "answer_proxies": [
+          "tls"
+        ],
+        "answer_transforms": [
+          "nbr18"
+        ]
+      },
+      "modality": "Visium (55 um spots) with H&E; molecular-spatial finding"
+    }
+  ],
+  "unverified": [
+    "H1: COL3A1, DCN, FAP, PDGFRB, PECAM1, CDH5, ENG are canonical markers added by the protocol; Ji 2020 names COL1A1, COL1A2, LUM (fibroblasts) and TFF3, CLDN5, VWF (endothelial cells) and reports CAF/endothelial transcript enrichment without a gene list in the text (Figure S3I/M and Table S4 hold cluster-level differential genes)",
+    "H2: the SPP1+ macrophage and myofibroblast marker genes are the protocol's; Valdeolivas 2024 uses cell2location cell-type abundances and names no marker genes for these types in its text",
+    "H2 secondary (CMS2 immune-deprived): no verbatim gene-level proxy; reported, not scored",
+    "H3: the paper's Club region is a deconvolution label; the non-Club row rule (own Club score <= within-sample 90th percentile) is the protocol's stand-in",
+    "S0: Immunity full text is not open; plasma-cell and TLS gene sets are the protocol's, not transcribed from the paper; no preprint date found"
+  ],
+  "quotation_rule": "finding_text entries are verbatim from the Europe PMC full text (section in parentheses); superscript reference numbers are written as [n]; spacing around italic gene symbols follows the source",
+  "supersedes": {
+    "protocol_id": "historical-rediscovery-v01",
+    "path": "dbench/protocols/historical_rediscovery_v01.json",
+    "canonical_sha256": "91a93b6b6db0feeca36d3450b43997032051223ce339847a399ab42467298cd6",
+    "v01_result": "runs/development/historical_rediscovery_v01/RESULTS.md (0 hits in 16 baseline runs; stays on record with its hit-rule ceiling section)"
+  },
+  "rationale": "Under v01 a hit required a top-20 variable with within-patient |r| >= 0.9 against a hand-written 4-7 gene proxy score. After the v01 baseline runs, Agent F measured the hit-rule ceiling, the largest |r| any design column reaches with the answer proxy: 0.63 for S0 (TLS, nbr18), 0.914 for H1 (fibroblast, nbr18; through the EMT-I programme only), 0.900 for H2 (myofibroblast, nbr6; through TAGLN only) and 0.89 for H3 (Club, nbr18); the proxies' own member genes reach only 0.74-0.83. A hit was therefore impossible on S0 and H3 and possible through a single column on H1 and H2, so v01 measured whether a method happened to name a near-copy of the proxy, not whether it found the published partner. v02 asks the question that generalises to the field: does the method's top 20 contain one of the design's best representatives of the published partner (top 10 by |r| with the proxy under the stated transform, |r| >= 0.5, stated sign). Tasks, proxies, targets, transforms, methods, budgets and cutoffs are unchanged."
+}

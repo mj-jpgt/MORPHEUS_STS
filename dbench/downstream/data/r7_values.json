@@ -1,0 +1,88 @@
+{
+ "relation": "v03_rff",
+ "relation_note": "the governing spec's fixed family (morpheus_training_and_evaluation_spec.md 0.7), morpheus_encoder.learned_search.relation_v03 (Agent M, commit bfc40ed): kernel ridge on 256 random Fourier features of the set (Gaussian kernel, median-heuristic bandwidth on proposal rows, fixed RFF directions per set size, RFF_SEED 20261021) plus the set linearly plus an intercept; inputs standardised by proposal-row statistics; penalty from {0.01, 0.1, 1, 10} by leave-one-patient-out CV on proposal rows; fitted to the response after the nuisance ridge (log depth; per-patient intercepts = within-patient standardisation; penalty from {0.1, 1, 10, 100, 1000} by LOPO); general gain = R2(nuisance + f_S, D_R) - R2(nuisance, D_R) with a 200-draw held-out-patient bootstrap CI; decomposition family = every proper set partition of S, each block its own 256-RFF map, fitted jointly; nulls unchanged (spatial_block, within_patient_perm, interaction_break; the protocol's draw count; p = (1 + #null >= observed)/(draws + 1)), re-scoring the fixed proposal fit on nulled D_R (interaction_break re-predicts with the first constituent block-swapped); validation rule unchanged (held-out full R2 > 0 and gain CI lower bound > 0); batched on the GPU",
+ "higher_order_flag": "receipt row field higher_order = (G_HO patient-bootstrap CI lower bound > 0) AND (held-out full-model R2 > 0) under relation v03_rff, where G_HO = held-out gain(full) - max over proper partitions of held-out gain(partition), the maximum taken inside every bootstrap draw; the funnel tallies n_fold_rows_higher_order and n_frozen_higher_order beside the validated counts",
+ "outputs": {
+  "general_discoveries": "internal hypotheses (rule above) regardless of shape: linear, additive, conditional or joint; each with pooled general gain + CI, the per-row B_known and B_decomp gains and its proposer",
+  "higher_order_discoveries": "the subset of general discoveries with k >= 2 whose pooled G_HO (relation v03_rff decomposition family) has a patient-bootstrap CI lower bound > 0 with pooled held-out full-model R2 > 0; per-fold rows carry higher_order",
+  "note": "a discovery is never dropped for being linear or simple; G_HO only marks which discoveries additionally require the joint object"
+ },
+ "reporting": {
+  "status": "reported for every receipt row and every frozen hypothesis, never a gate",
+  "baselines": "training spec 0.8 under relation v03_rff (Agent M 25fce7e): B_nuis = nuisance ridge (log depth; per-patient intercepts = within-patient standardisation); B_known = nuisance + the hest_multi programme scores (Hallmark + Gavish) after the target's exclusions (the target programme, its member genes, |r| >= 0.9 proxies and every programme with gene-set overlap coefficient >= 0.2 removed) + the three composition variables (CellViT PanNuke Neoplastic / Inflammatory / Connective fractions where every sample has a segmentation, else the top three programme principal axes; source recorded in episode_info.composition_source), ridge with LOPO penalty on D_P; B_decomp(S) = the best proper partition of S in the same family",
+  "row_fields": {
+   "B_nuis": "gain_B_nuis with gain_B_nuis_ci (identical to decomposition.gain_general / gain_general_ci and replication_gain / replication_gain_ci)",
+   "B_known": "gain_B_known with gain_B_known_ci (decomposition.gain_known / gain_known_ci; support LOPO decomposition.gain_known_proposal; columns used in decomposition.known_covariates)",
+   "B_decomp": "G_HO_B_decomp with G_HO_B_decomp_ci and best_decomposition (decomposition.G_HO / G_HO_ci; decomposition.gain_decompositions, gain_joint_vs_additive); the receipt's best_decomposition is chosen on held-out gain inside each bootstrap draw"
+  },
+  "replaces": "the N/B1/B2/B3 ladder (dbench.scripts.decomposition_ladder), which does not run under v03_rff in the hest_multi runner; no ladder step is run for these campaigns",
+  "pass_counts": {
+   "reported": "per cohort and per family, from funnel_aggregate.json baseline_pass_counts (dbench.prospective_campaign; same pass rule: >= 3 of 5 folds, required structured nulls p <= 0.05, BH q <= 0.10 within family): passes B_nuis (the internal rule); passes B_known (folds restricted to gain_B_known CI lower bound > 0); passes B_decomp (folds restricted to higher_order rows); passes B_known and B_decomp",
+   "status": "nothing gated; the finding classes A-F keep their meaning",
+   "downstream": "external replication and characterisation run on every B_nuis pass as before",
+   "paper_object_count": "the B_known column, with the higher-order (B_known and B_decomp) subset marked",
+   "state_cards": "the validation section of every state card carries the four passes and their folds"
+  }
+ },
+ "morphology_view_key": "morph_dictionary_v03",
+ "morphology_view_fields": {
+  "definition": "cosine similarities of the frozen H-Optimus-0 spot embedding, standardised per dimension on the fold's covered D_P spots, to the 33 kept centres of the frozen v03 morphology dictionary (runs/development/learned_search_v03/morphology_dictionary, centres.npz sha256 38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad; three-study population rule); covered spots only, nothing imputed",
+  "column_names": "morph_dictionary_v03:morph:kNN (NN = original centre index; kept list in PROVENANCE.json)",
+  "served_by": "morpheus_encoder/scripts/run_general_discovery_packet.py MORPH_V03_VIEW (Agent M, bfc40ed)"
+ },
+ "morph_targets": "kept_first_16",
+ "admissibility": {
+  "context_conditioned_programme": {
+   "context": true,
+   "cross_modal": false,
+   "rule": "every hypothesis carries >= 1 own variable and >= 1 nbr6, nbr18 or contrast variable; applied by the learned search at candidate generation and by the runner as a post-filter on every proposer"
+  },
+  "cross_modal_sets": {
+   "context": false,
+   "cross_modal": true,
+   "rule": "every hypothesis carries >= 1 raw_genes or programmes variable and >= 1 morph_dictionary_v03 variable; applied at generation and as a runner post-filter"
+  },
+  "programme_from_morphology": {
+   "context": false,
+   "cross_modal": false,
+   "rule": "candidate_views restrict the set to morph_dictionary_v03 variables"
+  },
+  "morphology_from_molecular": {
+   "context": false,
+   "cross_modal": false,
+   "rule": "candidate_views restrict the set to molecular variables; the target's own column and columns with within-patient |r| >= 0.9 to it are dropped"
+  }
+ },
+ "seconds_per_cell": {
+  "measurements": [
+   {
+    "study": "kidney_injury",
+    "seconds_total": "37-63",
+    "load": "16-17",
+    "proposal": "5-25",
+    "validation": "12-21",
+    "hardware": "A100",
+    "relation": "v03_rff",
+    "checkpoint": "v03",
+    "null_draws": 199,
+    "source": "Agent M re-run (bfc40ed); runs/development/learned_search_v03/blind_smoke/"
+   },
+   {
+    "study": "he2020_breast_idc",
+    "n_spots": 30548,
+    "seconds_total": 63,
+    "load": 13,
+    "proposal": 32,
+    "validation": 14,
+    "hardware": "A100",
+    "relation": "v03_rff",
+    "source": "Agent M re-run (bfc40ed)"
+   }
+  ],
+  "previous_engine": "v07_ho CPU path: 595 s for a kidney_injury cell",
+  "extrapolation_rule": "about 2.5 min per cell for Meylan (74k spots), extrapolated by Agent M from spot count (not run: blind cohort); other cohorts scale by spot count"
+ },
+ "release_commits": {
+  "relation_commit": "bfc40ed + 25fce7e (B_known per row) + 21a223a (admissibility read directly) (v06 clone; relation v03_rff)"
+ }
+}

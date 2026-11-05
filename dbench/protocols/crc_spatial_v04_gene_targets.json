@@ -1,0 +1,788 @@
+{
+ "schema": "morpheus_prospective_campaign/v1",
+ "campaign_id": "crc-spatial-v04-gene-targets-20261023",
+ "revision": "r1 (Agent W2, 2026-10-23): the gene-target families of crc-spatial-v03-20261023 re-registered at 0b9e153 (gene-target candidate-programme exclusion) with the budget-lifted finding stage",
+ "supersedes": "none: gene-target subset of crc-spatial-v03-20261023, whose gene-target cells predate the candidate-programme exclusion (run on 5633bdc; the v03 receipts stay as written)",
+ "release": {
+  "name": "same frozen release as renal-spatial-v07 / ependymoma-spatial-v01 (checkpoint, relation v03_rff, hest_multi loader)",
+  "learned_search_checkpoint": {
+   "path": "runs/development/learned_search_v03/release/frozen.pt",
+   "sha256": "13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+  },
+  "relation_commit": "bfc40ed + 25fce7e (B_known per row) + 21a223a (admissibility read directly) (v06 clone; relation v03_rff)",
+  "propose_commit": "63f6a99 (v06 clone; learned_search.propose contract)",
+  "loader_commit": "2168b13 / 32f7832 (v06 clone; hest_multi contract + sprint partitions)",
+  "measurement_bank_commit": "327f9cb",
+  "commit_note": "hashes are those of ~/morpheus_work_sw (branch second_wave), which contains the v06 clone history; cherry-picks: b877b05 -> 8b1246e (chunked cross-fold), 3b75b57 -> 00b8523 (cap table)",
+  "evidence_note": "deep learning enters as the frozen learned-search model (proposer and concept layer) and frozen measurement views (H-Optimus-0, SCimilarity, scGPT)",
+  "morphology_dictionary": {
+   "path": "runs/development/learned_search_v03/morphology_dictionary",
+   "centres_sha256": "38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad"
+  },
+  "learned_search_commits": "eb16eef (v03 packet proposer path), 4b2037c (concept_values = v03 dictionary)",
+  "release_commits": {
+   "clone_head_before_registration": "1e1d6fc",
+   "contrast_loader": "aaca0ad",
+   "tissue_architecture": "f1c91dd",
+   "inversion_v03": "1455244",
+   "transfer_v03": "fe423cf",
+   "historical_lock": "0b95dee",
+   "chunked_crossfold_launcher": "8b1246e",
+   "cap_table": "00b8523",
+   "note": "the registration commit itself is the next commit on second_wave and is recorded in the sweep driver log",
+   "phenomena_wiring": "e559bb0",
+   "gpu_memory_and_score_frozen": "a27a8a6",
+   "code_base_of_this_registration": "0b9e153 (clean worktree) plus launcher commits",
+   "gene_target_candidate_exclusion": "0b9e153"
+  }
+ },
+ "discovery": {
+  "candidate_budget": null,
+  "candidate_budget_meaning": "frozen hypotheses per relationship family entering the ledger at 'proposed' after the fold sweep; raw per-target proposals are internal search and recorded with their cost",
+  "patient_unit": true,
+  "literature_blind": true,
+  "fold_seed": 20260926,
+  "n_folds": 5,
+  "outer_split": "5 grouped patient folds over the 6 patients of hest_multi study 'valdeolivas2024_crc' (12 sections; all sections of a patient in one fold), deterministic shuffle with fold_seed; each fold in turn is D_R, the others D_P",
+  "proposals_per_target": 32,
+  "targets": {
+   "note": "targets of each deferred family are listed in relationship_families"
+  },
+  "transforms": {
+   "own": "the column itself",
+   "nbr6": "mean over the 6 nearest spots within sample (KD-tree; a spot without neighbours keeps its own value)",
+   "nbr18": "mean over the 18 nearest spots within sample",
+   "contrast": "own - nbr6",
+   "note": "the transform grammar of morpheus_encoder.learned_search.propose (prefixed names own:/nbr6:/nbr18:/contrast:); every proposer receives the same transformed design"
+  },
+  "target_loader_columns": {},
+  "runner_support": "runner commit e559bb0: row_restriction, admissibility.combine = both, declared_genes force-inclusion, candidate views composition / budding_like / gland_architecture / inferred_cnv / normal_appearing, targets contrast:gene, inferred_cnv:score, budding_like:*, gland_architecture:*",
+  "candidate_variables": "per family candidate_views under the four transforms: raw_genes = the D_P-selected 768 highly variable genes (log1p-CPM, within-patient centred, z-scored on D_P); programmes = 41 Gavish + 50 Hallmark scores; morph_concepts = the 64 concept coordinates; scimilarity / scgpt as v0.6",
+  "target_exclusions": {
+   "rule": "for a programme target, candidate programme and gene-set scores whose gene-set overlap coefficient with the target set (|A intersect B| / min(|A|, |B|)) is >= 0.2 are excluded, as are the target's own member genes, in addition to the within-patient |r| >= 0.9 leak guard; the excluded names are recorded per episode",
+   "overlap_threshold": 0.2,
+   "member_genes_excluded": true,
+   "abs_r_guard": 0.9,
+   "why": "the stub smokes showed near-copy target/candidate pairs, e.g. the Gavish Hypoxia meta-programme as target with HALLMARK_HYPOXIA as candidate; these share genes and score the same transcripts, so the 'relation' is the gene sets' overlap, not biology; this rule removes them",
+   "implementation": "Agent D (hest_multi episode exclusions), recorded under the episode's exclusions"
+  },
+  "excluded_from_candidates": [
+   "spot depth",
+   "patient identity",
+   "platform",
+   "for programme targets: the target programme under every transform, and any column with within-patient |r| >= 0.9 to the target or to its own k=6 neighbour mean on proposal rows (leak guard, listed per fold)",
+   "for morph_concept targets: every morph_concept and H-Optimus-0 column (the target is a function of that embedding) and CellViT descriptors"
+  ],
+  "comparison_model": {
+   "columns": [
+    "log1p spot depth (within-patient centred)"
+   ],
+   "patient": "patient enters by within-patient standardisation of the response and every column (as v0.5)",
+   "rule": "the comparison model is nuisance-only: log depth, patient centring, platform and study one-hots; fit on D_P and frozen; gain = R2(comparison + hypothesis, D_R) - R2(comparison, D_R) under relation v07_ho",
+   "why": "see renal_spatial_v07_notes.md: biological explanations are not competitors here, they are reported as the explanation decomposition",
+   "platform_note": "single platform (Visium); platform enters only if sections differ in chemistry",
+   "family_additions": {
+    "tumour_budding": "nuclear-shape statistics from the CellViT segmentation (mean eccentricity, orientation dispersion) enter the nuisance ridge for this family only (cross-section check)"
+   }
+  },
+  "explanation_decomposition": {
+   "status": "reported for every receipt row and every frozen hypothesis, never a gate",
+   "baselines": "training spec 0.8 under relation v03_rff (Agent M 25fce7e): B_nuis = nuisance ridge (log depth; per-patient intercepts = within-patient standardisation); B_known = nuisance + the hest_multi programme scores (Hallmark + Gavish) after the target's exclusions (the target programme, its member genes, |r| >= 0.9 proxies and every programme with gene-set overlap coefficient >= 0.2 removed) + the three composition variables (CellViT PanNuke Neoplastic / Inflammatory / Connective fractions where every sample has a segmentation, else the top three programme principal axes; source recorded in episode_info.composition_source), ridge with LOPO penalty on D_P; B_decomp(S) = the best proper partition of S in the same family",
+   "row_fields": {
+    "B_nuis": "gain_B_nuis with gain_B_nuis_ci (identical to decomposition.gain_general / gain_general_ci and replication_gain / replication_gain_ci)",
+    "B_known": "gain_B_known with gain_B_known_ci (decomposition.gain_known / gain_known_ci; support LOPO decomposition.gain_known_proposal; columns used in decomposition.known_covariates)",
+    "B_decomp": "G_HO_B_decomp with G_HO_B_decomp_ci and best_decomposition (decomposition.G_HO / G_HO_ci; decomposition.gain_decompositions, gain_joint_vs_additive); the receipt's best_decomposition is chosen on held-out gain inside each bootstrap draw"
+   },
+   "replaces": "the N/B1/B2/B3 ladder (dbench.scripts.decomposition_ladder), which does not run under v03_rff in the hest_multi runner; no ladder step is run for these campaigns",
+   "pass_counts": {
+    "reported": "per cohort and per family, from funnel_aggregate.json baseline_pass_counts (dbench.prospective_campaign; same pass rule: >= 3 of 5 folds, required structured nulls p <= 0.05, BH q <= 0.10 within family): passes B_nuis (the internal rule); passes B_known (folds restricted to gain_B_known CI lower bound > 0); passes B_decomp (folds restricted to higher_order rows); passes B_known and B_decomp",
+    "status": "nothing gated; the finding classes A-F keep their meaning",
+    "downstream": "external replication and characterisation run on every B_nuis pass as before",
+    "paper_object_count": "the B_known column, with the higher-order (B_known and B_decomp) subset marked",
+    "state_cards": "the validation section of every state card carries the four passes and their folds"
+   }
+  },
+  "null_suite": {
+   "spatial_block": "within-patient 2D block swap (6x6 grid) of the response on D_R (destroys spatial organisation, keeps marginals)",
+   "within_patient_perm": "permutation of the response within patient on D_R",
+   "interaction_break": "for |S| >= 2, within-patient block swap of one constituent variable on D_R (breaks joint structure, keeps marginals)",
+   "draws": 199,
+   "p_value": "(1 + #null gains >= observed) / (draws + 1)",
+   "required_for_internal": [
+    "spatial_block",
+    "within_patient_perm",
+    "interaction_break"
+   ]
+  },
+  "advance_rule": {
+   "proposed": "per relationship family: top 50 hypotheses by mean held-out gain over folds in which they PASSED, ranked across proposers jointly; provenance kept (as v0.5)",
+   "internal": "passing in >= 3 of 5 folds, mean gain over passing folds >= min_gain (0.01), all required structured nulls p <= 0.05 in every passing fold, BH q <= 0.10 within family (as v0.5)",
+   "external": "external spatial replication: the 10x FFPE colorectal sections ('reserve_ffpe_human_colorectal_cancer...') if patient-level metadata allow and they are absent from meta-training; tenx_demo_bowel is excluded (used to build the v03 morphology dictionary); otherwise unavailable",
+   "no_post_hoc_change": true,
+   "min_gain": 0.01,
+   "passing_fold": "held-out full-model R2 > 0, gain patient-bootstrap CI lower bound > 0 AND within_patient_perm null p <= 0.05 (the v0.5 rule; runner 'validated' carries exactly this rule)",
+   "per_patient_concentration": "reported per hypothesis; a flag, never a gate"
+  },
+  "pooling": {
+   "mode": "all_folds",
+   "rule": "the registered pooling step scores every frozen hypothesis in every fold, including the folds in which it was not frozen (each fold's held-out patients predicted from a fit on that fold's proposal patients, with the frozen variables, transforms and relation unchanged), so the pooled out-of-fold gain, its patient-bootstrap CI and the pooled nulls cover all patients; the folds in which the hypothesis was frozen are recorded beside it",
+   "finding_stage": "budget_lifted",
+   "budget_lifted_rule": "every hypothesis group passing the fold rule in >= 3 folds enters the finding stage (no top-50 cut at the finding stage); the registered finding rule applies; BH q <= 0.10 within family over ALL entrants; then near-duplicate collapse (nbr6 / nbr18 versions of a variable count as the same core name) and the second_catalogue_known / target_leak flags are applied",
+   "ledger_note": "candidate_budget is null: no per-family cut at the finding stage; the ledger freezes every entrant (a group passing the fold rule in >= 3 folds, scored in every scoreable fold by the registered cross-fold stage)",
+   "pass_and_multiplicity": "fold pass and the internal rule as v0.5 (advance_rule); BH q <= 0.10 within family over all entrants of the finding stage",
+   "implementation": "dbench.prospective_campaign._aggregate_families, native budget-lifted mode (budget_lifted(discovery); candidate_budget null); test dbench/tests/test_budget_lifted_pooling.py reproduces the supplementary v2 counts on the registered Meylan (244 B_known, 11 B_decomp, 1 both) and ependymoma fold receipts; the collapse (Jaccard >= 0.5 single linkage on variable sets, nbr6 / nbr18 versions one core name) and the second_catalogue_known / target_leak flags are the reporting layer of dbench/downstream/scripts/bknown_semantics.py applied to the aggregate; receipts and ledger are read only by the reporting layer; the aggregation-stage code commit is recorded in the driver log",
+   "supersedes_for_this_protocol": "the earlier 'collapse then top-50 by B_known' proposal is not used"
+  },
+  "higher_order_flag": "receipt row field higher_order = (G_HO patient-bootstrap CI lower bound > 0) AND (held-out full-model R2 > 0) under relation v03_rff, where G_HO = held-out gain(full) - max over proper partitions of held-out gain(partition), the maximum taken inside every bootstrap draw; the funnel tallies n_fold_rows_higher_order and n_frozen_higher_order beside the validated counts",
+  "outputs": {
+   "general_discoveries": "internal hypotheses (rule above) regardless of shape: linear, additive, conditional or joint; each with pooled general gain + CI, the per-row B_known and B_decomp gains and its proposer",
+   "higher_order_discoveries": "the subset of general discoveries with k >= 2 whose pooled G_HO (relation v03_rff decomposition family) has a patient-bootstrap CI lower bound > 0 with pooled held-out full-model R2 > 0; per-fold rows carry higher_order",
+   "note": "a discovery is never dropped for being linear or simple; G_HO only marks which discoveries additionally require the joint object"
+  },
+  "stop_rules": [
+   "a family with no internal hypothesis at budget 50: every hypothesis logged with stop_reason and proposer; reported; the advance rule never changes post hoc",
+   "sign reversal on any patient-level external transfer: the hypothesis stops at internal; hash stays locked",
+   "a proposer that fails to load (missing checkpoint or module) stops the run with a clear message; it is never silently replaced"
+  ],
+  "proposers": {
+   "learned_search": {
+    "description": "morpheus_encoder.learned_search.propose with the frozen checkpoint; runner --proposer learned_search; ranked variable sets under the four transforms, concept variables via its concept layer",
+    "checkpoint_path": "runs/development/learned_search_v03/release/frozen.pt",
+    "checkpoint_sha256": "13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+   },
+   "classical_pair": {
+    "description": "runner --proposer classical_pair: dbench.benchmark.methods ebm_ga2m (EBM GA2M pairwise terms) and gbm_interaction (gradient boosting + Friedman H) on the same proposal rows and design, their ranked lists interleaved by rank (run_general_discovery_packet._classical_pair_pool)"
+   },
+   "merge_rule": "interleaved_rank",
+   "budget": "equal: each proposer emits up to proposals_per_target hypotheses per (target, fold)",
+   "merge": "interleaved rank, as the runner merges the two classical methods: learned_search rank 1, classical_pair rank 1, learned_search rank 2, ...; a hypothesis nominated by both keeps its first position and records both proposers; the first proposals_per_target unique hypotheses are frozen",
+   "no_cv_reranking": "the pooled proposals are NOT re-ranked by cross-validated proposal gain (on Agent V's full-size cell that step took 8 h); implemented by the runner's --proposer all under merge_rule interleaved_rank (commit 6eda3cd)"
+  },
+  "proposers_in_all": [
+   "learned_search",
+   "classical_pair"
+  ],
+  "relation": "v03_rff",
+  "relation_note": "the governing spec's fixed family (morpheus_training_and_evaluation_spec.md 0.7), morpheus_encoder.learned_search.relation_v03 (Agent M, commit bfc40ed): kernel ridge on 256 random Fourier features of the set (Gaussian kernel, median-heuristic bandwidth on proposal rows, fixed RFF directions per set size, RFF_SEED 20261021) plus the set linearly plus an intercept; inputs standardised by proposal-row statistics; penalty from {0.01, 0.1, 1, 10} by leave-one-patient-out CV on proposal rows; fitted to the response after the nuisance ridge (log depth; per-patient intercepts = within-patient standardisation; penalty from {0.1, 1, 10, 100, 1000} by LOPO); general gain = R2(nuisance + f_S, D_R) - R2(nuisance, D_R) with a 200-draw held-out-patient bootstrap CI; decomposition family = every proper set partition of S, each block its own 256-RFF map, fitted jointly; nulls unchanged (spatial_block, within_patient_perm, interaction_break; the protocol's draw count; p = (1 + #null >= observed)/(draws + 1)), re-scoring the fixed proposal fit on nulled D_R (interaction_break re-predicts with the first constituent block-swapped); validation rule unchanged (held-out full R2 > 0 and gain CI lower bound > 0); batched on the GPU",
+  "response_transform": "every response is within-patient standardised (mean 0, sd 1 per patient on its own values)",
+  "rows": "spots with an H-Optimus-0 embedding (coverage-complete for concept targets and concept candidates); the kept fraction is recorded per fold and target; nothing is imputed",
+  "receipt_contract": [
+   "family",
+   "target",
+   "fold",
+   "proposer",
+   "variable_names",
+   "transforms",
+   "feature_form",
+   "replication_gain",
+   "replication_gain_ci",
+   "replication_r2_full",
+   "validated",
+   "higher_order",
+   "decomposition",
+   "nulls",
+   "provenance",
+   "n_relationships_tested",
+   "candidate_hash"
+  ],
+  "relationship_families": {
+   "metabolic_consumer_epithelial": {
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "candidate_views": [
+     "programmes",
+     "raw_genes",
+     "composition",
+     "morph_dictionary_v03"
+    ],
+    "declared_genes": [
+     "SLC16A1",
+     "SLC16A3",
+     "LDHA",
+     "LDHB"
+    ],
+    "declared_genes_note": "force-included in the raw_genes panel beside the D_P-selected HVGs (pending runner support; recorded in episode exclusions when absent from the panel)",
+    "complementary_programme": {
+     "programme:mp:Hypoxia": "programme:mp:Respiration",
+     "programme:mp:Respiration": "programme:mp:Hypoxia",
+     "programme:hallmark:HALLMARK_HYPOXIA": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_GLYCOLYSIS": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION": "programme:hallmark:HALLMARK_GLYCOLYSIS",
+     "gene:SLC16A1": "gene:SLC16A3",
+     "gene:SLC16A3": "gene:SLC16A1",
+     "gene:LDHA": "gene:LDHB",
+     "gene:LDHB": "gene:LDHA"
+    },
+    "complementary_note": "the producer-side (or consumer-side) programme named for each target; a declaration for reporting, not a restriction: the search proposes whatever set it ranks",
+    "controls": "known-biology baseline B_known already contains the hypoxia and glycolysis programmes (minus the target's exclusions), so a pass means the configuration adds to them; B_decomp rejects anything a producer-plus-consumer pair explains; interaction_break removes co-localisation artefacts",
+    "organ_comparison": "the same three families run in ccRCC (covered by the registered renal-spatial-v07 hypoxia and glycolysis targets) and in colorectal cancer, so the renal-versus-colorectal direction difference is tested as a compositional interaction, not assumed",
+    "targets": [
+     "gene:SLC16A1",
+     "gene:SLC16A3",
+     "gene:LDHA",
+     "gene:LDHB"
+    ],
+    "rows": "epithelial-dominant spots (consumer side): the CellViT PanNuke Neoplastic fraction is the largest of the three composition fractions under the spot; rows with no segmented nucleus are dropped, nothing imputed",
+    "requirement": "every hypothesis carries >= 1 nbr6, nbr18 or contrast molecular variable (the producer-side programme or gene in the neighbourhood) and >= 1 composition or morph_dictionary_v03 variable (the tissue between the compartments)",
+    "question": "which producer-side programme in the neighbourhood, together with the composition or morphology of the tissue between, explains the consumer-side metabolic state of epithelial-dominant spots beyond every pair",
+    "admissibility": {
+     "context": true,
+     "cross_modal": true,
+     "rule": ">= 1 nbr6/nbr18/contrast raw_genes or programmes variable AND >= 1 composition or morph_dictionary_v03 variable; applied at generation and as a runner post-filter",
+     "combine": "both"
+    },
+    "problem": "1 metabolic division of labour between tissue compartments",
+    "organ": "colorectal",
+    "wired_in": "runner commit e559bb0: row restriction to epithelial-dominant spots (CellViT PanNuke Neoplastic fraction largest of the three composition fractions); candidate view 'composition' (today only B_known covariates, not a candidate view); force-inclusion of the declared genes SLC16A1, SLC16A3, LDHA, LDHB in the raw_genes panel",
+    "row_restriction": "epithelial_dominant",
+    "gene_target_leak_control": "programmes whose gene set contains the target gene are removed from the candidate views (commit 0b9e153; recorded per episode as exclusion_report.programmes_containing_target_gene)"
+   },
+   "metabolic_producer_stromal_immune": {
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "candidate_views": [
+     "programmes",
+     "raw_genes",
+     "composition",
+     "morph_dictionary_v03"
+    ],
+    "declared_genes": [
+     "SLC16A1",
+     "SLC16A3",
+     "LDHA",
+     "LDHB"
+    ],
+    "declared_genes_note": "force-included in the raw_genes panel beside the D_P-selected HVGs (pending runner support; recorded in episode exclusions when absent from the panel)",
+    "complementary_programme": {
+     "programme:mp:Hypoxia": "programme:mp:Respiration",
+     "programme:mp:Respiration": "programme:mp:Hypoxia",
+     "programme:hallmark:HALLMARK_HYPOXIA": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_GLYCOLYSIS": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION": "programme:hallmark:HALLMARK_GLYCOLYSIS",
+     "gene:SLC16A1": "gene:SLC16A3",
+     "gene:SLC16A3": "gene:SLC16A1",
+     "gene:LDHA": "gene:LDHB",
+     "gene:LDHB": "gene:LDHA"
+    },
+    "complementary_note": "the producer-side (or consumer-side) programme named for each target; a declaration for reporting, not a restriction: the search proposes whatever set it ranks",
+    "controls": "known-biology baseline B_known already contains the hypoxia and glycolysis programmes (minus the target's exclusions), so a pass means the configuration adds to them; B_decomp rejects anything a producer-plus-consumer pair explains; interaction_break removes co-localisation artefacts",
+    "organ_comparison": "the same three families run in ccRCC (covered by the registered renal-spatial-v07 hypoxia and glycolysis targets) and in colorectal cancer, so the renal-versus-colorectal direction difference is tested as a compositional interaction, not assumed",
+    "targets": [
+     "gene:SLC16A1",
+     "gene:SLC16A3",
+     "gene:LDHA",
+     "gene:LDHB"
+    ],
+    "rows": "stromal- and immune-dominant spots (producer side): the CellViT Connective or Inflammatory fraction is the largest of the three composition fractions under the spot; rows with no segmented nucleus are dropped",
+    "requirement": "as metabolic_consumer_epithelial, with the epithelial-dominant neighbourhood as the complementary side",
+    "question": "which consumer-side programme in the neighbourhood, together with composition or morphology, explains the producer-side metabolic state of stromal- and immune-dominant spots beyond every pair",
+    "admissibility": {
+     "context": true,
+     "cross_modal": true,
+     "rule": ">= 1 nbr6/nbr18/contrast raw_genes or programmes variable AND >= 1 composition or morph_dictionary_v03 variable; applied at generation and as a runner post-filter",
+     "combine": "both"
+    },
+    "problem": "1 metabolic division of labour between tissue compartments",
+    "organ": "colorectal",
+    "wired_in": "runner commit e559bb0: row restriction to stromal- and immune-dominant spots (CellViT Connective or Inflammatory fraction largest); candidate view 'composition'; force-inclusion of the declared genes in the raw_genes panel",
+    "row_restriction": "stromal_immune_dominant",
+    "gene_target_leak_control": "programmes whose gene set contains the target gene are removed from the candidate views (commit 0b9e153; recorded per episode as exclusion_report.programmes_containing_target_gene)"
+   },
+   "metabolic_contrast_genes": {
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "candidate_views": [
+     "programmes",
+     "raw_genes",
+     "composition",
+     "morph_dictionary_v03"
+    ],
+    "declared_genes": [
+     "SLC16A1",
+     "SLC16A3",
+     "LDHA",
+     "LDHB"
+    ],
+    "declared_genes_note": "force-included in the raw_genes panel beside the D_P-selected HVGs (pending runner support; recorded in episode exclusions when absent from the panel)",
+    "complementary_programme": {
+     "programme:mp:Hypoxia": "programme:mp:Respiration",
+     "programme:mp:Respiration": "programme:mp:Hypoxia",
+     "programme:hallmark:HALLMARK_HYPOXIA": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_GLYCOLYSIS": "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+     "programme:hallmark:HALLMARK_OXIDATIVE_PHOSPHORYLATION": "programme:hallmark:HALLMARK_GLYCOLYSIS",
+     "gene:SLC16A1": "gene:SLC16A3",
+     "gene:SLC16A3": "gene:SLC16A1",
+     "gene:LDHA": "gene:LDHB",
+     "gene:LDHB": "gene:LDHA"
+    },
+    "complementary_note": "the producer-side (or consumer-side) programme named for each target; a declaration for reporting, not a restriction: the search proposes whatever set it ranks",
+    "controls": "known-biology baseline B_known already contains the hypoxia and glycolysis programmes (minus the target's exclusions), so a pass means the configuration adds to them; B_decomp rejects anything a producer-plus-consumer pair explains; interaction_break removes co-localisation artefacts",
+    "organ_comparison": "the same three families run in ccRCC (covered by the registered renal-spatial-v07 hypoxia and glycolysis targets) and in colorectal cancer, so the renal-versus-colorectal direction difference is tested as a compositional interaction, not assumed",
+    "targets": [
+     "contrast:gene:SLC16A1",
+     "contrast:gene:SLC16A3",
+     "contrast:gene:LDHA",
+     "contrast:gene:LDHB"
+    ],
+    "rows": "all spots with an H-Optimus-0 embedding and a segmentation",
+    "targets_note": "contrast = own - nbr6 of the metabolic programme or gene (the division-of-labour quantity itself); the target grammar of hest_multi.parse_target serves gene:, programme:, nbr6:/nbr18:programme: and concept: only, so contrast targets are pending runner support",
+    "requirement": "every hypothesis carries >= 1 own variable and >= 1 nbr6, nbr18 or contrast variable; the target's own programme and its member genes are excluded under every transform",
+    "question": "what configuration of neighbourhood programmes, composition and morphology explains where a spot's metabolic programme departs from its neighbourhood",
+    "admissibility": {
+     "context": true,
+     "cross_modal": false,
+     "rule": ">= 1 own variable AND >= 1 nbr6/nbr18/contrast variable"
+    },
+    "problem": "1 metabolic division of labour between tissue compartments",
+    "organ": "colorectal",
+    "wired_in": "runner commit e559bb0: contrast:gene:<SYM> targets in hest_multi.parse_target and the episode builder (own gene minus its 6-neighbour mean); commit aaca0ad serves contrast:programme: only",
+    "row_restriction": "segmented",
+    "targets_wiring": "contrast:gene:<SYM> parsed by hest_multi.parse_target (own gene minus its 6-neighbour mean)",
+    "gene_target_leak_control": "programmes whose gene set contains the target gene are removed from the candidate views (commit 0b9e153; recorded per episode as exclusion_report.programmes_containing_target_gene)"
+   }
+  },
+  "programme_targets_source": {
+   "rule": "mean over patients of (mean within-patient-standardised score on epithelial_dominant spots minus on normal_appearing spots); patients with >= 20 spots in both sets; mp: programmes; target choice only",
+   "path": "runs/development/sprint_v06/tumour_elevated_valdeolivas2024_crc.json",
+   "targets": [
+    "programme:mp:Cell Cycle - G2/M",
+    "programme:mp:Proteasomal degradation",
+    "programme:mp:Cell Cylce HMG-rich",
+    "programme:mp:MYC"
+   ],
+   "partitions_sha256_at_computation": "28d9b4e80c75868ff1688a28ce88c32306aba57f50927ab83bf441aa7154c510",
+   "note": "tumour-elevated programme targets of invisible_field; the generic programme targets are those of the v02 protocol (blind_targets file)"
+  },
+  "morphology_view": {
+   "runner_view_key": "morph_dictionary_v03",
+   "definition": "cosine similarities of the frozen H-Optimus-0 spot embedding, standardised per dimension on the fold's covered D_P spots, to the 33 kept centres of the frozen v03 morphology dictionary (runs/development/learned_search_v03/morphology_dictionary, centres.npz sha256 38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad; three-study population rule); covered spots only, nothing imputed",
+   "dictionary": {
+    "path": "runs/development/learned_search_v03/morphology_dictionary",
+    "centres_sha256": "38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad",
+    "provenance_sha256": "857d96742346fb1e6eec784b6a40d9e2885a408111e8e08630502d2a876f861f",
+    "k": 64,
+    "n_kept": 33,
+    "kept_centre_indices": [
+     0,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     15,
+     17,
+     18,
+     20,
+     22,
+     26,
+     27,
+     28,
+     29,
+     33,
+     36,
+     38,
+     39,
+     40,
+     43,
+     44,
+     46,
+     49,
+     50,
+     51,
+     55,
+     56,
+     58,
+     59,
+     61,
+     63
+    ],
+    "retention_rule": "populated (>= 20 spots) by >= 3 studies",
+    "construction_studies": [
+     "andersson2021_her2",
+     "bladder_batf3",
+     "bladder_epithelial",
+     "hcc_trem1",
+     "he2020_breast_idc",
+     "lymphnode_idc",
+     "tenx_demo_bowel",
+     "tenx_demo_brain",
+     "tenx_demo_breast",
+     "tenx_demo_lung",
+     "tenx_demo_ovary",
+     "tenx_demo_prostate"
+    ]
+   },
+   "column_names": "morph_dictionary_v03:morph:kNN (NN = original centre index; kept list in PROVENANCE.json)",
+   "target_mapping": {
+    "morph_concept_0": "morph:k00",
+    "morph_concept_1": "morph:k03",
+    "morph_concept_2": "morph:k04",
+    "morph_concept_3": "morph:k05",
+    "morph_concept_4": "morph:k06",
+    "morph_concept_5": "morph:k07",
+    "morph_concept_6": "morph:k08",
+    "morph_concept_7": "morph:k15",
+    "morph_concept_8": "morph:k17",
+    "morph_concept_9": "morph:k18",
+    "morph_concept_10": "morph:k20",
+    "morph_concept_11": "morph:k22",
+    "morph_concept_12": "morph:k26",
+    "morph_concept_13": "morph:k27",
+    "morph_concept_14": "morph:k28",
+    "morph_concept_15": "morph:k29"
+   }
+  }
+ },
+ "cohorts": [
+  {
+   "id": "valdeolivas2024_crc_discovery",
+   "role": "blind discovery (held-out patients = Level 1 replication)",
+   "study_key": "valdeolivas2024_crc",
+   "sections": 12,
+   "patients": 6,
+   "gates": [
+    {
+     "id": "hest_multi_study",
+     "path": "dbench/protocols/sprint_partitions_v01.json",
+     "required": true,
+     "note": "study key valdeolivas2024_crc"
+    },
+    {
+     "id": "hoptimus_embeddings",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus",
+     "required": true
+    },
+    {
+     "id": "learned_search_frozen_checkpoint",
+     "path": "runs/development/learned_search_v03/release/frozen.pt",
+     "required": true,
+     "note": "release checkpoint, sha256 13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+    },
+    {
+     "id": "zenodo_7760264_annotations",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Pathology_SpotAnnotations.zip",
+     "required": true,
+     "note": "pathologist spot classes, CC BY 4.0"
+    },
+    {
+     "id": "zenodo_7760264_wsis",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/sha256_manifest.txt",
+     "required": true,
+     "note": "four .ndpi whole slides (SN048, SN84, SN123, SN124), md5-verified, sha256 manifest"
+    },
+    {
+     "id": "cellvit_outputs",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN49_cellvit_seg.parquet",
+     "required": true,
+     "note": "HEST CellViT parquet for all 12 sections copied into the runner's first CELLVIT_DIRS entry (sha256-verified copies of external/hest_modalities_20260809/cellvit_seg)"
+    },
+    {
+     "id": "healthy_sections_converted",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/manifest.json",
+     "required": true,
+     "note": "ZEN37 / ZEN41 (A798015 Rep2 / Rep1, patient 6) converted from the Zenodo per-sample zips to the flat HEST layout with pathologist annotation CSVs beside them; the Problem 2 healthy-section control"
+    }
+   ]
+  }
+ ],
+ "translation": {
+  "note": "declared at registration from the downstream protocols; no clinical cohort is fixed in this draft",
+  "forbidden": [
+   "calling a held-out fold an external replication",
+   "outcome-guided state selection"
+  ]
+ },
+ "anti_leakage": {
+  "literature_before_internal_freeze": false,
+  "legacy_phase2_candidates_as_prospective_candidates": false,
+  "candidate_redefinition_after_external": false,
+  "truth_or_outcome_in_discovery": false,
+  "historical_answers_in_training": false
+ },
+ "ledger": {
+  "filename": "crc_spatial_v04_gene_targets_ledger.jsonl"
+ },
+ "status": "REGISTERED 2026-10-23 by Agent W2 on the coordinator's instruction (checkpoint release/frozen.pt 13c36faa8cd9, code base 0b9e153)",
+ "positive_controls": {
+  "note": "none declared in the draft"
+ },
+ "notes": [
+  "gene-target subset of crc-spatial-v03: 3 families x 4 targets x 5 folds = 60 cells",
+  "the v03 gene-target cells ran without the candidate-programme exclusion; v03 receipts are kept and not overwritten"
+ ],
+ "downstream": {
+  "replication": "external replication cohorts declared in the partitions manifest: gse294385 (molecular only; no full-resolution H&E in GEO) and gse280318_hd (Visium HD sections only; its Visium v2 section is HEST TENX152 in meta_training); rule hashed before external values",
+  "replication_cohorts": [
+   "gse294385",
+   "gse280318_hd"
+  ],
+  "consumer": "dbench/downstream/blind.py --run-dir runs/prospective/<campaign_id> --out runs/development/downstream_blind/<campaign_id> (reads campaign_manifest.json, funnel_aggregate.json, the ledger and receipts read only)",
+  "characterisation": "downstream Section 1.1-1.6 (dbench.downstream.characterise; 1.7 pathologist read scratched by the owner)",
+  "novelty": "dbench.downstream.novelty (literature lock before any query)",
+  "prioritisation": "dbench.downstream.therapeutic.prioritise (Section 4)",
+  "distillation": "dbench/protocols/assay_distillation_v03.json (state (a) within-patient, state (b) between-patient-inclusive; 7a on (b))",
+  "b_known_catalogue": "dbench/downstream/data/bknown_ccrcc_v01.json (renal); other organs: Hallmark + Gavish only until an organ catalogue is declared"
+ },
+ "registration": {
+  "never": "no write under runs/prospective by hand",
+  "commands": [
+   "python -m dbench.prospective_campaign --protocol dbench/protocols/crc_spatial_v04_gene_targets.json --run-dir runs/prospective/crc-spatial-v04-gene-targets-20261023",
+   "CAMPAIGN_PROTOCOL=dbench/protocols/crc_spatial_v04_gene_targets.json bash dbench/scripts/blind_sweep.sh runs/prospective/crc-spatial-v04-gene-targets-20261023 <workers>"
+  ]
+ },
+ "order_of_operations": [
+  "1 checkpoint freeze: runs/development/learned_search_v03/release/frozen.pt, sha256 13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446",
+  "2 historical-rediscovery H1/H2 version-1 lists locked at commit 0b95dee (runs/development/benchmark_v03/historical/LOCK_H1_H2.md), which declares the CRC and cSCC cohorts open for second-wave work",
+  "3 programme targets fixed by name by the blind-targets procedure (median within-section Moran's I over all sections, response-free): runs/development/sprint_v06/blind_targets_valdeolivas2024_crc.json",
+  "3b every blocked_on capability wired into the runner and tested; tumour-elevated programme ranks fixed by name",
+  "4 protocol status REGISTERED, canonical sha256 recorded; python -m dbench.prospective_campaign (manifest + empty ledger; ready_for_discovery must be true)",
+  "5 fold sweep (dbench/scripts/blind_sweep.sh), chunked cross-fold scoring, registered aggregation: hypotheses frozen and hashed in the ledger",
+  "6 replication v03 on the declared replication cohorts (rule hashed before external values)",
+  "7 characterisation (literature closed), then the literature lock and the novelty pass -- no literature is consulted at any earlier step"
+ ],
+ "programme_document": "MORPHEUS Second-Wave Discovery Programme (Problems 1 to 3 declared here; Problem 4 is a characterisation test on the registered Meylan run; Problem 5 is the cross-organ replication step)",
+ "data_sources": {
+  "hest_sections": {
+   "ZEN49": {
+    "patient": "valdeolivas2024_crc:Patient 1",
+    "zenodo_sample": "A121573_Rep1",
+    "zenodo_slide": "SN048",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN49.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN49.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN49_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN49_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN49.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi"
+   },
+   "ZEN48": {
+    "patient": "valdeolivas2024_crc:Patient 1",
+    "zenodo_sample": "A121573_Rep2",
+    "zenodo_slide": "SN048",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN48.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN48.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN48_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN48_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN48.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi"
+   },
+   "ZEN47": {
+    "patient": "valdeolivas2024_crc:Patient 2",
+    "zenodo_sample": "A416371_Rep1",
+    "zenodo_slide": "SN048",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN47.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN47.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN47_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN47_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN47.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi"
+   },
+   "ZEN46": {
+    "patient": "valdeolivas2024_crc:Patient 2",
+    "zenodo_sample": "A416371_Rep2",
+    "zenodo_slide": "SN048",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN46.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN46.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN46_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN46_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN46.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi"
+   },
+   "ZEN45": {
+    "patient": "valdeolivas2024_crc:Patient 3",
+    "zenodo_sample": "A120838_Rep1",
+    "zenodo_slide": "SN84",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN45.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN45.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN45_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN45_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN45.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-084.ndpi"
+   },
+   "ZEN44": {
+    "patient": "valdeolivas2024_crc:Patient 3",
+    "zenodo_sample": "A120838_Rep2",
+    "zenodo_slide": "SN84",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN44.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN44.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN44_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN44_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN44.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-084.ndpi"
+   },
+   "ZEN43": {
+    "patient": "valdeolivas2024_crc:Patient 4",
+    "zenodo_sample": "A551763_Rep1",
+    "zenodo_slide": "SN123",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN43.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN43.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN43_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN43_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN43.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-123.ndpi"
+   },
+   "ZEN39": {
+    "patient": "valdeolivas2024_crc:Patient 4",
+    "zenodo_sample": "A551763_Rep2",
+    "zenodo_slide": "SN124",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN39.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN39.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN39_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN39_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN39.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-124.ndpi"
+   },
+   "ZEN42": {
+    "patient": "valdeolivas2024_crc:Patient 5",
+    "zenodo_sample": "A595688_Rep1",
+    "zenodo_slide": "SN123",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN42.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN42.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN42_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN42_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN42.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-123.ndpi"
+   },
+   "ZEN38": {
+    "patient": "valdeolivas2024_crc:Patient 5",
+    "zenodo_sample": "A595688_Rep2",
+    "zenodo_slide": "SN124",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN38.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN38.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN38_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN38_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN38.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-124.ndpi"
+   },
+   "ZEN40": {
+    "patient": "valdeolivas2024_crc:Patient 7",
+    "zenodo_sample": "A938797_Rep1",
+    "zenodo_slide": "SN123",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN40.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN40.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN40_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN40_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN40.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-123.ndpi"
+   },
+   "ZEN36": {
+    "patient": "valdeolivas2024_crc:Patient 7",
+    "zenodo_sample": "A938797_Rep2",
+    "zenodo_slide": "SN124",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st/ZEN36.h5ad",
+    "wsi_hest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/wsis/ZEN36.tif (0.46 um/px, 40x, fresh frozen)",
+    "cellvit": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/cellvit_seg/ZEN36_cellvit_seg.parquet (copy of external/hest_modalities_20260809/cellvit_seg/ZEN36_cellvit_seg.parquet)",
+    "hoptimus": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/valdeolivas2024_crc/embeddings/hoptimus/ZEN36.npz",
+    "wsi_zenodo": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/Visium_Frozen_SN_V19S23-124.ndpi"
+   }
+  },
+  "hest_catalogue": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_meta/HEST_v1_3_0.csv (column subseries = Zenodo sample id)",
+  "healthy_sections": {
+   "ZEN41": {
+    "patient": "valdeolivas2024_crc:Patient 6",
+    "zenodo_sample": "A798015_Rep1",
+    "zenodo_slide": "SN123",
+    "zenodo_file": "https://zenodo.org/records/7760264/files/SN123_A798015_Rep1.zip",
+    "local_zip": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/SN123_A798015_Rep1.zip",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/st/ZEN41.h5ad",
+    "metadata": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/metadata/ZEN41.json",
+    "annotations": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/annotations/ZEN41_pathologist_annotations.csv",
+    "status": "not in the local HEST copy; converted 2026-10-22 to the flat HEST layout (scripts/second_wave/convert_valdeolivas_healthy.py, no patches); loads through hest_multi as patient 6 (ZEN41 1683 and ZEN37 1653 rows at min_depth 200); the full-resolution H&E is a capture area of the Zenodo .ndpi slide, not yet extracted"
+   },
+   "ZEN37": {
+    "patient": "valdeolivas2024_crc:Patient 6",
+    "zenodo_sample": "A798015_Rep2",
+    "zenodo_slide": "SN124",
+    "zenodo_file": "https://zenodo.org/records/7760264/files/SN124_A798015_Rep2.zip",
+    "local_zip": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/SN124_A798015_Rep2.zip",
+    "st": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/st/ZEN37.h5ad",
+    "metadata": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/metadata/ZEN37.json",
+    "annotations": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/annotations/ZEN37_pathologist_annotations.csv",
+    "status": "not in the local HEST copy; converted 2026-10-22 to the flat HEST layout (scripts/second_wave/convert_valdeolivas_healthy.py, no patches); loads through hest_multi as patient 6 (ZEN41 1683 and ZEN37 1653 rows at min_depth 200); the full-resolution H&E is a capture area of the Zenodo .ndpi slide, not yet extracted"
+   }
+  },
+  "healthy_layout_manifest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_healthy_hest_layout/manifest.json",
+  "cellvit_note": "HEST-distributed CellViT outputs (<id>_cellvit_seg.parquet + .geojson.zip: geometry, class, cell_id) exist for all 12 sections under external/hest_modalities_20260809/cellvit_seg and were copied 2026-10-22 (sha256-verified) into spatial/hest_data/cellvit_seg, the first entry of morpheus_encoder.learned_search.episodes_v03.CELLVIT_DIRS, so cellvit_path(sid) resolves every section without a code change",
+  "zenodo_7760264": {
+   "record": "https://zenodo.org/records/7760264 (Valdeolivas et al. 2024 npj Precis Oncol; doi 10.5281/zenodo.7760264)",
+   "licence": "CC BY 4.0 (record metadata license id cc-by-4.0, access_right open, no click-through)",
+   "local_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264",
+   "files": [
+    "Pathology_SpotAnnotations.zip",
+    "Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi",
+    "Visium_Frozen_SN_V19S23-084.ndpi",
+    "Visium_Frozen_SN_V19S23-123.ndpi",
+    "Visium_Frozen_SN_V19S23-124.ndpi"
+   ],
+   "sha256_manifest": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/valdeolivas_zenodo_7760264/sha256_manifest.txt",
+   "slide_to_samples": {
+    "SN048": [
+     "A121573_Rep1",
+     "A121573_Rep2",
+     "A416371_Rep1",
+     "A416371_Rep2"
+    ],
+    "SN84": [
+     "A120838_Rep1",
+     "A120838_Rep2"
+    ],
+    "SN123": [
+     "A551763_Rep1",
+     "A595688_Rep1",
+     "A798015_Rep1",
+     "A938797_Rep1"
+    ],
+    "SN124": [
+     "A551763_Rep2",
+     "A595688_Rep2",
+     "A798015_Rep2",
+     "A938797_Rep2"
+    ]
+   },
+   "annotation_use": "pathologist spot classes (tumour, stroma, immune mixtures, non-neoplastic mucosa, ...) define the pathologist arm of normal_appearing (Problem 2) and the independent check on the invasive-front band (Problem 3); they never enter as candidate variables",
+   "download_status": "downloaded 2026-10-22, md5 verified against the record, sha256 manifest written",
+   "sha256": {
+    "Visium_Frozen_SN_V19S23-123.ndpi": "8f0dc3c68efa79866f0e6843ac0cd4797d19c4e7a95f78f2b9e24087cfeca736",
+    "Visium_Frozen_SN_V19S23-084.ndpi": "2d3a0d6db91a4c250ee8a2f62d54d63752a9b89250044d9ac08f599c3cdf5d0e",
+    "Visium_Frozen_SN_V10B01-048_new_CRC_2021_02_16.ndpi": "ac2d4c1de0eebf334b636246513b3f08c9ef4d784f32378bf32d353858b89226",
+    "Pathology_SpotAnnotations.zip": "2468ad1208468277eaa7693cbaf92735e76d52207e87d534e0ac8fe77fcacb47",
+    "Visium_Frozen_SN_V19S23-124.ndpi": "49f31abee2a244254f893ac003dcfa9ca40adbd70cff041aba4fdf5d803c8339",
+    "SN123_A798015_Rep1.zip": "d6bd4168891d9c2a94b5f3fe7cb35e7a3e1c49fe6ac7df16af29aeea346aa282",
+    "SN124_A798015_Rep2.zip": "e75f9b4a39e9daac4682c7c090ce92490c7b40b88b9825e1b38eaa3ae525c083",
+    "record.json": "8ceac3bbe4364aa5ee1058a1c6a0525ddefc81865fe1a9c9c97008ab0575a147",
+    "filelist.tsv": "556f500b60e7b5fe41e642858f563a84e74398ead0210154c30357d7d41f5f93"
+   }
+  },
+  "replication_candidates": {
+   "GSE294385": {
+    "source": "GEO GSE294385 (Liu et al. 2026 Cancer Cell), 37 Visium sections, 11 patients, Space Ranger outputs",
+    "files": "GSE294385_RAW.tar 7.9 GB: per-sample tar.gz with filtered_feature_bc_matrix, spatial/ (tissue_hires_image.png <= 2000 px, tissue_lowres_image.png, cytassist_image.tiff ~25 MB, tissue_positions.csv, scalefactors)",
+    "h_and_e": "no full-resolution microscope H&E in GEO (hires PNG and CytAssist image only)",
+    "annotations": "none in GEO; sample records carry only 'tissue: Colorectal cancer metastasis' (no site, patient or class)",
+    "licence": "no licence stated on the GEO record; NCBI places no restrictions on use or distribution of GEO data (NCBI policies page, Molecular Data Usage)",
+    "local_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/geo_GSE294385 (GSE294385_RAW.tar, samples/<GSM>_<id>.tar.gz, extracted/<GSM>_<id>/, GSE294385_family_text.txt, README.md, sha256_manifest.txt)",
+    "status": "downloaded 2026-10-22 (scripts/second_wave/fetch_geo_crc.sh gse294385); usable for molecular replication only; not usable for morphology or CellViT; not converted"
+   },
+   "GSE280318": {
+    "source": "GEO GSE280318 SuperSeries (Oliveira et al. 2025 Nat Genet, 10x Genomics); sub-series GSE280315 Visium HD (5 sections: P1CRC, P2CRC, P5CRC, P3NAT, P5NAT; 8 um bins; tissue_image.btf 5.8-8.1 GB each, 56 GB total with GSE280313 Visium v2 and GSE280314 Xenium)",
+    "h_and_e": "full-resolution microscope images present (tissue_image.btf per Visium HD section; he_image.ome.tif per Xenium section)",
+    "annotations": "no pathologist spot annotations; Metadata.parquet carries deconvolution and unsupervised clustering labels",
+    "licence": "no licence stated on the GEO record; NCBI places no restrictions (as above); the same data on the 10x Genomics site carry Creative Commons Attribution in the HEST catalogue",
+    "overlap_with_meta_training": "the Visium v2 section P2CRC of this study is HEST TENX152, a member of the meta_training study tenx_demo_bowel (sprint_partitions_v01.json); the Visium HD sections are not in HEST; replication must use the HD sections only and say so",
+    "local_dir": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/second_wave_20261022/geo_GSE280318_visiumhd (P1CRC, P2CRC, P5CRC, P3NAT, P5NAT: filtered_feature_bc_matrix.h5, tissue_positions.parquet.gz, tissue_lowres_image.png.gz, scalefactors_json.json.gz; Metadata.parquet.gz for the three CRC sections only (GEO serves none for the NAT sections, NOT_SERVED.txt); GSE280315_family_text.txt, README.md, sha256_manifest.txt)",
+    "status": "Visium HD expression and positions downloaded 2026-10-22 (scripts/second_wave/fetch_geo_crc.sh gse280318_hd); tissue_image.btf, image.tif and he_image.ome.tif not downloaded; not converted"
+   }
+  }
+ },
+ "reporting": {
+  "top20_lists": "Primary lists are the registered uncapped top-20 (B_nuis-conditioned search, K = 64). A companion distinct-objects view applies an anchor-multiplicity cap m = 8 as a re-presentation of the same lists (no new search or fits); m was fixed from the development table (cap_rerank/cap_table.md, commit 3b75b57) before any aggregate of this run was read. Registered pooling counts are unaffected.",
+  "development_table": {
+   "path": "runs/development/benchmark_v03/cap_rerank/cap_table.md",
+   "commit_in_v06_clone": "3b75b57",
+   "commit_in_sw_clone": "00b8523 (cherry-pick)"
+  },
+  "anchor_multiplicity_cap_m": 8
+ },
+ "declared_not_wired": {}
+}

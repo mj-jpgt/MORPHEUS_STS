@@ -1,0 +1,14 @@
+{
+ "schema": "morpheus_transfer_protocol_addendum/v1",
+ "id": "transfer_v03.1",
+ "date": "2026-10-26",
+ "author": "Agent M (coordinator approval 2026-10-26)",
+ "amends": "morpheus_encoder/learned_search/transfer_v03.py (P5 cross-organ transfer matrix, rule v03)",
+ "rule_v03": "replicates = held-out gain interval (patient bootstrap, 95 %) above zero AND every variable's within-patient correlation sign agrees between source and target cohort",
+ "rule_v03_1": "replicates (v03.1) = replicates under rule v03 AND the target-cohort held-out gain exceeds the 95th percentile of that direction's matched-null held-out gains, both null types pooled (Moran-matched spatially smoothed fields and permuted programmes = random gene sets of the target programme's size, the same symbols in both cohorts)",
+ "reporting": "both rules side by side in every table (cell under v03 and under v03.1; null false-transfer rate under each); the v03.1 column is never reported alone",
+ "null_records": "every matched-null relation is stored with its type, relation, cell, held-out gain and interval (transfer_v03 null details); null counts >= 60 per direction where the source has enough transferable relations (independent draws per sampled relation)",
+ "reason": "at Visium scale (tens of thousands of spots) a negligible held-out gain carries a bootstrap interval above zero, so the CI rule alone counts permuted-programme nulls as replications: Meylan -> GSE208253 OSCC 36 / 70 permuted nulls replicated under v03 (median gain 0.007) while 0 / 50 smoothed-field nulls did; switching off rank-normalisation within section left the OSCC rate unchanged (0.50 vs 0.514), so the permuted-programme nulls share a spot-quality axis with the relations' variables rather than a section effect",
+ "consistency": "the same gain-based null logic as the CRC external replication (Agent R: replication judged against the matched-null gain distribution), so the P5 transfer tables and the external replication table use one rule",
+ "code": "transfer_v03.apply_rule_v031 / null_gain_threshold / rescore_v031; dbench phenomena_preview p5 --rescore"
+}

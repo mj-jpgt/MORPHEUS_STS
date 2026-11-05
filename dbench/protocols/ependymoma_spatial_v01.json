@@ -1,0 +1,647 @@
+{
+ "schema": "morpheus_prospective_campaign/v1",
+ "campaign_id": "ependymoma-spatial-v01-20261022",
+ "revision": "DRAFT r7 (Agent R, 2026-10-21): relation v03_rff (spec 0.7 family, Agent M bfc40ed); morphology view morph_dictionary_v03 with targets morph:kNN; explicit admissibility fields; per-row B_nuis / B_known / B_decomp reporting replaces the N/B1/B2/B3 ladder; measured seconds per cell. r6 (2026-10-21, Agent R): morphology view = v03 dictionary (33 kept centres, support-row standardisation; runner key morph_concepts via GainModelV03.concept_values, Agent M eb16eef/4b2037c; exact key and field values to be confirmed by Agent M before registration); family admissibility constraints stated. DRAFT r5 (2026-10-21, Agent R): advance_rule.external -> replication v03 (downstream Section 2); downstream and registration blocks; order_of_operations. DRAFT r4 (2026-10-16): programme targets fixed by name from Agent D's runs/development/sprint_v06/blind_targets_ependymoma_pfa.json (replacing own_mp1..8). r3 (2026-10-16): explicit proposers.merge_rule = interleaved_rank and pooling.mode = all_folds (runner 6eda3cd); gene-set overlap exclusion (>= 0.2) and member-gene exclusion beside the |r| >= 0.9 guard. r2: proposers learned_search + classical_pair without cross-validated re-ranking; higher_order flag and funnel tallies; nuisance comparison with study one-hots; target loader columns",
+ "supersedes": "none: first campaign on the untouched HEST ependymoma (posterior fossa A) Visium cohort, the second blind-discovery cohort of SPRINT_PLAN section 1; same template as renal-spatial-v07-DRAFT",
+ "release": {
+  "name": "same frozen release as renal-spatial-v07 (learned-search checkpoint, relation v07_ho, hest_multi loader)",
+  "learned_search_checkpoint": {
+   "path": "runs/development/learned_search_v03/release/frozen.pt",
+   "sha256": "13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+  },
+  "relation_commit": "bfc40ed + 25fce7e (B_known per row) + 21a223a (admissibility read directly) (v06 clone; relation v03_rff)",
+  "propose_commit": "63f6a99 (v06 clone; learned_search.propose contract)",
+  "loader_commit": "2168b13 / 32f7832 (v06 clone; hest_multi contract + sprint partitions)",
+  "measurement_bank_commit": "327f9cb",
+  "commit_note": "hashes are those of ~/morpheus_work_v06; to update at merge into main and at registration",
+  "evidence_note": "deep learning enters as the frozen learned-search model (proposer and concept layer) and frozen measurement views (H-Optimus-0, SCimilarity, scGPT)",
+  "morphology_dictionary": {
+   "path": "runs/development/learned_search_v03/morphology_dictionary",
+   "centres_sha256": "38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad"
+  },
+  "learned_search_commits": "eb16eef (v03 packet proposer path), 4b2037c (concept_values = v03 dictionary)",
+  "registration_commit": "024778c",
+  "commits_recorded": {
+   "registration_head": "024778c",
+   "learned_search_receipts": "024778c",
+   "b_known_label_fix": "b7879b1"
+  }
+ },
+ "discovery": {
+  "candidate_budget": 50,
+  "candidate_budget_meaning": "frozen hypotheses per relationship family entering the ledger at 'proposed' after the fold sweep; raw per-target proposals are internal search and recorded with their cost",
+  "patient_unit": true,
+  "literature_blind": true,
+  "fold_seed": 20260926,
+  "n_folds": 5,
+  "outer_split": "five grouped patient folds over the 11 ependymoma patients (14 sections; all sections of a patient stay in one fold; the sample ids and patient keys are those of sprint_partitions_v01.json study 'ependymoma_pfa'), deterministic shuffle with fold_seed; folds hold 2-3 patients; each fold in turn is D_R, the other four are D_P; HVG selection, z-score statistics and programme ranking are fit on D_P only",
+  "proposals_per_target": 32,
+  "targets": {
+   "definition_rule": "every response is response-free defined, within-patient standardised, and never derived from a gene set under test",
+   "spatial_organisation": {
+    "programme:mp:Interferon/MHC-II (I)": "own-spot score of the Gavish meta-programme Interferon/MHC-II (I) (rank 1 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Interferon/MHC-II (II)": "own-spot score of the Gavish meta-programme Interferon/MHC-II (II) (rank 2 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Hypoxia": "own-spot score of the Gavish meta-programme Hypoxia (rank 3 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Respiration": "own-spot score of the Gavish meta-programme Respiration (rank 4 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Astrocytes": "own-spot score of the Gavish meta-programme Astrocytes (rank 5 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Stress": "own-spot score of the Gavish meta-programme Stress (rank 6 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:Metal-response": "own-spot score of the Gavish meta-programme Metal-response (rank 7 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised",
+    "programme:mp:EMT-III": "own-spot score of the Gavish meta-programme EMT-III (rank 8 by median within-section Moran's I over all 14 sections of ependymoma_pfa), within-patient standardised"
+   },
+   "morphology_dictionary_v03": {
+    "morph:k00, morph:k03, morph:k04, morph:k05, morph:k06, morph:k07, morph:k08, morph:k15, morph:k17, morph:k18, morph:k20, morph:k22, morph:k26, morph:k27, morph:k28, morph:k29": "similarity to kept centres at positions 0..15 of the v03 dictionary's kept list, within-patient standardised; the list is fixed before any outcome is seen"
+   }
+  },
+  "transforms": {
+   "own": "the column itself",
+   "nbr6": "mean over the 6 nearest spots within sample (KD-tree; a spot without neighbours keeps its own value)",
+   "nbr18": "mean over the 18 nearest spots within sample",
+   "contrast": "own - nbr6",
+   "note": "the transform grammar of morpheus_encoder.learned_search.propose (prefixed names own:/nbr6:/nbr18:/contrast:); every proposer receives the same transformed design"
+  },
+  "target_loader_columns": {
+   "morph:k00": {
+    "loader_target": "morph:k00",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k00 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k03": {
+    "loader_target": "morph:k03",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k03 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k04": {
+    "loader_target": "morph:k04",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k04 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k05": {
+    "loader_target": "morph:k05",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k05 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k06": {
+    "loader_target": "morph:k06",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k06 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k07": {
+    "loader_target": "morph:k07",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k07 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k08": {
+    "loader_target": "morph:k08",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k08 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k15": {
+    "loader_target": "morph:k15",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k15 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k17": {
+    "loader_target": "morph:k17",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k17 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k18": {
+    "loader_target": "morph:k18",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k18 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k20": {
+    "loader_target": "morph:k20",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k20 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k22": {
+    "loader_target": "morph:k22",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k22 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k26": {
+    "loader_target": "morph:k26",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k26 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k27": {
+    "loader_target": "morph:k27",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k27 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k28": {
+    "loader_target": "morph:k28",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k28 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "morph:k29": {
+    "loader_target": "morph:k29",
+    "maps_to": "similarity of the spot to kept v03 dictionary centre k29 (morph_dictionary_v03 view), within-patient standardised; covered spots only; for this target the morphology view drops the target column and every column with within-patient |r| >= 0.9 to it on D_P"
+   },
+   "programme:mp:Interferon/MHC-II (I)": {
+    "loader_target": "programme:mp:Interferon/MHC-II (I)",
+    "maps_to": "hest_multi target 'programme:mp:Interferon/MHC-II (I)' (fixed by name; rank 1 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Interferon/MHC-II (II)": {
+    "loader_target": "programme:mp:Interferon/MHC-II (II)",
+    "maps_to": "hest_multi target 'programme:mp:Interferon/MHC-II (II)' (fixed by name; rank 2 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Hypoxia": {
+    "loader_target": "programme:mp:Hypoxia",
+    "maps_to": "hest_multi target 'programme:mp:Hypoxia' (fixed by name; rank 3 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Respiration": {
+    "loader_target": "programme:mp:Respiration",
+    "maps_to": "hest_multi target 'programme:mp:Respiration' (fixed by name; rank 4 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Astrocytes": {
+    "loader_target": "programme:mp:Astrocytes",
+    "maps_to": "hest_multi target 'programme:mp:Astrocytes' (fixed by name; rank 5 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Stress": {
+    "loader_target": "programme:mp:Stress",
+    "maps_to": "hest_multi target 'programme:mp:Stress' (fixed by name; rank 6 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:Metal-response": {
+    "loader_target": "programme:mp:Metal-response",
+    "maps_to": "hest_multi target 'programme:mp:Metal-response' (fixed by name; rank 7 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   },
+   "programme:mp:EMT-III": {
+    "loader_target": "programme:mp:EMT-III",
+    "maps_to": "hest_multi target 'programme:mp:EMT-III' (fixed by name; rank 8 in runs/development/sprint_v06/blind_targets_ependymoma_pfa.json); the score is the mean within-patient-centred log1p-CPM of the programme's genes on the full panel, within-patient standardised"
+   }
+  },
+  "runner_support": "runner --episode hest_multi (commit 6eda3cd) serves own_mp and concept targets on any partition study (ccRCC and ependymoma); --episode hest_real keeps the registered v0.5 ccRCC substrate path",
+  "candidate_variables": "per family candidate_views under the four transforms: raw_genes = the D_P-selected 768 highly variable genes (log1p-CPM, within-patient centred, z-scored on D_P); programmes = 41 Gavish + 50 Hallmark scores; morph_concepts = the 64 concept coordinates; scimilarity / scgpt as v0.6",
+  "target_exclusions": {
+   "rule": "for a programme target, candidate programme and gene-set scores whose gene-set overlap coefficient with the target set (|A intersect B| / min(|A|, |B|)) is >= 0.2 are excluded, as are the target's own member genes, in addition to the within-patient |r| >= 0.9 leak guard; the excluded names are recorded per episode",
+   "overlap_threshold": 0.2,
+   "member_genes_excluded": true,
+   "abs_r_guard": 0.9,
+   "why": "the stub smokes showed near-copy target/candidate pairs, e.g. the Gavish Hypoxia meta-programme as target with HALLMARK_HYPOXIA as candidate; these share genes and score the same transcripts, so the 'relation' is the gene sets' overlap, not biology; this rule removes them",
+   "implementation": "Agent D (hest_multi episode exclusions), recorded under the episode's exclusions"
+  },
+  "excluded_from_candidates": [
+   "spot depth",
+   "patient identity",
+   "platform",
+   "for programme targets: the target programme under every transform, and any column with within-patient |r| >= 0.9 to the target or to its own k=6 neighbour mean on proposal rows (leak guard, listed per fold)",
+   "for morph_concept targets: every morph_concept and H-Optimus-0 column (the target is a function of that embedding) and CellViT descriptors"
+  ],
+  "comparison_model": {
+   "columns": [
+    "log1p spot depth (within-patient centred)"
+   ],
+   "patient": "patient enters by within-patient standardisation of the response and every column (as v0.5)",
+   "rule": "the comparison model is nuisance-only: log depth, patient centring, platform and study one-hots; fit on D_P and frozen; gain = R2(comparison + hypothesis, D_R) - R2(comparison, D_R) under relation v07_ho",
+   "why": "see renal_spatial_v07_notes.md: biological explanations are not competitors here, they are reported as the explanation decomposition",
+   "platform_note": "single platform (Visium); platform enters only if sections differ in chemistry"
+  },
+  "explanation_decomposition": {
+   "status": "reported for every receipt row and every frozen hypothesis, never a gate",
+   "baselines": "training spec 0.8 under relation v03_rff (Agent M 25fce7e): B_nuis = nuisance ridge (log depth; per-patient intercepts = within-patient standardisation); B_known = nuisance + the hest_multi programme scores (Hallmark + Gavish) after the target's exclusions (the target programme, its member genes, |r| >= 0.9 proxies and every programme with gene-set overlap coefficient >= 0.2 removed) + the three composition variables (CellViT PanNuke Neoplastic / Inflammatory / Connective fractions where every sample has a segmentation, else the top three programme principal axes; source recorded in episode_info.composition_source), ridge with LOPO penalty on D_P; B_decomp(S) = the best proper partition of S in the same family",
+   "row_fields": {
+    "B_nuis": "gain_B_nuis with gain_B_nuis_ci (identical to decomposition.gain_general / gain_general_ci and replication_gain / replication_gain_ci)",
+    "B_known": "gain_B_known with gain_B_known_ci (decomposition.gain_known / gain_known_ci; support LOPO decomposition.gain_known_proposal; columns used in decomposition.known_covariates)",
+    "B_decomp": "G_HO_B_decomp with G_HO_B_decomp_ci and best_decomposition (decomposition.G_HO / G_HO_ci; decomposition.gain_decompositions, gain_joint_vs_additive); the receipt's best_decomposition is chosen on held-out gain inside each bootstrap draw"
+   },
+   "replaces": "the N/B1/B2/B3 ladder (dbench.scripts.decomposition_ladder), which does not run under v03_rff in the hest_multi runner; no ladder step is run for these campaigns",
+   "pass_counts": {
+    "reported": "per cohort and per family, from funnel_aggregate.json baseline_pass_counts (dbench.prospective_campaign; same pass rule: >= 3 of 5 folds, required structured nulls p <= 0.05, BH q <= 0.10 within family): passes B_nuis (the internal rule); passes B_known (folds restricted to gain_B_known CI lower bound > 0); passes B_decomp (folds restricted to higher_order rows); passes B_known and B_decomp",
+    "status": "nothing gated; the finding classes A-F keep their meaning",
+    "downstream": "external replication and characterisation run on every B_nuis pass as before",
+    "paper_object_count": "the B_known column, with the higher-order (B_known and B_decomp) subset marked",
+    "state_cards": "the validation section of every state card carries the four passes and their folds"
+   }
+  },
+  "null_suite": {
+   "spatial_block": "within-patient 2D block swap (6x6 grid) of the response on D_R (destroys spatial organisation, keeps marginals)",
+   "within_patient_perm": "permutation of the response within patient on D_R",
+   "interaction_break": "for |S| >= 2, within-patient block swap of one constituent variable on D_R (breaks joint structure, keeps marginals)",
+   "draws": 199,
+   "p_value": "(1 + #null gains >= observed) / (draws + 1)",
+   "required_for_internal": [
+    "spatial_block",
+    "within_patient_perm",
+    "interaction_break"
+   ]
+  },
+  "advance_rule": {
+   "proposed": "per relationship family: top 50 hypotheses by mean held-out gain over folds in which they PASSED, ranked across proposers jointly; provenance kept (as v0.5)",
+   "internal": "passing in >= 3 of 5 folds, mean gain over passing folds >= min_gain (0.01), all required structured nulls p <= 0.05 in every passing fold, BH q <= 0.10 within family (as v0.5)",
+   "external": "external spatial replication unavailable (downstream Section 2.1: no independent public PFA Visium cohort); findings reported at internal stage with external replication marked unavailable",
+   "no_post_hoc_change": true,
+   "min_gain": 0.01,
+   "passing_fold": "held-out full-model R2 > 0, gain patient-bootstrap CI lower bound > 0 AND within_patient_perm null p <= 0.05 (the v0.5 rule; runner 'validated' carries exactly this rule)",
+   "per_patient_concentration": "reported per hypothesis; a flag, never a gate"
+  },
+  "pooling": {
+   "mode": "all_folds",
+   "rule": "the registered pooling step scores every frozen hypothesis in every fold, including the folds in which it was not frozen (each fold's held-out patients predicted from a fit on that fold's proposal patients, with the frozen variables, transforms and relation unchanged), so the pooled out-of-fold gain, its patient-bootstrap CI and the pooled nulls cover all patients; the folds in which the hypothesis was frozen are recorded beside it",
+   "pass_and_multiplicity": "fold pass and the internal rule as v0.5 (advance_rule); BH q <= 0.10 within family over the frozen set",
+   "implementation": "dbench.prospective_campaign.pooling_mode == 'all_folds' and the runner's cross-fold scoring of frozen hypotheses (--score-frozen; commit 6eda3cd)"
+  },
+  "higher_order_flag": "receipt row field higher_order = (G_HO patient-bootstrap CI lower bound > 0) AND (held-out full-model R2 > 0) under relation v03_rff, where G_HO = held-out gain(full) - max over proper partitions of held-out gain(partition), the maximum taken inside every bootstrap draw; the funnel tallies n_fold_rows_higher_order and n_frozen_higher_order beside the validated counts",
+  "outputs": {
+   "general_discoveries": "internal hypotheses (rule above) regardless of shape: linear, additive, conditional or joint; each with pooled general gain + CI, the per-row B_known and B_decomp gains and its proposer",
+   "higher_order_discoveries": "the subset of general discoveries with k >= 2 whose pooled G_HO (relation v03_rff decomposition family) has a patient-bootstrap CI lower bound > 0 with pooled held-out full-model R2 > 0; per-fold rows carry higher_order",
+   "note": "a discovery is never dropped for being linear or simple; G_HO only marks which discoveries additionally require the joint object"
+  },
+  "stop_rules": [
+   "a family with no internal hypothesis at budget 50: every hypothesis logged with stop_reason and proposer; reported; the advance rule never changes post hoc",
+   "sign reversal on any patient-level external transfer: the hypothesis stops at internal; hash stays locked",
+   "a proposer that fails to load (missing checkpoint or module) stops the run with a clear message; it is never silently replaced"
+  ],
+  "proposers": {
+   "learned_search": {
+    "description": "morpheus_encoder.learned_search.propose with the frozen checkpoint; runner --proposer learned_search; ranked variable sets under the four transforms, concept variables via its concept layer",
+    "checkpoint_path": "runs/development/learned_search_v03/release/frozen.pt",
+    "checkpoint_sha256": "13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+   },
+   "classical_pair": {
+    "description": "runner --proposer classical_pair: dbench.benchmark.methods ebm_ga2m (EBM GA2M pairwise terms) and gbm_interaction (gradient boosting + Friedman H) on the same proposal rows and design, their ranked lists interleaved by rank (run_general_discovery_packet._classical_pair_pool)"
+   },
+   "merge_rule": "interleaved_rank",
+   "budget": "equal: each proposer emits up to proposals_per_target hypotheses per (target, fold)",
+   "merge": "interleaved rank, as the runner merges the two classical methods: learned_search rank 1, classical_pair rank 1, learned_search rank 2, ...; a hypothesis nominated by both keeps its first position and records both proposers; the first proposals_per_target unique hypotheses are frozen",
+   "no_cv_reranking": "the pooled proposals are NOT re-ranked by cross-validated proposal gain (on Agent V's full-size cell that step took 8 h); implemented by the runner's --proposer all under merge_rule interleaved_rank (commit 6eda3cd)"
+  },
+  "proposers_in_all": [
+   "learned_search",
+   "classical_pair"
+  ],
+  "relation": "v03_rff",
+  "relation_note": "the governing spec's fixed family (morpheus_training_and_evaluation_spec.md 0.7), morpheus_encoder.learned_search.relation_v03 (Agent M, commit bfc40ed): kernel ridge on 256 random Fourier features of the set (Gaussian kernel, median-heuristic bandwidth on proposal rows, fixed RFF directions per set size, RFF_SEED 20261021) plus the set linearly plus an intercept; inputs standardised by proposal-row statistics; penalty from {0.01, 0.1, 1, 10} by leave-one-patient-out CV on proposal rows; fitted to the response after the nuisance ridge (log depth; per-patient intercepts = within-patient standardisation; penalty from {0.1, 1, 10, 100, 1000} by LOPO); general gain = R2(nuisance + f_S, D_R) - R2(nuisance, D_R) with a 200-draw held-out-patient bootstrap CI; decomposition family = every proper set partition of S, each block its own 256-RFF map, fitted jointly; nulls unchanged (spatial_block, within_patient_perm, interaction_break; the protocol's draw count; p = (1 + #null >= observed)/(draws + 1)), re-scoring the fixed proposal fit on nulled D_R (interaction_break re-predicts with the first constituent block-swapped); validation rule unchanged (held-out full R2 > 0 and gain CI lower bound > 0); batched on the GPU",
+  "response_transform": "every response is within-patient standardised (mean 0, sd 1 per patient on its own values)",
+  "rows": "spots with an H-Optimus-0 embedding (coverage-complete for concept targets and concept candidates); the kept fraction is recorded per fold and target; nothing is imputed",
+  "receipt_contract": [
+   "family",
+   "target",
+   "fold",
+   "proposer",
+   "variable_names",
+   "transforms",
+   "feature_form",
+   "replication_gain",
+   "replication_gain_ci",
+   "replication_r2_full",
+   "validated",
+   "higher_order",
+   "decomposition",
+   "nulls",
+   "provenance",
+   "n_relationships_tested",
+   "candidate_hash"
+  ],
+  "relationship_families": {
+   "programme_from_morphology": {
+    "targets": [
+     "programme:mp:Interferon/MHC-II (I)",
+     "programme:mp:Interferon/MHC-II (II)",
+     "programme:mp:Hypoxia",
+     "programme:mp:Respiration",
+     "programme:mp:Astrocytes",
+     "programme:mp:Stress",
+     "programme:mp:Metal-response",
+     "programme:mp:EMT-III"
+    ],
+    "candidate_views": [
+     "morph_dictionary_v03"
+    ],
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "budget": 50,
+    "question": "which morphology concepts (in the spot or its neighbourhood) carry information about a spatially organised molecular programme beyond depth",
+    "admissibility": {
+     "context": false,
+     "cross_modal": false,
+     "rule": "candidate_views restrict the set to morph_dictionary_v03 variables"
+    }
+   },
+   "morphology_from_molecular": {
+    "targets": [
+     "morph:k00",
+     "morph:k03",
+     "morph:k04",
+     "morph:k05",
+     "morph:k06",
+     "morph:k07",
+     "morph:k08",
+     "morph:k15",
+     "morph:k17",
+     "morph:k18",
+     "morph:k20",
+     "morph:k22",
+     "morph:k26",
+     "morph:k27",
+     "morph:k28",
+     "morph:k29"
+    ],
+    "candidate_views": [
+     "raw_genes",
+     "programmes",
+     "scimilarity",
+     "scgpt"
+    ],
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "budget": 50,
+    "question": "which molecular state (own or neighbourhood) predicts a learned morphology concept",
+    "admissibility": {
+     "context": false,
+     "cross_modal": false,
+     "rule": "candidate_views restrict the set to molecular variables; the target's own column and columns with within-patient |r| >= 0.9 to it are dropped"
+    },
+    "candidate_views_note": "scimilarity / scgpt are not served by the hest_multi runner (HEST_MULTI_VIEWS = raw_genes, programmes, morph_concepts) and are recorded as unavailable views in every receipt"
+   },
+   "context_conditioned_programme": {
+    "targets": [
+     "programme:mp:Interferon/MHC-II (I)",
+     "programme:mp:Interferon/MHC-II (II)",
+     "programme:mp:Hypoxia",
+     "programme:mp:Respiration",
+     "programme:mp:Astrocytes",
+     "programme:mp:Stress",
+     "programme:mp:Metal-response",
+     "programme:mp:EMT-III"
+    ],
+    "candidate_views": [
+     "raw_genes",
+     "programmes"
+    ],
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "requirement": "every hypothesis carries at least one own-spot variable and at least one nbr6, nbr18 or contrast variable (a relation conditioned on tissue context); hypotheses failing the requirement are counted in proposer_report and not frozen in this family",
+    "budget": 50,
+    "question": "programme relations that depend on the surrounding tissue",
+    "admissibility": {
+     "context": true,
+     "cross_modal": false,
+     "rule": "every hypothesis carries >= 1 own variable and >= 1 nbr6, nbr18 or contrast variable; applied by the learned search at candidate generation and by the runner as a post-filter on every proposer"
+    }
+   },
+   "cross_modal_sets": {
+    "targets": [
+     "programme:mp:Interferon/MHC-II (I)",
+     "programme:mp:Interferon/MHC-II (II)",
+     "programme:mp:Hypoxia",
+     "programme:mp:Respiration",
+     "programme:mp:Astrocytes",
+     "programme:mp:Stress",
+     "programme:mp:Metal-response",
+     "programme:mp:EMT-III"
+    ],
+    "candidate_views": [
+     "raw_genes",
+     "programmes",
+     "morph_dictionary_v03"
+    ],
+    "transforms": [
+     "own",
+     "nbr6",
+     "nbr18",
+     "contrast"
+    ],
+    "requirement": "every hypothesis carries at least one molecular variable (raw_genes or programmes) and at least one morphology (morph_dictionary_v03) variable, any transforms",
+    "budget": 50,
+    "question": "joint molecular and morphological sets",
+    "admissibility": {
+     "context": false,
+     "cross_modal": true,
+     "rule": "every hypothesis carries >= 1 raw_genes or programmes variable and >= 1 morph_dictionary_v03 variable; applied at generation and as a runner post-filter"
+    }
+   }
+  },
+  "programme_targets_source": {
+   "path": "runs/development/sprint_v06/blind_targets_ependymoma_pfa.json",
+   "sha256": "483bb50e4ad4f8b7612632cd5940794137c89fc222c54b52555af6dc4a52a4e4",
+   "commit": "2095729 (Agent D)",
+   "rule": "Gavish meta-programmes ranked by median within-section Moran's I (k = 6 nearest spots within section, row-standardised), computed once on all sections of the study; target choice only (no response, no hypothesis information)",
+   "n_spots": 32983,
+   "sections_used": 14,
+   "replaces": "own_mp1..own_mp8 (per-fold Moran ranking); the targets are now fixed by name for every fold"
+  },
+  "morphology_view": {
+   "runner_view_key": "morph_dictionary_v03",
+   "definition": "cosine similarities of the frozen H-Optimus-0 spot embedding, standardised per dimension on the fold's covered D_P spots, to the 33 kept centres of the frozen v03 morphology dictionary (runs/development/learned_search_v03/morphology_dictionary, centres.npz sha256 38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad; three-study population rule); covered spots only, nothing imputed",
+   "dictionary": {
+    "path": "runs/development/learned_search_v03/morphology_dictionary",
+    "centres_sha256": "38102157ad19130639614ba60f78ea85a153c4ad0d6e5746bb8dcf70988488ad",
+    "provenance_sha256": "857d96742346fb1e6eec784b6a40d9e2885a408111e8e08630502d2a876f861f",
+    "k": 64,
+    "n_kept": 33,
+    "kept_centre_indices": [
+     0,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     15,
+     17,
+     18,
+     20,
+     22,
+     26,
+     27,
+     28,
+     29,
+     33,
+     36,
+     38,
+     39,
+     40,
+     43,
+     44,
+     46,
+     49,
+     50,
+     51,
+     55,
+     56,
+     58,
+     59,
+     61,
+     63
+    ],
+    "retention_rule": "populated (>= 20 spots) by >= 3 studies",
+    "construction_studies": [
+     "andersson2021_her2",
+     "bladder_batf3",
+     "bladder_epithelial",
+     "hcc_trem1",
+     "he2020_breast_idc",
+     "lymphnode_idc",
+     "tenx_demo_bowel",
+     "tenx_demo_brain",
+     "tenx_demo_breast",
+     "tenx_demo_lung",
+     "tenx_demo_ovary",
+     "tenx_demo_prostate"
+    ]
+   },
+   "column_names": "morph_dictionary_v03:morph:kNN (NN = original centre index; kept list in PROVENANCE.json)",
+   "target_mapping": {
+    "morph_concept_0": "morph:k00",
+    "morph_concept_1": "morph:k03",
+    "morph_concept_2": "morph:k04",
+    "morph_concept_3": "morph:k05",
+    "morph_concept_4": "morph:k06",
+    "morph_concept_5": "morph:k07",
+    "morph_concept_6": "morph:k08",
+    "morph_concept_7": "morph:k15",
+    "morph_concept_8": "morph:k17",
+    "morph_concept_9": "morph:k18",
+    "morph_concept_10": "morph:k20",
+    "morph_concept_11": "morph:k22",
+    "morph_concept_12": "morph:k26",
+    "morph_concept_13": "morph:k27",
+    "morph_concept_14": "morph:k28",
+    "morph_concept_15": "morph:k29"
+   }
+  }
+ },
+ "cohorts": [
+  {
+   "id": "hest_ependymoma_discovery",
+   "role": "untouched blind discovery (held-out patients = Level 1 replication)",
+   "study_key": "ependymoma_pfa",
+   "sample_ids": "NCBI628-NCBI641 (sprint_partitions_v01.json)",
+   "sections": 14,
+   "patients": 11,
+   "gates": [
+    {
+     "id": "hest_ependymoma_st",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/spatial/hest_data/st",
+     "required": true
+    },
+    {
+     "id": "sprint_partitions",
+     "path": "/home/ubuntu/morpheus_work_v06/dbench/protocols/sprint_partitions_v01.json",
+     "required": true
+    },
+    {
+     "id": "ependymoma_hoptimus_embeddings",
+     "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20261016/ependymoma_pfa/embeddings/hoptimus",
+     "required": true,
+     "note": "written by the H-Optimus-0 job running at drafting (Agent E, hest_fm_embeddings_20261016/ependymoma_pfa)"
+    },
+    {
+     "id": "learned_search_frozen_checkpoint",
+     "path": "runs/development/learned_search_v03/release/frozen.pt",
+     "required": true,
+     "note": "release checkpoint, sha256 13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446"
+    }
+   ]
+  }
+ ],
+ "translation": {
+  "note": "no clinical or bulk cohort declared at drafting; translational analyses are TODO before registration and run only after internal freeze",
+  "forbidden": [
+   "calling a held-out ependymoma fold an external replication",
+   "outcome-guided state selection"
+  ]
+ },
+ "anti_leakage": {
+  "literature_before_internal_freeze": false,
+  "legacy_phase2_candidates_as_prospective_candidates": false,
+  "candidate_redefinition_after_external": false,
+  "truth_or_outcome_in_discovery": false,
+  "historical_answers_in_training": false
+ },
+ "ledger": {
+  "filename": "ependymoma_spatial_v01_ledger.jsonl"
+ },
+ "status": "REGISTERED 2026-10-22 by Agent R on the coordinator's instruction (checkpoint release/frozen.pt 13c36faa8cd9, code HEAD 024778c)",
+ "positive_controls": {
+  "purpose": "separate a technical failure from a real absence; informational only",
+  "controls": [
+   {
+    "name": "planted_context_relation",
+    "spec": "development run: nbr6 of a random programme planted into own_mp1 at 2 % of residual variance on fold 0",
+    "expected": "learned_search and classical_pair both rank it in their top 8; general discovery, G_HO CI includes 0"
+   },
+   {
+    "name": "planted_product",
+    "spec": "development run: a product of two raw genes planted into own_mp2 at 2 % of residual variance on fold 0",
+    "expected": "passes; G_HO CI lower bound > 0 (higher-order discovery)"
+   }
+  ]
+ },
+ "notes": "dbench/protocols/renal_spatial_v07_notes.md (same comparison-model and decomposition rationale)",
+ "downstream": {
+  "replication": "external spatial replication unavailable (downstream Section 2.1: no independent public PFA Visium cohort); findings reported at internal stage with external replication marked unavailable",
+  "replication_cohorts": [],
+  "consumer": "dbench/downstream/blind.py --run-dir runs/prospective/<campaign_id> --out runs/development/downstream_blind/<campaign_id> (reads campaign_manifest.json, funnel_aggregate.json, the ledger and receipts read only)",
+  "characterisation": "downstream Section 1.1-1.6 (dbench.downstream.characterise; 1.7 pathologist read scratched by the owner)",
+  "novelty": "dbench.downstream.novelty (literature lock before any query)",
+  "prioritisation": "dbench.downstream.therapeutic.prioritise (Section 4)",
+  "distillation": "dbench/protocols/assay_distillation_v03.json (state (a) within-patient, state (b) between-patient-inclusive; 7a on (b))",
+  "b_known_catalogue": "dbench/downstream/data/bknown_ccrcc_v01.json (renal); other organs: Hallmark + Gavish only until an organ catalogue is declared"
+ },
+ "registration": {
+  "fields_filled_at_registration": [
+   "campaign_id: '<stem>-DRAFT' -> '<stem>-<YYYYMMDD>'",
+   "status: DRAFT -> REGISTERED",
+   "release.learned_search_checkpoint.path / .sha256 (freeze)",
+   "discovery.proposers.learned_search.checkpoint_path / checkpoint_sha256 (same values)",
+   "cohorts[*].gates[id=learned_search_frozen_checkpoint].path (same path)",
+   "release.relation_commit / propose_commit / loader_commit / measurement_bank_commit (the commit the sweep runs)",
+   "programme targets by name where the draft says 'to be filled at registration'"
+  ],
+  "commands": [
+   "python -m dbench.prospective_campaign --protocol dbench/protocols/ependymoma_spatial_v01.json --run-dir runs/prospective/ependymoma-spatial-v01-<YYYYMMDD>",
+   "CAMPAIGN_PROTOCOL=dbench/protocols/ependymoma_spatial_v01.json bash dbench/scripts/blind_sweep.sh runs/prospective/ependymoma-spatial-v01-<YYYYMMDD> <workers>"
+  ],
+  "never": "these fields are not filled by any agent before the freeze; no write under runs/prospective before registration",
+  "measured_seconds_per_cell": {
+   "measurements": [
+    {
+     "study": "kidney_injury",
+     "seconds_total": "37-63",
+     "load": "16-17",
+     "proposal": "5-25",
+     "validation": "12-21",
+     "hardware": "A100",
+     "relation": "v03_rff",
+     "checkpoint": "v03",
+     "null_draws": 199,
+     "source": "Agent M re-run (bfc40ed); runs/development/learned_search_v03/blind_smoke/"
+    },
+    {
+     "study": "he2020_breast_idc",
+     "n_spots": 30548,
+     "seconds_total": 63,
+     "load": 13,
+     "proposal": 32,
+     "validation": 14,
+     "hardware": "A100",
+     "relation": "v03_rff",
+     "source": "Agent M re-run (bfc40ed)"
+    }
+   ],
+   "previous_engine": "v07_ho CPU path: 595 s for a kidney_injury cell",
+   "extrapolation_rule": "about 2.5 min per cell for Meylan (74k spots), extrapolated by Agent M from spot count (not run: blind cohort); other cohorts scale by spot count",
+   "this_cohort": {
+    "study": "ependymoma_pfa",
+    "n_spots": 33214,
+    "status": "not measured (blind cohort; measured on the first registered cell)"
+   }
+  },
+  "checkpoint_to_register": {
+   "path": "runs/development/learned_search_v03/release/frozen.pt",
+   "sha256": "13c36faa8cd9caa7121381b59dc06e5d35069492b565e1fa786e2e03a46f3446",
+   "what": "the full run's selected checkpoint continued ~4,000 steps under the corrected B_known definition (label fix b7879b1); FROZEN.md records the base checkpoint and sha256, the repair steps, the B_known calibration before / after and the final sha256 (Agent M)",
+   "not": "runs/development/learned_search_v03/full/frozen.pt",
+   "expected": "about 05:30 UTC 2026-10-22"
+  }
+ },
+ "order_of_operations": [
+  "1 checkpoint freeze: release.learned_search_checkpoint path + sha256 and the release commits filled by the coordinator",
+  "2 historical-rediscovery scoring on this cohort completed and its result locked (historical cohorts only); ccRCC external cohorts: renal-spatial-v07 replication v03 run and recorded on them first",
+  "3 programme targets fixed by name by the blind-targets procedure (Gavish meta-programmes ranked by median within-section Moran's I, all sections, response-free) and written into discovery.targets / relationship_families",
+  "4 protocol status REGISTERED, canonical sha256 recorded; python -m dbench.prospective_campaign --protocol <file> --run-dir runs/prospective/<campaign_id> (manifest + empty ledger; ready_for_discovery must be true)",
+  "5 fold sweep (per-row B_nuis / B_known / B_decomp gains reported in every receipt) (dbench/scripts/blind_sweep.sh), --aggregate, cross-fold scoring (--crossfold-requests, --score-frozen), final --aggregate: hypotheses frozen and hashed in the ledger",
+  "7 replication v03 on the declared replication cohorts (rule hashed before external values)",
+  "8 characterisation (literature closed), then the literature lock and the novelty pass (OpenAlex, Europe PMC) -- no literature is consulted at any earlier step"
+ ]
+}

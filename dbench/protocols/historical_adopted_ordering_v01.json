@@ -1,0 +1,9 @@
+{
+ "id": "historical_adopted_ordering_v01",
+ "declared": "2026-10-27, before any adopted-ordering historical run",
+ "purpose": "report the adopted ordering (exact support-fit gain) as 'ours' on the historical rediscovery tasks beside the pre-adoption learned-beam rows",
+ "unchanged": ["protocol dbench/protocols/historical_rediscovery_v02.json (sha256 f79f4170eb4decf75879e0bdabbd651b3bb59d5e28c65359571ef5cdd45594c7)", "tasks H1, H2, H3", "episodes and folds from dbench.scripts.historical_rediscovery.task_episode", "candidate design (build_design)", "budget 64 tested sets", "hit rule on the top 20", "query-validated rescoring by dbench.harness.historical_repair_v03 (unmodified)"],
+ "changed": "proposer only: the registered method 'support_screen' (dbench.benchmark.summary_baselines SupportScreen via search_by_scores, rank_by = support-fit patient-grouped cross-validated gain, no network); no new search procedure and no tuning",
+ "one_implementation_cap": "one driver (dbench/harness/historical_adopted.py) and one run; a failure is reported as a failure, not repaired by changing the rule",
+ "report": "rank of first v02 hit and rank of first query-validated hit beside the pre-adoption learned beam row; eligibility as in historical_repaired.md (H1 and H2 not primary-eligible)"
+}

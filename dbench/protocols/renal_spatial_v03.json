@@ -1,0 +1,172 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "renal-spatial-v03-20260926",
+  "supersedes": "renal-spatial-v02-20260926 (registered; its first receipts showed the competitor baseline contained the response for CellViT-fraction and neighbour-program targets, so every incremental gain read exactly 0; v0.3 adds the baseline exclusion clause and changes nothing else; no candidate was ever frozen under v0.2)",
+  "release": {
+    "name": "spatial-morpheus-v0.1 (frozen morpheus_factorized representation configuration, full width, no variance/covariance penalty)",
+    "contract": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/contract.json",
+      "sha256": "26bf6b052a4fe71c67f76f9ab6a2b0ac28889a1311905926020d6efd4ba98c3c"
+    },
+    "sealed_evidence": {
+      "path": "/home/ubuntu/morpheus_work/runs/general_v4_hest_ssl_holdout/sealed/hest_panel.json",
+      "sha256": "ae402d8b13c56f0bce27a73f66ed8903c9020731132c4430910fba6fa96ec72a"
+    },
+    "evidence_note": "the sealed evidence above is a development result on one slide (INT1) with shared spots between proposal and replication splits; it fixes the representation configuration only and is not cited as independent replication"
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "candidate_budget_meaning": "frozen candidates entering the ledger at stage 'proposed' after the fold sweep; raw per-target proposals are internal search and are never ledger entries",
+    "arm_split": {
+      "source": 30,
+      "morpheus_factorized": 20
+    },
+    "patient_unit": true,
+    "literature_blind": true,
+    "fold_seed": 20260926,
+    "n_folds": 5,
+    "outer_split": "five grouped patient folds over the 24 HEST ccRCC patients (1 sample = 1 patient), deterministic shuffle with fold_seed; each fold in turn is D_R, the other four are D_P; HVG selection, z-score statistics, PCA of image embeddings and program ranking are fit on D_P only",
+    "proposals_per_target": 32,
+    "targets": {
+      "definition_rule": "every response is response-free defined, within-patient centred, and never derived from a gene set under test",
+      "morphology": {
+        "morph_pc1": "H-optimus per-spot embedding PC 1, PCA fit on D_P, patient-residualised",
+        "morph_pc2": "H-optimus per-spot embedding PC 2",
+        "morph_pc3": "H-optimus per-spot embedding PC 3",
+        "morph_pc4": "H-optimus per-spot embedding PC 4",
+        "morph_pc5": "H-optimus per-spot embedding PC 5",
+        "cv_count": "CellViT nuclei assigned to the spot (nearest-spot assignment, radius = spot_diameter_fullres / 2), log1p",
+        "cv_area": "mean nuclear polygon area of the spot's nuclei",
+        "cv_frac_Neoplastic": "fraction of the spot's nuclei in CellViT class Neoplastic",
+        "cv_frac_Connective": "fraction Connective",
+        "cv_frac_Epithelial": "fraction Epithelial",
+        "cv_frac_Inflammatory": "fraction Inflammatory",
+        "cv_frac_Dead": "fraction Dead"
+      },
+      "spatial_organisation": {
+        "nbr_mp1..nbr_mp8": "neighbour-mean (k=6, within sample) of the 8 Gavish malignant metaprogram scores with the highest within-patient Moran's I on D_P; program identities recorded per fold in the receipt"
+      }
+    },
+    "candidate_variables": "the D_P-selected 300 highest-variance genes (log-CPM, patient fixed effect removed, z-scored with D_P statistics) and, for the morpheus_factorized arm, its representation coordinates mapped back to genes by response-free observed-coordinate links",
+    "excluded_from_candidates": [
+      "spot depth",
+      "patient identity",
+      "CellViT descriptors",
+      "image embeddings"
+    ],
+    "competitor_set": {
+      "always": [
+        "log1p spot depth",
+        "CellViT class fractions",
+        "the 41 Gavish program scores of the spot"
+      ],
+      "when_candidate_has_context": [
+        "neighbour-mean of the 41 program scores"
+      ],
+      "when_order_ge_3": [
+        "all pairwise products of the candidate's variables"
+      ],
+      "rule": "the simpler model is fit on D_P and frozen; gain = R2(simpler + candidate feature, D_R) - R2(simpler, D_R)",
+      "exclusion_clause": "the simpler model never contains the response or a deterministic function of it: for cv_frac_<class> targets all CellViT class fractions are excluded from the baseline (they sum to one); for nbr_mp<k> targets the target program's own neighbour mean is excluded (the other 40 neighbour-mean programs and the spot's own 41 program scores remain); receipts record the baseline column names"
+    },
+    "null_suite": {
+      "spatial_block": "within-patient 2D block swap (6x6 grid) of the response on D_R (destroys spatial organisation, keeps marginals)",
+      "within_patient_perm": "permutation of the response within patient on D_R",
+      "interaction_break": "for |S| >= 2, within-patient block swap of one constituent variable on D_R (breaks joint structure, keeps marginals)",
+      "draws": 199,
+      "p_value": "(1 + #null gains >= observed) / (draws + 1)"
+    },
+    "advance_rule": {
+      "proposed": "top 30 (source) + top 20 (morpheus_factorized) candidates by mean replication gain over folds in which they recur; recorded with fold_gains, null p per kind, baseline_width, arm, proposal mechanism, budget",
+      "internal": "recurrence in >= 3 of 5 folds with replication gain >= 0.02 in each, all three nulls p <= 0.05 in the recurring folds, BH q <= 0.10 over the 50 frozen candidates",
+      "external": "CPTAC ccRCC (110 patients) bulk-RNA transfer of the frozen feature vs slide-level H&E descriptors (H-optimus slide mean/std PCs, CellViT slide summaries): scale extension, same sign, p <= 0.05",
+      "orthogonal": "CPTAC proteomics transfer of the frozen feature, same sign, p <= 0.05",
+      "actionable": "predeclared prognosis (CPTAC OS, TCGA-KIRC OS) after state lock and an EIG-ranked discriminating experiment; treatment claims remain blocked",
+      "no_post_hoc_change": true
+    },
+    "stop_rules": [
+      "no candidate reaches 'internal' at budget 50: every candidate logged with stop_reason; report 'no discovery at budget 50 under v0.2'; v0.3 may change the target class, never this advance rule",
+      "all survivors labelled 'known' by the novelty tool: report as independent replication of known biology (levels 1-3), no novelty claim",
+      "sign reversal on any external transfer: candidate stops at 'internal'; hash stays locked"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "hest_ccrcc_discovery",
+      "role": "fresh measured-ST plus morphology discovery (Level 1 replication = held-out patients)",
+      "gates": [
+        {
+          "id": "hest_ccrcc_archive",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc",
+          "required": true
+        },
+        {
+          "id": "hest_ccrcc_patient_and_provenance_manifest",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc/PROSPECTIVE_PATIENT_PROVENANCE.json",
+          "required": true
+        },
+        {
+          "id": "hest_hoptimus_embeddings",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/ccrcc/embeddings/hoptimus",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cptac_ccrcc_external",
+      "role": "locked RNA-protein-H&E external (Level 2) and orthogonal (Level 3) validation",
+      "gates": [
+        {
+          "id": "cptac_molecular_tables",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/proteomics__umich.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_rna_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/transcriptomics__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_patient_mapping",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/cptac_ccrcc_patient_mapping.json",
+          "required": true
+        },
+        {
+          "id": "cptac_he_descriptors",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_ccrcc_he_descriptors_20260925/embeddings.h5",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tcga_kirc_prognosis",
+      "role": "second prognostic cohort after state lock (public cBioPortal acquisition)",
+      "gates": [
+        {
+          "id": "tcga_kirc_tables",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/tcga_kirc_20260925",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "translation": {
+    "cptac": "RNA-protein-H&E triangle only; spot-to-slide transfer is labelled scale extension",
+    "tcga_kirc": "predeclared prognosis and H&E-readout analysis after state lock",
+    "treatment_claim": "blocked pending raw patient-level randomized JAVELIN or CheckMate data",
+    "forbidden": [
+      "derived JAVELIN contrast tables as patient-level treatment evidence",
+      "outcome-guided state selection",
+      "calling a held-out HEST fold an external replication"
+    ]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "legacy_phase2_candidates_as_prospective_candidates": false,
+    "candidate_redefinition_after_external": false,
+    "truth_or_outcome_in_discovery": false
+  },
+  "ledger": {
+    "filename": "renal_spatial_v03_ledger.jsonl"
+  }
+}

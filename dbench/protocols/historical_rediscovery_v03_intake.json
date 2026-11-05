@@ -1,0 +1,51 @@
+{
+  "schema": "morpheus_historical_rediscovery_intake/v1",
+  "protocol_id": "historical-rediscovery-v03-intake",
+  "status": "FROZEN INTAKE ONLY: no method may run until each task has a source-data receipt, an answer proxy transcribed from the publication, and a canonical protocol hash. This file deliberately does not inherit v02 outcomes.",
+  "purpose": "Create a fresh retrospective panel of public paired H&E/spatial-transcriptomics studies. These cohorts are excluded from all concept fitting, normalisation fitting, learned-search meta-training, development selection, and blind-discovery analyses.",
+  "common_rules": {
+    "input": "The method sees the data and a broad pre-publication scientific target, not the published answer variables or relation.",
+    "selection": "Task wording, answer proxies, direction, spatial transform, candidate pools, split, budget, and scoring rule must be written and hashed before any MORPHEUS or baseline output is viewed.",
+    "patient_split": "All slides from a patient stay together; a deterministic patient-disjoint support/query split is predeclared in the task-specific frozen protocol.",
+    "output": "Keep full ranked lists, candidate counts, query-side gain and all misses. Historical results are not used for tuning."
+  },
+  "studies": [
+    {
+      "intake_id": "HR3_TNBC",
+      "accession": "GSE210616",
+      "disease": "triple-negative breast cancer",
+      "technology": "10x Visium paired with H&E",
+      "publication": "Spatial transcriptomic analysis of a diverse patient cohort reveals a conserved architecture in triple-negative breast cancer",
+      "data_receipt_required": ["processed expression", "spot coordinates", "matched H&E or authoritative image link", "patient/section mapping", "gene symbols"],
+      "candidate_finding_class": "spatial tumour microenvironment architecture",
+      "task_status": "awaiting publication-to-data identity and answer-proxy transcription; no output opened"
+    },
+    {
+      "intake_id": "HR3_BREAST_PLASTICITY",
+      "accession": "GSE213688",
+      "disease": "plastic and non-plastic breast cancer",
+      "technology": "10x Visium paired with H&E",
+      "publication": "Spatial Transcriptomics Reveal Pitfalls and Opportunities for the Detection of Rare High-Plasticity Breast Cancer Subtypes",
+      "data_receipt_required": ["processed expression", "spot coordinates", "matched H&E from Zenodo release", "patient/section mapping", "gene symbols"],
+      "candidate_finding_class": "plasticity-associated tumour/stroma organisation",
+      "task_status": "awaiting publication-to-data identity and answer-proxy transcription; no output opened"
+    },
+    {
+      "intake_id": "HR3_HCC_CABONIVO",
+      "accession": "GSE238264",
+      "disease": "hepatocellular carcinoma treated with neoadjuvant cabozantinib and nivolumab",
+      "technology": "10x Visium paired with H&E",
+      "publication": "Spatial transcriptomics analysis of neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma identifies independent mechanisms of resistance and recurrence",
+      "data_receipt_required": ["processed expression", "spot coordinates", "matched H&E", "patient/response mapping", "gene symbols"],
+      "candidate_finding_class": "immune-poor tumour region and HCC-CAF spatial interaction",
+      "task_status": "awaiting publication-to-data identity and answer-proxy transcription; no output opened"
+    }
+  ],
+  "exclusions": {
+    "concept_layer": "all three studies",
+    "normalisation": "all three studies",
+    "learned_search_meta_training": "all three studies",
+    "architecture_selection": "all three studies",
+    "historical_v02": "pilot-only and not pooled with v03"
+  }
+}

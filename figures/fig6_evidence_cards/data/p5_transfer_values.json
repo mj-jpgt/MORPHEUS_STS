@@ -1,0 +1,34 @@
+{
+  "source": "~/morpheus_work_tx/runs/development/translation_v10/layer_p5.json (over nuisance) and p5_known_addendum.json (over known biology); frozen f_S, no refit; patient-bootstrap 95% CI; matched-null 95th percentile from 99 Moran-matched random-programme draws",
+  "cohorts": {
+    "valdeolivas2024_crc": {"label": "Colorectal (Valdeolivas 2024)", "n_patients": 6},
+    "ependymoma_pfa": {"label": "Ependymoma (PFA)", "n_patients": 11}
+  },
+  "cards": {
+    "G3": {
+      "valdeolivas2024_crc": {"nuis": [0.300, 0.245, 0.388], "nuis_null_q95": -0.144, "known": [0.261, 0.194, 0.341], "known_null_q95": -0.116, "pass_nuis": true, "pass_known": true},
+      "ependymoma_pfa":      {"nuis": [0.084, 0.003, 0.151], "nuis_null_q95": -0.042, "known": [0.050, -0.018, 0.114], "known_null_q95": -0.042, "pass_nuis": true, "pass_known": false}
+    },
+    "G4": {
+      "valdeolivas2024_crc": {"nuis": [0.044, -0.160, 0.304], "nuis_null_q95": -0.164, "known": [0.009, -0.209, 0.249], "known_null_q95": -0.143, "pass_nuis": false, "pass_known": false},
+      "ependymoma_pfa":      {"nuis": [0.126, -0.009, 0.200], "nuis_null_q95": -0.152, "known": [0.084, -0.044, 0.160], "known_null_q95": -0.139, "pass_nuis": false, "pass_known": false}
+    },
+    "G5": {
+      "valdeolivas2024_crc": {"nuis": [-0.037, -0.257, 0.074], "nuis_null_q95": -0.018, "known": null, "pass_nuis": false},
+      "ependymoma_pfa":      {"nuis": [0.023, -0.073, 0.093], "nuis_null_q95": null, "known": null, "pass_nuis": false}
+    },
+    "G7": {
+      "valdeolivas2024_crc": {"nuis": [-0.052, -0.290, 0.060], "nuis_null_q95": -0.020, "known": null, "pass_nuis": false},
+      "ependymoma_pfa":      {"nuis": [0.020, -0.063, 0.069], "nuis_null_q95": null, "known": null, "pass_nuis": false}
+    }
+  },
+  "not_testable": {
+    "gse294385": "discovery genes absent from the panel (G3: CAV3, PDE4DIP; G4: DAPL1; G5/G7: BNIP3)",
+    "ji2020_cscc": "legacy ST panel lacks 53 myogenesis genes (G3), 31 apical-junction genes (G4), SLC3A1 (G5/G7); positive control also fails there"
+  },
+  "positive_control": {
+    "rule": "split-half Hallmark hypoxia relation transferred the same way",
+    "valdeolivas2024_crc": [0.108, 0.083, 0.137],
+    "ependymoma_pfa": [0.234, 0.156, 0.281]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "morpheus_assay_distillation/v2",
+  "protocol_id": "assay-distillation-v02",
+  "created_utc": "2026-10-21",
+  "governing_plan": ".claude/learned_search_v02.md, 'MORPHEUS Downstream' Section 7 (v01 = the specification text); coordinator decision 2026-10-21 on the G18 Section 7 null",
+  "status": "FROZEN before any blind finding arrives; canonical hash in dbench/protocols/assay_distillation_v02.sha256; a change is a new protocol id",
+  "implementation": "dbench/downstream/distill.py (students, evaluation, diagnosis_7b, tcga_internal_detector); state-card fields distillation.primary_7a / diagnosis_7b / bulk_anchored_7c (dbench.downstream.locks.CARD_OPTIONAL)",
+  "ladder": {
+    "7a_primary": {
+      "role": "primary route, unchanged from Section 7",
+      "students": "ridge, 2-layer MLP (512, GELU, dropout 0.2), gated attention over region bags; trained on spatial discovery patients only, frozen H-Optimus-0 embeddings, state score as the only target",
+      "evaluation": "Section 7.5: held-out spatial patients; TCGA-KIRC pooled, leave-one-site-out-calibrated and within-site-centred Spearman against the Section 5 bulk score; CPTAC against RNA and protein scores; baselines STPath and DeepSpot where run",
+      "success": "best student TCGA pooled Spearman > 0.3 with patient-bootstrap CI above the permuted-target null q95, and within-site-centred Spearman above the available STPath / DeepSpot baselines",
+      "card_field": "distillation.primary_7a (and per_model / success / site_decomposition)"
+    },
+    "7b_diagnosis": {
+      "role": "run for every finding whether 7a passes or not, so a 7a null is interpretable; reported, never gated",
+      "i_spot_level": "Spearman between the ridge student's held-out predictions and the state score on held-out spatial patients (patient-grouped folds), with the permuted-target null; answers whether H&E predicts the state at all before any bulk reference enters",
+      "ii_between_patient_share": "share of the state score's spot variance carried by patient means in the spatial cohort (spot-weighted one-way decomposition), reported for the state as defined in the card; a state with a share near 0 has no patient-level quantity for a bulk proxy to track, which is a property of the finding, not a failure of the student",
+      "iii_preparation_split": "slide-cohort Spearman of the 7a ridge student split by preparation class: TCGA-KIRC diagnostic slides (DX, FFPE) as one class; CPTAC-CCRCC by the public CPTAC clinical field tumor_tissue_collection_frozen_with_oct (Yes / No). The CPTAC DICOM specimen-preparation sequence records staining only, so the clinical procurement field is the only public preparation label; this limitation is reported beside the split",
+      "card_field": "distillation.diagnosis_7b"
+    },
+    "7c_bulk_anchored": {
+      "role": "secondary, weaker claim: 'the state is detectable from H&E when a bulk label is available'; never a replacement for 7a and never called spatial-to-bulk transfer",
+      "detector": "ridge on slide-mean H-Optimus-0 embeddings trained inside TCGA-KIRC with the bulk molecular score as label (dbench.downstream.distill.tcga_internal_detector): repeated 5-fold CV (10 repeats, seed 20260824), leave-one-tissue-source-site-out, within-site-centred Spearman for both",
+      "card_field": "distillation.bulk_anchored_7c, written in a separate block from primary_7a"
+    }
+  },
+  "deepspot": "inference deferred until the GPU is free after the registry freeze; launch script dbench/downstream/scripts/deepspot_inference.sh (Kidney_HEST1K, H-Optimus-0); the kidney model was trained on HEST data that includes the discovery cohort, so its discovery-cohort numbers are not independent and only its TCGA/CPTAC numbers stand as a baseline. The authors' precomputed TCGA predictions (huggingface nonchev/TCGA_virtual_spatial_transcriptomics, ratschlab/TCGA_virtual_spatial_transcriptomics_atlas) are gated and are not used",
+  "stpath": "unavailable (input features from gated Prov-GigaPath, outside the H-Optimus-0-only rule)",
+  "gates": "7a success is the only declared success rule; 7b and 7c are reported, never gated",
+  "supersedes": {"protocol_id": "downstream Section 7 text (v01)", "what_changes": "adds the pre-declared 7b diagnosis and 7c bulk-anchored secondary; 7a unchanged"}
+}

@@ -1,0 +1,668 @@
+{
+ "overlap_annotation": [
+  {
+   "barkley_module": "Cycle",
+   "n_genes": 297,
+   "best_matches": [
+    {
+     "gavish_mp_id": 1,
+     "gavish_mp_name": "Cell Cycle - G2/M",
+     "n_shared": 50,
+     "jaccard": 0.1684,
+     "frac_of_barkley_module": 0.1684,
+     "frac_of_gavish_mp": 1.0
+    },
+    {
+     "gavish_mp_id": 2,
+     "gavish_mp_name": "Cell Cycle - G1/S",
+     "n_shared": 50,
+     "jaccard": 0.1684,
+     "frac_of_barkley_module": 0.1684,
+     "frac_of_gavish_mp": 1.0
+    },
+    {
+     "gavish_mp_id": 3,
+     "gavish_mp_name": "Cell Cylce HMG-rich",
+     "n_shared": 27,
+     "jaccard": 0.0844,
+     "frac_of_barkley_module": 0.0909,
+     "frac_of_gavish_mp": 0.54
+    },
+    {
+     "gavish_mp_id": 4,
+     "gavish_mp_name": "Chromatin",
+     "n_shared": 6,
+     "jaccard": 0.0176,
+     "frac_of_barkley_module": 0.0202,
+     "frac_of_gavish_mp": 0.12
+    },
+    {
+     "gavish_mp_id": 8,
+     "gavish_mp_name": "Proteasomal degradation",
+     "n_shared": 5,
+     "jaccard": 0.0146,
+     "frac_of_barkley_module": 0.0168,
+     "frac_of_gavish_mp": 0.1
+    }
+   ]
+  },
+  {
+   "barkley_module": "Stress",
+   "n_genes": 233,
+   "best_matches": [
+    {
+     "gavish_mp_id": 5,
+     "gavish_mp_name": "Stress",
+     "n_shared": 43,
+     "jaccard": 0.1792,
+     "frac_of_barkley_module": 0.1845,
+     "frac_of_gavish_mp": 0.86
+    },
+    {
+     "gavish_mp_id": 22,
+     "gavish_mp_name": "Secreted I",
+     "n_shared": 41,
+     "jaccard": 0.1694,
+     "frac_of_barkley_module": 0.176,
+     "frac_of_gavish_mp": 0.82
+    },
+    {
+     "gavish_mp_id": 7,
+     "gavish_mp_name": "Stress (in vitro)",
+     "n_shared": 12,
+     "jaccard": 0.0443,
+     "frac_of_barkley_module": 0.0515,
+     "frac_of_gavish_mp": 0.24
+    },
+    {
+     "gavish_mp_id": 14,
+     "gavish_mp_name": "EMT-III",
+     "n_shared": 9,
+     "jaccard": 0.0328,
+     "frac_of_barkley_module": 0.0386,
+     "frac_of_gavish_mp": 0.18
+    },
+    {
+     "gavish_mp_id": 16,
+     "gavish_mp_name": "MES (glioma)",
+     "n_shared": 7,
+     "jaccard": 0.0254,
+     "frac_of_barkley_module": 0.03,
+     "frac_of_gavish_mp": 0.14
+    }
+   ]
+  },
+  {
+   "barkley_module": "Interferon",
+   "n_genes": 136,
+   "best_matches": [
+    {
+     "gavish_mp_id": 17,
+     "gavish_mp_name": "Interferon/MHC-II (I)",
+     "n_shared": 50,
+     "jaccard": 0.3676,
+     "frac_of_barkley_module": 0.3676,
+     "frac_of_gavish_mp": 1.0
+    },
+    {
+     "gavish_mp_id": 18,
+     "gavish_mp_name": "Interferon/MHC-II (II)",
+     "n_shared": 16,
+     "jaccard": 0.0941,
+     "frac_of_barkley_module": 0.1176,
+     "frac_of_gavish_mp": 0.32
+    },
+    {
+     "gavish_mp_id": 15,
+     "gavish_mp_name": "EMT IV",
+     "n_shared": 8,
+     "jaccard": 0.0449,
+     "frac_of_barkley_module": 0.0588,
+     "frac_of_gavish_mp": 0.16
+    },
+    {
+     "gavish_mp_id": 23,
+     "gavish_mp_name": "Secreted II",
+     "n_shared": 7,
+     "jaccard": 0.0391,
+     "frac_of_barkley_module": 0.0515,
+     "frac_of_gavish_mp": 0.14
+    },
+    {
+     "gavish_mp_id": 35,
+     "gavish_mp_name": "Hemato-related-I",
+     "n_shared": 5,
+     "jaccard": 0.0276,
+     "frac_of_barkley_module": 0.0368,
+     "frac_of_gavish_mp": 0.1
+    }
+   ]
+  },
+  {
+   "barkley_module": "Hypoxia",
+   "n_genes": 46,
+   "best_matches": [
+    {
+     "gavish_mp_id": 6,
+     "gavish_mp_name": "Hypoxia",
+     "n_shared": 26,
+     "jaccard": 0.3714,
+     "frac_of_barkley_module": 0.5652,
+     "frac_of_gavish_mp": 0.52
+    },
+    {
+     "gavish_mp_id": 39,
+     "gavish_mp_name": "Metal-response",
+     "n_shared": 2,
+     "jaccard": 0.0213,
+     "frac_of_barkley_module": 0.0435,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 40,
+     "gavish_mp_name": "PDAC-related",
+     "n_shared": 2,
+     "jaccard": 0.0213,
+     "frac_of_barkley_module": 0.0435,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 5,
+     "gavish_mp_name": "Stress",
+     "n_shared": 1,
+     "jaccard": 0.0105,
+     "frac_of_barkley_module": 0.0217,
+     "frac_of_gavish_mp": 0.02
+    },
+    {
+     "gavish_mp_id": 7,
+     "gavish_mp_name": "Stress (in vitro)",
+     "n_shared": 1,
+     "jaccard": 0.0105,
+     "frac_of_barkley_module": 0.0217,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Oxphos",
+   "n_genes": 24,
+   "best_matches": [
+    {
+     "gavish_mp_id": 21,
+     "gavish_mp_name": "Respiration",
+     "n_shared": 13,
+     "jaccard": 0.2131,
+     "frac_of_barkley_module": 0.5417,
+     "frac_of_gavish_mp": 0.26
+    },
+    {
+     "gavish_mp_id": 3,
+     "gavish_mp_name": "Cell Cylce HMG-rich",
+     "n_shared": 2,
+     "jaccard": 0.0278,
+     "frac_of_barkley_module": 0.0833,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 20,
+     "gavish_mp_name": "MYC",
+     "n_shared": 2,
+     "jaccard": 0.0278,
+     "frac_of_barkley_module": 0.0833,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 11,
+     "gavish_mp_name": "Translation initiation",
+     "n_shared": 1,
+     "jaccard": 0.0137,
+     "frac_of_barkley_module": 0.0417,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Metal",
+   "n_genes": 9,
+   "best_matches": [
+    {
+     "gavish_mp_id": 39,
+     "gavish_mp_name": "Metal-response",
+     "n_shared": 3,
+     "jaccard": 0.0536,
+     "frac_of_barkley_module": 0.3333,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 25,
+     "gavish_mp_name": "Astrocytes",
+     "n_shared": 2,
+     "jaccard": 0.0351,
+     "frac_of_barkley_module": 0.2222,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 15,
+     "gavish_mp_name": "EMT IV",
+     "n_shared": 1,
+     "jaccard": 0.0172,
+     "frac_of_barkley_module": 0.1111,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Mesenchymal",
+   "n_genes": 18,
+   "best_matches": [
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 10,
+     "jaccard": 0.1724,
+     "frac_of_barkley_module": 0.5556,
+     "frac_of_gavish_mp": 0.2
+    },
+    {
+     "gavish_mp_id": 25,
+     "gavish_mp_name": "Astrocytes",
+     "n_shared": 3,
+     "jaccard": 0.0462,
+     "frac_of_barkley_module": 0.1667,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 31,
+     "gavish_mp_name": "Alveolar",
+     "n_shared": 2,
+     "jaccard": 0.0303,
+     "frac_of_barkley_module": 0.1111,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 13,
+     "gavish_mp_name": "EMT-II",
+     "n_shared": 1,
+     "jaccard": 0.0149,
+     "frac_of_barkley_module": 0.0556,
+     "frac_of_gavish_mp": 0.02
+    },
+    {
+     "gavish_mp_id": 15,
+     "gavish_mp_name": "EMT IV",
+     "n_shared": 1,
+     "jaccard": 0.0149,
+     "frac_of_barkley_module": 0.0556,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "pEMT",
+   "n_genes": 144,
+   "best_matches": [
+    {
+     "gavish_mp_id": 13,
+     "gavish_mp_name": "EMT-II",
+     "n_shared": 36,
+     "jaccard": 0.2278,
+     "frac_of_barkley_module": 0.25,
+     "frac_of_gavish_mp": 0.72
+    },
+    {
+     "gavish_mp_id": 14,
+     "gavish_mp_name": "EMT-III",
+     "n_shared": 25,
+     "jaccard": 0.1479,
+     "frac_of_barkley_module": 0.1736,
+     "frac_of_gavish_mp": 0.5
+    },
+    {
+     "gavish_mp_id": 16,
+     "gavish_mp_name": "MES (glioma)",
+     "n_shared": 12,
+     "jaccard": 0.0659,
+     "frac_of_barkley_module": 0.0833,
+     "frac_of_gavish_mp": 0.24
+    },
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 11,
+     "jaccard": 0.0601,
+     "frac_of_barkley_module": 0.0764,
+     "frac_of_gavish_mp": 0.22
+    },
+    {
+     "gavish_mp_id": 39,
+     "gavish_mp_name": "Metal-response",
+     "n_shared": 9,
+     "jaccard": 0.0486,
+     "frac_of_barkley_module": 0.0625,
+     "frac_of_gavish_mp": 0.18
+    }
+   ]
+  },
+  {
+   "barkley_module": "Alveolar",
+   "n_genes": 16,
+   "best_matches": [
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 3,
+     "jaccard": 0.0476,
+     "frac_of_barkley_module": 0.1875,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 13,
+     "gavish_mp_name": "EMT-II",
+     "n_shared": 2,
+     "jaccard": 0.0312,
+     "frac_of_barkley_module": 0.125,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 14,
+     "gavish_mp_name": "EMT-III",
+     "n_shared": 2,
+     "jaccard": 0.0312,
+     "frac_of_barkley_module": 0.125,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 40,
+     "gavish_mp_name": "PDAC-related",
+     "n_shared": 2,
+     "jaccard": 0.0312,
+     "frac_of_barkley_module": 0.125,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 6,
+     "gavish_mp_name": "Hypoxia",
+     "n_shared": 1,
+     "jaccard": 0.0154,
+     "frac_of_barkley_module": 0.0625,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Basal",
+   "n_genes": 33,
+   "best_matches": [
+    {
+     "gavish_mp_id": 15,
+     "gavish_mp_name": "EMT IV",
+     "n_shared": 14,
+     "jaccard": 0.2029,
+     "frac_of_barkley_module": 0.4242,
+     "frac_of_gavish_mp": 0.28
+    },
+    {
+     "gavish_mp_id": 29,
+     "gavish_mp_name": "NPC/OPC",
+     "n_shared": 2,
+     "jaccard": 0.0247,
+     "frac_of_barkley_module": 0.0606,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 4,
+     "gavish_mp_name": "Chromatin",
+     "n_shared": 1,
+     "jaccard": 0.0122,
+     "frac_of_barkley_module": 0.0303,
+     "frac_of_gavish_mp": 0.02
+    },
+    {
+     "gavish_mp_id": 7,
+     "gavish_mp_name": "Stress (in vitro)",
+     "n_shared": 1,
+     "jaccard": 0.0122,
+     "frac_of_barkley_module": 0.0303,
+     "frac_of_gavish_mp": 0.02
+    },
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 1,
+     "jaccard": 0.0122,
+     "frac_of_barkley_module": 0.0303,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Squamous",
+   "n_genes": 64,
+   "best_matches": [
+    {
+     "gavish_mp_id": 19,
+     "gavish_mp_name": "Epithelial Senescence",
+     "n_shared": 21,
+     "jaccard": 0.2258,
+     "frac_of_barkley_module": 0.3281,
+     "frac_of_gavish_mp": 0.42
+    },
+    {
+     "gavish_mp_id": 40,
+     "gavish_mp_name": "PDAC-related",
+     "n_shared": 5,
+     "jaccard": 0.0459,
+     "frac_of_barkley_module": 0.0781,
+     "frac_of_gavish_mp": 0.1
+    },
+    {
+     "gavish_mp_id": 23,
+     "gavish_mp_name": "Secreted II",
+     "n_shared": 4,
+     "jaccard": 0.0364,
+     "frac_of_barkley_module": 0.0625,
+     "frac_of_gavish_mp": 0.08
+    },
+    {
+     "gavish_mp_id": 31,
+     "gavish_mp_name": "Alveolar",
+     "n_shared": 4,
+     "jaccard": 0.0364,
+     "frac_of_barkley_module": 0.0625,
+     "frac_of_gavish_mp": 0.08
+    },
+    {
+     "gavish_mp_id": 6,
+     "gavish_mp_name": "Hypoxia",
+     "n_shared": 1,
+     "jaccard": 0.0088,
+     "frac_of_barkley_module": 0.0156,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "Glandular",
+   "n_genes": 70,
+   "best_matches": [
+    {
+     "gavish_mp_id": 30,
+     "gavish_mp_name": "PDAC-classical",
+     "n_shared": 22,
+     "jaccard": 0.2245,
+     "frac_of_barkley_module": 0.3143,
+     "frac_of_gavish_mp": 0.44
+    },
+    {
+     "gavish_mp_id": 23,
+     "gavish_mp_name": "Secreted II",
+     "n_shared": 12,
+     "jaccard": 0.1111,
+     "frac_of_barkley_module": 0.1714,
+     "frac_of_gavish_mp": 0.24
+    },
+    {
+     "gavish_mp_id": 19,
+     "gavish_mp_name": "Epithelial Senescence",
+     "n_shared": 9,
+     "jaccard": 0.0811,
+     "frac_of_barkley_module": 0.1286,
+     "frac_of_gavish_mp": 0.18
+    },
+    {
+     "gavish_mp_id": 40,
+     "gavish_mp_name": "PDAC-related",
+     "n_shared": 9,
+     "jaccard": 0.0811,
+     "frac_of_barkley_module": 0.1286,
+     "frac_of_gavish_mp": 0.18
+    },
+    {
+     "gavish_mp_id": 31,
+     "gavish_mp_name": "Alveolar",
+     "n_shared": 8,
+     "jaccard": 0.0714,
+     "frac_of_barkley_module": 0.1143,
+     "frac_of_gavish_mp": 0.16
+    }
+   ]
+  },
+  {
+   "barkley_module": "Ciliated",
+   "n_genes": 39,
+   "best_matches": [
+    {
+     "gavish_mp_id": 24,
+     "gavish_mp_name": "Cilia",
+     "n_shared": 17,
+     "jaccard": 0.2361,
+     "frac_of_barkley_module": 0.4359,
+     "frac_of_gavish_mp": 0.34
+    },
+    {
+     "gavish_mp_id": 30,
+     "gavish_mp_name": "PDAC-classical",
+     "n_shared": 1,
+     "jaccard": 0.0114,
+     "frac_of_barkley_module": 0.0256,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "AC",
+   "n_genes": 35,
+   "best_matches": [
+    {
+     "gavish_mp_id": 25,
+     "gavish_mp_name": "Astrocytes",
+     "n_shared": 14,
+     "jaccard": 0.1972,
+     "frac_of_barkley_module": 0.4,
+     "frac_of_gavish_mp": 0.28
+    },
+    {
+     "gavish_mp_id": 18,
+     "gavish_mp_name": "Interferon/MHC-II (II)",
+     "n_shared": 3,
+     "jaccard": 0.0366,
+     "frac_of_barkley_module": 0.0857,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 39,
+     "gavish_mp_name": "Metal-response",
+     "n_shared": 3,
+     "jaccard": 0.0366,
+     "frac_of_barkley_module": 0.0857,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 2,
+     "jaccard": 0.0241,
+     "frac_of_barkley_module": 0.0571,
+     "frac_of_gavish_mp": 0.04
+    },
+    {
+     "gavish_mp_id": 38,
+     "gavish_mp_name": "Glutathione",
+     "n_shared": 2,
+     "jaccard": 0.0241,
+     "frac_of_barkley_module": 0.0571,
+     "frac_of_gavish_mp": 0.04
+    }
+   ]
+  },
+  {
+   "barkley_module": "OPC",
+   "n_genes": 8,
+   "best_matches": [
+    {
+     "gavish_mp_id": 27,
+     "gavish_mp_name": "Oligo Progenitor",
+     "n_shared": 4,
+     "jaccard": 0.0741,
+     "frac_of_barkley_module": 0.5,
+     "frac_of_gavish_mp": 0.08
+    },
+    {
+     "gavish_mp_id": 29,
+     "gavish_mp_name": "NPC/OPC",
+     "n_shared": 3,
+     "jaccard": 0.0545,
+     "frac_of_barkley_module": 0.375,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 12,
+     "gavish_mp_name": "EMT-I",
+     "n_shared": 1,
+     "jaccard": 0.0175,
+     "frac_of_barkley_module": 0.125,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  },
+  {
+   "barkley_module": "NPC",
+   "n_genes": 30,
+   "best_matches": [
+    {
+     "gavish_mp_id": 26,
+     "gavish_mp_name": "NPC Glioma",
+     "n_shared": 17,
+     "jaccard": 0.2698,
+     "frac_of_barkley_module": 0.5667,
+     "frac_of_gavish_mp": 0.34
+    },
+    {
+     "gavish_mp_id": 29,
+     "gavish_mp_name": "NPC/OPC",
+     "n_shared": 3,
+     "jaccard": 0.039,
+     "frac_of_barkley_module": 0.1,
+     "frac_of_gavish_mp": 0.06
+    },
+    {
+     "gavish_mp_id": 28,
+     "gavish_mp_name": "Oligo normal",
+     "n_shared": 1,
+     "jaccard": 0.0127,
+     "frac_of_barkley_module": 0.0333,
+     "frac_of_gavish_mp": 0.02
+    },
+    {
+     "gavish_mp_id": 32,
+     "gavish_mp_name": "Skin-pigmentation",
+     "n_shared": 1,
+     "jaccard": 0.0127,
+     "frac_of_barkley_module": 0.0333,
+     "frac_of_gavish_mp": 0.02
+    }
+   ]
+  }
+ ]
+}

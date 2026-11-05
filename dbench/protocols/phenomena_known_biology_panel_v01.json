@@ -1,0 +1,63 @@
+{
+ "schema": "morpheus_known_biology_panel/v1",
+ "id": "phenomena_known_biology_panel_v01",
+ "status": "PRESPECIFIED positive-control panel (written and hashed before any data is opened; owner directive 2026-10-26)",
+ "written_by": "Agent R",
+ "purpose": "direct tests of the published facts that motivated each of the five phenomena, to decide whether absences in P1-P5 are informative or instrument limits",
+ "code": {
+  "operators": "morpheus.tier2.substrates.hest_multi at commit 5fd7c05 (second_wave): compartment_view (nbrS/nbrE, rings; 43b5123), architecture_table (epithelial_dominant, stromal_immune_dominant, normal_appearing, invasive_front, distance_to_neoplastic_um, cnv:score), study_interface_distance (iface_dist:spots, iface_dist:um), cell_state_strata",
+  "relation": "morpheus_encoder.learned_search.relation_v03 (v03_rff, D_RFF 256, LOPO penalty from {0.01, 0.1, 1, 10})",
+  "driver": "dbench/downstream/scripts/phenomena_panel.py"
+ },
+ "cohorts": ["meylan2022_ccrcc", "valdeolivas2024_crc (+ healthy sections ZEN37, ZEN41 as the declared normal reference)", "ji2020_cscc", "ependymoma_pfa", "gse208253_oscc", "gse237183_glioma"],
+ "common_statistics": {
+  "contrast_tests": "per-patient within-patient difference of means between declared spot classes; cohort estimate = mean of per-patient differences; patient-bootstrap 95% CI (2000 draws); sign count over patients; null = within-patient permutation of the class labels (199 draws), p = (1 + #null >= observed in the declared direction) / 200",
+  "relation_tests": "relation v03_rff on patient folds (<= 6 folds), held-out pooled gain over the declared baseline with patient-bootstrap CI; partial slope sign from the relation fitted on all patients; nulls: within-patient permutation of the target (199) and Moran-matched random gene programmes replacing gene-defined explanatory variables (49, external_replication.matched_programmes)",
+  "small_cohorts": "cohorts with < 8 patients report the per-patient sign count and per-patient values beside the bootstrap interval",
+  "pass": "the declared direction with CI excluding 0 and the permutation null p <= 0.05 (relation tests: also the Moran-matched null p <= 0.05 where computable); reported per fact per cohort, never pooled across cohorts"
+ },
+ "facts": {
+  "P1a_compartment_mct": {
+   "source": "Maspero 2026; Chen 2025",
+   "test": "contrast stromal_immune_dominant minus epithelial_dominant spots per patient for SLC16A3 (MCT4), LDHA, SLC16A1 (MCT1) log-CPM",
+   "declared_direction": {"crc_and_other_carcinoma": {"SLC16A3": "+", "LDHA": "+", "SLC16A1": "-"},
+                          "meylan2022_ccrcc": {"SLC16A3": "-", "LDHA": "-", "SLC16A1": "+", "note": "renal direction per Maspero: tumour (epithelial/neoplastic) secretes lactate (MCT4, LDHA high in tumour)"}},
+   "cohorts": ["meylan2022_ccrcc", "valdeolivas2024_crc", "ji2020_cscc", "gse208253_oscc"]
+  },
+  "P1b_interface_glycolysis": {
+   "source": "Maspero 2026",
+   "test": "on stromal_immune_dominant spots, HALLMARK_GLYCOLYSIS score vs |iface_dist:um| (study_interface_distance): relation v03_rff with the distance as the explanatory variable, over the depth baseline",
+   "declared_direction": "glycolysis decreases with distance from the epithelial-stromal interface (negative partial slope)",
+   "cohorts": ["meylan2022_ccrcc", "valdeolivas2024_crc", "ji2020_cscc", "gse208253_oscc"]
+  },
+  "P2_field_effect": {
+   "source": "Raude 2026; Erickson 2022",
+   "tests": ["(a) normal_appearing epithelial spots in tumour sections vs the healthy sections ZEN37/ZEN41: distance in programme space (Euclidean distance of the 91-programme vector to the healthy-section centroid) and cnv:score, as a function of distance_to_neoplastic_um rings (1, 2, 3, >3 spot pitches)",
+             "(b) within tumour sections: near (<= 2 pitches) vs far (> 3 pitches) normal_appearing spots, per patient contrast of the programme-space distance and cnv:score",
+             "(c) ji2020_cscc: (b) with the within-section reference"],
+   "declared_direction": "divergence and cnv:score decrease with distance from tumour; near > far",
+   "cohorts": ["valdeolivas2024_crc", "ji2020_cscc"]
+  },
+  "P3_budding": {
+   "source": "Garcia-Rodriguez 2025; Fujiyoshi 2020; Righi 2015",
+   "test": "on invasive_front spots, correlation-type relation (single explanatory, v03_rff) of the budding_like index with each declared covariate",
+   "declared_direction": {"mp:EMT-II (partial EMT)": "+", "mp:EMT-III": "+", "KRT17": "+", "ITGB1": "+", "nbr6 POSTN": "+", "nbr6 CTHRC1": "+",
+                          "inflammatory fraction (CellViT)": "-", "CD8A+CD8B mean": "-", "mp:Hypoxia": "-"},
+   "hotspot_proxy": "ITBCC-style: per section, the 5% front spots with the highest budding_like index vs the rest; contrast of the same covariates (reported)",
+   "cohorts": ["valdeolivas2024_crc"]
+  },
+  "P4_constructed_objects": {
+   "source": "Li 2026; Hugaboom 2025",
+   "tests": ["(a) macrophage programme M = mean of C1QA, C1QB, C1QC, APOE, TREM2; context = neoplastic minus inflammatory CellViT fraction of the 6-neighbourhood; relation v03_rff of programme:mp:Interferon/MHC-II (I) (and of mp:Cell Cycle - G2/M) on [M, context] over B_nuis; inversion test: sign of the partial slope of M in the lowest vs highest context tertile (refit within tertile), declared: the slope changes sign",
+             "(b) TLS score T = mean of CXCL13, MS4A1, CD19, CR2, CCL19, LTB; exhausted CD8 score X = mean of LAG3, HAVCR2, PDCD1, TOX; relation of programme:mp:IG on [T, X] over B_nuis; declared: positive gain with a non-additive part (G_HO, the B_decomp partition {T},{X}) CI > 0; Meylan S0 sanity: T alone predicts mp:IG positively"],
+   "cohorts": ["meylan2022_ccrcc", "valdeolivas2024_crc", "ji2020_cscc", "gse208253_oscc"]
+  },
+  "P5_transfer": {
+   "source": "Bill 2023; Gavish 2023",
+   "tests": ["(a) CXCL9:SPP1 = log1p CXCL9 - log1p SPP1 (spot) predicting programme:mp:Interferon/MHC-II (I): relation frozen in meylan2022_ccrcc, transferred through morpheus_encoder.learned_search.transfer_v03 to every other cohort; declared: sign conserved (positive) with transfer gain CI > 0",
+             "(b) Gavish programme recurrence: per cohort the ranking of the 41 Gavish programmes by median within-section Moran's I (k = 6); pairwise Spearman of the rankings and top-10 overlap across organs; declared: positive rank agreement (Spearman CI > 0 by bootstrap over sections)"],
+   "cohorts": "all six where the genes are present"
+  }
+ },
+ "informative_vs_instrument": "per problem one line: if the known fact passes in the cohort, an absence of novel objects for that problem is informative; if the known fact fails, the absence is an instrument limit (assay, panel, resolution or cohort size), stated with the failing component"
+}

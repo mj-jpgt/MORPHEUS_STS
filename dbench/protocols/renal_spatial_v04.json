@@ -1,0 +1,372 @@
+{
+  "schema": "morpheus_prospective_campaign/v1",
+  "campaign_id": "renal-spatial-v04-20261011",
+  "supersedes": "renal-spatial-v03-20260926 (sealed, untouched). v0.3's competitor columns were not within-patient centred while the response was, so the competitor did not transfer across patients (held-out R2 down to -1.14) and its five 'internal' leads carry no held-out information once the competitor is centred (gain <= 0.003). v0.3 also counted proposed folds, not passing folds, toward recurrence. v0.4 fixes both in the forward path and adopts the .claude/ideas.md design: protected measurement bank, residual hypothesis generator, A-F explanation levels.",
+  "release": {
+    "name": "measurement-bank-v1 + residual_generator-v1 + standardised inner-CV competitor (frozen configuration)",
+    "measurement_bank_commit": "327f9cb",
+    "generator_commit": "c49ea5a",
+    "evidence_note": "No representation checkpoint. Deep learning enters only as (a) frozen measurement views and (b) the target-conditioned residual hypothesis generator, which nominates hypotheses that are re-fit from scratch on held-out patients.",
+    "runner_commit": "c17749e",
+    "pooling_commit": "3ab819c",
+    "substrate_commit": "b27b66f"
+  },
+  "discovery": {
+    "candidate_budget": 50,
+    "candidate_budget_meaning": "frozen candidates per relationship family entering the ledger at 'proposed' after the fold sweep; raw per-target proposals are internal search and recorded with their cost",
+    "patient_unit": true,
+    "literature_blind": true,
+    "fold_seed": 20260926,
+    "n_folds": 5,
+    "outer_split": "five grouped patient folds over the 24 HEST ccRCC patients (1 sample = 1 patient), deterministic shuffle with fold_seed; each fold in turn is D_R, the other four are D_P; HVG selection, z-score statistics, PCA of image embeddings and program ranking are fit on D_P only",
+    "proposals_per_target": 32,
+    "targets": {
+      "definition_rule": "every response is response-free defined, within-patient centred, and never derived from a gene set under test",
+      "morphology": {
+        "morph_pc1": "H-optimus per-spot embedding PC 1, PCA fit on D_P, patient-residualised",
+        "morph_pc2": "H-optimus per-spot embedding PC 2",
+        "morph_pc3": "H-optimus per-spot embedding PC 3",
+        "morph_pc4": "H-optimus per-spot embedding PC 4",
+        "morph_pc5": "H-optimus per-spot embedding PC 5",
+        "cv_count": "CellViT nuclei assigned to the spot (nearest-spot assignment, radius = spot_diameter_fullres / 2), log1p",
+        "cv_area": "mean nuclear polygon area of the spot's nuclei",
+        "cv_frac_Neoplastic": "fraction of the spot's nuclei in CellViT class Neoplastic",
+        "cv_frac_Connective": "fraction Connective",
+        "cv_frac_Epithelial": "fraction Epithelial",
+        "cv_frac_Inflammatory": "fraction Inflammatory",
+        "cv_frac_Dead": "fraction Dead"
+      },
+      "spatial_organisation": {
+        "nbr_mp1..nbr_mp8": "neighbour-mean (k=6, within sample) of the 8 Gavish malignant metaprogram scores with the highest within-patient Moran's I on D_P; program identities recorded per fold in the receipt"
+      }
+    },
+    "candidate_variables": "the D_P-selected 300 highest-variance genes (log-CPM, patient fixed effect removed, z-scored with D_P statistics) and, for the morpheus_factorized arm, its representation coordinates mapped back to genes by response-free observed-coordinate links",
+    "excluded_from_candidates": [
+      "spot depth",
+      "patient identity",
+      "CellViT descriptors",
+      "image embeddings"
+    ],
+    "competitor_set": {
+      "always": [
+        "log1p spot depth",
+        "CellViT class fractions",
+        "the 41 Gavish program scores of the spot"
+      ],
+      "when_candidate_has_context": [
+        "neighbour-mean of the 41 program scores"
+      ],
+      "when_order_ge_3": [
+        "all pairwise products of the candidate's variables"
+      ],
+      "rule": "the simpler model is fit on D_P and frozen; gain = R2(simpler + candidate feature, D_R) - R2(simpler, D_R)",
+      "exclusion_clause": "the simpler model never contains the response or a deterministic function of it: for cv_frac_<class> targets all CellViT class fractions are excluded from the baseline (they sum to one); for nbr_mp<k> targets the target program's own neighbour mean is excluded (the other 40 neighbour-mean programs and the spot's own 41 program scores remain); receipts record the baseline column names",
+      "centring_rule": "every competitor column is within-patient STANDARDISED (within sample for spatial contexts): minus the within-patient mean, divided by the within-patient sd of that column's own values (floored), exactly as the response is; the competitor is fit on D_P and frozen; implemented in the substrate (hest.real_episode / bmmc.real_episode, within_patient_scale=True), recorded as metadata.baseline_standardised. Reason: the v0.3 competitor was uncentred (did not transfer); a centred-only competitor still failed morph_pc1 on fold 0 (held-out R2 -0.28 to -0.51) because the within-patient spread of the response differed 3.4x across held-out patients.",
+      "when_target_is_neighbourhood_programme": [
+        "neighbour-mean of the 41 programme scores",
+        "neighbour-mean of pca view",
+        "own-spot pca view"
+      ],
+      "library": "validation: ridge on the standardised competitor columns with regularisation chosen by patient-grouped inner cross-validation on D_P over a fixed alpha grid that includes the zero (fold-mean) model; the full model (competitor + hypothesis feature) is selected the same way, independently; chosen alphas and both held-out R2 values recorded per row. The generator's conventional-explanation step uses ridge / spline-GAM / gradient boosting chosen on inner patient folds (never on D_R). A fold where the competitor itself is below zero on held-out patients is a fold where a hypothesis must still clear full-model R2 > 0; no other rule."
+    },
+    "null_suite": {
+      "spatial_block": "within-patient 2D block swap (6x6 grid) of the response on D_R (destroys spatial organisation, keeps marginals)",
+      "within_patient_perm": "permutation of the response within patient on D_R",
+      "interaction_break": "for |S| >= 2, within-patient block swap of one constituent variable on D_R (breaks joint structure, keeps marginals)",
+      "draws": 199,
+      "p_value": "(1 + #null gains >= observed) / (draws + 1)"
+    },
+    "advance_rule": {
+      "proposed": "per relationship family: top 50 hypotheses by mean held-out gain over folds in which they PASSED (held-out full-model R2 > 0 and gain bootstrap CI > 0), ranked across proposers jointly; provenance kept",
+      "internal": "passing (R2 > 0, gain CI > 0, all applicable structured nulls p <= 0.05) in >= 3 of 5 folds, mean gain >= 0.01 (minimum Level-A effect), BH q <= 0.10 within family; 'recurrence' counts passing folds only",
+      "external": "CPTAC ccRCC tumours only (n=110, canonical protein isoforms, dedupe_symbols): bulk-RNA transfer of the frozen feature vs the programme analogue or slide H&E descriptors; scale extension, same sign, permutation p <= 0.05",
+      "orthogonal": "CPTAC proteomics transfer, same sign, p <= 0.05",
+      "actionable": "pre-registered survival spec (hashed before fitting; CPTAC OS, TCGA-KIRC OS; Cox on tertiles with age/sex/stage[/grade]), translational evidence record (Open Targets, DepMap, drugs, safety, biomarker stage), EIG-ranked discriminating experiment",
+      "no_post_hoc_change": true,
+      "explanation_level": "every internal candidate is decomposed (decompose_explanation): A simple / B additive / C non-additive / D context-dependent; no candidate is dropped for being Level A; E/F only from external evidence flags",
+      "min_gain": 0.01,
+      "passing_fold": "a fold passes for a hypothesis only if its held-out full-model R2 > 0 and the gain bootstrap CI lower bound > 0; this is the runner's `validated` rule under v0.4; nulls, mean gain >= min_gain and BH q are applied at pooling",
+      "pooling_commit": "3ab819c"
+    },
+    "stop_rules": [
+      "a family with no internal candidate at budget 50: every hypothesis logged with stop_reason and proposer; report honestly; the advance rule never changes post hoc",
+      "all survivors labelled known by the novelty tool after reading the hits: report as independent replication; no novelty claim",
+      "sign reversal on any external transfer: candidate stops at internal; hash stays locked"
+    ],
+    "proposers": {
+      "enumeration": "single bank variables and low-order products from the raw_genes view (the v0.3 proposer, unchanged)",
+      "residual_generator": "cross-fitted conventional-explanation residual -> sparse-gated multimodal residual interaction network (+ graph branch for spatial) -> stability-distilled 1-5 variable hypotheses over the bank views; provenance and search cost recorded per hypothesis; graph branch enabled only for the molecular_x_context_to_tissue_phenotype family",
+      "rule": "both run on the proposal patients under ONE shared per-target proposal budget (max_candidates), ranked jointly by patient-grouped cross-validated proposal gain on proposal rows; every hypothesis records its proposer; none is privileged; generator hypotheses that recurred in fewer than half the seed fits are still sent to held-out validation and carry recurrent_in_generator=false (validation is the test, not the stability filter)"
+    },
+    "measurement_bank": {
+      "views": [
+        "raw_genes",
+        "pca",
+        "nmf",
+        "programmes",
+        "hoptimus",
+        "cellvit_structure",
+        "context_neighbour_mean",
+        "coords",
+        "patient",
+        "scimilarity",
+        "scgpt"
+      ],
+      "response_free_exclusions": "per target, as implemented in measurement_bank.build_bank: morph_pc* drop the hoptimus view; cv_count/cv_area drop the matching nuclear column; cv_frac_* drop all class fractions and entropy; nbr_mp* drop that programme's neighbour mean",
+      "fitted_on_proposal_only": [
+        "raw_genes selection",
+        "pca",
+        "nmf",
+        "standardisation/whitening of scgpt"
+      ],
+      "caveat": "scimilarity and scgpt are pseudo-bulk spot embeddings on Visium; recorded in every view"
+    },
+    "relationship_families": {
+      "molecular_to_morphology": {
+        "targets": [
+          "morph_pc1",
+          "morph_pc2",
+          "morph_pc3",
+          "morph_pc4",
+          "morph_pc5",
+          "cv_count",
+          "cv_area",
+          "cv_frac_Neoplastic",
+          "cv_frac_Connective",
+          "cv_frac_Epithelial",
+          "cv_frac_Inflammatory",
+          "cv_frac_Dead"
+        ],
+        "candidate_views": [
+          "raw_genes",
+          "pca",
+          "nmf",
+          "programmes",
+          "scimilarity",
+          "scgpt"
+        ],
+        "budget": 50
+      },
+      "molecular_to_neighbourhood_programme": {
+        "targets": [
+          "nbr_mp1",
+          "nbr_mp2",
+          "nbr_mp3",
+          "nbr_mp4",
+          "nbr_mp5",
+          "nbr_mp6",
+          "nbr_mp7",
+          "nbr_mp8"
+        ],
+        "candidate_views": [
+          "raw_genes",
+          "pca",
+          "nmf",
+          "programmes",
+          "scimilarity",
+          "scgpt"
+        ],
+        "budget": 50
+      },
+      "molecular_x_context_to_tissue_phenotype": {
+        "targets": [
+          "morph_pc1",
+          "morph_pc2",
+          "morph_pc3",
+          "morph_pc4",
+          "morph_pc5",
+          "cv_count",
+          "cv_area",
+          "cv_frac_Neoplastic",
+          "cv_frac_Connective",
+          "cv_frac_Epithelial",
+          "cv_frac_Inflammatory",
+          "cv_frac_Dead"
+        ],
+        "candidate_views": [
+          "raw_genes",
+          "programmes",
+          "scimilarity",
+          "context_neighbour_mean",
+          "cellvit_structure"
+        ],
+        "budget": 50,
+        "requirement": "every hypothesis carries at least one context variable from context_neighbour_mean or cellvit_structure and at least one molecular variable",
+        "generator_note": "the generator's structures that are context-only or molecular-only do not satisfy this family's requirement and are not frozen here; their counts are kept in proposer_report (fold-0 smoke: 0 emitted with the graph on)"
+      },
+      "composition_adjacency_to_molecular": {
+        "targets": [
+          "own_mp1",
+          "own_mp2",
+          "own_mp3",
+          "own_mp4",
+          "own_mp5",
+          "own_mp6",
+          "own_mp7",
+          "own_mp8"
+        ],
+        "candidate_views": [
+          "cellvit_structure",
+          "context_neighbour_mean",
+          "hoptimus"
+        ],
+        "budget": 50,
+        "exclusion": "the target programme and its neighbour mean are excluded from candidates and competitor",
+        "target_definition": "own_mp{k}: own-spot Gavish programme score of the k-th highest within-patient Moran's I programme ranked on proposal patients (same ranking as nbr_mp), within-patient centred",
+        "competitor_note": "depth, CellViT class fractions and the other programme scores; the target programme and its neighbour mean are excluded everywhere"
+      },
+      "tissue_to_patient": {
+        "status": "deferred to the external stage: CPTAC slide descriptors and outcomes, after candidates are frozen"
+      }
+    },
+    "rows": "every v0.4 episode is coverage-complete: spots with H-Optimus-0, CellViT geometry and tissue structure all present; the kept fraction is recorded per fold and target; nothing is imputed",
+    "receipt_contract": [
+      "family",
+      "target",
+      "fold",
+      "proposer",
+      "variable_names",
+      "feature_form",
+      "replication_gain",
+      "replication_gain_ci",
+      "replication_r2_full",
+      "validated",
+      "nulls",
+      "provenance",
+      "recurrent_in_generator",
+      "candidate_hash"
+    ],
+    "response_transform": "every response is within-patient standardised (mean 0, sd 1 per patient on its own values); recorded as metadata.response_standardised"
+  },
+  "cohorts": [
+    {
+      "id": "hest_ccrcc_discovery",
+      "role": "fresh measured-ST plus morphology discovery (Level 1 replication = held-out patients)",
+      "gates": [
+        {
+          "id": "hest_ccrcc_archive",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc",
+          "required": true
+        },
+        {
+          "id": "hest_ccrcc_patient_and_provenance_manifest",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/morpheus_substrate_mirror/hest/ccrcc/PROSPECTIVE_PATIENT_PROVENANCE.json",
+          "required": true
+        },
+        {
+          "id": "hest_hoptimus_embeddings",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hest_fm_embeddings_20260906/ccrcc/embeddings/hoptimus",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cptac_ccrcc_external",
+      "role": "locked RNA-protein-H&E external (Level 2) and orthogonal (Level 3) validation",
+      "gates": [
+        {
+          "id": "cptac_molecular_tables",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/proteomics__umich.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_rna_table",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/tables/ccrcc/transcriptomics__washu.parquet",
+          "required": true
+        },
+        {
+          "id": "cptac_patient_mapping",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/hf_tcga_cptac_cgga/cptac/cptac_ccrcc_patient_mapping.json",
+          "required": true
+        },
+        {
+          "id": "cptac_he_descriptors",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/cptac_ccrcc_he_descriptors_20260925/embeddings.h5",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tcga_kirc_prognosis",
+      "role": "second prognostic cohort after state lock (public cBioPortal acquisition)",
+      "gates": [
+        {
+          "id": "tcga_kirc_tables",
+          "path": "/lambda/nfs/geeg/biorag3_persistent_20260711/external/tcga_kirc_20260925",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "translation": {
+    "cptac": "RNA-protein-H&E triangle only; spot-to-slide transfer is labelled scale extension",
+    "tcga_kirc": "predeclared prognosis and H&E-readout analysis after state lock",
+    "treatment_claim": "blocked pending raw patient-level randomized JAVELIN or CheckMate data",
+    "forbidden": [
+      "derived JAVELIN contrast tables as patient-level treatment evidence",
+      "outcome-guided state selection",
+      "calling a held-out HEST fold an external replication"
+    ]
+  },
+  "anti_leakage": {
+    "literature_before_internal_freeze": false,
+    "legacy_phase2_candidates_as_prospective_candidates": false,
+    "candidate_redefinition_after_external": false,
+    "truth_or_outcome_in_discovery": false
+  },
+  "ledger": {
+    "filename": "renal_spatial_v04_ledger.jsonl"
+  },
+  "status": "REGISTERED 2026-10-11 (frozen at registration; the ledger is append-only; the advance rule never changes post hoc)",
+  "legacy_leads": {
+    "from": "renal-spatial-v03-20260926",
+    "genes": [
+      "PFKP",
+      "HINT1",
+      "COX6A1",
+      "ENPEP"
+    ],
+    "status": "exercised the translational machinery; no held-out information under a transferable competitor; they are not inputs to v0.4 and are not excluded from it either"
+  },
+  "positive_controls": {
+    "purpose": "separate a technical failure from a real absence; informational, nothing is excluded or admitted because of them",
+    "controls": [
+      {
+        "name": "immunoglobulin_to_inflammatory_structure",
+        "genes": [
+          "IGKC",
+          "IGHG1",
+          "IGHG3",
+          "IGHA1",
+          "JCHAIN",
+          "IGLC1",
+          "IGLC2"
+        ],
+        "expected": "at least one IG gene or IG-containing hypothesis passes (held-out R2 > 0, CI > 0) for cv_frac_Inflammatory or a morph_pc target in >= 2 folds",
+        "family": [
+          "molecular_to_morphology",
+          "molecular_x_context_to_tissue_phenotype"
+        ]
+      },
+      {
+        "name": "chemokine_niche_context",
+        "genes": [
+          "CXCL9",
+          "CXCL10",
+          "CCL5",
+          "HLA-DRA",
+          "STAT1"
+        ],
+        "expected": "appear among proposed hypotheses with Inflammatory-fraction or neighbour-Inflammatory context in >= 1 fold (known macrophage/CD8 chemokine niche, PMC12496100)",
+        "family": [
+          "molecular_x_context_to_tissue_phenotype"
+        ]
+      },
+      {
+        "name": "planted_interaction_recovery",
+        "spec": "IGLC1 x SERPINE1 planted into morph_pc1 at 5% of residual variance on fold 0 (development run, not part of the registered receipts)",
+        "expected": "generator ranks it first (recorded by Agent G, 2026-10-11, stability 1.00)"
+      }
+    ]
+  }
+}

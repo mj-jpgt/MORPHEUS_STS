@@ -1,0 +1,95 @@
+{
+  "schema": "morpheus_pointer_expansion_lock/v1",
+  "status": "locked_before_reserve_confirmation",
+  "selected_checkpoint": {
+    "checkpoint": {
+      "path": "runs/development/learned_search_v01/full/frozen.pt",
+      "sha256": "44259df1f5a9772ee5cab80061b69b4de5e3e968d97c9a8f444f5f2ced3cc7a4"
+    },
+    "model": {
+      "path": "morpheus_encoder/learned_search/model.py",
+      "sha256": "9b3bfcc2f8a8c484805bcc243adc00df8c10f2a1efd0b5bad7f59391511675c1"
+    },
+    "propose_bridge": {
+      "path": "morpheus_encoder/learned_search/propose.py",
+      "sha256": "aaa62b4c5b673ffc300fec34057e5f9d464c4bab016f52eb4694c2de30a5aa2c"
+    },
+    "common_harness": {
+      "path": "dbench/benchmark/methods.py",
+      "sha256": "c5633c0e1d5f62fdd35712ec5a6519074f8b73c48bc1342529e1bee8000a85bf"
+    },
+    "reserve_adapter": {
+      "path": "morpheus/tier2/substrates/hest_multi.py",
+      "sha256": "ed025fee1c94d8a4ddd6efa8320b780af62f34eaf504d86e6033dce402ab82f0"
+    },
+    "reserve_runner": {
+      "path": "dbench/benchmark/reserve_pointer_expansion_confirmation.py",
+      "sha256": "1921450dd1bc02012af863273b643daef8794dc0483417fe9d79b7cedf789b87"
+    }
+  },
+  "strategy": "pointer_expand",
+  "proposal_family": "pointer_conditional_expansion",
+  "parameters": {
+    "n_paths": 32,
+    "n_anchors": 16,
+    "n_partners_per_anchor": 5,
+    "max_screen_rows": 4096,
+    "max_emitted_sets": 192,
+    "relation_cv_folds": 3,
+    "rank": "descending grouped support-CV gain over immediate proper subsets"
+  },
+  "selection_evidence": {
+    "development_only": "real HEST kidney-injury, 12 controlled 10%-effect gene worlds",
+    "not_confirmation": "MEND59-MEND68 reserve untouched at lock time"
+  },
+  "confirmation": {
+    "reserve_study": "reserve_spatially_resolved_transcriptomic_profiling_of_d",
+    "patients": [
+      "MEND59",
+      "MEND60",
+      "MEND61",
+      "MEND62",
+      "MEND63",
+      "MEND64",
+      "MEND65",
+      "MEND66",
+      "MEND67",
+      "MEND68"
+    ],
+    "primary_metrics": [
+      "candidate_pool_exact",
+      "top16_exact",
+      "heldout_query_relation",
+      "heldout_gain"
+    ],
+    "baselines_deferred_until": "reserve proposal coverage preserves context/spatial benefit",
+    "target": "gene:ACTB",
+    "support_patients": [
+      "MEND59",
+      "MEND60",
+      "MEND61",
+      "MEND62",
+      "MEND63",
+      "MEND64",
+      "MEND65",
+      "MEND66"
+    ],
+    "query_patients": [
+      "MEND67",
+      "MEND68"
+    ],
+    "relations": [
+      "product_2",
+      "context_threshold",
+      "gp_2",
+      "spatial_mix_gp"
+    ],
+    "seeds": [
+      200,
+      201,
+      202
+    ],
+    "source": "gene",
+    "no_hoptimus_claim": true
+  }
+}
